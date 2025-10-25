@@ -9,8 +9,8 @@ const Logo = ({ isSticky }) => {
 		<Link href="/" className="logo">
 			<Image
 				className={`${
-					headerType === 9 || headerType === 10
-						? "w-full max-w-[190px]"
+					headerType === 4 || headerType === 9 || headerType === 10
+						? "w-full max-w-[190px] h-auto"
 						: "w-15 h-15 "
 				} ${
 					isInnerPage && !isSticky
@@ -18,7 +18,7 @@ const Logo = ({ isSticky }) => {
 						: " hidden dark:inline-block"
 				} `}
 				src={
-					headerType === 9 || headerType === 10
+					headerType === 4 || headerType === 9 || headerType === 10
 						? "/img/logo/black.png"
 						: "/img/logo/logo.png"
 				}
@@ -28,8 +28,8 @@ const Logo = ({ isSticky }) => {
 			/>
 			<Image
 				className={`${
-					headerType === 9 || headerType === 10
-						? "w-full max-w-[190px]"
+					headerType === 4 || headerType === 9 || headerType === 10
+						? "w-full max-w-[190px] h-auto"
 						: "w-15 h-15"
 				} ${
 					isInnerPage && !isSticky ? "hidden" : "inlin-block dark:hidden"

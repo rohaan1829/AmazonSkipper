@@ -67,7 +67,7 @@ const Header = ({ isSticky }) => {
 								headerType === 10
 									? "max-w-140px sm:max-w-210px flex items-center h-75px sm:h-85px md:h-[103px]  border-r border-border-coloer dark:border-bg-color-2 w-full leading-1 pr-15px sm:pr-0"
 									: headerType === 4 || headerType === 6 || headerType === 9
-									? `max-w-205px lg:max-w-130px xl:max-w-205px w-full`
+									? `max-w-205px lg:max-w-130px xl:max-w-205px w-full -mt-2 sm:-mt-1 md:mt-0`
 									: ""
 							}
 						>
