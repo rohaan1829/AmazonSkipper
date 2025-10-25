@@ -8,16 +8,23 @@ import Link from "next/link";
 const Hero9 = () => {
 	return (
 		<section className="hero-section relative pt-150px sm:pt-[165px] md:pt-150px lg:pt-185px xl:pt-140px 2xl:pt-185px  pb-10 sm:pb-70px overflow-hidden dark:bg-primary-color-light">
+			{/* Gradient Background - Dark Mode */}
+			<div className="absolute inset-0 bg-gradient-to-br from-[#121212] via-[#1a1a1a] to-[#4CAF50]/20 opacity-90 dark:block hidden"></div>
+			<div className="absolute inset-0 bg-gradient-to-tr from-[#4CAF50]/10 via-transparent to-[#121212] opacity-60 dark:block hidden"></div>
+			
+			{/* Gradient Background - Light Mode */}
+			<div className="absolute inset-0 bg-gradient-to-br from-white via-[#f8f9fa] to-[#4CAF50]/70 opacity-95 dark:hidden block"></div>
+			<div className="absolute inset-0 bg-gradient-to-tr from-[#4CAF50]/80 via-transparent to-white opacity-90 dark:hidden block"></div>
 			{/* <!-- bg --> */}
 
-			<div className="px-15px">
+			<div className="px-15px relative z-10">
 				<div className="mb-50px md:mb-20 lg:mb-10 xl:mb-20">
-					<h1 className="text-size-80 sm:text-size-70 md:text-size-84 lg:text-size-110 xl:text-size-136 2x:text-size-140 3xl:text-size-164 4xl:text-size-174 5xl:text-size-203  text-primary-color  dark:text-white-color leading-1.1 lg:leading-1.1  mb-5  -tracking-0.04em font-semibold uppercase flex flex-wrap sm:flex-nowrap items-center justify-center gap-10px sm:gap-5 2xl:gap-[65px] ">
-						Hello
-						<ButtonPopupVideo2 />
-						Motion
-					</h1>
-				</div>
+					<h1 className="text-size-80 sm:text-size-70 md:text-size-84 lg:text-size-110 xl:text-size-136 2x:text-size-140 3xl:text-size-164 4xl:text-size-174 5xl:text-size-203 bg-gradient-to-r from-[#4CAF50] via-[#121212] to-[#4CAF50] bg-clip-text text-transparent dark:from-[#4CAF50]/60 dark:via-white dark:to-[#4CAF50]/60 leading-1.1 lg:leading-1.1  mb-5  -tracking-0.04em font-semibold uppercase flex flex-wrap sm:flex-nowrap items-center justify-center gap-10px sm:gap-5 2xl:gap-[65px] ">
+					Hello
+					<ButtonPopupVideo2 />
+					Motion
+				</h1>
+			</div>
 			</div>
 			<div className="container">
 				<div className="relative ">
@@ -26,7 +33,7 @@ const Hero9 = () => {
 					</div>
 					{/* <!-- transparent area --> */}
 					<div className=" absolute -top-5 sm:top-0  lg:top-[16%] left-auto lg:left-[11%] xl:left-[15%] right-[30px] sm:right-0 md:right-[15%] lg:right-auto animate-move-var">
-						<div className="flex gap-1.5 px-15px lg:px-30px py-25px sm:py-30px lg:py-45px rounded-10px border border-dashed border-primary-color-light dark:border-white-color bg-gradient-14 backdrop-blur-[55px] z-1">
+						<div className="flex gap-1.5 px-15px lg:px-30px py-25px sm:py-30px lg:py-45px rounded-10px border border-dashed border-[#4CAF50]/80 dark:border-[#4CAF50]/30 bg-gradient-to-br from-white via-[#f8f9fa] to-[#4CAF50]/60 dark:from-[#121212] dark:via-[#1a1a1a] dark:to-[#4CAF50]/15 backdrop-blur-[55px] z-1 shadow-lg shadow-[#4CAF50]/40 dark:shadow-[#4CAF50]/10">
 							<div className="w-[26px] flex-shrink-0">
 								<span>
 									<svg
