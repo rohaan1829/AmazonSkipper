@@ -87,8 +87,7 @@ const Hero9 = () => {
 								</span>
 							</div>
 							<h4 className="md:text-[19px] leading-[1.52] font-medium text-seondary-color dark:text-white-color">
-								Awarded Creative <br />
-								Video Editor.
+								Schedule a Demo <br />
 							</h4>
 							<div>
 								<span className="w-[13px] h-[13px] border-2 border-black-color dark:border-white-color bg-white-color dark:bg-black-color rounded-100% absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2  [&:nth-child(2)]:left-full last:left-full last:top-full"></span>

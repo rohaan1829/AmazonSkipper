@@ -1,5 +1,14 @@
+"use client";
+import { useEffect, useState } from "react";
+
 const TestimonialsCard9 = ({ testimonial }) => {
 	const { authorName, authorDesig, desc, img } = testimonial ? testimonial : {};
+	const [isClient, setIsClient] = useState(false);
+
+	useEffect(() => {
+		setIsClient(true);
+	}, []);
+
 	return (
 		<div className="px-22px py-7 border-2 border-primary-color border-opacity-30  [.swiper-slide-active_&]:border-opacity-100 hover:border-primary-color dark:hover:border-primary-color transition-all duration-500 rounded-15px relative z-0 group">
 			<div className="text-primary-color-light dark:text-white-color relative z-10">
@@ -28,7 +37,7 @@ const TestimonialsCard9 = ({ testimonial }) => {
 							<div className="star-ratings relative text-base  tracking-[5px] sm:tracking-[8px] lg:tracking-[5px] xl:tracking-[8px] leading-none text-transparent stroke-[1px] drop-shadow-[1px_1px_0_var(--tj-theme-primary)]  stroke-primary-color mb-1.5 ">
 								<div
 									className="fill-ratings absolute top-0 left-0 z-1 overflow-hidden text-primary-color "
-									style={{ width: "86%" }}
+									style={{ width: isClient ? "86%" : "0%" }}
 								>
 									<span className="inline-block">★★★★★</span>
 								</div>
