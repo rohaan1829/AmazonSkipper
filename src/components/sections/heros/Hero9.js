@@ -19,10 +19,10 @@ const Hero9 = () => {
 
 			<div className="px-15px relative z-10">
 				<div className="mb-50px md:mb-20 lg:mb-10 xl:mb-20">
-					<h1 className="text-size-80 sm:text-size-70 md:text-size-84 lg:text-size-110 xl:text-size-136 2x:text-size-140 3xl:text-size-164 4xl:text-size-174 5xl:text-size-203 bg-gradient-to-r from-[#4CAF50] via-[#121212] to-[#4CAF50] bg-clip-text text-transparent dark:from-[#4CAF50]/60 dark:via-white dark:to-[#4CAF50]/60 leading-1.1 lg:leading-1.1  mb-5  -tracking-0.04em font-semibold uppercase flex flex-wrap sm:flex-nowrap items-center justify-center gap-10px sm:gap-5 2xl:gap-[65px] ">
-					Hello
+					<h1 className="text-[73px] sm:text-[65px] md:text-[77px] lg:text-[101px] xl:text-[125px] 2x:text-[129px] 3xl:text-[151px] 4xl:text-[160px] 5xl:text-[186px] bg-gradient-to-r from-[#4CAF50] via-[#121212] to-[#4CAF50] bg-clip-text text-transparent dark:from-[#4CAF50]/60 dark:via-white dark:to-[#4CAF50]/60 leading-1.1 lg:leading-1.1  mb-5  -tracking-0.04em font-semibold uppercase flex flex-wrap sm:flex-nowrap items-center justify-center gap-10px sm:gap-5 2xl:gap-[65px] ">
+					SPEND
 					<ButtonPopupVideo2 />
-					Motion
+					SMARTER
 				</h1>
 			</div>
 			</div>
@@ -113,17 +113,16 @@ const Hero9 = () => {
 					</div>
 					<div className="w-full max-w-310px relative md:absolute  md:right-auto lg:right-0 xl:right-0 2xl:right-[1%] 3xl:-right-[9%] -top-10 md:top-auto lg:top-1/2 xl:top-[40%] md:bottom-0  md:left-1/2 lg:left-auto  md:-translate-x-1/2 lg:translate-x-0 lg:-translate-y-1/2  mx-auto md:mx-0 z-1 ">
 						<div>
-							<p
-								className="text-seondary-color dark:text-white-color-4 leading-1.5    mb-26px   wow fadeInUp"
+							<div
+								className="text-seondary-color dark:text-white-color-4 leading-1.3 mb-26px wow fadeInUp text-2xl md:text-3xl lg:text-4xl font-bold"
 								data-wow-delay=".3s"
 							>
-								My role as a amplify tha story through my careful{" "}
-								<span className="dark:text-white-color">
-									{"[Video Editor]"}
-								</span>{" "}
-								selection of footages, pacing, and visual style. My keen
-								attention to detail allows me to enhance the mood.
-							</p>
+								<div className="text-left">
+									<div>Your Amazon AD Spend Could</div>
+									<div>be <span className="text-[#4CAF50] font-bold">X%</span> Lower in 47 days</div>
+									<div>Guaranteed!</div>
+								</div>
+							</div>
 						</div>
 						<FunFact9 />
 						<div>
