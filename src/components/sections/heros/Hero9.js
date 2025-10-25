@@ -13,8 +13,8 @@ const Hero9 = () => {
 			<div className="absolute inset-0 bg-gradient-to-tr from-[#4CAF50]/10 via-transparent to-[#121212] opacity-60 dark:block hidden"></div>
 			
 			{/* Gradient Background - Light Mode */}
-			<div className="absolute inset-0 bg-gradient-to-br from-white via-[#f8f9fa] to-[#4CAF50]/70 opacity-95 dark:hidden block"></div>
-			<div className="absolute inset-0 bg-gradient-to-tr from-[#4CAF50]/80 via-transparent to-white opacity-90 dark:hidden block"></div>
+			<div className="absolute inset-0 bg-gradient-to-br from-white via-[#f8f9fa] to-[#4CAF50]/90 opacity-95 dark:hidden block"></div>
+			<div className="absolute inset-0 bg-gradient-to-tr from-[#4CAF50]/95 via-transparent to-white opacity-95 dark:hidden block"></div>
 			{/* <!-- bg --> */}
 
 			<div className="px-15px relative z-10">
@@ -28,12 +28,18 @@ const Hero9 = () => {
 			</div>
 			<div className="container">
 				<div className="relative ">
-					<div className="image mx-auto w-full max-w-[631px] sm:max-w-[330px] md:max-w-550px lg:max-[450px] 2xl:max-w-[631px] relative z-0 after:absolute after:left-0 after:bottom-0 after:h-[480px] after:w-full after:bg-gradient-15-light  dark:after:bg-gradient-15">
-						<img src="/img/hero/hero-9-thumb.png" alt="hero" />
-					</div>
+				<div className="image mx-auto w-full max-w-[631px] sm:max-w-[330px] md:max-w-550px lg:max-[450px] 2xl:max-w-[631px] relative z-0 after:absolute after:left-0 after:bottom-0 after:h-[480px] after:w-full after:bg-gradient-15-light dark:after:bg-gradient-15">
+				<img
+					src="/img/hero/huzaifa.png"
+					alt="Huzaifa"
+					className="w-full h-auto
+							[clip-path:path('M0_200A315_315_0_0_1_630_200L630_900L0_900Z')]"
+				/>
+				</div>
+
 					{/* <!-- transparent area --> */}
 					<div className=" absolute -top-5 sm:top-0  lg:top-[16%] left-auto lg:left-[11%] xl:left-[15%] right-[30px] sm:right-0 md:right-[15%] lg:right-auto animate-move-var">
-						<div className="flex gap-1.5 px-15px lg:px-30px py-25px sm:py-30px lg:py-45px rounded-10px border border-dashed border-[#4CAF50]/80 dark:border-[#4CAF50]/30 bg-gradient-to-br from-white via-[#f8f9fa] to-[#4CAF50]/60 dark:from-[#121212] dark:via-[#1a1a1a] dark:to-[#4CAF50]/15 backdrop-blur-[55px] z-1 shadow-lg shadow-[#4CAF50]/40 dark:shadow-[#4CAF50]/10">
+						<div className="flex gap-1.5 px-15px lg:px-30px py-25px sm:py-30px lg:py-45px rounded-10px border border-dashed border-[#4CAF50]/90 dark:border-[#4CAF50]/30 bg-gradient-to-br from-white via-[#f8f9fa] to-[#4CAF50]/80 dark:from-[#121212] dark:via-[#1a1a1a] dark:to-[#4CAF50]/15 backdrop-blur-[55px] z-1 shadow-lg shadow-[#4CAF50]/60 dark:shadow-[#4CAF50]/10">
 							<div className="w-[26px] flex-shrink-0">
 								<span>
 									<svg

@@ -19,7 +19,7 @@ const Logo = ({ isSticky }) => {
 				} `}
 				src={
 					headerType === 9 || headerType === 10
-						? "/img/logo/logo-9.png"
+						? "/img/logo/black.png"
 						: "/img/logo/logo.png"
 				}
 				alt=""
@@ -27,10 +27,14 @@ const Logo = ({ isSticky }) => {
 				height={1000}
 			/>
 			<Image
-				className={`w-15 h-15  ${
+				className={`${
+					headerType === 9 || headerType === 10
+						? "w-full max-w-[190px]"
+						: "w-15 h-15"
+				} ${
 					isInnerPage && !isSticky ? "hidden" : "inlin-block dark:hidden"
 				}`}
-				src="/img/logo/logo-dark.png"
+				src="/img/logo/8 - Edited.png"
 				alt=""
 				width={1000}
 				height={1000}
