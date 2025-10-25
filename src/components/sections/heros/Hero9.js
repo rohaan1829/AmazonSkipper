@@ -9,12 +9,12 @@ const Hero9 = () => {
 	return (
 		<section className="hero-section relative pt-150px sm:pt-[165px] md:pt-150px lg:pt-185px xl:pt-140px 2xl:pt-185px  pb-10 sm:pb-70px overflow-hidden dark:bg-primary-color-light">
 			{/* Gradient Background - Dark Mode */}
-			<div className="absolute inset-0 bg-gradient-to-br from-[#121212] via-[#1a1a1a] to-[#4CAF50]/20 opacity-90 dark:block hidden"></div>
-			<div className="absolute inset-0 bg-gradient-to-tr from-[#4CAF50]/10 via-transparent to-[#121212] opacity-60 dark:block hidden"></div>
+			<div className="absolute inset-0 bg-gradient-to-br from-[#121212] via-[#1a1a1a] to-[#4CAF50]/40 opacity-90 dark:block hidden"></div>
+			<div className="absolute inset-0 bg-gradient-to-tr from-[#4CAF50]/30 via-transparent to-[#121212] opacity-80 dark:block hidden"></div>
 			
 			{/* Gradient Background - Light Mode */}
-			<div className="absolute inset-0 bg-gradient-to-br from-white via-[#f8f9fa] to-[#4CAF50]/90 opacity-95 dark:hidden block"></div>
-			<div className="absolute inset-0 bg-gradient-to-tr from-[#4CAF50]/95 via-transparent to-white opacity-95 dark:hidden block"></div>
+			<div className="absolute inset-0 bg-gradient-to-br from-white via-[#4CAF50]/20 to-[#4CAF50] opacity-95 dark:hidden block"></div>
+			<div className="absolute inset-0 bg-gradient-to-tr from-[#4CAF50] via-[#4CAF50]/30 to-white opacity-95 dark:hidden block"></div>
 			{/* <!-- bg --> */}
 
 			<div className="px-15px relative z-10">
