@@ -14,8 +14,8 @@ import "./css/odometer-theme-default.css";
 import "./globals.css";
 
 export const metadata = {
-	title: "Gerold - Personal Portfolio React  NextJs Template",
-	description: "Gerold - Personal Portfolio React  NextJs Template",
+	title: "Amazon Skipper - Your Amazon Business Solution",
+	description: "Amazon Skipper - Professional Amazon business services and solutions to help you succeed on Amazon marketplace",
 };
 
 export default function RootLayout({ children }) {

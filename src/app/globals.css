@@ -39,9 +39,9 @@ Description: Gerold - Personal Portfolio Tailwind Template
 /* variable */
 :root {
 	--body-color: #dddddd;
-	--primary-color: #8750f7;
-	--primary-color-light: #140c1c;
-	--secondary-color: #2a1454;
+	--primary-color: #121212;
+	--primary-color-light: #1a1a1a;
+	--secondary-color: #4CAF50;
 	--white-color: #ffffff;
 	--off-white-color: #f6f3fc;
 	--black-color: #050709;

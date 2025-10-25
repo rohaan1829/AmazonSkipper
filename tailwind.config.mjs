@@ -26,12 +26,12 @@ container
 /** @type {import('tailwindcss').Config} */
 
 // variables
-const primaryColor = "#8750f7";
-const primaryColor2 = "#9b8dff";
-const primaryColorLight = "#140c1c";
-const seondaryColor = "#2a1454";
-const seondaryColor2 = "#240f31";
-const seondaryColor3 = "#1D1129";
+const primaryColor = "#121212";
+const primaryColor2 = "#2a2a2a";
+const primaryColorLight = "#1a1a1a";
+const seondaryColor = "#4CAF50";
+const seondaryColor2 = "#45a049";
+const seondaryColor3 = "#3d8b40";
 const bodyColor = "#dddddd";
 const bodyColor2 = "#7A7A7A";
 const bodyColor3 = "#FFFFFF99";
@@ -46,7 +46,7 @@ const grayColor2 = "#747779";
 const grayColor3 = "#22272c";
 const grayColor4 = "#FFFFFF80";
 const borderColor = "#d9d9d9";
-const borderColor2 = "rgba(129, 76, 236, 0.2)";
+const borderColor2 = "rgba(76, 175, 80, 0.2)";
 const borderColor3 = "#FFFFFF24";
 const borderColor4 = "#FFFFFF26";
 const borderColor5 = "#ffffff14";
@@ -57,10 +57,10 @@ const bgColor = "#10171c";
 const bgColor2 = "#FFFFFF1A";
 const bgColor3 = "#d9d9d980";
 const bgColor4 = "#0c1115";
-const bgColor5 = "#2e1f3e";
-const bgColor6 = "rgba(36, 15, 49, 0.5)";
-const bgColor7 = "#814CEC33";
-const bgColor8 = "rgb(192, 172, 233)";
+const bgColor5 = "#1a1a1a";
+const bgColor6 = "rgba(18, 18, 18, 0.5)";
+const bgColor7 = "#4CAF5033";
+const bgColor8 = "rgb(76, 175, 80)";
 const green1 = "#00ff2f";
 const green2 = "#00f721";
 module.exports = {
@@ -518,18 +518,18 @@ module.exports = {
 				"gradient-secondary-2": `linear-gradient(90deg, ${primaryColor} 0%, ${seondaryColor} 110.61%)`,
 				"gradient-text": `linear-gradient(to right, ${primaryColor} 0%, ${whiteColor} 100%)`,
 				"gradient-text-light": `linear-gradient(to right, ${primaryColor} 0%, ${seondaryColor} 100%)`,
-				"gradient-circle": `linear-gradient(260deg, ${primaryColor} 0%, rgba(115, 67, 210, 0) 100%)`,
-				"gradient-circle-2": `linear-gradient(260deg, ${primaryColor} 0%, rgba(115, 67, 210, 0.1) 100%)`,
+				"gradient-circle": `linear-gradient(260deg, ${primaryColor} 0%, rgba(18, 18, 18, 0) 100%)`,
+				"gradient-circle-2": `linear-gradient(260deg, ${primaryColor} 0%, rgba(18, 18, 18, 0.1) 100%)`,
 				"gradient-primary-2": `linear-gradient(161deg, ${seondaryColor} 0%, ${primaryColor} 100%)`,
 				"gradient-primary-3": `linear-gradient(to right, ${primaryColor} 0, ${primaryColor} 100%)`,
 				"gradient-primary-4": `linear-gradient(-45deg, ${seondaryColor} 11.52%, ${primaryColor} 91.55%)`,
-				"gradient-primary-5": `linear-gradient(90deg, ${primaryColor} 0%, #f0a 100%)`,
+				"gradient-primary-5": `linear-gradient(90deg, ${primaryColor} 0%, ${seondaryColor} 100%)`,
 				"gradient-primary-6": `linear-gradient(92deg, ${whiteColor} 15%, rgba(255, 255, 255, 0) 95%)`,
-				"gradient-primary-6-dark": `linear-gradient(92deg, rgb(13, 6, 18) 0%, rgba(13, 6, 18, 0) 100%)`,
+				"gradient-primary-6-dark": `linear-gradient(92deg, rgb(18, 18, 18) 0%, rgba(18, 18, 18, 0) 100%)`,
 				"gradient-primary-7": `linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 28.52%, rgba(255, 255, 255, 0) 68.59%, rgba(255, 255, 255, 1) 96.94%)`,
 				"gradient-primary-8": `linear-gradient(-10deg, ${seondaryColor} 0%, ${primaryColor} 100%)`,
 				"gradient-primary-9": `linear-gradient(180deg, rgba(5, 7, 8, 0) 0%, #050708 100%)`,
-				"gradient-primary-10": `linear-gradient(107deg, rgba(129, 76, 236, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%)`,
+				"gradient-primary-10": `linear-gradient(107deg, rgba(76, 175, 80, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%)`,
 				"gradient-primary-10-light": `linear-gradient(to right, rgba(135, 80, 247, 0.1) 0%, ${seondaryColor} 100%)`,
 				"gradient-primary-11": `linear-gradient(to right, currentColor 0, currentColor 100%)`,
 				"gradient-12": `linear-gradient(rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.01) 100%)`,
