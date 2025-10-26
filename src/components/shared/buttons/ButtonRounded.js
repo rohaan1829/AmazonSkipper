@@ -1,23 +1,30 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const ButtonRounded = () => {
 	const buttonRef = useRef(null);
+	const [isClient, setIsClient] = useState(false);
 
 	useEffect(() => {
+		setIsClient(true);
+	}, []);
+
+	useEffect(() => {
+		if (!isClient || !buttonRef.current) return;
+
 		const button = buttonRef.current;
 		const dot = button.querySelector(".tj-btn-circle-dot");
+
+		if (!dot) return;
 
 		const updatePosition = e => {
 			const rect = button.getBoundingClientRect();
 			const x = e.pageX - rect.left - window.scrollX;
 			const y = e.pageY - rect.top - window.scrollY;
 
-			if (dot) {
-				dot.style.top = `${y}px`;
-				dot.style.left = `${x}px`;
-			}
+			dot.style.top = `${y}px`;
+			dot.style.left = `${x}px`;
 		};
 
 		button.addEventListener("mouseenter", updatePosition);
@@ -27,7 +34,7 @@ const ButtonRounded = () => {
 			button.removeEventListener("mouseenter", updatePosition);
 			button.removeEventListener("mouseout", updatePosition);
 		};
-	}, []);
+	}, [isClient]);
 	return (
 		<Link
 			href="#"

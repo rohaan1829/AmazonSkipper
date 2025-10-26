@@ -38,7 +38,7 @@ const Hero9 = () => {
 				</div>
 
 					{/* <!-- transparent area --> */}
-					<div className=" absolute -top-5 sm:top-0  lg:top-[16%] left-auto lg:left-[11%] xl:left-[15%] right-[30px] sm:right-0 md:right-[15%] lg:right-auto animate-move-var">
+					<div className=" absolute -top-5 sm:top-0  lg:top-[16%] left-auto lg:left-[11%] xl:left-[15%] right-[30px] sm:right-0 md:right-[15%] lg:right-auto">
 						<div className="flex gap-1.5 px-15px lg:px-30px py-25px sm:py-30px lg:py-45px rounded-10px border border-dashed border-[#4CAF50]/90 dark:border-[#4CAF50]/30 bg-gradient-to-br from-white via-[#f8f9fa] to-[#4CAF50]/80 dark:from-[#121212] dark:via-[#1a1a1a] dark:to-[#4CAF50]/15 backdrop-blur-[55px] z-1 shadow-lg shadow-[#4CAF50]/60 dark:shadow-[#4CAF50]/10">
 							<div className="w-[26px] flex-shrink-0">
 								<span>
@@ -113,8 +113,7 @@ const Hero9 = () => {
 					<div className="w-full max-w-310px relative md:absolute  md:right-auto lg:right-0 xl:right-0 2xl:right-[1%] 3xl:-right-[9%] -top-10 md:top-auto lg:top-1/2 xl:top-[40%] md:bottom-0  md:left-1/2 lg:left-auto  md:-translate-x-1/2 lg:translate-x-0 lg:-translate-y-1/2  mx-auto md:mx-0 z-1 ">
 						<div>
 							<div
-								className="text-seondary-color dark:text-white-color-4 leading-1.3 mb-26px wow fadeInUp text-2xl md:text-3xl lg:text-4xl font-bold"
-								data-wow-delay=".3s"
+								className="text-seondary-color dark:text-white-color-4 leading-1.3 mb-26px text-2xl md:text-3xl lg:text-4xl font-bold"
 							>
 								<div className="text-left">
 									<div>Your Amazon AD Spend Could</div>

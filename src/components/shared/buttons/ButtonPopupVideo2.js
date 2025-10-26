@@ -1,10 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const ButtonPopupVideo2 = ({ url }) => {
+	const [isClient, setIsClient] = useState(false);
+
 	useEffect(() => {
+		setIsClient(true);
 		import("glightbox").then(({ default: GLightbox }) => {
 			const lightbox = GLightbox({
 				selector: ".glightbox",

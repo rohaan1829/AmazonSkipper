@@ -45,7 +45,7 @@ const PageWrapper = ({
 			<Preloader />
 
 			<BackToTop />
-			{headerType === 4 ? <MagicCusror1 /> : ""}
+			{headerType === 4 && <MagicCusror1 />}
 			<HeaderContextProvider
 				value={{ isIndexPage, isInnerPage, headerType, isResumeBtn }}
 			>
@@ -53,7 +53,7 @@ const PageWrapper = ({
 				<Header isSticky={true} />
 			</HeaderContextProvider>
 			<PortfolioRenderContextProvider>
-				{children ? children : ""}
+				{children}
 			</PortfolioRenderContextProvider>
 			<FooterContextProvider value={{ footerType }}>
 				{footerType === 10 ? (
