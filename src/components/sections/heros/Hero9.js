@@ -1,11 +1,16 @@
 "use client";
 
-import ButtonPopupVideo2 from "@/components/shared/buttons/ButtonPopupVideo2";
 import ButtonRounded from "@/components/shared/buttons/ButtonRounded";
 import FunFact9 from "@/components/shared/fun-fact/FunFact9";
 import Link from "next/link";
+import { useState } from "react";
 
 const Hero9 = () => {
+	const [isModalOpen, setIsModalOpen] = useState(false);
+
+	const openModal = () => setIsModalOpen(true);
+	const closeModal = () => setIsModalOpen(false);
+
 	return (
 		<section className="hero-section relative pt-150px sm:pt-[165px] md:pt-150px lg:pt-185px xl:pt-140px 2xl:pt-185px  pb-10 sm:pb-70px overflow-hidden dark:bg-primary-color-light">
 			{/* Gradient Background - Dark Mode */}
@@ -19,11 +24,11 @@ const Hero9 = () => {
 
 			<div className="px-15px relative z-10">
 				<div className="mb-50px md:mb-20 lg:mb-10 xl:mb-20">
-					<h1 className="text-[73px] sm:text-[65px] md:text-[77px] lg:text-[101px] xl:text-[125px] 2x:text-[129px] 3xl:text-[151px] 4xl:text-[160px] 5xl:text-[186px] bg-gradient-to-r from-[#4CAF50] via-[#121212] to-[#4CAF50] bg-clip-text text-transparent dark:from-[#4CAF50]/60 dark:via-white dark:to-[#4CAF50]/60 leading-1.1 lg:leading-1.1  mb-5  -tracking-0.04em font-semibold uppercase flex flex-wrap sm:flex-nowrap items-center justify-center gap-10px sm:gap-5 2xl:gap-[65px] ">
-					SPEND
-					<ButtonPopupVideo2 />
-					SMARTER
-				</h1>
+					<h1 className="text-[41px] sm:text-[36px] md:text-[43px] lg:text-[57px] xl:text-[70px] 2x:text-[72px] 3xl:text-[85px] 4xl:text-[90px] 5xl:text-[104px] text-white dark:text-white leading-1.1 lg:leading-1.1 mb-6 -tracking-0.04em font-semibold text-center">
+						<div>Your Amazon AD Spend Could</div>
+						<div>be <span className="text-[#4CAF50] font-bold">X%</span> Lower in 47 days</div>
+						<div>Guaranteed!</div>
+					</h1>
 			</div>
 			</div>
 			<div className="container">
@@ -35,10 +40,49 @@ const Hero9 = () => {
 					className="w-full h-auto
 							[clip-path:path('M0_200A315_315_0_0_1_630_200L630_900L0_900Z')]"
 				/>
+				
+				{/* Play Button Overlay */}
+				<div className="absolute inset-0 flex items-center justify-center z-10">
+					<button
+						onClick={openModal}
+						className="group relative w-18 h-18 sm:w-22 sm:h-22 md:w-25 md:h-25 lg:w-29 lg:h-29 xl:w-32 xl:h-32 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95"
+						style={{
+							background: 'radial-gradient(circle at 30% 30%, #ffffff, #f1f3f4, #e8eaed)',
+							border: '2px solid #000',
+							boxShadow: '0 4px 8px rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.6)'
+						}}
+					>
+						{/* Play Triangle with Glossy Effect */}
+						<div className="relative ml-1">
+							{/* Main Triangle */}
+							<div 
+								className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9 relative"
+								style={{
+									background: 'linear-gradient(135deg, #4CAF50, #2E7D32)',
+									clipPath: 'polygon(0 0, 0 100%, 100% 50%)',
+									border: '1px solid #333'
+								}}
+							>
+								{/* Glossy Highlight */}
+								<div 
+									className="absolute inset-0"
+									style={{
+										background: 'linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.1) 100%)',
+										clipPath: 'polygon(0 0, 0 100%, 100% 50%)',
+										mixBlendMode: 'overlay'
+									}}
+								></div>
+							</div>
+						</div>
+						
+						{/* Hover Effect */}
+						<div className="absolute inset-0 rounded-full bg-white/10 scale-0 group-hover:scale-110 transition-transform duration-300"></div>
+					</button>
+				</div>
 				</div>
 
 					{/* <!-- transparent area --> */}
-					<div className=" absolute -top-5 sm:top-0  lg:top-[16%] left-auto lg:left-[11%] xl:left-[15%] right-[30px] sm:right-0 md:right-[15%] lg:right-auto">
+					<div className=" absolute -top-5 sm:top-0  lg:top-[16%] left-auto lg:left-[6%] xl:left-[10%] right-[30px] sm:right-0 md:right-[15%] lg:right-auto">
 						<div className="flex gap-1.5 px-15px lg:px-30px py-25px sm:py-30px lg:py-45px rounded-10px border border-dashed border-[#4CAF50]/90 dark:border-[#4CAF50]/30 bg-gradient-to-br from-white via-[#f8f9fa] to-[#4CAF50]/80 dark:from-[#121212] dark:via-[#1a1a1a] dark:to-[#4CAF50]/15 backdrop-blur-[55px] z-1 shadow-lg shadow-[#4CAF50]/60 dark:shadow-[#4CAF50]/10">
 							<div className="w-[26px] flex-shrink-0">
 								<span>
@@ -86,9 +130,9 @@ const Hero9 = () => {
 									</svg>
 								</span>
 							</div>
-							<h4 className="md:text-[19px] leading-[1.52] font-medium text-seondary-color dark:text-white-color">
-								Schedule a Demo <br />
-							</h4>
+							<button className="md:text-[19px] leading-[1.52] font-medium text-white bg-[#4CAF50] hover:bg-[#2E7D32] dark:bg-[#4CAF50] dark:hover:bg-[#2E7D32] transition-all duration-300 cursor-pointer px-4 py-2 rounded-lg border border-[#4CAF50] hover:border-[#2E7D32] shadow-md hover:shadow-lg">
+								Schedule a Demo
+							</button>
 							<div>
 								<span className="w-[13px] h-[13px] border-2 border-black-color dark:border-white-color bg-white-color dark:bg-black-color rounded-100% absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2  [&:nth-child(2)]:left-full last:left-full last:top-full"></span>
 								<span className="w-[13px] h-[13px] border-2 border-black-color dark:border-white-color bg-white-color dark:bg-black-color rounded-100% absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2  [&:nth-child(2)]:left-full last:left-full last:top-full"></span>
@@ -104,21 +148,26 @@ const Hero9 = () => {
 						</div>
 
 						<Link
-							className="-ml-[95px] sm:-ml-[122px] mt-9 px-4 py-0.5 text-size-17 font-medium rounded-full bg-primary-color text-white-color"
+							className="-ml-[95px] sm:-ml-[122px] mt-9 px-4 py-0.5 text-size-17 font-medium rounded-full bg-primary-color text-white-color hover:bg-[#2E7D32] transition-colors duration-300"
 							href="#"
 						>
-							Gerold
+							Spend Smarter
 						</Link>
 					</div>
 					<div className="w-full max-w-310px relative md:absolute  md:right-auto lg:right-0 xl:right-0 2xl:right-[1%] 3xl:-right-[9%] -top-10 md:top-auto lg:top-1/2 xl:top-[40%] md:bottom-0  md:left-1/2 lg:left-auto  md:-translate-x-1/2 lg:translate-x-0 lg:-translate-y-1/2  mx-auto md:mx-0 z-1 ">
 						<div>
 							<div
-								className="text-seondary-color dark:text-white-color-4 leading-1.3 mb-26px text-2xl md:text-3xl lg:text-4xl font-bold"
+								className="text-seondary-color dark:text-white-color-4 leading-1.3 mb-26px text-lg md:text-xl lg:text-2xl font-medium"
 							>
 								<div className="text-left">
-									<div>Your Amazon AD Spend Could</div>
-									<div>be <span className="text-[#4CAF50] font-bold">X%</span> Lower in 47 days</div>
-									<div>Guaranteed!</div>
+									<div className="mb-2">
+										<span className="text-[#4CAF50] font-bold">No Empty Promise, Just Proven Results</span>
+									</div>
+									<div>
+										<span className="text-seondary-color dark:text-white-color"> - Or We'll Refund You </span>
+										<span className="bg-gradient-to-r from-[#FF6B6B] to-[#E53E3E] bg-clip-text text-transparent font-bold">100%</span>
+										<span className="text-seondary-color dark:text-white-color">.</span>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -129,6 +178,47 @@ const Hero9 = () => {
 					</div>
 				</div>
 			</div>
+
+			{/* Video Modal */}
+			{isModalOpen && (
+				<div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+					<div className="relative w-full max-w-4xl bg-black rounded-lg overflow-hidden shadow-2xl">
+						{/* Close Button */}
+						<button
+							onClick={closeModal}
+							className="absolute top-4 right-4 z-10 w-10 h-10 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-colors duration-200"
+						>
+							<svg
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								className="w-6 h-6"
+							>
+								<path
+									d="M18 6L6 18M6 6L18 18"
+									stroke="currentColor"
+									strokeWidth="2"
+									strokeLinecap="round"
+									strokeLinejoin="round"
+								/>
+							</svg>
+						</button>
+						
+						{/* YouTube Video Embed */}
+						<div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+							<iframe
+								src="https://www.youtube.com/embed/sf7DukfFK8E?si=XZKLLslAmqnhLQ7M&autoplay=1"
+								title="Amazon Skipper Video"
+								className="absolute top-0 left-0 w-full h-full"
+								frameBorder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowFullScreen
+							></iframe>
+						</div>
+					</div>
+				</div>
+			)}
 		</section>
 	);
 };
