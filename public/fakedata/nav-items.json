@@ -3,12 +3,12 @@
     {
       "name":"Services",
       "path":"#services",
-      "path2":"/#services"  
+      "path2":"/services"  
     },
     {
       "name":"Works",
       "path":"#portfolio",
-      "path2":"/#portfolio"  
+      "path2":"/portfolio"  
     },
     {
       "name":"Resume",
