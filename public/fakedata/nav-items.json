@@ -1,5 +1,9 @@
 [
-
+    {
+      "name":"Home",
+      "path":"/",
+      "path2":"/"  
+    },
     {
       "name":"Services",
       "path":"#services",

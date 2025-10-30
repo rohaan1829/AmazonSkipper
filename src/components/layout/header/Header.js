@@ -14,15 +14,20 @@ import MobileMenuController from "./MobileMenuController";
 import Navbar from "./Navbar";
 
 const Header = ({ isSticky }) => {
-	const [isActiveMobileMenu, setIsActiveMobileMenu] = useState(false);
+    const [isActiveMobileMenu, setIsActiveMobileMenu] = useState(false);
+    const [mounted, setMounted] = useState(false);
 	const { isInnerPage, headerType, isIndexPage } = useHeaderContext();
-	useEffect(() => {
+    useEffect(() => {
 		stickyHeader();
-	}, []);
+        setMounted(true);
+    }, []);
+
+    if (!mounted) return null;
 
 	return (
-		<header
-			className={`header-area ${
+        <header
+            suppressHydrationWarning
+            className={`header-area ${
 				headerType === 6 || headerType === 9 || headerType === 10
 					? "header-6"
 					: headerType === 5

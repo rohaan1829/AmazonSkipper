@@ -5,8 +5,8 @@ import Link from "next/link";
 const Footer6 = () => {
 	const { footerType } = useFooterContext();
 	return (
-		<footer className="dark:bg-primary-color-light">
-			<div className="footer-inner  bg-[url('/img/shapes/h4-cta.jpg')] bg-cover bg-no-repeat bg-center rounded-t-[40px] md:rounded-t-[60px] lg:rounded-t-[100px]">
+		<footer>
+			<div className="footer-inner bg-gradient-to-b from-green-600 to-black rounded-t-[40px] md:rounded-t-[60px] lg:rounded-t-[100px]">
 				<div className="pt-20 pb-60px md:pt-100px md:pb-20 lg:pb-90px xl:pt-30 xl:pb-100px">
 					<div className="container">
 						<div
@@ -19,7 +19,7 @@ const Footer6 = () => {
 							>
 								<div className="max-w-180px w-full mb-6">
 									<Link href="/">
-										<img src="/img/logo/logo-9-black.png" alt="" />
+										<img src="/img/logo/black.png" alt="" />
 									</Link>
 								</div>
 								<div className=" text-white-color mb-4">

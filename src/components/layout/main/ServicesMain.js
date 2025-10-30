@@ -1,5 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import getALlServices from "@/libs/getALlServices";
 import Testimonials9 from "@/components/sections/testimonials/Testimonials9";
 
@@ -63,7 +68,7 @@ const ServicesMain = () => {
   return (
     <main>
       {/* Hero Services Header */}
-      <section className="relative py-100px bg-gradient-to-br from-[#121212] via-[#1a1a1a] to-[#4CAF50]/20 overflow-hidden">
+      <section className="relative pt-160px md:pt-[180px] lg:pt-[200px] pb-100px bg-gradient-to-br from-[#121212] via-[#1a1a1a] to-[#4CAF50]/20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-tr from-[#4CAF50]/10 via-transparent to-[#121212] opacity-80"></div>
         <div className="container relative z-10">
           <div className="text-center">
@@ -87,7 +92,7 @@ const ServicesMain = () => {
         </div>
       </section>
 
-      {/* Enhanced Service Cards */}
+      {/* Enhanced Service Cards (match Recent Work slider behavior) */}
       <section className="py-100px bg-white dark:bg-[#121212]">
         <div className="container">
           <div className="text-center mb-16">
@@ -99,27 +104,74 @@ const ServicesMain = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, idx) => (
-              <div 
-                key={idx}
-                className="group relative bg-white dark:bg-[#1a1a1a] rounded-20px p-8 border border-gray-200 dark:border-gray-700 hover:border-[#4CAF50] transition-all duration-300 hover:shadow-2xl hover:shadow-[#4CAF50]/20 transform hover:-translate-y-2"
+          <div className="relative mx-25px">
+            {/* external nav buttons like Recent Work */}
+            <button
+              className="portfolio-slider-6-prev absolute left-[-12px] top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg flex items-center justify-center text-[#121212] dark:text-white"
+              aria-label="Previous"
+            >
+              <i className="fa-regular fa-chevron-left"></i>
+            </button>
+            <button
+              className="portfolio-slider-6-next absolute right-[-12px] top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg flex items-center justify-center text-[#121212] dark:text-white"
+              aria-label="Next"
+            >
+              <i className="fa-regular fa-chevron-right"></i>
+            </button>
+
+            <div className="wow fadeInUp" data-wow-delay=".3s">
+              <Swiper
+                spaceBetween={30}
+                slidesPerView={1}
+                loop={true}
+                freeMode={true}
+                centeredSlides={true}
+                speed={3000}
+                autoplay={{ delay: 2000 }}
+                pagination={{ clickable: true }}
+                navigation={{
+                  prevEl: ".portfolio-slider-6-prev",
+                  nextEl: ".portfolio-slider-6-next",
+                }}
+                breakpoints={{
+                  768: { slidesPerView: 1.5 },
+                  992: { slidesPerView: 2 },
+                  1200: { slidesPerView: 3 },
+                }}
+                modules={[Pagination, Autoplay, Navigation]}
+                className="services-slider"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] rounded-15px flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <i className={`${service.iconName} text-2xl text-white`}></i>
-                </div>
-                <h3 className="text-2xl font-bold text-[#121212] dark:text-white mb-4">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-6">
-                  {service.shortDesc}
-                </p>
-                <div className="text-[#4CAF50] font-semibold">
-                  {service.totalProject}
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#4CAF50] to-[#2E7D32] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
-              </div>
-            ))}
+                {services?.map((service, idx) => (
+                  <SwiperSlide key={idx}>
+                    <div className="portfolio-item branding p-5 md:p-25px bg-cream-light-color dark:bg-black-color hover:bg-cream-light-color dark:hover:bg-seondary-color rounded-30px group relative">
+                      <div className="mb-25px rounded-15px overflow-hidden w-full">
+                        <div className="w-16 h-16 bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] rounded-15px flex items-center justify-center">
+                          <i className={`${service.iconName} text-2xl text-white`}></i>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-25px justify-between">
+                        <div>
+                          <h4 className="block text-xl text-seondary-color dark:text-white-color hover:text-primary-color dark:hover:text-primary-color font-bold mb-1.5">
+                            {service.title}
+                          </h4>
+                          <p className="block text-primary-color-light dark:text-body-color-3">
+                            {service.shortDesc}
+                          </p>
+                        </div>
+                        <button
+                          type="button"
+                          className="flex-shrink-0 text-size-25px w-60px h-60px text-primary-color-light dark:text-white-color group-hover:text-white-color bg-transparent group-hover:bg-gradient-primary-8 outline-1 outline outline-body-color dark:outline-bg-color-2 group-hover:border-transparent rounded-100% leading-1 transition-all duration-300 inline-flex justify-center items-center"
+                        >
+                          <span className="relative overflow-hidden -rotate-45">
+                            <i className="fa-regular fa-arrow-right text-lg group-hover:translate-x-150% transition-all duration-500 inline-block"></i>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
           </div>
         </div>
       </section>

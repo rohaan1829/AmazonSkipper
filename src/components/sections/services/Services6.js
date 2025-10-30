@@ -22,18 +22,16 @@ const Services6 = ({ type }) => {
 				<div className="container">
 					{/* <!-- section heading --> */}
 					<div className="mb-10 md:mb-50px xl:mb-60px text-center flex flex-col items-center ">
-						<div className="mb-25px  ">
-							<span
-								className={`text-xs relative inline-block text-primary-color font-semibold tracking-0.02em uppercase ${
-									type === 2
-										? "wow fadeInRight"
-										: "px-3 py-5px rounded-full border  border-border-color-2  "
-								}  `}
-								data-wow-delay={type === 2 ? "0" : ".3s"}
-							>
-								my services
-							</span>
-						</div>
+					<div className="mb-25px  ">
+						<h2
+							className={`text-3xl md:text-size-35 lg:text-size-40 xl:text-size-45 uppercase font-semibold leading-1.2 -tracking-0.02em inline-block text-white-color max-w-580px w-full ${
+								type === 2 ? "wow fadeInRight" : "tj-text-invert"
+							}`}
+							data-wow-delay={type === 2 ? "0" : ".3s"}
+						>
+							My services
+						</h2>
+					</div>
 						<h2 className="text-3xl md:text-size-35 lg:text-size-40 xl:text-size-45 uppercase font-semibold  leading-1.2 -tracking-0.02em inline-block text-seondary-color dark:text-white-color    max-w-580px w-full tj-text-invert">
 							Here's how I can help!
 						</h2>

@@ -38,9 +38,9 @@ const Navbar = ({ isActiveMobileMenu, setIsActiveMobileMenu, isSticky }) => {
 							<li key={idx} className="nav_item group relative hidden lg:block">
 								<Link
 									href={name.toLowerCase() === 'services' ? '/services' : name.toLowerCase() === 'works' ? '/portfolio' : (isIndexPage ? path : path2)}
-									className={`text-size-15 font-medium  ${
-										isInnerPage && !isSticky
-											? "text-white-color"
+							className={`text-size-15 font-medium  ${
+								isInnerPage && !isSticky
+									? "text-seondary-color dark:text-white-color"
 											: headerType === 5 ||
 											  headerType === 6 ||
 											  headerType === 9 ||
