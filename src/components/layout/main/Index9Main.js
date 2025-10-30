@@ -7,7 +7,7 @@ import Portfolio9 from "@/components/sections/portfolio/Portfolio9";
 import Resume5 from "@/components/sections/resume/Resume5";
 import Services6 from "@/components/sections/services/Services6";
 import Skills4 from "@/components/sections/skills/Skills4";
-import Testimonials9 from "@/components/sections/testimonials/Testimonials9";
+// import Testimonials9 from "@/components/sections/testimonials/Testimonials9";
 
 const Index9Main = () => {
 	return (
@@ -15,14 +15,14 @@ const Index9Main = () => {
 			<Hero9 />
 			<Brands2 />
 			<Skills4 />
+			<Blogs5 />
 			<About6 />
 			<Services6 type={2} />
 			<Portfolio9 />
 			<FeatureMarque2 type={3} isRotate={true} />
-			<Resume5 type={2} title={" MY Background and Achievements"} />
-			<Testimonials9 />
-
-			<Blogs5 />
+			<Resume5 type={2} />
+			{/* <Testimonials9 /> */}
+			
 		</main>
 	);
 };

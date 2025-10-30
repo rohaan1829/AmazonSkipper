@@ -1,371 +1,209 @@
 "use client";
 
-import tjTab from "@/libs/tjTab";
-import { useEffect } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
-const Resume5 = ({ type, title }) => {
+const stepsData = [
+    {
+        id: 1,
+        bigTitle: "Complete Brand Audit",
+        sub: "Setting Realistic Expectations",
+        bullets: ["Icebreaker Call", "Market Analysis", "Data Extraction", "Account Audit"],
+        img: "/img/about/audit.png",
+        alt: "Discovery Call",
+    },
+    {
+        id: 2,
+        bigTitle: "Scope and Goal Clarity",
+        sub: "Setting Realistic Goals",
+        bullets: ["Explanation Call", "Scope Clarity", "Goal Clarity", "Actions Checklist"],
+        img: "/img/about/goal.jpg",
+        alt: "What needs to be done",
+    },
+    {
+        id: 3,
+        bigTitle: "Execution",
+        sub: "This is Where the Magic Happens",
+        bullets: [
+            "Advertising Strategy Building",
+            "Smooth Brand Management",
+            "Detail Page Optimization",
+            "Advertising Implementation",
+        ],
+        img: "/img/about/execution.webp",
+        alt: "Sale Report",
+    },
+];
+
+const Resume5 = ({
+	type,
+	title = "How It Works",
+	subheadline = "Behind the Scenes of Your Amazon Ads Transformation",
+	ctaVariant = "double", // "double" | "reveal"
+	onCTAClick,
+}) => {
+	const prefersReducedMotion = useMemo(
+		() =>
+			typeof window !== "undefined" &&
+			window.matchMedia &&
+			window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+		[]
+	);
+
+	const [activeId, setActiveId] = useState(1);
+	const containerRef = useRef(null);
+
+	// Initialize from URL hash
 	useEffect(() => {
-		tjTab();
+		const hash = typeof window !== "undefined" ? window.location.hash : "";
+		const match = hash.match(/#step-(\d+)/);
+		if (match) {
+			const id = Number(match[1]);
+			if (id >= 1 && id <= stepsData.length) {
+				setActiveId(id);
+			}
+		}
 	}, []);
+
+	// Update hash on active step
+	useEffect(() => {
+		if (typeof window !== "undefined") {
+			const next = `#step-${activeId}`;
+			if (window.location.hash !== next) {
+				history.replaceState(null, "", next);
+			}
+		}
+	}, [activeId]);
+
+	const handleToggle = (id) => {
+		const willOpen = activeId !== id;
+		setActiveId(id);
+		// analytics
+		if (typeof window !== "undefined") {
+			window.dispatchEvent(
+				new CustomEvent("howitworks", {
+					detail: { type: "step", action: willOpen ? "open" : "close", step: id },
+				})
+			);
+		}
+	};
+
+	const handleCTAClick = (variant) => {
+		// analytics
+		if (typeof window !== "undefined") {
+			window.dispatchEvent(
+				new CustomEvent("howitworks", {
+					detail: { type: "cta", action: "click", cta: variant },
+				})
+			);
+		}
+		if (typeof onCTAClick === "function") onCTAClick(variant);
+	};
+
 	return (
-		<section id="resume">
+		<section id="resume" aria-labelledby="howitworks-heading">
 			<div
 				className={` py-60px md:py-20 lg:py-30 relative ${
 					type === 2 ? "dark:bg-primary-color-light" : ""
 				} after:absolute after:top-0 after:left-1/2  after:-translate-x-1/2 after:-translate-y-1/2 after:right-5 after:w-650px after:h-550px after:blur-[150px] after:rounded-50% after:bg-gradient-circle-2 after:-z-1   after:opacity-60`}
 			>
-				<div className="container">
-					{/* <!-- section heading --> */}
+				<div className="container" ref={containerRef}>
+					{/* heading */}
 					<div className="mb-10 md:mb-50px xl:mb-60px text-center flex flex-col items-center ">
-						<div className="mb-25px  ">
-							<span
-								className={`text-xs  uppercase text-primary-color  font-medium relative inline-block tracking-0.2em  wow ${
-									type === 2 ? "fadeInRight" : "fadeInUp"
-								}`}
-								data-wow-delay={".3s"}
-							>
-								Behind the Pixels
-							</span>
-						</div>
 						<h2
+							id="howitworks-heading"
 							className={`text-3xl md:text-size-35 lg:text-size-40 xl:text-size-45 font-semibold  leading-1.2 -tracking-0.02em inline-block text-seondary-color dark:text-white-color   max-w-580px w-full ${
 								type === 2 ? "uppercase tj-text-invert" : " wow fadeInUp"
 							}`}
 							data-wow-delay={type === 2 ? "0" : ".4s"}
 						>
-							{title ? title : "My Experience, Education & Awards"}
+							{title}
 						</h2>
+						<p className="text-primary-color-light dark:text-body-color-3 mt-3 max-w-700px text-lg md:text-xl lg:text-2xl">
+							{subheadline}
+						</p>
 					</div>
-					{/* <!-- resume tab --> */}
-					<div className="">
-						<div className="flex items-center mb-30px sm:mb-10">
-							<ul
-								id="tabs"
-								className="max-w-400 mx-auto inline-flex items-center justify-center bg-primary-color rounded-full p-5px relative z-0 "
-							>
-								<li className="active ">
-									<a
-										className=" text-sm sm:text-size-15  font-bold px-15px sm:px-25px py-10px sm:py-11px text-white-color bg-transparent rounded-full "
-										href="#tab1"
-									>
-										Experiences
-									</a>
-								</li>
-								<li>
-									<a
-										className=" text-sm sm:text-size-15  font-bold px-15px sm:px-25px py-10px sm:py-11px text-white-color bg-transparent rounded-full "
-										href="#tab2"
-									>
-										Education
-									</a>
-								</li>
-								<li>
-									<a
-										className=" text-sm sm:text-size-15  font-bold px-15px sm:px-25px py-10px sm:py-11px text-white-color bg-transparent rounded-full "
-										href="#tab3"
-									>
-										Awards
-									</a>
-								</li>
-							</ul>
-						</div>
 
-						<div id="tab-contents">
-							{/* <!-- experience --> */}
-							<div id="tab1" className="tab-contents tab-pane fade show">
-								<div className=" px-15px py-30px xl:p-60px border-2 border-body-color dark:border-bg-color-2 rounded-15px">
-									{/* <!-- content --> */}
-									<div className=" w-full ">
-										<div className=" flex flex-col md:flex-row md:justify-between  gap-5 lg:gap-35px 2xl:gap-95px pb-45px mb-10 last:pb-0 last:mb-0   border-b-2 border-body-color dark:border-bg-color-2 last:border-0">
-											<div className=" flex flex-col md:flex-row gap-30px md:gap-10 max-w-735px w-full">
-												<div className=" w-60px  flex-shrink-0">
-													<img src="/img/icons/h4-work-1.png" alt="" />
-												</div>
-												<div>
-													<h4 className="text-xl leading-1.2  text-seondary-color dark:text-white-color mb-15px uppercase font-medium">
-														Senior Product Designer
-													</h4>
-													<p className=" text-primary-color dark:text-body-color group-hover:text-white-color transition-all text-size-15 uppercase mb-22px duration-300">
-														VirtusLab
-													</p>
-													<p className=" text-lg  text-seondary-color dark:text-body-color-3 group-hover:text-white-color transition-all duration-300">
-														I'm winner of the world's most prestigious web
-														designthat has more-or-less normal awards in the
-														fields.
-													</p>
-												</div>
-											</div>
+                    {/* 3-step two-column layout inspired by reference image */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-35px md:gap-50px lg:gap-60px items-stretch">
+                        {/* Step 1 */}
+                        <div className="bg-cream-light-color dark:bg-black-color bg-gradient-to-br from-[#4CAF50]/10 to-transparent dark:from-[#4CAF50]/15 rounded-15px p-5 md:p-25px border border-body-color dark:border-bg-color-2 h-full flex flex-col">
+                            <div className="text-primary-color text-3xl font-bold mb-10">1</div>
+                            <h3 className="text-2xl md:text-3xl font-semibold text-white-color mb-5">{stepsData[0].bigTitle}</h3>
+                            <p className="text-primary-color-light dark:text-body-color-3 mb-6">{stepsData[0].sub}</p>
+                            <ul className="grid grid-cols-2 gap-y-3 text-white-color/90 text-size-15">
+                                {stepsData[0].bullets.map((b, i) => (
+                                    <li key={i} className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-primary-color"></span>{b}</li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="rounded-15px overflow-hidden border border-body-color dark:border-bg-color-2 bg-cream-light-color dark:bg-black-color p-5 md:p-25px h-full">
+                            <img src={stepsData[0].img} alt={stepsData[0].alt} className="w-full h-full object-cover rounded-10" />
+                        </div>
 
-											{/* <!-- date --> */}
-											<div className="md:flex-shrink-0">
-												<div className="flex items-center gap-10px text-lg sm:text-xl">
-													<i className="fa-thin fa-calendar-check text-xl text-primary-color leading-1"></i>
-													<p className="  text-seondary-color dark:text-body-color-3 group-hover:text-white-color transition-all duration-300 md:ml-auto tracking-0.02em ">
-														2022 - 2023
-													</p>
-												</div>
-											</div>
-										</div>
-										<div className=" flex flex-col md:flex-row md:justify-between  gap-5 lg:gap-35px 2xl:gap-95px pb-45px mb-10 last:pb-0 last:mb-0   border-b-2 border-body-color dark:border-bg-color-2 last:border-0">
-											<div className=" flex flex-col md:flex-row gap-30px md:gap-10 max-w-735px w-full">
-												<div className=" w-60px  flex-shrink-0">
-													<img src="/img/icons/h4-work-2.png" alt="" />
-												</div>
-												<div>
-													<h4 className="text-xl leading-1.2  text-seondary-color dark:text-white-color mb-15px uppercase font-medium">
-														Senior Product Designer
-													</h4>
-													<p className=" text-primary-color dark:text-body-color group-hover:text-white-color transition-all text-size-15 uppercase mb-22px duration-300">
-														Semiflat Studio
-													</p>
-													<p className=" text-lg  text-seondary-color dark:text-body-color-3 group-hover:text-white-color transition-all duration-300">
-														I'm winner of the world's most prestigious web
-														designthat has more-or-less normal awards in the
-														fields.
-													</p>
-												</div>
-											</div>
+                        {/* Step 2 */}
+                        <div className="rounded-15px overflow-hidden border border-body-color dark:border-bg-color-2 bg-cream-light-color dark:bg-black-color p-5 md:p-25px order-3 md:order-none h-full">
+                            <img src={stepsData[1].img} alt={stepsData[1].alt} className="w-full h-full object-cover rounded-10" />
+                        </div>
+                        <div className="bg-cream-light-color dark:bg-black-color bg-gradient-to-br from-[#4CAF50]/10 to-transparent dark:from-[#4CAF50]/15 rounded-15px p-5 md:p-25px border border-body-color dark:border-bg-color-2 order-2 md:order-none h-full flex flex-col">
+                            <div className="text-primary-color text-3xl font-bold mb-10">2</div>
+                            <h3 className="text-2xl md:text-3xl font-semibold text-white-color mb-5">{stepsData[1].bigTitle}</h3>
+                            <p className="text-primary-color-light dark:text-body-color-3 mb-6">{stepsData[1].sub}</p>
+                            <ul className="grid grid-cols-2 gap-y-3 text-white-color/90 text-size-15">
+                                {stepsData[1].bullets.map((b, i) => (
+                                    <li key={i} className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-primary-color"></span>{b}</li>
+                                ))}
+                            </ul>
+                        </div>
 
-											{/* <!-- date --> */}
-											<div className="md:flex-shrink-0">
-												<div className="flex items-center gap-10px text-lg sm:text-xl">
-													<i className="fa-thin fa-calendar-check text-xl text-primary-color leading-1"></i>
-													<p className="  text-seondary-color dark:text-body-color-3 group-hover:text-white-color transition-all duration-300 md:ml-auto tracking-0.02em ">
-														2020 - 2023
-													</p>
-												</div>
-											</div>
-										</div>
-										<div className=" flex flex-col md:flex-row md:justify-between  gap-5 lg:gap-35px 2xl:gap-95px pb-45px mb-10 last:pb-0 last:mb-0   border-b-2 border-body-color dark:border-bg-color-2 last:border-0">
-											<div className=" flex flex-col md:flex-row gap-30px md:gap-10 max-w-735px w-full">
-												<div className=" w-60px  flex-shrink-0">
-													<img src="/img/icons/h4-work-3.png" alt="" />
-												</div>
-												<div>
-													<h4 className="text-xl leading-1.2  text-seondary-color dark:text-white-color mb-15px uppercase font-medium">
-														Senior User Interface Designer
-													</h4>
-													<p className=" text-primary-color dark:text-body-color group-hover:text-white-color transition-all text-size-15 uppercase mb-22px duration-300">
-														Autentika
-													</p>
-													<p className=" text-lg  text-seondary-color dark:text-body-color-3 group-hover:text-white-color transition-all duration-300">
-														I'm winner of the world's most prestigious web
-														designthat has more-or-less normal awards in the
-														fields.
-													</p>
-												</div>
-											</div>
+                        {/* Step 3 */}
+                        <div className="bg-cream-light-color dark:bg-black-color bg-gradient-to-br from-[#4CAF50]/10 to-transparent dark:from-[#4CAF50]/15 rounded-15px p-5 md:p-25px border border-body-color dark:border-bg-color-2 h-full flex flex-col">
+                            <div className="text-primary-color text-3xl font-bold mb-10">3</div>
+                            <h3 className="text-2xl md:text-3xl font-semibold text-white-color mb-5">{stepsData[2].bigTitle}</h3>
+                            <p className="text-primary-color-light dark:text-body-color-3 mb-6">{stepsData[2].sub}</p>
+                            <ul className="grid grid-cols-2 gap-y-3 text-white-color/90 text-size-15">
+                                {stepsData[2].bullets.map((b, i) => (
+                                    <li key={i} className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-primary-color"></span>{b}</li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="rounded-15px overflow-hidden border border-body-color dark:border-bg-color-2 bg-cream-light-color dark:bg-black-color p-5 md:p-25px h-full">
+                            <img src={stepsData[2].img} alt={stepsData[2].alt} className="w-full h-full object-cover rounded-10" />
+                        </div>
+                    </div>
 
-											{/* <!-- date --> */}
-											<div className="md:flex-shrink-0">
-												<div className="flex items-center gap-10px text-lg sm:text-xl">
-													<i className="fa-thin fa-calendar-check text-xl text-primary-color leading-1"></i>
-													<p className="  text-seondary-color dark:text-body-color-3 group-hover:text-white-color transition-all duration-300 md:ml-auto tracking-0.02em ">
-														2018 - 2020
-													</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							{/* <!-- education --> */}
-							<div id="tab2" className="tab-contents tab-pane fade">
-								<div className=" px-15px py-30px xl:p-60px border-2 border-body-color dark:border-bg-color-2 rounded-15px">
-									{/* <!-- content --> */}
-									<div className=" w-full ">
-										<div className=" flex flex-col md:flex-row md:justify-between  gap-5 lg:gap-35px 2xl:gap-95px pb-45px mb-10 last:pb-0 last:mb-0   border-b-2 border-body-color dark:border-bg-color-2 last:border-0">
-											<div className=" flex flex-col md:flex-row gap-30px md:gap-10 max-w-735px w-full">
-												<div className=" w-60px  flex-shrink-0">
-													<img src="/img/icons/h4-work-4.png" alt="" />
-												</div>
-												<div>
-													<h4 className="text-xl leading-1.2  text-seondary-color dark:text-white-color mb-15px uppercase font-medium">
-														SWPS
-													</h4>
-													<p className=" text-primary-color dark:text-body-color group-hover:text-white-color transition-all text-size-15 uppercase mb-22px duration-300">
-														Bachelor's Degree in Web Design and Development
-													</p>
-													<p className=" text-lg  text-seondary-color dark:text-body-color-3 group-hover:text-white-color transition-all duration-300">
-														I'm winner of the world's most prestigious web
-														designthat has more-or-less normal awards in the
-														fields.
-													</p>
-												</div>
-											</div>
-
-											{/* <!-- date --> */}
-											<div className="md:flex-shrink-0">
-												<div className="flex items-center gap-10px text-lg sm:text-xl">
-													<i className="fa-thin fa-calendar-check text-xl text-primary-color leading-1"></i>
-													<p className="  text-seondary-color dark:text-body-color-3 group-hover:text-white-color transition-all duration-300 md:ml-auto tracking-0.02em ">
-														2022 - 2024
-													</p>
-												</div>
-											</div>
-										</div>
-										<div className=" flex flex-col md:flex-row md:justify-between  gap-5 lg:gap-35px 2xl:gap-95px pb-45px mb-10 last:pb-0 last:mb-0   border-b-2 border-body-color dark:border-bg-color-2 last:border-0">
-											<div className=" flex flex-col md:flex-row gap-30px md:gap-10 max-w-735px w-full">
-												<div className=" w-60px  flex-shrink-0">
-													<img src="/img/icons/h4-work-5.png" alt="" />
-												</div>
-												<div>
-													<h4 className="text-xl leading-1.2  text-seondary-color dark:text-white-color mb-15px uppercase font-medium">
-														design university
-													</h4>
-													<p className=" text-primary-color dark:text-body-color group-hover:text-white-color transition-all text-size-15 uppercase mb-22px duration-300">
-														ux/ui designer
-													</p>
-													<p className=" text-lg  text-seondary-color dark:text-body-color-3 group-hover:text-white-color transition-all duration-300">
-														I'm winner of the world's most prestigious web
-														designthat has more-or-less normal awards in the
-														fields.
-													</p>
-												</div>
-											</div>
-
-											{/* <!-- date --> */}
-											<div className="md:flex-shrink-0">
-												<div className="flex items-center gap-10px text-lg sm:text-xl">
-													<i className="fa-thin fa-calendar-check text-xl text-primary-color leading-1"></i>
-													<p className="  text-seondary-color dark:text-body-color-3 group-hover:text-white-color transition-all duration-300 md:ml-auto tracking-0.02em ">
-														2020 - 2022
-													</p>
-												</div>
-											</div>
-										</div>
-										<div className=" flex flex-col md:flex-row md:justify-between  gap-5 lg:gap-35px 2xl:gap-95px pb-45px mb-10 last:pb-0 last:mb-0   border-b-2 border-body-color dark:border-bg-color-2 last:border-0">
-											<div className=" flex flex-col md:flex-row gap-30px md:gap-10 max-w-735px w-full">
-												<div className=" w-60px  flex-shrink-0">
-													<img src="/img/icons/h4-work-6.png" alt="" />
-												</div>
-												<div>
-													<h4 className="text-xl leading-1.2  text-seondary-color dark:text-white-color mb-15px uppercase font-medium">
-														UI UX design university
-													</h4>
-													<p className=" text-primary-color dark:text-body-color group-hover:text-white-color transition-all text-size-15 uppercase mb-22px duration-300">
-														ux/ui designer
-													</p>
-													<p className=" text-lg  text-seondary-color dark:text-body-color-3 group-hover:text-white-color transition-all duration-300">
-														I'm winner of the world's most prestigious web
-														designthat has more-or-less normal awards in the
-														fields.
-													</p>
-												</div>
-											</div>
-
-											{/* <!-- date --> */}
-											<div className="md:flex-shrink-0">
-												<div className="flex items-center gap-10px text-lg sm:text-xl">
-													<i className="fa-thin fa-calendar-check text-xl text-primary-color leading-1"></i>
-													<p className="  text-seondary-color dark:text-body-color-3 group-hover:text-white-color transition-all duration-300 md:ml-auto tracking-0.02em ">
-														2018 - 2020
-													</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							{/* <!-- award --> */}
-							<div id="tab3" className="tab-contents tab-pane fade">
-								<div className=" px-15px py-30px xl:p-60px border-2 border-body-color dark:border-bg-color-2 rounded-15px">
-									{/* <!-- content --> */}
-									<div className=" w-full ">
-										<div className=" flex flex-col md:flex-row md:justify-between  gap-5 lg:gap-35px 2xl:gap-95px pb-45px mb-10 last:pb-0 last:mb-0   border-b-2 border-body-color dark:border-bg-color-2 last:border-0">
-											<div className=" flex flex-col md:flex-row gap-30px md:gap-10 max-w-735px w-full">
-												<div className=" w-60px  flex-shrink-0">
-													<img src="/img/icons/h4-work-7.png" alt="" />
-												</div>
-												<div>
-													<h4 className="text-xl leading-1.2  text-seondary-color dark:text-white-color mb-15px uppercase font-medium">
-														x4 Red dot Design Award
-													</h4>
-													<p className=" text-primary-color dark:text-body-color group-hover:text-white-color transition-all text-size-15 uppercase mb-22px duration-300">
-														UI/UX Design
-													</p>
-													<p className=" text-lg  text-seondary-color dark:text-body-color-3 group-hover:text-white-color transition-all duration-300">
-														I'm winner of the world's most prestigious web
-														designthat has more-or-less normal awards in the
-														fields.
-													</p>
-												</div>
-											</div>
-
-											{/* <!-- date --> */}
-											<div className="md:flex-shrink-0">
-												<div className="flex items-center gap-10px text-lg sm:text-xl">
-													<i className="fa-thin fa-calendar-check text-xl text-primary-color leading-1"></i>
-													<p className="  text-seondary-color dark:text-body-color-3 group-hover:text-white-color transition-all duration-300 md:ml-auto tracking-0.02em ">
-														2024
-													</p>
-												</div>
-											</div>
-										</div>
-										<div className=" flex flex-col md:flex-row md:justify-between  gap-5 lg:gap-35px 2xl:gap-95px pb-45px mb-10 last:pb-0 last:mb-0   border-b-2 border-body-color dark:border-bg-color-2 last:border-0">
-											<div className=" flex flex-col md:flex-row gap-30px md:gap-10 max-w-735px w-full">
-												<div className=" w-60px  flex-shrink-0">
-													<img src="/img/icons/h4-work-8.png" alt="" />
-												</div>
-												<div>
-													<h4 className="text-xl leading-1.2  text-seondary-color dark:text-white-color mb-15px uppercase font-medium">
-														x2 W3 Code Award
-													</h4>
-													<p className=" text-primary-color dark:text-body-color group-hover:text-white-color transition-all text-size-15 uppercase mb-22px duration-300">
-														Development
-													</p>
-													<p className=" text-lg  text-seondary-color dark:text-body-color-3 group-hover:text-white-color transition-all duration-300">
-														I'm winner of the world's most prestigious web
-														designthat has more-or-less normal awards in the
-														fields.
-													</p>
-												</div>
-											</div>
-
-											{/* <!-- date --> */}
-											<div className="md:flex-shrink-0">
-												<div className="flex items-center gap-10px text-lg sm:text-xl">
-													<i className="fa-thin fa-calendar-check text-xl text-primary-color leading-1"></i>
-													<p className="  text-seondary-color dark:text-body-color-3 group-hover:text-white-color transition-all duration-300 md:ml-auto tracking-0.02em ">
-														2022
-													</p>
-												</div>
-											</div>
-										</div>
-										<div className=" flex flex-col md:flex-row md:justify-between  gap-5 lg:gap-35px 2xl:gap-95px pb-45px mb-10 last:pb-0 last:mb-0   border-b-2 border-body-color dark:border-bg-color-2 last:border-0">
-											<div className=" flex flex-col md:flex-row gap-30px md:gap-10 max-w-735px w-full">
-												<div className=" w-60px  flex-shrink-0">
-													<img src="/img/icons/h4-work-9.png" alt="" />
-												</div>
-												<div>
-													<h4 className="text-xl leading-1.2  text-seondary-color dark:text-white-color mb-15px uppercase font-medium">
-														x1 IF Product Design Award
-													</h4>
-													<p className=" text-primary-color dark:text-body-color group-hover:text-white-color transition-all text-size-15 uppercase mb-22px duration-300">
-														ux/ui designer
-													</p>
-													<p className=" text-lg  text-seondary-color dark:text-body-color-3 group-hover:text-white-color transition-all duration-300">
-														I'm winner of the world's most prestigious web
-														designthat has more-or-less normal awards in the
-														fields.
-													</p>
-												</div>
-											</div>
-
-											{/* <!-- date --> */}
-											<div className="md:flex-shrink-0">
-												<div className="flex items-center gap-10px text-lg sm:text-xl">
-													<i className="fa-thin fa-calendar-check text-xl text-primary-color leading-1"></i>
-													<p className="  text-seondary-color dark:text-body-color-3 group-hover:text-white-color transition-all duration-300 md:ml-auto tracking-0.02em ">
-														2020
-													</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+					{/* CTA variants */}
+					<div className="mt-30px md:mt-50px text-center flex flex-col items-center gap-15px">
+						{ctaVariant === "double" ? (
+							<>
+								<h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-white-color">
+									What If Your Amazon Ads Could Work Twice as Hard?
+								</h3>
+								<button
+									type="button"
+									className=" font-bold text-white-color capitalize w-full max-w-[320px] py-22px md:py-[28px] px-3 bg-200 bg-gradient-secondary hover:bg-[-100%] rounded-15px flex gap-10px justify-center items-center leading-1 transition-all duration-300 group"
+									data-cta="double"
+									onClick={() => handleCTAClick("double")}
+								>
+									Double My Efforts!
+									<i className="fa-regular fa-arrow-right transition-all duration-400 -rotate-45 group-hover:rotate-0"></i>
+								</button>
+							</>
+						) : (
+							<>
+								<h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-white-color">
+									What's the ONE Thing Holding Back Your Amazon Sales?
+								</h3>
+								<button
+									type="button"
+									className=" font-bold text-white-color capitalize w-full max-w-[320px] py-22px md:py-[28px] px-3 bg-200 bg-gradient-secondary hover:bg-[-100%] rounded-15px flex gap-10px justify-center items-center leading-1 transition-all duration-300 group"
+									data-cta="reveal"
+									onClick={() => handleCTAClick("reveal")}
+								>
+									We'll Reveal It!
+									<i className="fa-regular fa-arrow-right transition-all duration-400 -rotate-45 group-hover:rotate-0"></i>
+								</button>
+							</>
+						)}
 					</div>
 				</div>
 			</div>

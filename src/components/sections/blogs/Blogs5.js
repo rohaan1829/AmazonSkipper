@@ -38,7 +38,7 @@ const Blogs5 = ({ type }) => {
 							}`}
 							data-wow-delay={type === 2 ? ".4s" : "0s"}
 						>
-							Read My Recent Blog
+							This could be you. Let us show you how.
 						</h2>
 					</div>
 					{/* <!-- blogs --> */}

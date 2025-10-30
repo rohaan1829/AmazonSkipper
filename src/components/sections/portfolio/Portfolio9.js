@@ -17,18 +17,17 @@ const Portfolio9 = () => {
 				<div className="container">
 					{/* <!-- section heading --> */}
 					<div className="mb-10 md:mb-50px xl:mb-60px  flex flex-wrap justify-between items-end ">
-						<div>
+					<div className="w-full text-center">
 							<div className="mb-25px  ">
 								<span
-									className="text-xs  uppercase text-primary-color  font-semibold relative inline-block tracking-0.2em wow fadeInRight"
+								className="text-xs  uppercase text-white-color  font-semibold relative inline-block tracking-0.2em wow fadeInRight"
 									data-wow-delay=".3s"
 								>
-									My Recent Work
+									Testimonials
 								</span>
 							</div>
-							<h2 className="text-3xl md:text-size-35 lg:text-size-40 xl:text-size-45 uppercase font-semibold  leading-1.2 -tracking-0.02em inline-block text-seondary-color dark:text-white-color  max-w-580px w-full tj-text-invert">
-								Recent work for <br />
-								MY clients!
+						<h2 className="text-3xl md:text-size-35 lg:text-size-40 xl:text-size-45 uppercase font-semibold  leading-1.2 -tracking-0.02em inline-block text-white-color text-center max-w-580px w-full tj-text-invert">
+								See For Yourself
 							</h2>
 						</div>
 						<div>
