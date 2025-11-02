@@ -1,7 +1,7 @@
 import sliceText from "@/libs/sliceText";
 import Link from "next/link";
 
-const BlogCard5 = ({ blog, idx }) => {
+const BlogCard5 = ({ blog, idx, badgeText }) => {
 	const { id, img, title, blogTopList, category, date } = blog ? blog : {};
 	const showAbleBlogTopList = blogTopList?.slice(1, 3);
 
@@ -14,19 +14,30 @@ const BlogCard5 = ({ blog, idx }) => {
 				<div className="relative ">
 					<Link
 						href={`/blogs/${id}`}
-						className="w-full mb-4 rounded-10px overflow-hidden"
+						className="w-full mb-4 rounded-10px overflow-hidden relative block group/image"
 					>
 						<img
 							src={img}
 							alt=""
 							className="w-full group-hover:scale-110 transition-all duration-500"
 						/>
+						{badgeText === "Video" && (
+							<div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover/image:bg-black/40 transition-all duration-300">
+								<button
+									type="button"
+									className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/90 hover:bg-white transition-all duration-300 flex items-center justify-center shadow-lg hover:scale-110 group-hover/image:scale-110 translate-y-4 md:translate-y-5"
+									aria-label="Play video"
+								>
+									<i className="fa-solid fa-play text-[#4CAF50] text-xl md:text-2xl ml-1"></i>
+								</button>
+							</div>
+						)}
 					</Link>
 					<Link
 						href="#"
-						className="text-size-15  px-10px py-5px leading-1  text-white-color hover:text-white-color  bg-200 bg-gradient-secondary hover:bg-[-100%] rounded-full absolute left-4 top-4"
+						className="text-size-15  px-10px py-5px leading-1  text-white-color hover:text-white-color  bg-200 bg-gradient-secondary hover:bg-[-100%] rounded-full absolute left-4 top-4 z-10"
 					>
-						{idx % 2 ? "Editing" : "Video"}
+						{badgeText !== undefined ? badgeText : (idx % 2 ? "Editing" : "Video")}
 					</Link>
 				</div>
 				<div className=" p-15px   transition-all duration-500">

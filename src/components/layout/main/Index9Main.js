@@ -1,5 +1,5 @@
 import About6 from "@/components/sections/about/About6";
-import Blogs5 from "@/components/sections/blogs/Blogs5";
+//import Blogs5 from "@/components/sections/blogs/Blogs5";
 import Brands2 from "@/components/sections/brands/Brands2";
 import Hero9 from "@/components/sections/heros/Hero9";
 import FeatureMarque2 from "@/components/sections/marquee/FeatureMarque2";
@@ -15,7 +15,7 @@ const Index9Main = () => {
 			<Hero9 />
 			<Brands2 />
 			<Skills4 />
-			<Blogs5 />
+			{/* <Blogs5 /> */}
 			<About6 />
 			<Services6 type={2} />
 			<Portfolio9 />
