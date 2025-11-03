@@ -18,7 +18,7 @@ const MobileMenu = ({ isActiveMobileMenu }) => {
             ? navItems?.map(({ name, path, path2 }, idx) => (
                 <li key={idx}>
                   <Link
-                    href={name.toLowerCase() === 'services' ? '/services' : name.toLowerCase() === 'works' ? '/portfolio' : (isIndexPage ? path : path2)}
+                    href={name.toLowerCase() === 'services' ? '/services' : name.toLowerCase() === 'works' ? '/portfolio' : name.toLowerCase() === 'about us' ? '/about' : (isIndexPage ? path : path2)}
                     className="text-size-25 text-white-color uppercase leading-1.2 py-15px"
                   >
                     {name}
