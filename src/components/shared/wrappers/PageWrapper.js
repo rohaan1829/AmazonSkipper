@@ -50,7 +50,7 @@ const PageWrapper = ({
 				value={{ isIndexPage, isInnerPage, headerType, isResumeBtn }}
 			>
 				<Header />
-				<Header isSticky={true} />
+				{headerType !== 9 && <Header isSticky={true} />}
 			</HeaderContextProvider>
 			<PortfolioRenderContextProvider>
 				{children}

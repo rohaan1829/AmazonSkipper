@@ -40,13 +40,13 @@ const Skills4 = ({ type, title }) => {
 	return (
 		<section
 			id="skills"
-			className="py-20 lg:py-28 bg-black text-white relative overflow-hidden"
+			className="py-20 lg:py-28 bg-white dark:bg-black text-black dark:text-white relative overflow-hidden"
 		>
 			<div className="container mx-auto px-6">
 				<div className="flex flex-col lg:flex-row lg:items-start lg:space-x-16">
 					{/* Heading Left */}
 					<div className="w-full lg:w-1/3 mb-12 lg:mb-0">
-						<h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-white -ml-[20%]">
+						<h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-black dark:text-white -ml-[20%]">
 						This could be you.   <br />
 							<span className="text-[#4CAF50]">Let us show you how.</span>
 						</h2>

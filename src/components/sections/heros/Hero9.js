@@ -12,19 +12,27 @@ const Hero9 = () => {
 	const closeModal = () => setIsModalOpen(false);
 
 	return (
-		<section className="hero-section relative pt-150px sm:pt-[165px] md:pt-150px lg:pt-185px xl:pt-140px 2xl:pt-185px  pb-10 sm:pb-70px overflow-hidden bg-black">
-			{/* Black and Green Gradient Background - Dark Mode */}
-			<div className="absolute inset-0 bg-gradient-to-br from-black via-[#1a1a1a] to-[#4CAF50]/80 opacity-100 dark:block hidden"></div>
-			<div className="absolute inset-0 bg-gradient-to-tr from-[#4CAF50]/70 via-transparent to-black opacity-95 dark:block hidden"></div>
+		<section className="hero-section relative pt-150px sm:pt-[165px] md:pt-150px lg:pt-185px xl:pt-140px 2xl:pt-185px  pb-10 sm:pb-70px overflow-hidden bg-transparent dark:bg-black">
+			{/* Black Gradient Background - Dark Mode */}
+			<div className="absolute inset-0 bg-gradient-to-br from-black via-[#1a1a1a] to-black opacity-100 dark:block hidden"></div>
+			<div className="absolute inset-0 bg-gradient-to-tr from-black via-transparent to-black opacity-95 dark:block hidden"></div>
 			
-			{/* Black and Green Gradient Background - Light Mode */}
-			<div className="absolute inset-0 bg-gradient-to-br from-black via-[#1a1a1a] to-[#4CAF50]/75 opacity-100 dark:hidden block"></div>
-			<div className="absolute inset-0 bg-gradient-to-tr from-[#4CAF50]/65 via-transparent to-black opacity-90 dark:hidden block"></div>
+			{/* Dark mode background image */}
+			<div
+				className="absolute inset-0 hidden dark:block bg-no-repeat bg-center bg-cover z-0"
+				style={{ backgroundImage: "url('/img/hero/darkgreen.png')" }}
+			/>
+			
+			{/* Light mode background image */}
+			<div
+				className="absolute inset-0 block dark:hidden bg-no-repeat bg-center bg-cover z-0"
+				style={{ backgroundImage: "url('/img/hero/green.png')" }}
+			/>
 			{/* <!-- bg --> */}
 
 			<div className="px-15px relative z-10">
 				<div className="mb-50px md:mb-20 lg:mb-10 xl:mb-20">
-					<h1 className="text-[41px] sm:text-[36px] md:text-[43px] lg:text-[57px] xl:text-[70px] 2x:text-[72px] 3xl:text-[85px] 4xl:text-[90px] 5xl:text-[104px] text-white dark:text-white leading-1.1 lg:leading-1.1 mb-6 -tracking-0.04em font-semibold text-center">
+					<h1 className="text-[41px] sm:text-[36px] md:text-[43px] lg:text-[57px] xl:text-[70px] 2x:text-[72px] 3xl:text-[85px] 4xl:text-[90px] 5xl:text-[104px] text-black dark:text-white leading-1.1 lg:leading-1.1 mb-6 -tracking-0.04em font-semibold text-center">
 						<div>Your Amazon AD Spend Could</div>
 						<div>be <span className="text-[#4CAF50] font-bold">X%</span> Lower in 47 days</div>
 						<div>Guaranteed!</div>

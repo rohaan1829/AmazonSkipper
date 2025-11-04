@@ -10,7 +10,9 @@ const Logo = ({ isSticky }) => {
 			<Image
 				className={`${
 					headerType === 4 || headerType === 9 || headerType === 10
-						? "w-full max-w-[190px] h-auto"
+						? isSticky && headerType === 9
+							? "w-full max-w-[150px] h-auto"
+							: "w-full max-w-[190px] h-auto"
 						: "w-15 h-15 "
 				} ${
 					isInnerPage && !isSticky
@@ -29,7 +31,9 @@ const Logo = ({ isSticky }) => {
 			<Image
 				className={`${
 					headerType === 4 || headerType === 9 || headerType === 10
-						? "w-full max-w-[190px] h-auto"
+						? isSticky && headerType === 9
+							? "w-full max-w-[150px] h-auto"
+							: "w-full max-w-[190px] h-auto"
 						: "w-15 h-15"
 				} ${
 					isInnerPage && !isSticky ? "hidden" : "inlin-block dark:hidden"

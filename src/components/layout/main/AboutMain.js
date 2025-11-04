@@ -91,17 +91,17 @@ const AboutMain = () => {
 
             {/* Story Content */}
             <div className="space-y-8 md:space-y-10">
-              <div className="prose prose-lg md:prose-xl max-w-none">
-                <p className="text-lg md:text-xl lg:text-2xl text-gray-800 dark:text-gray-200 leading-relaxed font-light">
+              <div className="bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] rounded-30px p-8 md:p-12 border border-[#4CAF50]/30">
+                <p className="text-lg md:text-xl lg:text-2xl text-white leading-relaxed font-light">
                   We saw too many sellers struggling with underperforming ads, skyrocketing ACoS, and a lack of real results. We knew there had to be a better way.
                 </p>
               </div>
 
-              <div className="bg-gradient-to-br from-[#FF6B35] to-[#FF8C42] rounded-30px p-8 md:p-12 border border-[#FF6B35]/30">
-                <p className="text-lg md:text-xl lg:text-2xl text-white leading-relaxed font-light mb-6">
+              <div className="prose prose-lg md:prose-xl max-w-none space-y-6">
+                <p className="text-lg md:text-xl lg:text-2xl text-gray-800 dark:text-gray-200 leading-relaxed font-light">
                   So, we built a different kind of agency. One that's obsessed with data, transparency, and results. But our team is more than numbers & algorithms. We're a passionate group of individuals who genuinely care about your success. We celebrate your wins as our own, and we're always here to lend a helping hand, no matter the challenge.
                 </p>
-                <p className="text-lg md:text-xl lg:text-2xl text-white leading-relaxed font-light">
+                <p className="text-lg md:text-xl lg:text-2xl text-gray-800 dark:text-gray-200 leading-relaxed font-light">
                   With our belief in transparency, collaboration, and a relentless focus on ROI, we're not afraid to challenge the norm and push boundaries to make you grow YOUR Amazon Business beyond boundaries.
                 </p>
               </div>
@@ -134,17 +134,17 @@ const AboutMain = () => {
 
             {/* Vision Content */}
             <div className="space-y-8 md:space-y-10">
-              <div className="prose prose-lg md:prose-xl max-w-none">
-                <p className="text-lg md:text-xl lg:text-2xl text-gray-800 dark:text-gray-200 leading-relaxed font-light">
+              <div className="bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] rounded-30px p-8 md:p-12 border border-[#4CAF50]/30">
+                <p className="text-lg md:text-xl lg:text-2xl text-white leading-relaxed font-light">
                   At Amazonskipper, we don't believe in luck or guesswork when it comes to Amazon advertising. We believe in data, in strategy, and in results.
                 </p>
               </div>
 
-              <div className="bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] rounded-30px p-8 md:p-12 border border-[#4CAF50]/30">
-                <p className="text-lg md:text-xl lg:text-2xl text-white leading-relaxed font-light mb-6">
+              <div className="prose prose-lg md:prose-xl max-w-none space-y-6">
+                <p className="text-lg md:text-xl lg:text-2xl text-gray-800 dark:text-gray-200 leading-relaxed font-light">
                   But it's not just about us. It's about YOU. Your goals, your challenges, your vision for your brand. We take the time to understand your unique needs and tailor a strategy specifically created for you.
                 </p>
-                <p className="text-lg md:text-xl lg:text-2xl text-white leading-relaxed font-light">
+                <p className="text-lg md:text-xl lg:text-2xl text-gray-800 dark:text-gray-200 leading-relaxed font-light">
                   That's why we spent years dissecting Amazon's algorithms, studying market trends, and testing countless strategies. We've seen what works, what doesn't, and what truly moves the needle for sellers like you.
                 </p>
               </div>
@@ -180,7 +180,7 @@ const AboutMain = () => {
               {/* Left Column - Text Content */}
               <div className="space-y-6 md:space-y-8 order-2 lg:order-1">
                 <div className="prose prose-lg md:prose-xl max-w-none">
-                  <p className="text-lg md:text-xl lg:text-2xl text-gray-800 dark:text-gray-200 leading-relaxed font-light">
+                  <p className="text-lg md:text-xl lg:text-2xl text-[#4CAF50] leading-relaxed font-light">
                     Huzaifa isn't your typical CEO. He's a fighter and a survivor who turned a five-year battle with cancer into a data-driven disruption of Amazon advertising.
                   </p>
                 </div>
@@ -191,11 +191,11 @@ const AboutMain = () => {
                   </p>
                 </div>
 
-                <div className="bg-gradient-to-br from-[#FF6B35] to-[#FF8C42] rounded-30px p-8 md:p-12 border border-[#FF6B35]/30">
-                  <p className="text-lg md:text-xl lg:text-2xl text-white leading-relaxed font-light mb-6">
+                <div className="prose prose-lg md:prose-xl max-w-none space-y-6">
+                  <p className="text-lg md:text-xl lg:text-2xl text-gray-800 dark:text-gray-200 leading-relaxed font-light">
                     Determined to build a brighter future for himself and his family, he got into the world of Amazon selling. But Huzaifa's ambition didn't stop there. He became obsessed with mastering Amazon's algorithms, and advertising strategies, analyzing data, and experimenting relentlessly.
                   </p>
-                  <p className="text-lg md:text-xl lg:text-2xl text-white leading-relaxed font-light">
+                  <p className="text-lg md:text-xl lg:text-2xl text-gray-800 dark:text-gray-200 leading-relaxed font-light">
                     Today, Huzaifa is not only a cancer survivor but the CEO of Amazonskipper, a company he founded to empower Amazon sellers with the knowledge and tools they need to grow a profitable business.
                   </p>
                 </div>
@@ -279,13 +279,11 @@ const AboutMain = () => {
       </section>
 
       {/* Call-to-Action Section */}
-      <section id="cta" className="relative py-100px md:py-120px overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FF6B35] via-[#FF8C42] to-[#FF6B35]"></div>
-        
+      <section id="cta" className="relative py-100px md:py-120px overflow-hidden bg-black">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/10 rounded-full blur-[120px] animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/10 rounded-full blur-[120px] animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#4CAF50]/10 rounded-full blur-[120px] animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#4CAF50]/5 rounded-full blur-[120px] animate-pulse" style={{animationDelay: '1s'}}></div>
         </div>
 
         <div className="container relative z-10 px-6 md:px-8">
@@ -301,7 +299,7 @@ const AboutMain = () => {
               <ButtonPrimary type={2} isIcon={true} href="/#contact">
                 Get Started Today
               </ButtonPrimary>
-              <button className="px-8 py-4 bg-white text-[#FF6B35] hover:bg-gray-100 rounded-15px font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+              <button className="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-black rounded-15px font-bold text-lg transition-all duration-300 transform hover:scale-105">
                 Schedule a Call
               </button>
             </div>

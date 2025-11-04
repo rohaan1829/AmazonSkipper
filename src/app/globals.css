@@ -262,6 +262,14 @@ img {
 .dark .header-6 .nav .nav_item .active {
 	color: var(--white-color);
 }
+/* Compact sticky header for header-6/headerType 9 */
+.header-6.header-sticky.sticky {
+	background-color: var(--off-white-color);
+	backdrop-filter: blur(10px);
+}
+.dark .header-6.header-sticky.sticky {
+	background-color: var(--black-color);
+}
 
 .menu-bar button {
 	border: none;

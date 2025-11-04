@@ -40,20 +40,20 @@ const Brands2 = ({ type }) => {
 			} overflow-x-hidden dark:bg-primary-color-light`}
 		>
       {/* CASE STUDIES SECTION */}
-      <section className="pt-16 md:pt-20 lg:pt-24 pb-3 md:pb-4 lg:pb-5 bg-black relative">
+      <section className="pt-16 md:pt-20 lg:pt-24 pb-3 md:pb-4 lg:pb-5 bg-white dark:bg-black relative">
 				<div className="container">
 					<div className="text-center mb-12 md:mb-16">
-						<h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4">
+						<h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black dark:text-white mb-4">
 							Real Sellers. <span className="text-[#4CAF50]">Real Results.</span>
 						</h2>
-						<h3 className="text-lg md:text-xl lg:text-2xl text-white/80 mb-6 max-w-4xl mx-auto">
+						<h3 className="text-lg md:text-xl lg:text-2xl text-black/80 dark:text-white/80 mb-6 max-w-4xl mx-auto">
               See the Real-World Examples of Amazon Sellers Like YOU Turn Around
               Their Underperforming Amazon Ads.
 						</h3>
-            <p className="text-base md:text-lg text-white/70 mb-4 max-w-4xl mx-auto">
+            <p className="text-base md:text-lg text-black/70 dark:text-white/70 mb-4 max-w-4xl mx-auto">
 								You're not alone if your Amazon ads aren't delivering the results you expected. In fact, it's a common struggle for many sellers.
 							</p>
-            <p className="text-base md:text-lg text-white/70 mb-6 max-w-4xl mx-auto">
+            <p className="text-base md:text-lg text-black/70 dark:text-white/70 mb-6 max-w-4xl mx-auto">
 								But here's the good news: Underperforming ads don't have to be your reality. See the real-world examples of how we've helped Amazon sellers like you transform their ad campaigns & get profit generating results.
 							</p>
           </div>
@@ -62,7 +62,7 @@ const Brands2 = ({ type }) => {
           <div className="relative flex justify-center items-center overflow-visible">
             <button
               onClick={prevSlide}
-              className="absolute -left-4 md:-left-12 lg:-left-16 text-white text-4xl z-20 hover:text-[#4CAF50] transition"
+              className="absolute -left-4 md:-left-12 lg:-left-16 text-black dark:text-white text-4xl z-20 hover:text-[#4CAF50] transition"
               aria-label="Previous"
             >
               ‹
@@ -128,7 +128,7 @@ const Brands2 = ({ type }) => {
 
             <button
               onClick={nextSlide}
-              className="absolute -right-4 md:-right-12 lg:-right-16 text-white text-4xl z-20 hover:text-[#4CAF50] transition"
+              className="absolute -right-4 md:-right-12 lg:-right-16 text-black dark:text-white text-4xl z-20 hover:text-[#4CAF50] transition"
               aria-label="Next"
             >
               ›

@@ -40,12 +40,13 @@ const Header = ({ isSticky }) => {
 					headerType === 10
 						? "border-b border-border-coloer dark:border-bg-color-2 "
 						: isSticky
-						? headerType === 9 ||
-						  headerType === 8 ||
-						  headerType === 7 ||
-						  headerType === 6 ||
-						  headerType === 5 ||
-						  headerType === 4
+						? headerType === 9
+							? "py-3"
+							: headerType === 8 ||
+							  headerType === 7 ||
+							  headerType === 6 ||
+							  headerType === 5 ||
+							  headerType === 4
 							? "pt-5 pb-5  "
 							: "py-10px"
 						: "pt-15px xl:pt-5 pb-5 md:pb-30px xl:pb-5"
