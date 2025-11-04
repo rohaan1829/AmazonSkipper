@@ -46,10 +46,7 @@ const AboutMain = () => {
 
               {/* Main Headline */}
               <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[1.1] text-[#1a1a1a] dark:text-white mb-8">
-                <span className="block">The "Amazon Skipper"</span>
-                <span className="block text-[#4CAF50]" style={{textShadow: '0 0 40px rgba(76, 175, 80, 0.5)'}}>
-                  Story
-                </span>
+                The "<span className="whitespace-nowrap">Amazon Skipper</span>" <span className="text-[#4CAF50]" style={{textShadow: '0 0 40px rgba(76, 175, 80, 0.5)'}}>Story</span>
               </h1>
 
               {/* Description Paragraph */}
