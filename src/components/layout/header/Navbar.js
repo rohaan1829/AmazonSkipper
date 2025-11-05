@@ -13,6 +13,13 @@ const Navbar = ({ isActiveMobileMenu, setIsActiveMobileMenu, isSticky }) => {
 	const { isIndexPage, isInnerPage, isResumeBtn, headerType } =
 		useHeaderContext();
 	const navItems = getNavItems();
+	// Filter out Resume and Skills for headerType 9 (home-9)
+	const filteredNavItems = headerType === 9 
+		? navItems.filter(item => 
+			item.name.toLowerCase() !== 'resume' && 
+			item.name.toLowerCase() !== 'skills'
+		)
+		: navItems;
 	useEffect(() => {
 		// mobileMenuController();
 		indexingAndActiveLink();
@@ -33,11 +40,11 @@ const Navbar = ({ isActiveMobileMenu, setIsActiveMobileMenu, isSticky }) => {
 						: ` gap-x-5 2xl:gap-x-45px`
 				}`}
 			>
-				{navItems?.length
-					? navItems?.map(({ name, path, path2 }, idx) => (
+				{filteredNavItems?.length
+					? filteredNavItems?.map(({ name, path, path2 }, idx) => (
 							<li key={idx} className="nav_item group relative hidden lg:block">
 								<Link
-									href={name.toLowerCase() === 'services' ? '/services' : name.toLowerCase() === 'works' ? '/portfolio' : name.toLowerCase() === 'about us' ? '/about' : (isIndexPage ? path : path2)}
+									href={name.toLowerCase() === 'services' ? '/services' : name.toLowerCase() === 'works' ? '/portfolio' : name.toLowerCase() === 'about us' ? '/about' : name.toLowerCase() === 'case studies' ? '/case-studies' : (isIndexPage ? path : path2)}
 							className={`text-size-15 font-medium  ${
 								isInnerPage && !isSticky
 									? "text-seondary-color dark:text-white-color"

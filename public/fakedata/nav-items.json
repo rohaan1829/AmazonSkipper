@@ -20,6 +20,11 @@
       "path2":"/portfolio"  
     },
     {
+      "name":"Case Studies",
+      "path":"#case-studies",
+      "path2":"/case-studies"  
+    },
+    {
       "name":"Resume",
       "path":"#resume",
       "path2":"/#resume"  

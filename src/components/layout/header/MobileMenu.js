@@ -4,8 +4,15 @@ import getNavItems from "@/libs/getNavItems";
 import Link from "next/link";
 
 const MobileMenu = ({ isActiveMobileMenu }) => {
-  const { isIndexPage } = useHeaderContext();
+  const { isIndexPage, headerType } = useHeaderContext();
   const navItems = getNavItems();
+  // Filter out Resume and Skills for headerType 9 (home-9)
+  const filteredNavItems = headerType === 9 
+    ? navItems.filter(item => 
+        item.name.toLowerCase() !== 'resume' && 
+        item.name.toLowerCase() !== 'skills'
+      )
+    : navItems;
   return (
     <div
       className={`mobile-menu absolute left-0 top-full min-h-screen-90 w-full bg-seondary-color block origin-top-left lg:hidden ${
@@ -14,11 +21,11 @@ const MobileMenu = ({ isActiveMobileMenu }) => {
     >
       <div className="container py-5">
         <ul className="ml-4">
-          {navItems?.length
-            ? navItems?.map(({ name, path, path2 }, idx) => (
+          {filteredNavItems?.length
+            ? filteredNavItems?.map(({ name, path, path2 }, idx) => (
                 <li key={idx}>
                   <Link
-                    href={name.toLowerCase() === 'services' ? '/services' : name.toLowerCase() === 'works' ? '/portfolio' : name.toLowerCase() === 'about us' ? '/about' : (isIndexPage ? path : path2)}
+                    href={name.toLowerCase() === 'services' ? '/services' : name.toLowerCase() === 'works' ? '/portfolio' : name.toLowerCase() === 'about us' ? '/about' : name.toLowerCase() === 'case studies' ? '/case-studies' : (isIndexPage ? path : path2)}
                     className="text-size-25 text-white-color uppercase leading-1.2 py-15px"
                   >
                     {name}
