@@ -221,7 +221,7 @@ const About6 = () => {
 						<div className="w-full max-w-[630px] lg:max-w-[510px] xl:max-w-[560px] 2xl:max-w-[630px] flex flex-col justify-start">
 							<div className="mb-15px">
 								<span
-									className="text-xs  uppercase text-primary-color  font-semibold relative inline-block tracking-0.2em wow fadeInRight"
+									className="text-xs  uppercase text-primary-color dark:text-white  font-semibold relative inline-block tracking-0.2em wow fadeInRight"
 									data-wow-delay=".3s"
 								>
 									Behind the Pixels

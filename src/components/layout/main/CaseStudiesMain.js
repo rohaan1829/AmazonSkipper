@@ -7,11 +7,61 @@ import getCaseStudies from "@/libs/getCaseStudies";
 // Case Study Item Component
 const CaseStudyItem = ({ caseStudy, index }) => {
   const [isClient, setIsClient] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const [animatedMetrics, setAnimatedMetrics] = useState({
     revenue: 0,
     acos: caseStudy?.after?.metrics?.acos?.before || 42,
     tacos: caseStudy?.after?.metrics?.tacos?.before || 28,
   });
+
+  useEffect(() => {
+    setIsClient(true);
+    
+    // Scroll animation observer - wait for element to be in DOM
+    let scrollObserver = null;
+    let timeoutId = null;
+
+    const setupScrollAnimation = () => {
+      const caseStudyElement = document.getElementById(`case-study-${index}`);
+      if (!caseStudyElement) {
+        // Retry if element not found yet
+        timeoutId = setTimeout(setupScrollAnimation, 100);
+        return;
+      }
+
+      // Check if element is already in view (for first case study)
+      const rect = caseStudyElement.getBoundingClientRect();
+      const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+      if (isInView && index === 0) {
+        // First case study - show immediately if already in view
+        setIsVisible(true);
+        return;
+      }
+
+      scrollObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setIsVisible(true);
+              if (scrollObserver) {
+                scrollObserver.disconnect();
+              }
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+      );
+
+      scrollObserver.observe(caseStudyElement);
+    };
+
+    setupScrollAnimation();
+
+    return () => {
+      if (timeoutId) clearTimeout(timeoutId);
+      if (scrollObserver) scrollObserver.disconnect();
+    };
+  }, [index]);
 
   useEffect(() => {
     setIsClient(true);
@@ -112,7 +162,14 @@ const CaseStudyItem = ({ caseStudy, index }) => {
   const tacosReduction = (((tacos.before - tacos.after) / tacos.before) * 100).toFixed(0);
 
   return (
-    <div className={index > 0 ? "mt-20 md:mt-24" : ""}>
+    <div 
+      id={`case-study-${index}`}
+      className={`${index > 0 ? "mt-20 md:mt-24" : ""} transition-all duration-700 ease-out ${
+        isVisible 
+          ? "opacity-100 translate-y-0" 
+          : "opacity-0 translate-y-8"
+      }`}
+    >
       {/* Case Study Header */}
       <div className="mb-16 md:mb-20">
         <div className="inline-block px-4 py-2 bg-[#4CAF50]/10 text-[#4CAF50] rounded-full text-sm font-semibold mb-6 uppercase tracking-wider">
@@ -127,7 +184,11 @@ const CaseStudyItem = ({ caseStudy, index }) => {
       </div>
 
       {/* Before Section */}
-      <div className="mb-20 md:mb-24">
+      <div className={`mb-20 md:mb-24 transition-all duration-700 ease-out delay-[100ms] ${
+        isVisible 
+          ? "opacity-100 translate-y-0" 
+          : "opacity-0 translate-y-6"
+      }`}>
         <div className="bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 rounded-30px p-8 md:p-12 border-2 border-red-200 dark:border-red-800/50">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center">
@@ -165,7 +226,11 @@ const CaseStudyItem = ({ caseStudy, index }) => {
       </div>
 
       {/* Strategy Section */}
-      <div className="mb-20 md:mb-24">
+      <div className={`mb-20 md:mb-24 transition-all duration-700 ease-out delay-[200ms] ${
+        isVisible 
+          ? "opacity-100 translate-y-0" 
+          : "opacity-0 translate-y-6"
+      }`}>
         <div className="bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] rounded-30px p-8 md:p-12 border border-[#4CAF50]/30">
           <div className="flex items-center gap-4 mb-8">
             <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
@@ -191,7 +256,14 @@ const CaseStudyItem = ({ caseStudy, index }) => {
       </div>
 
       {/* After Section - Metrics */}
-      <div id={`metrics-section-${index}`} className="mb-20 md:mb-24">
+      <div 
+        id={`metrics-section-${index}`} 
+        className={`mb-20 md:mb-24 transition-all duration-700 ease-out delay-[300ms] ${
+          isVisible 
+            ? "opacity-100 translate-y-0" 
+            : "opacity-0 translate-y-6"
+        }`}
+      >
         <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-30px p-8 md:p-12 border-2 border-[#4CAF50] dark:border-[#4CAF50]/50">
           <div className="flex items-center gap-4 mb-8">
             <div className="w-12 h-12 bg-[#4CAF50] rounded-full flex items-center justify-center">
