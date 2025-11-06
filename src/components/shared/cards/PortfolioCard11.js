@@ -1,15 +1,12 @@
 "use client";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 
 const PortfolioCard11 = ({ portfolio }) => {
-	const themeMode = useSearchParams()?.get("theme_mode");
-	const { title, img, id, category } = portfolio ? portfolio : {};
-	const isLight = themeMode === "light" ? true : false;
+	const { title, img, shortDesc } = portfolio ? portfolio : {};
 	return (
-		<div className="portfolio-item branding  p-5 md:p-25px bg-cream-light-color dark:bg-black-color hover:bg-cream-light-color dark:hover:bg-seondary-color rounded-30px group relative">
+		<div className="portfolio-item branding  p-5 md:p-25px bg-cream-light-color dark:bg-black-color hover:bg-cream-light-color dark:hover:bg-seondary-color rounded-30px group relative h-full flex flex-col">
 			<Link
-				href={`./portfolio/${id}${isLight ? "?theme_mode=light" : ""}`}
+				href="/services"
 				className="mb-25px rounded-15px overflow-hidden w-full"
 			>
 				<img
@@ -19,23 +16,21 @@ const PortfolioCard11 = ({ portfolio }) => {
 				/>
 			</Link>
 
-			<div className="flex items-center gap-25px  justify-between ">
-				<div>
-					<h4 className="block text-xl text-seondary-color dark:text-white-color hover:text-primary-color dark:hover:text-primary-color   font-bold  mb-1.5">
-						<Link
-							href={`./portfolio/${id}${isLight ? "?theme_mode=light" : ""}`}
-						>
+			<div className="flex items-center gap-25px  justify-between flex-grow">
+				<div className="flex-grow">
+					<h4 className="block text-xl text-seondary-color dark:text-white-color hover:text-primary-color dark:hover:text-primary-color   font-bold  mb-1.5 min-h-[60px]">
+						<Link href="/services">
 							{title}
 						</Link>
 					</h4>
 
-					<p className="block text-primary-color-light dark:text-body-color-3">
-						Project was about precision and information...
+					<p className="block text-primary-color-light dark:text-body-color-3 min-h-[60px]">
+						{shortDesc}
 					</p>
 				</div>
 
 				<Link
-					href={`./portfolio/${id}${isLight ? "?theme_mode=light" : ""}`}
+					href="/services"
 					className="flex-shrink-0 text-size-25px w-60px h-60px text-primary-color-light dark:text-white-color group-hover:text-white-color   bg-transparent group-hover:bg-gradient-primary-8 outline-1 outline outline-body-color dark:outline-bg-color-2 group-hover:border-transparent  rounded-100% leading-1 transition-all duration-300  inline-flex justify-center items-center"
 				>
 					<span className="relative overflow-hidden -rotate-45">

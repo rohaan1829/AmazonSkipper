@@ -224,7 +224,7 @@ const About6 = () => {
 									className="text-xs  uppercase text-primary-color dark:text-white  font-semibold relative inline-block tracking-0.2em wow fadeInRight"
 									data-wow-delay=".3s"
 								>
-									Behind the Pixels
+									
 								</span>
 							</div>
 							<h2 className="text-3xl md:text-size-35 lg:text-size-40 xl:text-size-45 uppercase font-semibold  leading-1.2 -tracking-0.02em inline-block text-seondary-color dark:text-white-color mb-20px lg:mb-15px xl:mb-20px max-w-580px w-full tj-text-invert">

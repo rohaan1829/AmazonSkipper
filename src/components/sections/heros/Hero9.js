@@ -22,12 +22,6 @@ const Hero9 = () => {
 				className="absolute inset-0 hidden dark:block bg-no-repeat bg-center bg-cover z-0"
 				style={{ backgroundImage: "url('/img/hero/darkgreen.png')" }}
 			/>
-			
-			{/* Light mode background image */}
-			<div
-				className="absolute inset-0 block dark:hidden bg-no-repeat bg-center bg-cover z-0"
-				style={{ backgroundImage: "url('/img/hero/green.png')" }}
-			/>
 			{/* <!-- bg --> */}
 
 			<div className="px-15px relative z-10">
@@ -53,11 +47,10 @@ const Hero9 = () => {
 				<div className="absolute inset-0 flex items-center justify-center z-10">
 					<button
 						onClick={openModal}
-						className="group relative w-18 h-18 sm:w-22 sm:h-22 md:w-25 md:h-25 lg:w-29 lg:h-29 xl:w-32 xl:h-32 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95"
+						className="group relative w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-26 xl:h-26 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 bg-transparent"
 						style={{
-							background: 'radial-gradient(circle at 30% 30%, #ffffff, #f1f3f4, #e8eaed)',
-							border: '2px solid #000',
-							boxShadow: '0 4px 8px rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.6)'
+							border: '3px solid #ffffff',
+							boxShadow: '0 4px 8px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.1)'
 						}}
 					>
 						{/* Play Triangle with Glossy Effect */}
