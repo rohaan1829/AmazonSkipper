@@ -82,8 +82,77 @@ const Hero9 = () => {
 				</div>
 				</div>
 
+					{/* Left Side Text */}
+					<div className="w-full max-w-310px relative md:absolute md:left-auto lg:left-0 xl:left-0 2xl:left-[1%] 3xl:-left-[9%] -top-10 md:top-auto lg:top-1/2 xl:top-[40%] md:bottom-0 md:right-1/2 lg:right-auto md:translate-x-1/2 lg:translate-x-0 lg:-translate-y-1/2 mx-auto md:mx-0 z-1">
+						<div>
+							<div
+								className="text-seondary-color dark:text-white-color-4 leading-1.3 mb-26px text-lg md:text-xl lg:text-2xl font-medium"
+							>
+								<div className="text-left">
+									<div className="mb-2">
+										<span className="text-[#4CAF50] font-bold">Forget "Best Sellers."</span>
+									</div>
+									<div>
+										<span className="text-seondary-color dark:text-white-color">We Help YOU Become a </span>
+										<span className="bg-gradient-to-r from-[#4CAF50] to-[#2E7D32] bg-clip-text text-transparent font-bold">Profitable Seller</span>
+										<span className="text-seondary-color dark:text-white-color">.</span>
+									</div>
+								</div>
+							</div>
+							
+							{/* Clutch and Trustpilot Badges */}
+							<div className="flex flex-wrap gap-2 items-center mt-3">
+								<a
+									href="https://clutch.co/profile/amazon-skipper"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="inline-block hover:opacity-80 transition-opacity"
+								>
+									<div className="flex items-center gap-1 bg-white dark:bg-[#1a1a1a] px-2 py-1 rounded border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
+										<div className="flex items-center">
+											<span className="text-sm font-bold text-[#4CAF50]">4.9</span>
+											<div className="flex ml-0.5">
+												{[...Array(5)].map((_, i) => (
+													<svg key={i} className="w-2.5 h-2.5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+														<path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+													</svg>
+												))}
+											</div>
+										</div>
+										<div className="text-[9px] text-gray-600 dark:text-gray-400">
+											<span className="font-semibold text-gray-900 dark:text-white">Clutch</span>
+										</div>
+									</div>
+								</a>
+								
+								<a
+									href="https://www.trustpilot.com/review/amazonskipper.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="inline-block hover:opacity-80 transition-opacity"
+								>
+									<div className="flex items-center gap-1 bg-white dark:bg-[#1a1a1a] px-2 py-1 rounded border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
+										<div className="flex items-center">
+											<span className="text-sm font-bold text-[#00B67A]">4.8</span>
+											<div className="flex ml-0.5">
+												{[...Array(5)].map((_, i) => (
+													<svg key={i} className="w-2.5 h-2.5 text-[#00B67A] fill-current" viewBox="0 0 20 20">
+														<path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+													</svg>
+												))}
+											</div>
+										</div>
+										<div className="text-[9px] text-gray-600 dark:text-gray-400">
+											<span className="font-semibold text-gray-900 dark:text-white">Trustpilot</span>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+
 					{/* <!-- transparent area --> */}
-					<div className=" absolute -top-5 sm:top-0  lg:top-[16%] left-auto lg:left-[6%] xl:left-[10%] right-[30px] sm:right-0 md:right-[15%] lg:right-auto">
+					<div className=" absolute -top-5 sm:top-0  lg:top-[38%] xl:top-[42%] 2xl:top-[44%] left-auto lg:left-[6%] xl:left-[10%] right-[30px] sm:right-0 md:right-[15%] lg:right-auto">
 						<div className="flex gap-1.5 px-15px lg:px-30px py-25px sm:py-30px lg:py-45px rounded-10px border border-dashed border-[#4CAF50]/90 dark:border-[#4CAF50]/30 bg-gradient-to-br from-white via-[#f8f9fa] to-[#4CAF50]/80 dark:from-[#121212] dark:via-[#1a1a1a] dark:to-[#4CAF50]/15 backdrop-blur-[55px] z-1 shadow-lg shadow-[#4CAF50]/60 dark:shadow-[#4CAF50]/10">
 							<div className="w-[26px] flex-shrink-0">
 								<span>

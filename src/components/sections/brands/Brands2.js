@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import BlogCard5 from "@/components/shared/cards/BlogCard5";
 
 const caseStudies = [
@@ -12,13 +13,14 @@ const caseStudies = [
 ];
 
 const videoTestimonials = [
-  { id: "testimonial-1", img: "/img/hero/huzaifa.png", title: "Sarah's Success Story", category: "Video" },
-  { id: "testimonial-2", img: "/img/hero/huzaifa.png", title: "How I Reduced My Ad Spend", category: "Video" },
-  { id: "testimonial-3", img: "/img/hero/huzaifa.png", title: "Real Results Real Fast", category: "Video" },
+  { id: "testimonial-1", videoId: "5U66ATCyg4I", title: "Mark's Success Story", category: "Video" },
+  { id: "testimonial-2", videoId: "5U66ATCyg4I", title: "Mark's Success Story", category: "Video" },
+  { id: "testimonial-3", videoId: "5U66ATCyg4I", title: "Mark's Success Story", category: "Video" },
 ];
 
 const Brands2 = ({ type }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [playingVideo, setPlayingVideo] = useState(null);
 
   const nextSlide = () => setActiveIndex((p) => (p + 1) % caseStudies.length);
   const prevSlide = () => setActiveIndex((p) => (p - 1 + caseStudies.length) % caseStudies.length);
@@ -153,16 +155,84 @@ const Brands2 = ({ type }) => {
 						</h2>
 					</div>
 					
-          {/* Video Testimonials Grid - using BlogCard5 design */}
+          {/* Video Testimonials Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 lg:gap-6 items-stretch">
             {videoTestimonials?.length
-              ? videoTestimonials?.map((testimonial, idx) => (
-                  <div key={testimonial.id} className="h-full">
-                    <div className="h-full [&>div]:h-full [&>div>div]:h-full">
-                      <BlogCard5 blog={testimonial} idx={idx} badgeText="Video" />
+              ? videoTestimonials?.map((testimonial, idx) => {
+                  const thumbnailUrl = `https://img.youtube.com/vi/${testimonial.videoId}/maxresdefault.jpg`;
+                  const isPlaying = playingVideo === testimonial.id;
+                  
+                  return (
+                    <div key={testimonial.id} className="h-full">
+                      <div className="h-full p-15px bg-white dark:bg-black-color border border-white dark:border-border-color-2 backdrop-blur-[40px] rounded-10px relative overflow-hidden group">
+                        <div className="relative rounded-10px overflow-hidden mb-4">
+                          {isPlaying ? (
+                            <iframe
+                              width="100%"
+                              height="100%"
+                              src={`https://www.youtube.com/embed/${testimonial.videoId}?autoplay=1&rel=0`}
+                              title={testimonial.title}
+                              frameBorder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                              className="w-full aspect-video"
+                            />
+                          ) : (
+                            <>
+                              <img
+                                src={thumbnailUrl}
+                                alt={testimonial.title}
+                                className="w-full aspect-video object-cover group-hover:scale-110 transition-all duration-500"
+                              />
+                              <div 
+                                className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-all duration-300 cursor-pointer"
+                                onClick={() => setPlayingVideo(testimonial.id)}
+                              >
+                                <button
+                                  type="button"
+                                  className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/90 hover:bg-white transition-all duration-300 flex items-center justify-center shadow-lg hover:scale-110 group-hover:scale-110"
+                                  aria-label="Play video"
+                                >
+                                  <i className="fa-solid fa-play text-[#4CAF50] text-base md:text-lg ml-1"></i>
+                                </button>
+                              </div>
+                            </>
+                          )}
+                          <Link
+                            href="#"
+                            className="text-size-15 px-10px py-5px leading-1 text-white-color hover:text-white-color bg-200 bg-gradient-secondary hover:bg-[-100%] rounded-full absolute left-4 top-4 z-10"
+                          >
+                            {testimonial.category}
+                          </Link>
+                        </div>
+                        <div className="p-15px">
+                          <div className="w-full">
+                            <div className="relative z-10">
+                              <ul className="flex gap-4 items-center mb-4">
+                                <li>
+                                  <Link
+                                    href="#"
+                                    className="leading-1 text-white hover:text-white/80 capitalize"
+                                  >
+                                    {testimonial.category}
+                                  </Link>
+                                </li>
+                              </ul>
+                              <h4>
+                                <Link
+                                  href="#"
+                                  className="text-white w-full text-size-22 lg:text-2xl font-semibold leading-1.4 lg:leading-1.4 uppercase tracking-0.02em inline duration-500 hover:opacity-80"
+                                >
+                                  {testimonial.title}
+                                </Link>
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                ))
+                  );
+                })
               : ""}
           </div>
 				</div>
