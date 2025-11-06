@@ -1,0 +1,582 @@
+[
+	{
+		"id": 1,
+		"featured": true,
+		"hero": {
+			"badge": "Success Stories",
+			"title": "Case Studies",
+			"titleHighlight": "Studies",
+			"description": "Witness how we help businesses transform from struggling to successful on Amazon. Become an Amazon success story with our tailored solutions and proven track record.",
+			"stats": [
+				{
+					"value": "100+",
+					"label": "Projects Completed"
+				},
+				{
+					"value": "355%",
+					"label": "Avg. Revenue Growth"
+				},
+				{
+					"value": "24pt",
+					"label": "ACoS Reduction"
+				}
+			]
+		},
+		"header": {
+			"badge": "Featured Case Study",
+			"title": "A Compelling Turnaround: From Stagnation to Momentum",
+			"description": "Want a blueprint for turning an under‑performing Amazon brand into a runaway success? Read on to see how a natural‑protein‑bar maker overcame fierce competition, poor visibility, and soaring ad costs — and emerged stronger than ever. This journey illustrates how clear strategy and disciplined execution can make numbers soar."
+		},
+		"before": {
+			"title": "Before We Stepped In",
+			"description": "The company produces natural protein bars, but was struggling on Amazon. Its listings were inefficiently structured, competitors were drawing away potential customers, and shifts in demand across seasons caused erratic sales. All of this led to a lacklustre performance:",
+			"metrics": [
+				{
+					"value": "$45K",
+					"label": "Monthly Revenue",
+					"status": "Stuck & Stagnant"
+				},
+				{
+					"value": "42%",
+					"label": "Advertising Cost of Sales",
+					"status": "Eating Into Profits"
+				},
+				{
+					"value": "28%",
+					"label": "Total ACoS (TACoS)",
+					"status": "Heavy Paid Reliance"
+				}
+			],
+			"summary": "These metrics painted a picture of a brand spending too much and gaining too little."
+		},
+		"strategy": {
+			"title": "The Skipper Strategy",
+			"description": "To right the ship, we crafted a multifaceted plan anchored in proven tactics from successful Amazon case studies:",
+			"items": [
+				{
+					"title": "Product & Listing Rebuild",
+					"description": "Thorough keyword research and incorporated popular, purchase‑driven phrases into product titles and descriptions. Enhanced product detail pages featured lifestyle imagery, and variant groupings were reorganised to improve browsing."
+				},
+				{
+					"title": "Cross‑Selling & Complementary Products",
+					"description": "Popular nut mixes were prominently featured on new bar listings, creating synergy between established and new items. Advertisements promoted complementary bundles and special deals to encourage larger orders."
+				},
+				{
+					"title": "Advertising & Search Strategy",
+					"description": "Branded keyword‑protection campaigns safeguarded existing traffic, visibility campaigns targeted top search phrases and seasonally timed promotions tapped into fitness demand. Weekly bid tweaks and bidding multipliers for premium ad placements kept spend efficient."
+				},
+				{
+					"title": "Creative Optimisation",
+					"description": "Invested in high‑quality photos and videos showcasing the bars' appearance and serving ideas. These upgraded visuals increased shopper engagement and purchase likelihood."
+				},
+				{
+					"title": "Budget Reallocation & Marketplace Management",
+					"description": "Ad spend was shifted away from weaker regions to marketplaces where the brand reliably controlled the buy‑box. Budgets focused on terms that yielded conversions, and product‑targeting campaigns were streamlined."
+				},
+				{
+					"title": "Display Remarketing",
+					"description": "Re‑engaged shoppers who had previously browsed the products, increasing conversion rates and maximizing return on ad spend."
+				}
+			]
+		},
+		"after": {
+			"title": "The Calm After the Storm",
+			"description": "Six months later, the brand's performance told a radically different story:",
+			"metrics": {
+				"revenue": {
+					"before": 45000,
+					"after": 205000,
+					"label": "Monthly Revenue"
+				},
+				"acos": {
+					"before": 42,
+					"after": 18,
+					"label": "ACoS"
+				},
+				"tacos": {
+					"before": 28,
+					"after": 14,
+					"label": "TACoS"
+				}
+			},
+			"summary": "Beyond these core metrics, profit margins increased dramatically, basket size grew thanks to cross‑selling, and the brand secured Amazon's Choice badges across multiple flavours. The transformation shows that with a clear plan and continual optimisation, even a struggling brand can chart a course to stability and long‑term growth."
+		},
+		"cta": {
+			"title": "Ready to Transform Your Amazon Business?",
+			"description": "Join hundreds of successful Amazon sellers who've transformed their businesses with our proven strategies.",
+			"buttons": [
+				{
+					"text": "Get Your Free Audit",
+					"url": "/#contact",
+					"type": "primary"
+				},
+				{
+					"text": "Schedule a Call",
+					"url": "#",
+					"type": "secondary"
+				}
+			]
+		}
+	},
+	{
+		"id": 2,
+		"featured": false,
+		"hero": {
+			"badge": "Success Stories",
+			"title": "Case Studies",
+			"titleHighlight": "Studies",
+			"description": "Witness how we help businesses transform from struggling to successful on Amazon. Become an Amazon success story with our tailored solutions and proven track record.",
+			"stats": [
+				{
+					"value": "100+",
+					"label": "Projects Completed"
+				},
+				{
+					"value": "355%",
+					"label": "Avg. Revenue Growth"
+				},
+				{
+					"value": "24pt",
+					"label": "ACoS Reduction"
+				}
+			]
+		},
+		"header": {
+			"badge": "Featured Case Study",
+			"title": "Turning the Tide for an Eco‑Cleaning Brand: A Fresh Start on Amazon",
+			"description": "Looking for inspiration on reviving a stalled Amazon presence? See how a company that sells biodegradable cleaning sprays escaped lacklustre sales, tamed its ad spend and charted a new path to growth. This story proves that smart tactics and consistent refinements can make a struggling brand thrive."
+		},
+		"before": {
+			"title": "Before We Stepped In",
+			"description": "This brand specialises in eco‑friendly home cleaners but was floundering online. Product pages weren't attracting shoppers, bigger rivals were capturing traffic and demand fluctuated with seasons. The numbers highlighted the problem:",
+			"metrics": [
+				{
+					"value": "$20K",
+					"label": "Monthly Revenue",
+					"status": "Far Below Expectations"
+				},
+				{
+					"value": "40%",
+					"label": "Advertising Cost of Sales",
+					"status": "Eroding Margins"
+				},
+				{
+					"value": "30%",
+					"label": "Total ACoS (TACoS)",
+					"status": "Heavy Paid Reliance"
+				}
+			],
+			"summary": "Such figures suggested overspending and underperforming, a common scenario for brands entering crowded categories."
+		},
+		"strategy": {
+			"title": "The Skipper Strategy",
+			"description": "We devised a comprehensive plan rooted in lessons from top Amazon success stories — but adapted to the unique needs of an eco‑cleaning business:",
+			"items": [
+				{
+					"title": "Reworking Product Listings",
+					"description": "We conducted in‑depth keyword analysis and wove shopper‑friendly terms into titles and descriptions. Enhanced content with imagery showing clean kitchens and natural ingredients made pages more inviting, and variants were regrouped for easier browsing."
+				},
+				{
+					"title": "Promoting Complementary Products",
+					"description": "Best‑selling microfiber cloths were paired with the sprays on detail pages to encourage combined purchases. Advertisements emphasised value packs and starter kits to raise average order size."
+				},
+				{
+					"title": "Refined Advertising Campaigns",
+					"description": "Branded traffic was shielded with protection ads while separate campaigns targeted high‑search‑volume cleaning terms. Seasonal offers were aligned with spring‑cleaning and holiday hosting periods. Bid strategies were tweaked regularly and premium ad placements were bid on strategically."
+				},
+				{
+					"title": "Upgrading Visuals",
+					"description": "We commissioned new photos highlighting the recyclable packaging and plant‑based formulas, plus quick demo videos that increased engagement."
+				},
+				{
+					"title": "Smart Budget Allocation",
+					"description": "Advertising dollars were shifted away from slower sales regions toward markets where the brand consistently won the buy‑box. Spend focused on high‑converting keywords, with streamlined product‑targeting and display remarketing to bring back curious browsers."
+				}
+			]
+		},
+		"after": {
+			"title": "The Calm After the Storm",
+			"description": "Six months later the payoff was clear:",
+			"metrics": {
+				"revenue": {
+					"before": 20000,
+					"after": 200000,
+					"label": "Monthly Revenue"
+				},
+				"acos": {
+					"before": 40,
+					"after": 20,
+					"label": "ACoS"
+				},
+				"tacos": {
+					"before": 30,
+					"after": 12,
+					"label": "TACoS"
+				}
+			},
+			"summary": "In addition to these core metrics, customer loyalty grew through kit promotions, and the brand earned sustainability badges that further boosted credibility. By year's end, total sales surpassed $1 million, underscoring the lasting momentum of the turnaround. The story demonstrates that when a brand refines its presentation, rethinks its campaigns and reallocates resources wisely, it can quickly progress from merely surviving to genuinely thriving on Amazon."
+		},
+		"cta": {
+			"title": "Ready to Transform Your Amazon Business?",
+			"description": "Join hundreds of successful Amazon sellers who've transformed their businesses with our proven strategies.",
+			"buttons": [
+				{
+					"text": "Get Your Free Audit",
+					"url": "/#contact",
+					"type": "primary"
+				},
+				{
+					"text": "Schedule a Call",
+					"url": "#",
+					"type": "secondary"
+				}
+			]
+		}
+	},
+	{
+		"id": 3,
+		"featured": false,
+		"hero": {
+			"badge": "Success Stories",
+			"title": "Case Studies",
+			"titleHighlight": "Studies",
+			"description": "Witness how we help businesses transform from struggling to successful on Amazon. Become an Amazon success story with our tailored solutions and proven track record.",
+			"stats": [
+				{
+					"value": "100+",
+					"label": "Projects Completed"
+				},
+				{
+					"value": "355%",
+					"label": "Avg. Revenue Growth"
+				},
+				{
+					"value": "24pt",
+					"label": "ACoS Reduction"
+				}
+			]
+		},
+		"header": {
+			"badge": "Featured Case Study",
+			"title": "Brewing Success for a Specialty Coffee Brand: From Low Sales to Roaring Hot",
+			"description": "Ever wonder how a small coffee brand can rise above the noise on Amazon? This story chronicles how a roaster of artisan beans moved from stagnation to explosive growth. With clever adjustments and relentless optimisation, they turned sips into a thriving business."
+		},
+		"before": {
+			"title": "Before We Stepped In",
+			"description": "This company sells single‑origin coffee beans and handcrafted blends. Despite a loyal offline following, its Amazon performance was stifled by a number of issues. Beans were offered in only one bag size, deterring bulk buyers. Packaging looked generic and lacked storytelling about origin, and there was no subscribe‑and‑save option. Slow fulfilment to the East Coast and the absence of international listings further hampered growth. Key metrics painted the picture:",
+			"metrics": [
+				{
+					"value": "$100K",
+					"label": "Monthly Revenue",
+					"status": "Hovering Around Expectations"
+				},
+				{
+					"value": "55%",
+					"label": "Advertising Cost of Sales",
+					"status": "Severely Cutting Into Profits"
+				},
+				{
+					"value": "38%",
+					"label": "Total ACoS (TACoS)",
+					"status": "Overreliance on Paid Ads"
+				}
+			],
+			"summary": "These figures underscored the need for a strategic overhaul."
+		},
+		"strategy": {
+			"title": "The Skipper Strategy",
+			"description": "We crafted a plan inspired by best practices yet tailored to the coffee category:",
+			"items": [
+				{
+					"title": "Expanding Options and Storytelling",
+					"description": "We added multiple bag sizes and introduced a subscribe‑and‑save program to attract repeat customers. Product pages were rewritten to highlight farm origins, roast dates and tasting notes, and packaging was redesigned with origin stories and flavor cues."
+				},
+				{
+					"title": "Launching Accessory Bundles",
+					"description": "Popular grinders, filters and French presses were packaged with bean purchases to encourage larger carts. Gift sets were promoted ahead of holidays to capture shoppers looking for presents."
+				},
+				{
+					"title": "Improving Fulfilment and International Reach",
+					"description": "We optimised supply chains and used multiple fulfilment centres to ensure fast shipping to all regions. Listings were localised and launched on Amazon Canada and the UK to tap new audiences."
+				},
+				{
+					"title": "Targeted Campaigns and Influencer Outreach",
+					"description": "Ads were segmented to protect branded searches and target specialty coffee keywords. Influencer collaborations and sponsored posts on social media built buzz around limited‑edition roasts."
+				},
+				{
+					"title": "Budget Optimisation",
+					"description": "Ad budgets shifted from low‑return regions to markets where the buy‑box was secure. Spending focused on high‑converting keywords, and display remarketing nurtured interest from previous page visitors."
+				}
+			]
+		},
+		"after": {
+			"title": "The Calm After the Storm",
+			"description": "Results arrived quickly:",
+			"metrics": {
+				"revenue": {
+					"before": 100000,
+					"after": 1000000,
+					"label": "Monthly Revenue"
+				},
+				"acos": {
+					"before": 55,
+					"after": 25,
+					"label": "ACoS"
+				},
+				"tacos": {
+					"before": 38,
+					"after": 15,
+					"label": "TACoS"
+				}
+			},
+			"summary": "As momentum built, the brand ended the year with over $8 million in total sales. Subscriptions and limited‑edition roasts became significant revenue drivers, and the brand earned accolades for sustainability. This case shows that with thoughtful listing enhancements, targeted promotions and disciplined spending, even a small roaster can brew up big results on Amazon."
+		},
+		"cta": {
+			"title": "Ready to Transform Your Amazon Business?",
+			"description": "Join hundreds of successful Amazon sellers who've transformed their businesses with our proven strategies.",
+			"buttons": [
+				{
+					"text": "Get Your Free Audit",
+					"url": "/#contact",
+					"type": "primary"
+				},
+				{
+					"text": "Schedule a Call",
+					"url": "#",
+					"type": "secondary"
+				}
+			]
+		}
+	},
+	{
+		"id": 4,
+		"featured": false,
+		"hero": {
+			"badge": "Success Stories",
+			"title": "Case Studies",
+			"titleHighlight": "Studies",
+			"description": "Witness how we help businesses transform from struggling to successful on Amazon. Become an Amazon success story with our tailored solutions and proven track record.",
+			"stats": [
+				{
+					"value": "100+",
+					"label": "Projects Completed"
+				},
+				{
+					"value": "355%",
+					"label": "Avg. Revenue Growth"
+				},
+				{
+					"value": "24pt",
+					"label": "ACoS Reduction"
+				}
+			]
+		},
+		"header": {
+			"badge": "Featured Case Study",
+			"title": "Rescuing a Plant‑Based Pet Food Brand: Creating a Feeding Frenzy on Amazon",
+			"description": "Need proof that a stagnant Amazon business can roar back to life? Here's how a company making plant‑based pet food escaped supply‑chain woes and runaway ad costs to achieve spectacular growth. This tale shows that with the right approach, even underdogs can dominate their niche."
+		},
+		"before": {
+			"title": "Before We Stepped In",
+			"description": "This brand specialises in vegan kibble and treats for pets but was barely making a dent online. The products were often miscategorised, causing them to be buried in unrelated search results. Seasonal ingredients led to frequent stockouts, and marketing messaging focused only on vegan pet owners, ignoring a broader audience. The numbers told a sobering story:",
+			"metrics": [
+				{
+					"value": "$40K",
+					"label": "Monthly Revenue",
+					"status": "Well Below Potential"
+				},
+				{
+					"value": "48%",
+					"label": "Advertising Cost of Sales",
+					"status": "Eroding Profit Margins"
+				},
+				{
+					"value": "34%",
+					"label": "Total ACoS (TACoS)",
+					"status": "Overdependence on Advertising"
+				}
+			],
+			"summary": "Such figures highlighted an urgent need for change."
+		},
+		"strategy": {
+			"title": "The Skipper Strategy",
+			"description": "To turn the tide, we mapped out a strategic overhaul tailored to the pet‑food market:",
+			"items": [
+				{
+					"title": "Correcting Categorisation and Content",
+					"description": "We worked with Amazon to properly categorise the products within the pet‑food section, and rewrote titles and descriptions using shopper‑friendly terms that emphasised nutrition. Variants were regrouped so pet owners could easily select formulas based on age and size."
+				},
+				{
+					"title": "Strengthening Supply and Packaging",
+					"description": "Inventory systems were overhauled to better forecast demand for perishable ingredients, reducing stockouts. Packaging was updated to highlight the product's freshness and sustainability."
+				},
+				{
+					"title": "Broadening Audience and Promotions",
+					"description": "Marketing messaging was expanded to appeal to all health‑conscious pet owners, not just vegans. Campaigns targeted search terms like \"allergy friendly dog food\" and \"sustainable cat kibble,\" and promotions were timed around pet adoption events and summer travel."
+				},
+				{
+					"title": "Enhancing Media",
+					"description": "New photos showed active pets thriving on plant‑based diets, while short clips demonstrated feeding routines and emphasised digestibility. These assets boosted engagement and trust."
+				},
+				{
+					"title": "Smart Budget Realignment",
+					"description": "We diverted ad spend from low‑return regions to marketplaces where the brand consistently held the buy‑box. Budgets focused on high‑converting keywords, and remarketing campaigns re‑engaged previous visitors."
+				}
+			]
+		},
+		"after": {
+			"title": "The Calm After the Storm",
+			"description": "Within six months, the numbers spoke for themselves:",
+			"metrics": {
+				"revenue": {
+					"before": 40000,
+					"after": 400000,
+					"label": "Monthly Revenue"
+				},
+				"acos": {
+					"before": 48,
+					"after": 20,
+					"label": "ACoS"
+				},
+				"tacos": {
+					"before": 34,
+					"after": 13,
+					"label": "TACoS"
+				}
+			},
+			"summary": "By the end of the year, total sales exceeded $2.4 million. Customer loyalty surged thanks to bundle subscriptions, and the brand earned ethical‑pet certifications that bolstered its reputation. This turnaround proves that focused tactics and ongoing optimisation can transform a struggling business into a category leader."
+		},
+		"cta": {
+			"title": "Ready to Transform Your Amazon Business?",
+			"description": "Join hundreds of successful Amazon sellers who've transformed their businesses with our proven strategies.",
+			"buttons": [
+				{
+					"text": "Get Your Free Audit",
+					"url": "/#contact",
+					"type": "primary"
+				},
+				{
+					"text": "Schedule a Call",
+					"url": "#",
+					"type": "secondary"
+				}
+			]
+		}
+	},
+	{
+		"id": 5,
+		"featured": false,
+		"hero": {
+			"badge": "Success Stories",
+			"title": "Case Studies",
+			"titleHighlight": "Studies",
+			"description": "Witness how we help businesses transform from struggling to successful on Amazon. Become an Amazon success story with our tailored solutions and proven track record.",
+			"stats": [
+				{
+					"value": "100+",
+					"label": "Projects Completed"
+				},
+				{
+					"value": "355%",
+					"label": "Avg. Revenue Growth"
+				},
+				{
+					"value": "24pt",
+					"label": "ACoS Reduction"
+				}
+			]
+		},
+		"header": {
+			"badge": "Featured Case Study",
+			"title": "Revitalising an Artisan Skincare Brand: From Slow Sales to Soaring Success",
+			"description": "Curious how a niche beauty label can shine on Amazon's crowded shelves? This case chronicles how a maker of small‑batch moisturisers and soaps transformed its performance. With inventive solutions and disciplined spending, the brand went from obscurity to becoming a sought‑after name."
+		},
+		"before": {
+			"title": "Before We Stepped In",
+			"description": "This business crafts natural face creams and soaps by hand. Despite high quality, several roadblocks hindered its online growth. Glass jars and delicate packaging led to leakage complaints and poor reviews. Listings lacked compliance language for cosmetic regulations, causing low visibility. Marketing focused on a limited audience, and the brand hadn't tapped into bundling opportunities. The key indicators were grim:",
+			"metrics": [
+				{
+					"value": "$80K",
+					"label": "Monthly Revenue",
+					"status": "Far Short of Potential"
+				},
+				{
+					"value": "48%",
+					"label": "Advertising Cost of Sales",
+					"status": "Squeezing Profitability"
+				},
+				{
+					"value": "36%",
+					"label": "Total ACoS (TACoS)",
+					"status": "Limited Organic Reach"
+				}
+			],
+			"summary": "These figures signalled that urgent intervention was needed."
+		},
+		"strategy": {
+			"title": "The Skipper Strategy",
+			"description": "To revive the brand, we devised a plan addressing its unique hurdles:",
+			"items": [
+				{
+					"title": "Packaging and Compliance Makeover",
+					"description": "We redesigned containers and protective inserts to withstand shipping, reducing breakage. Product pages were rewritten to include proper cosmetic ingredient disclosures and compliance statements, improving search placement."
+				},
+				{
+					"title": "Diversifying Product Offerings",
+					"description": "The assortment was expanded to include travel‑sized sets and seasonal scents, enticing new customers and encouraging gifting. Bundles combined complementary items like soap and lotion to boost order value."
+				},
+				{
+					"title": "Review Generation and Education",
+					"description": "A sampling program encouraged customers to leave reviews, while educational content explained the benefits of natural skincare and proper usage. This built credibility and increased conversions."
+				},
+				{
+					"title": "Targeted Promotion and Storytelling",
+					"description": "Advertising campaigns were segmented by skin concerns and emphasised ingredient sourcing and artisanal craftsmanship. Social media partnerships with beauty bloggers created buzz around limited‑edition batches."
+				},
+				{
+					"title": "Resource Realignment",
+					"description": "Budgets were shifted away from low‑impact keywords to high‑intent search terms, and remarketing campaigns brought back shoppers who had browsed but not purchased. Spending focused on marketplaces where the brand held strong logistics and fulfilment."
+				}
+			]
+		},
+		"after": {
+			"title": "The Calm After the Storm",
+			"description": "The results were striking:",
+			"metrics": {
+				"revenue": {
+					"before": 80000,
+					"after": 800000,
+					"label": "Monthly Revenue"
+				},
+				"acos": {
+					"before": 48,
+					"after": 24,
+					"label": "ACoS"
+				},
+				"tacos": {
+					"before": 36,
+					"after": 16,
+					"label": "TACoS"
+				}
+			},
+			"summary": "By year's end, cumulative sales surpassed $3.5 million. The brand gained credibility through thousands of positive reviews, and its expanded line of travel kits and bundles became customer favourites. This case demonstrates that thoughtful packaging, clear compliance and targeted outreach can lift an artisanal product from modest beginnings to runaway success on Amazon."
+		},
+		"cta": {
+			"title": "Ready to Transform Your Amazon Business?",
+			"description": "Join hundreds of successful Amazon sellers who've transformed their businesses with our proven strategies.",
+			"buttons": [
+				{
+					"text": "Get Your Free Audit",
+					"url": "/#contact",
+					"type": "primary"
+				},
+				{
+					"text": "Schedule a Call",
+					"url": "#",
+					"type": "secondary"
+				}
+			]
+		}
+	}
+]
+
