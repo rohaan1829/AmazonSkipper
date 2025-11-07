@@ -4,7 +4,7 @@ import getPortfolio from "@/libs/getPortfolio";
 import portfolioGrid from "@/libs/portfolioGrid";
 import Link from "next/link";
 import { useEffect } from "react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const Portfolio9 = () => {
@@ -33,16 +33,6 @@ const Portfolio9 = () => {
 								Our Services
 							</h2>
 						</div>
-						<div>
-							<div className="testimonial-navigation hidden lg:flex  flex-wrap gap-15px items-center ">
-								<div className="portfolio-slider-6-prev  w-55px h-55px inline-flex justify-center items-center  border border-border-color  relative  dark:border-bg-color-2  rounded-100%   z-1 group before:absolute before:w-full before:h-full before:top-0 before:left-0 before:bg-gradient-primary  before:rounded-100% before:opacity-0 before:invisible before:transition-all before:duration-[0.6s] before:-z-1 hover:before:opacity-100 hover:before:visible ">
-									<i className="fa-regular fa-arrow-left text-primary-color-light  group-hover:text-white-color dark:text-white-color"></i>
-								</div>
-								<div className="portfolio-slider-6-next w-55px h-55px inline-flex justify-center items-center    relative   border  border-border-color dark:border-bg-color-2  group text-primary-color-light hover:text-white-color dark:text-white-color rounded-100% z-1 before:absolute before:w-full before:h-full before:top-0 before:left-0 before:bg-gradient-primary  before:rounded-100% before:opacity-0 before:invisible before:transition-all before:duration-[0.6s] before:-z-1 hover:before:opacity-100 hover:before:visible">
-									<i className="fa-regular fa-arrow-right text-primary-color-light  group-hover:text-white-color dark:text-white-color"></i>
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>
 
@@ -65,10 +55,6 @@ const Portfolio9 = () => {
 								pagination={{
 									clickable: true,
 								}}
-								navigation={{
-									prevEl: ".portfolio-slider-6-prev",
-									nextEl: ".portfolio-slider-6-next",
-								}}
 								breakpoints={{
 									768: {
 										slidesPerView: 1.5,
@@ -81,7 +67,7 @@ const Portfolio9 = () => {
 										slidesPerView: 3,
 									},
 								}}
-								modules={[Pagination, Autoplay, Navigation]}
+								modules={[Pagination, Autoplay]}
 								className="portfolio-slider-5"
 							>
 								{portfolio?.map((portfioSingle, idx) => (
