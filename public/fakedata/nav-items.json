@@ -25,6 +25,11 @@
       "path2":"/about"  
     },
     {
+      "name":"FAQ's",
+      "path":"/faq",
+      "path2":"/faq"  
+    },
+    {
       "name":"Contact",
       "path":"#contact",
       "path2":"/#contact"  

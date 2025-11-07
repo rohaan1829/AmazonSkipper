@@ -17,46 +17,106 @@ const About6 = () => {
 	const quizQuestions = [
 		{
 			id: 1,
-			question: "What's your biggest Amazon ad challenge?",
+			question: "AMAZON SKIPPER - Brand Stress Test\n\nQ1. What best describes your brand’s current voyage?",
 			options: [
-				{ value: "low_roas", text: "Low ROAS - spending more than earning", points: 3 },
-				{ value: "high_acos", text: "High ACOS - ads are too expensive", points: 3 },
-				{ value: "low_visibility", text: "Low visibility - not enough impressions", points: 2 },
-				{ value: "conversion_issues", text: "Low conversion rates", points: 2 },
-				{ value: "competition", text: "Too much competition", points: 1 }
+				{
+					value: "voyage_sailing_fast",
+					text: "A. Sailing fast but scattered — growth feels exciting, just not steady yet",
+					points: 2
+				},
+				{
+					value: "voyage_heavy_fuel",
+					text: "B. Good winds, heavy fuel — Sales are solid, but ad spends eating the profits",
+					points: 3
+				},
+				{
+					value: "voyage_drifting",
+					text: "C. Drifting and draining — sales weak, ads burning cash like cannon fire",
+					points: 3
+				},
+				{
+					value: "voyage_smooth_waters",
+					text: "D. Smooth waters — calm, steady systems doing their job",
+					points: 1
+				}
 			]
 		},
 		{
 			id: 2,
-			question: "How long have you been running Amazon ads?",
+			question: "Q2. What’s slowing your ship down right now?",
 			options: [
-				{ value: "newbie", text: "Less than 3 months", points: 3 },
-				{ value: "beginner", text: "3-6 months", points: 2 },
-				{ value: "intermediate", text: "6-12 months", points: 2 },
-				{ value: "experienced", text: "1+ years but struggling", points: 3 },
-				{ value: "expert", text: "2+ years", points: 1 }
+				{
+					value: "slow_ad_spend",
+					text: "A. Strong currents of ad spend — we’re burning too much to stay afloat",
+					points: 3
+				},
+				{
+					value: "slow_cash_stock",
+					text: "B. Low tides of cash or stock — money or inventory always runs tight",
+					points: 3
+				},
+				{
+					value: "slow_team_sync",
+					text: "C. Crew not in sync — the team’s there, but not rowing the same way",
+					points: 2
+				},
+				{
+					value: "slow_foggy_direction",
+					text: "D. Foggy direction ahead — we’re moving, but not sure where exactly we’re headed",
+					points: 2
+				}
 			]
 		},
 		{
 			id: 3,
-			question: "What's your monthly ad spend?",
+			question: "Q3. “If you could change one thing about your brand tomorrow…”",
 			options: [
-				{ value: "under_1k", text: "Under $1,000", points: 2 },
-				{ value: "1k_5k", text: "$1,000 - $5,000", points: 2 },
-				{ value: "5k_10k", text: "$5,000 - $10,000", points: 3 },
-				{ value: "10k_25k", text: "$10,000 - $25,000", points: 3 },
-				{ value: "over_25k", text: "Over $25,000", points: 1 }
+				{
+					value: "change_strengthen_crew",
+					text: "A. Strengthen the crew — Hire a new team",
+					points: 2
+				},
+				{
+					value: "change_calm_ads",
+					text: "B. Calm the ad storms — control my spend",
+					points: 3
+				},
+				{
+					value: "change_tighten_sails",
+					text: "C. Tighten my sails — stop constant stock-outs",
+					points: 2
+				},
+				{
+					value: "change_clear_course",
+					text: "D. Find a clearer course — know exactly which products deserve full focus",
+					points: 2
+				}
 			]
 		},
 		{
 			id: 4,
-			question: "What's your current ROAS?",
+			question: "Q4. Emotion check — how does your voyage with Amazon feel lately?",
 			options: [
-				{ value: "under_2", text: "Under 2:1", points: 3 },
-				{ value: "2_3", text: "2:1 - 3:1", points: 2 },
-				{ value: "3_4", text: "3:1 - 4:1", points: 2 },
-				{ value: "4_5", text: "4:1 - 5:1", points: 1 },
-				{ value: "over_5", text: "Over 5:1", points: 1 }
+				{
+					value: "emotion_steady",
+					text: "A. Steady winds — I’m energized and actually enjoy the data and results",
+					points: 1
+				},
+				{
+					value: "emotion_rough",
+					text: "B. Rough waters — I’m drained and tired of constant fires",
+					points: 3
+				},
+				{
+					value: "emotion_lost",
+					text: "C. Lost at sea — I’m burnt out and dread even opening Seller Central",
+					points: 3
+				},
+				{
+					value: "emotion_searching",
+					text: "D. Searching for calmer tides — I just want the business to breathe again",
+					points: 2
+				}
 			]
 		}
 	];
@@ -132,7 +192,7 @@ const About6 = () => {
 											<div className="relative z-10 h-full flex flex-col">
 												{/* Quiz Header */}
 												<div className="mb-6">
-													<h3 className="text-2xl font-bold mb-2">Amazon Ad Assessment</h3>
+													<h3 className="text-2xl font-bold mb-2">Amazon Skipper – Brand Stress Test</h3>
 													<p className="text-white/80 text-sm">Find out how we can help your ads perform better</p>
 													<div className="mt-3 bg-white/20 rounded-full h-2">
 														<div 
@@ -202,7 +262,7 @@ const About6 = () => {
 									/* SSR Fallback - Static content */
 									<div className="relative z-10 h-full flex flex-col justify-center text-center">
 										<div className="mb-6">
-											<h3 className="text-2xl font-bold mb-2">Amazon Ad Assessment</h3>
+											<h3 className="text-2xl font-bold mb-2">Amazon Skipper – Brand Stress Test</h3>
 											<p className="text-white/80 text-sm mb-6">Find out how we can help your ads perform better</p>
 											<div className="bg-white/20 rounded-full h-2 mb-4">
 												<div className="bg-white rounded-full h-2 w-0"></div>
@@ -227,7 +287,7 @@ const About6 = () => {
 									
 								</span>
 							</div>
-							<h2 className="text-3xl md:text-size-35 lg:text-size-40 xl:text-size-45 uppercase font-semibold  leading-1.2 -tracking-0.02em inline-block text-seondary-color dark:text-white-color mb-20px lg:mb-15px xl:mb-20px max-w-580px w-full tj-text-invert">
+							<h2 className="text-3xl md:text-size-35 lg:text-size-40 xl:text-size-45 uppercase font-semibold  leading-1.2 -tracking-0.02em inline-block text-seondary-color dark:text-white-color dark:text-white mb-20px lg:mb-15px xl:mb-20px max-w-580px w-full tj-text-invert">
 								We Don't Guess. We decode the data, optimize your ads, & deliver the one thing that matters: ROI.
 							</h2>
 							<div className="  w-full ">

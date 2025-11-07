@@ -44,7 +44,21 @@ const Navbar = ({ isActiveMobileMenu, setIsActiveMobileMenu, isSticky }) => {
 					? filteredNavItems?.map(({ name, path, path2 }, idx) => (
 							<li key={idx} className="nav_item group relative hidden lg:block">
 								<Link
-									href={name.toLowerCase() === 'services' ? '/services' : name.toLowerCase() === 'works' ? '/portfolio' : name.toLowerCase() === 'about us' ? '/about' : name.toLowerCase() === 'case studies' ? '/case-studies' : (isIndexPage ? path : path2)}
+									href={
+										name.toLowerCase() === "services"
+											? "/services"
+											: name.toLowerCase() === "works"
+											? "/portfolio"
+											: name.toLowerCase() === "about us"
+											? "/about"
+											: name.toLowerCase() === "case studies"
+											? "/case-studies"
+											: name.toLowerCase().includes("faq")
+											? "/faq"
+											: isIndexPage
+											? path
+											: path2
+									}
 							className={`text-size-15 font-medium  ${
 								isInnerPage && !isSticky
 									? "text-seondary-color dark:text-white-color"
