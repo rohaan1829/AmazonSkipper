@@ -38,24 +38,24 @@ const AboutMain = () => {
           <div className="max-w-7xl mx-auto">
             <div className="text-center max-w-5xl mx-auto">
               {/* Badge */}
-              <div className="inline-block mb-6">
+              <div className="inline-block mb-6 wow fadeInDown" data-wow-delay=".05s">
                 <span className="px-6 py-2 bg-[#4CAF50]/10 border border-[#4CAF50]/30 rounded-full text-[#4CAF50] text-sm font-semibold uppercase tracking-wider backdrop-blur-sm">
                   About Amazon Skipper
                 </span>
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[1.1] text-[#1a1a1a] dark:text-white mb-8">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[1.1] text-[#1a1a1a] dark:text-white mb-8 wow fadeInUp" data-wow-delay=".1s">
                 The "<span className="whitespace-nowrap">Amazon Skipper</span>" <span className="text-[#4CAF50]" style={{textShadow: '0 0 40px rgba(76, 175, 80, 0.5)'}}>Story</span>
               </h1>
 
               {/* Description Paragraph */}
-              <p className="text-lg md:text-xl lg:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed max-w-4xl mx-auto mb-10 font-light">
+              <p className="text-lg md:text-xl lg:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed max-w-4xl mx-auto mb-10 font-light wow fadeInUp" data-wow-delay=".18s">
                 Founded in late 2022 by Amazon expert Huzaifa, our team is made up of seasoned PPC experts, data scientists, and creative problem-solvers who are passionate about one thing: helping sellers like you win on Amazon.
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center wow fadeInUp" data-wow-delay=".26s">
                 <ButtonPrimary type={2} isIcon={true} href="/#contact">
                   Get Your Free Audit
                 </ButtonPrimary>
@@ -79,7 +79,7 @@ const AboutMain = () => {
         <div className="container relative z-10 px-6 md:px-8">
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
-            <div className="text-center mb-16 md:mb-20">
+            <div className="text-center mb-16 md:mb-20 wow fadeInUp" data-wow-delay=".05s">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#1a1a1a] dark:text-white mb-6 leading-tight">
                 Building a Better Way
               </h2>
@@ -88,13 +88,13 @@ const AboutMain = () => {
 
             {/* Story Content */}
             <div className="space-y-8 md:space-y-10">
-              <div className="bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] rounded-30px p-8 md:p-12 border border-[#4CAF50]/30">
+              <div className="bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] rounded-30px p-8 md:p-12 border border-[#4CAF50]/30 wow fadeInUp" data-wow-delay=".12s">
                 <p className="text-lg md:text-xl lg:text-2xl text-white leading-relaxed font-light">
                   We saw too many sellers struggling with underperforming ads, skyrocketing ACoS, and a lack of real results. We knew there had to be a better way.
                 </p>
               </div>
 
-              <div className="prose prose-lg md:prose-xl max-w-none space-y-6">
+              <div className="prose prose-lg md:prose-xl max-w-none space-y-6 wow fadeInUp" data-wow-delay=".2s">
                 <p className="text-lg md:text-xl lg:text-2xl text-gray-800 dark:text-gray-200 leading-relaxed font-light">
                   So, we built a different kind of agency. One that's obsessed with data, transparency, and results. But our team is more than numbers & algorithms. We're a passionate group of individuals who genuinely care about your success. We celebrate your wins as our own, and we're always here to lend a helping hand, no matter the challenge.
                 </p>
@@ -118,7 +118,7 @@ const AboutMain = () => {
         <div className="container relative z-10 px-6 md:px-8">
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
-            <div className="text-center mb-16 md:mb-20">
+            <div className="text-center mb-16 md:mb-20 wow fadeInUp" data-wow-delay=".05s">
               <span className="inline-block px-4 py-2 bg-[#4CAF50]/20 text-[#4CAF50] rounded-full text-sm font-semibold mb-6 uppercase tracking-wider">
                 Our Values
               </span>
@@ -131,13 +131,13 @@ const AboutMain = () => {
 
             {/* Vision Content */}
             <div className="space-y-8 md:space-y-10">
-              <div className="bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] rounded-30px p-8 md:p-12 border border-[#4CAF50]/30">
+              <div className="bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] rounded-30px p-8 md:p-12 border border-[#4CAF50]/30 wow fadeInUp" data-wow-delay=".12s">
                 <p className="text-lg md:text-xl lg:text-2xl text-white leading-relaxed font-light">
                   At Amazonskipper, we don't believe in luck or guesswork when it comes to Amazon advertising. We believe in data, in strategy, and in results.
                 </p>
               </div>
 
-              <div className="prose prose-lg md:prose-xl max-w-none space-y-6">
+              <div className="prose prose-lg md:prose-xl max-w-none space-y-6 wow fadeInUp" data-wow-delay=".2s">
                 <p className="text-lg md:text-xl lg:text-2xl text-gray-800 dark:text-gray-200 leading-relaxed font-light">
                   But it's not just about us. It's about YOU. Your goals, your challenges, your vision for your brand. We take the time to understand your unique needs and tailor a strategy specifically created for you.
                 </p>
@@ -146,7 +146,7 @@ const AboutMain = () => {
                 </p>
               </div>
 
-              <div className="prose prose-lg md:prose-xl max-w-none">
+              <div className="prose prose-lg md:prose-xl max-w-none wow fadeInUp" data-wow-delay=".28s">
                 <p className="text-lg md:text-xl lg:text-2xl text-gray-800 dark:text-gray-200 leading-relaxed font-light">
                   We're transparent, we're collaborative that's why we're not about vanity metrics or empty promises. Our only focus is maximizing your ROI, increasing your sales, and building a sustainable Amazon business.
                 </p>
@@ -161,7 +161,7 @@ const AboutMain = () => {
         <div className="container px-6 md:px-8">
           <div className="max-w-7xl mx-auto">
             {/* Section Header */}
-            <div className="text-center mb-16 md:mb-20">
+            <div className="text-center mb-16 md:mb-20 wow fadeInUp" data-wow-delay=".05s">
               <span className="inline-block px-4 py-2 bg-[#4CAF50]/10 text-[#4CAF50] dark:bg-[#4CAF50]/20 rounded-full text-sm font-semibold mb-6 uppercase tracking-wider">
                 The Founder
               </span>
@@ -175,7 +175,7 @@ const AboutMain = () => {
             {/* Content Grid */}
             <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
               {/* Left Column - Text Content */}
-              <div className="space-y-6 md:space-y-8 order-2 lg:order-1">
+              <div className="space-y-6 md:space-y-8 order-2 lg:order-1 wow fadeInLeft" data-wow-delay=".12s">
                 <div className="prose prose-lg md:prose-xl max-w-none">
                   <p className="text-lg md:text-xl lg:text-2xl text-[#4CAF50] leading-relaxed font-light">
                     Huzaifa isn't your typical CEO. He's a fighter and a survivor who turned a five-year battle with cancer into a data-driven disruption of Amazon advertising.
@@ -211,7 +211,7 @@ const AboutMain = () => {
               </div>
 
               {/* Right Column - Image/Visual Element */}
-              <div className="relative order-1 lg:order-2">
+              <div className="relative order-1 lg:order-2 wow fadeInRight" data-wow-delay=".18s">
                 <div className="relative aspect-square max-w-lg mx-auto">
                   {/* Decorative Background Layers */}
                   <div className="absolute inset-0 bg-gradient-to-br from-[#4CAF50]/20 to-[#2E7D32]/20 rounded-30px transform rotate-6"></div>
@@ -252,7 +252,7 @@ const AboutMain = () => {
         }}></div>
 
         <div className="container relative z-10 px-6 md:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 wow fadeInUp" data-wow-delay=".05s">
             <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
               Our Track Record
             </h2>
@@ -262,7 +262,11 @@ const AboutMain = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 text-center text-white max-w-6xl mx-auto">
             {stats.map((stat, idx) => (
-              <div key={idx} className="group transform hover:scale-110 transition-all duration-300">
+              <div
+                key={idx}
+                className="group transform hover:scale-110 transition-all duration-300 wow fadeInUp"
+                data-wow-delay={`${0.08 * idx + 0.1}s`}
+              >
                 <div className="bg-white/10 backdrop-blur-sm rounded-20px p-8 border border-white/20 hover:border-white/40 transition-all duration-300">
                   <div className="text-5xl md:text-6xl font-black mb-3 group-hover:scale-110 transition-transform">
                     {stat.value}
@@ -284,21 +288,17 @@ const AboutMain = () => {
         </div>
 
         <div className="container relative z-10 px-6 md:px-8">
-          <div className="text-center text-white max-w-4xl mx-auto">
+          <div className="text-center text-white max-w-4xl mx-auto wow fadeInUp" data-wow-delay=".05s">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
-              Ready to Transform Your
-              <span className="block text-white">Amazon Business?</span>
+              Get My Growth Audit
             </h2>
             <p className="text-xl md:text-2xl mb-10 text-white/90 leading-relaxed">
-              Join hundreds of successful Amazon sellers who've transformed their businesses with our proven strategies. Let's build your unstoppable growth together.
+              Find exactly where your ad spend, listings, or strategy are leaking profit — before it costs another dollar.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center wow fadeInUp" data-wow-delay=".15s">
               <ButtonPrimary type={2} isIcon={true} href="/#contact">
-                Get Started Today
+                Get My Growth Audit
               </ButtonPrimary>
-              <button className="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-black rounded-15px font-bold text-lg transition-all duration-300 transform hover:scale-105">
-                Schedule a Call
-              </button>
             </div>
           </div>
         </div>
