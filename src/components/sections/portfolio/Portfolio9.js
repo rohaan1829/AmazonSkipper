@@ -22,14 +22,14 @@ const Portfolio9 = () => {
 							<div className="mb-25px  ">
 								<Link
 									href="/services"
-									className="text-xs  uppercase text-white-color  font-semibold relative inline-block tracking-0.2em wow fadeInRight hover:text-[#4CAF50] transition-colors duration-300 group"
+									className="text-xs  uppercase text-black-color dark:text-white-color  font-semibold relative inline-block tracking-0.2em wow fadeInRight hover:text-[#4CAF50] transition-colors duration-300 group"
 									data-wow-delay=".3s"
 								>
 									
 									<i className="fa-regular fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300 inline-block"></i>
 								</Link>
 							</div>
-						<h2 className="text-3xl md:text-size-35 lg:text-size-40 xl:text-size-45 uppercase font-semibold  leading-1.2 -tracking-0.02em inline-block text-white-color text-center max-w-580px w-full tj-text-invert">
+						<h2 className="text-3xl md:text-size-35 lg:text-size-40 xl:text-size-45 uppercase font-semibold  leading-1.2 -tracking-0.02em inline-block text-black-color dark:text-white-color text-center max-w-580px w-full tj-text-invert">
 								Our Services
 							</h2>
 						</div>

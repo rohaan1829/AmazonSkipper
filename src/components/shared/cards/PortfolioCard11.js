@@ -7,11 +7,11 @@ const PortfolioCard11 = ({ portfolio }) => {
 		<div className="portfolio-item branding  p-5 md:p-25px bg-cream-light-color dark:bg-black-color hover:bg-cream-light-color dark:hover:bg-seondary-color rounded-30px group relative h-full flex flex-col">
 			<Link
 				href="/services"
-				className="mb-25px rounded-15px overflow-hidden w-full"
+				className="mb-25px block rounded-15px overflow-hidden w-full h-[260px] sm:h-[300px]"
 			>
 				<img
 					src={img}
-					className="mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-300  group-hover:scale-110"
+					className="w-full h-full object-contain mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-300 group-hover:scale-110"
 					alt=""
 				/>
 			</Link>
