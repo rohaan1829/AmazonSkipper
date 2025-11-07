@@ -17,7 +17,7 @@ const About6 = () => {
 	const quizQuestions = [
 		{
 			id: 1,
-			question: "AMAZON SKIPPER - Brand Stress Test\n\nQ1. What best describes your brand’s current voyage?",
+			question: "Q1. What best describes your brand’s current voyage?",
 			options: [
 				{
 					value: "voyage_sailing_fast",
