@@ -1,15 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import BlogCard5 from "@/components/shared/cards/BlogCard5";
 
 const caseStudies = [
-  { title: "Amazon PPC Optimization Success", img: "/img/hero/huzaifa.png" },
-  { title: "Reducing Ad Spend by 45%", img: "/img/hero/huzaifa.png" },
-  { title: "Brand Campaign Transformation", img: "/img/hero/huzaifa.png" },
-  { title: "Product Launch Ad Strategy", img: "/img/hero/huzaifa.png" },
+  { title: "Amazon PPC Optimization Success", img: "/img/portfolio/pppc.png" },
+  { title: "Reducing Ad Spend by 45%", img: "/img/portfolio/spend.png" },
+  { title: "Brand Campaign Transformation", img: "/img/portfolio/brand.png" },
+  { title: "Product Launch Ad Strategy", img: "/img/portfolio/product.png" },
 ];
 
 const videoTestimonials = [
@@ -22,10 +22,28 @@ const Brands2 = ({ type }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [playingVideo, setPlayingVideo] = useState(null);
 
-  const nextSlide = () => setActiveIndex((p) => (p + 1) % caseStudies.length);
-  const prevSlide = () => setActiveIndex((p) => (p - 1 + caseStudies.length) % caseStudies.length);
+	const nextSlide = () => setActiveIndex((p) => (p + 1) % caseStudies.length);
+	const prevSlide = () => setActiveIndex((p) => (p - 1 + caseStudies.length) % caseStudies.length);
 
-  // Cards increased by 50%
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setActiveIndex((p) => (p + 1) % caseStudies.length);
+		}, 5000);
+
+		return () => clearInterval(interval);
+	}, []);
+
+	const textVariants = {
+		hidden: { opacity: 0, y: -40 },
+		visible: { opacity: 1, y: 0 },
+	};
+
+	const fadeUpVariants = {
+		hidden: { opacity: 0, y: 30 },
+		visible: { opacity: 1, y: 0 },
+	};
+
+	// Cards increased by 50%
   const ACTIVE_W = 465; // 50% increase from 310
   const ACTIVE_H = 810; // 50% increase from 540
   const SIDE_W = 390; // 50% increase from 260
@@ -44,21 +62,39 @@ const Brands2 = ({ type }) => {
       {/* CASE STUDIES SECTION */}
       <section className="pt-16 md:pt-20 lg:pt-24 pb-3 md:pb-4 lg:pb-5 bg-white dark:bg-black relative">
 				<div className="container">
-					<div className="text-center mb-12 md:mb-16">
-						<h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black dark:text-white mb-4">
+					<motion.div
+						className="text-center mb-12 md:mb-16"
+						variants={textVariants}
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true, amount: 0.4 }}
+						transition={{ duration: 0.6, staggerChildren: 0.15 }}
+					>
+						<motion.h2
+							className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black dark:text-white mb-4"
+							variants={textVariants}
+						>
 							Real Sellers. <span className="text-[#4CAF50]">Real Results.</span>
-						</h2>
-						<h3 className="text-lg md:text-xl lg:text-2xl text-black/80 dark:text-white/80 mb-6 max-w-4xl mx-auto">
-              See the Real-World Examples of Amazon Sellers Like YOU Turn Around
-              Their Underperforming Amazon Ads.
-						</h3>
-            <p className="text-base md:text-lg text-black/70 dark:text-white/70 mb-4 max-w-4xl mx-auto">
-								You're not alone if your Amazon ads aren't delivering the results you expected. In fact, it's a common struggle for many sellers.
-							</p>
-            <p className="text-base md:text-lg text-black/70 dark:text-white/70 mb-6 max-w-4xl mx-auto">
-								But here's the good news: Underperforming ads don't have to be your reality. See the real-world examples of how we've helped Amazon sellers like you transform their ad campaigns & get profit generating results.
-							</p>
-          </div>
+						</motion.h2>
+						<motion.h3
+							className="text-lg md:text-xl lg:text-2xl text-black/80 dark:text-white/80 mb-6 max-w-4xl mx-auto"
+							variants={textVariants}
+						>
+							See the Real-World Examples of Amazon Sellers Like YOU Turn Around Their Underperforming Amazon Ads.
+						</motion.h3>
+						<motion.p
+							className="text-base md:text-lg text-black/70 dark:text-white/70 mb-4 max-w-4xl mx-auto"
+							variants={textVariants}
+						>
+							You're not alone if your Amazon ads aren't delivering the results you expected. In fact, it's a common struggle for many sellers.
+						</motion.p>
+						<motion.p
+							className="text-base md:text-lg text-black/70 dark:text-white/70 mb-6 max-w-4xl mx-auto"
+							variants={textVariants}
+						>
+							But here's the good news: Underperforming ads don't have to be your reality. See the real-world examples of how we've helped Amazon sellers like you transform their ad campaigns &amp; get profit generating results.
+						</motion.p>
+					</motion.div>
 
           {/* Slider */}
           <div className="relative flex justify-center items-center overflow-visible">
@@ -135,25 +171,39 @@ const Brands2 = ({ type }) => {
             >
               ›
             </button>
-            
-            {/* CTA Button */}
-            <button
-              className="absolute bottom-[20%] left-1/2 transform -translate-x-1/2 bg-[#4CAF50] hover:bg-[#45a049] text-white font-bold text-lg md:text-xl px-8 md:px-12 py-3 md:py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl z-30"
+          </div>
+          <div className="mt-0 md:mt-1 text-center max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-black/80 dark:text-white/80 mb-6">
+              Our process has helped dozens of sellers go from chaos to control — here’s how it actually works.
+            </p>
+            <Link
+              href="/case-studies"
+              className="inline-flex items-center justify-center bg-gradient-to-r from-black via-[#0f3d1f] to-[#4CAF50] hover:from-[#050505] hover:via-[#14532d] hover:to-[#22c55e] text-white font-semibold text-base md:text-lg px-6 md:px-10 py-3 md:py-3.5 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
             >
-              Let's make money
-            </button>
+              See the Skipper Framework
+            </Link>
           </div>
 				</div>
 			</section>
 
       {/* VIDEO TESTIMONIALS SECTION */}
-      <section className="py-16 md:py-20 lg:py-24 bg-[#4CAF50]">
+      <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-black via-[#4CAF50] to-black">
 				<div className="container">
-					<div className="text-center mb-12 md:mb-16">
-						<h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6">
+					<motion.div
+						className="text-center mb-12 md:mb-16"
+						variants={fadeUpVariants}
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true, amount: 0.4 }}
+						transition={{ duration: 0.6 }}
+					>
+						<motion.h2
+							className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6"
+							variants={fadeUpVariants}
+						>
 							Don't Just Take Our Word for It. <span className="text-white">Hear It Straight from the Sellers.</span>
-						</h2>
-					</div>
+						</motion.h2>
+					</motion.div>
 					
           {/* Video Testimonials Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 lg:gap-6 items-stretch">
