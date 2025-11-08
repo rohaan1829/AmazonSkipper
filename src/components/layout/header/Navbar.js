@@ -61,28 +61,28 @@ const Navbar = ({ isActiveMobileMenu, setIsActiveMobileMenu, isSticky }) => {
 									}
 							className={`text-size-15 font-medium  ${
 								isInnerPage && !isSticky
-									? "text-seondary-color dark:text-white-color"
-											: headerType === 5 ||
+									? "text-[#22C55E] dark:text-[#22C55E]"
+									: headerType === 5 ||
 											  headerType === 6 ||
 											  headerType === 9 ||
 											  headerType === 10
 											? ""
-											: "text-seondary-color dark:text-white-color"
+											: "text-[#22C55E] dark:text-[#22C55E]"
 									} capitalize relative z-0  ${
 										headerType === 5 || headerType === 10 ? "" : "py-10px "
 									}  ${
 										headerType === 5 || headerType === 6 || headerType === 9
-											? ` text-seondary-color hover:text-primary-color dark:text-gray-color-4 dark:hover:text-white-color ${
+											? ` text-[#22C55E] hover:text-[#15803D] dark:text-[#22C55E] dark:hover:text-[#16A34A] ${
 													headerType === 6 || headerType === 9
 														? "py-10px md:py-14px lg:py-14px 2xl:py-14px"
 														: "px-14px py-3px border border-transparent hover:border-primary-color rounded-full"
 											  }   `
 											: headerType === 4
-											? `  md:py-14px lg:py-14px 2xl:py-14px `
+											? ` text-[#22C55E] hover:text-[#15803D] dark:text-[#22C55E] dark:hover:text-[#16A34A] md:py-14px lg:py-14px 2xl:py-14px `
 											: `${
 													headerType === 10
-														? "text-seondary-color hover:text-primary-color dark:text-gray-color-4 dark:hover:text-white-color  py-10 after:w-0 after:h-0.5 after:bg-primary-color after:absolute after:right-0 hover:after:left-0 after:-bottom-0 after:transition-all after:duration-500 group-hover:after:w-full"
-														: "md:py-15px lg:py-25px 2xl:py-30px  after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full"
+														? "text-[#22C55E] hover:text-[#15803D] dark:text-[#22C55E] dark:hover:text-[#16A34A]  py-10 after:w-0 after:h-0.5 after:bg-primary-color after:absolute after:right-0 hover:after:left-0 after:-bottom-0 after:transition-all after:duration-500 group-hover:after:w-full"
+														: "text-[#22C55E] hover:text-[#15803D] dark:text-[#22C55E] dark:hover:text-[#16A34A] md:py-15px lg:py-25px 2xl:py-30px  after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full"
 											  }`
 									} `}
 								>

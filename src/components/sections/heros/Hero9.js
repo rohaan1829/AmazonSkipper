@@ -12,7 +12,7 @@ const Hero9 = () => {
 	const closeModal = () => setIsModalOpen(false);
 
 	return (
-		<section className="hero-section relative pt-150px sm:pt-[165px] md:pt-150px lg:pt-185px xl:pt-140px 2xl:pt-185px  pb-10 sm:pb-70px overflow-hidden bg-transparent dark:bg-black">
+		<section className="hero-section relative min-h-[calc(100svh-40px)] pt-105px sm:pt-[118px] md:pt-[120px] lg:pt-[132px] xl:pt-[135px] 2xl:pt-[138px] pb-20px sm:pb-30px overflow-hidden bg-transparent dark:bg-black">
 			{/* Black Gradient Background - Dark Mode */}
 			<div className="absolute inset-0 bg-gradient-to-br from-black via-[#1a1a1a] to-black opacity-100 dark:block hidden"></div>
 			<div className="absolute inset-0 bg-gradient-to-tr from-black via-transparent to-black opacity-95 dark:block hidden"></div>
@@ -25,8 +25,8 @@ const Hero9 = () => {
 			{/* <!-- bg --> */}
 
 			<div className="px-15px relative z-10">
-				<div className="mb-50px md:mb-20 lg:mb-10 xl:mb-20">
-					<h1 className="text-[41px] sm:text-[36px] md:text-[43px] lg:text-[57px] xl:text-[70px] 2x:text-[72px] 3xl:text-[85px] 4xl:text-[90px] 5xl:text-[104px] text-black dark:text-white leading-1.1 lg:leading-1.1 mb-6 -tracking-0.04em font-semibold text-center">
+					<div className="mb-20px md:mb-14 lg:mb-12 xl:mb-14">
+						<h1 className="text-[36px] sm:text-[32px] md:text-[39px] lg:text-[50px] xl:text-[58px] 2x:text-[62px] 3xl:text-[72px] 4xl:text-[78px] 5xl:text-[88px] text-black dark:text-white leading-[1.08] lg:leading-[1.05] mb-4 -tracking-0.04em font-semibold text-center">
 						<div>Your Amazon AD Spend Could</div>
 						<div>be <span className="text-[#4CAF50] font-bold">X%</span> Lower in 47 days</div>
 						<div>Guaranteed!</div>
@@ -34,8 +34,8 @@ const Hero9 = () => {
 			</div>
 			</div>
 			<div className="container">
-				<div className="relative ">
-				<div className="image mx-auto w-full max-w-[631px] sm:max-w-[330px] md:max-w-550px lg:max-[450px] 2xl:max-w-[631px] relative z-0 after:absolute after:left-0 after:bottom-0 after:h-[480px] after:w-full after:bg-gradient-15-light dark:after:bg-gradient-15">
+				<div className="relative pt-2 sm:pt-4 md:pt-4 lg:pt-3">
+				<div className="image mx-auto w-full max-w-[520px] sm:max-w-[320px] md:max-w-[460px] lg:max-w-[440px] 2xl:max-w-[580px] relative z-0 after:absolute after:left-0 after:bottom-0 after:h-[310px] after:w-full after:bg-gradient-15-light dark:after:bg-gradient-15">
 				<img
 					src="/img/hero/huzaifa.png"
 					alt="Huzaifa"
@@ -83,14 +83,14 @@ const Hero9 = () => {
 				</div>
 
 					{/* Left Side Text */}
-					<div className="w-full max-w-310px relative md:absolute md:left-auto lg:left-0 xl:left-0 2xl:left-[1%] 3xl:-left-[9%] -top-10 md:top-auto lg:top-1/2 xl:top-[40%] md:bottom-0 md:right-1/2 lg:right-auto md:translate-x-1/2 lg:translate-x-0 lg:-translate-y-1/2 mx-auto md:mx-0 z-1">
+					<div className="w-full max-w-300px relative md:absolute md:left-auto lg:left-0 xl:left-0 2xl:left-[1%] 3xl:-left-[9%] top-2 md:top-auto lg:top-[23%] xl:top-[22%] md:bottom-0 md:right-1/2 lg:right-auto md:translate-x-1/2 lg:translate-x-0 lg:-translate-y-1/2 mx-auto md:mx-0 z-1">
 						<div>
 							<div
 								className="text-seondary-color dark:text-white-color-4 leading-1.3 mb-26px text-lg md:text-xl lg:text-2xl font-medium"
 							>
 								<div className="text-left">
-									<div className="mb-2">
-										<span className="text-[#4CAF50] font-bold">Forget "Best Sellers."</span>
+									<div className="mb-1.5">
+										<span className="text-[#4CAF50] font-semibold">Forget "Best Sellers."</span>
 									</div>
 									<div>
 										<span className="text-seondary-color dark:text-white-color">We Help YOU Become a </span>
@@ -101,7 +101,7 @@ const Hero9 = () => {
 							</div>
 							
 							{/* Clutch and Trustpilot Badges */}
-							<div className="flex flex-wrap gap-2 items-center mt-3">
+							<div className="flex flex-wrap gap-2 items-center mt-2">
 								<a
 									href="https://clutch.co/profile/amazon-skipper"
 									target="_blank"
@@ -152,8 +152,8 @@ const Hero9 = () => {
 					</div>
 
 					{/* <!-- transparent area --> */}
-					<div className=" absolute -top-5 sm:top-0  lg:top-[38%] xl:top-[42%] 2xl:top-[44%] left-auto lg:left-[6%] xl:left-[10%] right-[30px] sm:right-0 md:right-[15%] lg:right-auto">
-						<div className="flex gap-1.5 px-15px lg:px-30px py-25px sm:py-30px lg:py-45px rounded-10px border border-dashed border-[#4CAF50]/90 dark:border-[#4CAF50]/30 bg-gradient-to-br from-white via-[#f8f9fa] to-[#4CAF50]/80 dark:from-[#121212] dark:via-[#1a1a1a] dark:to-[#4CAF50]/15 backdrop-blur-[55px] z-1 shadow-lg shadow-[#4CAF50]/60 dark:shadow-[#4CAF50]/10">
+					<div className=" absolute -top-3 sm:-top-0.5  lg:top-[26%] xl:top-[27%] 2xl:top-[28%] left-auto lg:left-[6%] xl:left-[10%] right-[30px] sm:right-0 md:right-[15%] lg:right-auto">
+						<div className="flex gap-1.5 px-15px lg:px-24px py-18px sm:py-24px lg:py-32px rounded-10px border border-dashed border-[#4CAF50]/90 dark:border-[#4CAF50]/30 bg-gradient-to-br from-white via-[#f8f9fa] to-[#4CAF50]/80 dark:from-[#121212] dark:via-[#1a1a1a] dark:to-[#4CAF50]/15 backdrop-blur-[45px] z-1 shadow-lg shadow-[#4CAF50]/60 dark:shadow-[#4CAF50]/10">
 							<div className="w-[26px] flex-shrink-0">
 								<span>
 									<svg
@@ -224,7 +224,7 @@ const Hero9 = () => {
 							Spend Smarter
 						</Link>
 					</div>
-					<div className="w-full max-w-310px relative md:absolute  md:right-auto lg:right-0 xl:right-0 2xl:right-[1%] 3xl:-right-[9%] -top-10 md:top-auto lg:top-1/2 xl:top-[40%] md:bottom-0  md:left-1/2 lg:left-auto  md:-translate-x-1/2 lg:translate-x-0 lg:-translate-y-1/2  mx-auto md:mx-0 z-1 ">
+					<div className="w-full max-w-300px relative md:absolute  md:right-auto lg:right-0 xl:right-0 2xl:right-[1%] 3xl:-right-[9%] top-2 md:top-auto lg:top-[23%] xl:top-[22%] md:bottom-0  md:left-1/2 lg:left-auto  md:-translate-x-1/2 lg:translate-x-0 lg:-translate-y-1/2  mx-auto md:mx-0 z-1 ">
 						<div>
 							<div
 								className="text-seondary-color dark:text-white-color-4 leading-1.3 mb-26px text-lg md:text-xl lg:text-2xl font-medium"

@@ -49,6 +49,8 @@ const Header = ({ isSticky }) => {
 							  headerType === 4
 							? "pt-5 pb-5  "
 							: "py-10px"
+						: headerType === 9
+						? "pt-0 pb-0 md:pt-1 md:pb-8px"
 						: "pt-15px xl:pt-5 pb-5 md:pb-30px xl:pb-5"
 				} relative`}
 			>

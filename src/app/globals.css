@@ -217,6 +217,14 @@ img {
 	width: 100%;
 	z-index: 99;
 }
+.header-6.header-absolute {
+	top: -22px;
+}
+@media (min-width: 768px) {
+	.header-6.header-absolute {
+		top: -28px;
+	}
+}
 
 .header-area.header-2 {
 	width: 100%;
