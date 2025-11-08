@@ -335,7 +335,7 @@ const ServicesMain = () => {
       </section>
 
       {/* Onboarding Process Section */}
-      <section className="py-100px bg-gradient-to-br from-[#0b0b0b] via-[#121212] to-[#050505] scroll-mt-[130px] relative overflow-hidden">
+      <section className="py-80px bg-gradient-to-br from-[#0b0b0b] via-[#121212] to-[#050505] scroll-mt-[130px] relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-10 -left-10 w-72 h-72 rounded-full bg-[#4CAF50]/20 blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-[22rem] h-[22rem] rounded-full bg-[#FF6B35]/15 blur-[120px]"></div>
@@ -476,7 +476,7 @@ const ServicesMain = () => {
       </section> */}
 
       {/* Success Stories Section */}
-      <section id="success-stories" className="py-100px bg-gradient-to-br from-[#121212] via-[#1a1a1a] to-[#121212] dark:from-[#0a0a0a] dark:via-[#121212] dark:to-[#0a0a0a] relative overflow-hidden scroll-mt-[130px]">
+      <section id="success-stories" className="py-80px bg-gradient-to-br from-[#121212] via-[#1a1a1a] to-[#121212] dark:from-[#0a0a0a] dark:via-[#121212] dark:to-[#0a0a0a] relative overflow-hidden scroll-mt-[130px]">
         {/* Background Effects */}
         <div className="absolute inset-0 bg-gradient-to-tr from-[#4CAF50]/10 via-transparent to-[#4CAF50]/5"></div>
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#4CAF50]/10 rounded-full blur-3xl"></div>
@@ -632,7 +632,7 @@ const ServicesMain = () => {
       </section>
 
       {/* Client Outcomes Section */}
-      <section id="outcomes" className="py-100px bg-gradient-to-br from-[#0a0a0a] via-[#121212] to-[#1a1a1a] dark:from-[#050505] dark:via-[#0a0a0a] dark:to-[#121212] relative overflow-hidden scroll-mt-[130px]">
+      <section id="outcomes" className="py-80px bg-gradient-to-br from-[#0a0a0a] via-[#121212] to-[#1a1a1a] dark:from-[#050505] dark:via-[#0a0a0a] dark:to-[#121212] relative overflow-hidden scroll-mt-[130px]">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#4CAF50]/5 rounded-full blur-[150px] animate-pulse"></div>
@@ -730,7 +730,7 @@ const ServicesMain = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-100px bg-white dark:bg-[#121212] scroll-mt-[130px]">
+      <section id="testimonials" className="py-80px bg-white dark:bg-[#121212] scroll-mt-[130px]">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-[#1a1a1a] dark:text-white">
@@ -819,7 +819,7 @@ const ServicesMain = () => {
       </section>
 
       {/* Stats/Results Section */}
-      <section id="results" className="py-100px bg-gradient-to-r from-[#4CAF50] to-[#2E7D32] scroll-mt-[130px]">
+      <section id="results" className="py-80px bg-gradient-to-r from-[#4CAF50] to-[#2E7D32] scroll-mt-[130px]">
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">
@@ -844,7 +844,7 @@ const ServicesMain = () => {
       </section>
 
       {/* FAQ Accordion Section */}
-      <section id="faq" className="py-100px bg-white dark:bg-[#1a1a1a] scroll-mt-[130px]">
+      <section id="faq" className="py-80px bg-white dark:bg-[#1a1a1a] scroll-mt-[130px]">
         <div className="container max-w-4xl">
           <h2 className="text-4xl font-bold text-center mb-16 text-[#121212] dark:text-white">
             Frequently Asked Questions
@@ -873,7 +873,7 @@ const ServicesMain = () => {
       </section>
 
       {/* Call-to-Action with Video Background */}
-      <section id="cta" className="relative py-100px overflow-hidden scroll-mt-[130px]">
+      <section id="cta" className="relative py-80px overflow-hidden scroll-mt-[130px]">
         <div className="absolute inset-0 bg-gradient-to-r from-[#121212]/90 to-[#4CAF50]/90"></div>
         <div className="container relative z-10">
           <div className="text-center text-white">
