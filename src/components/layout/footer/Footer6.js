@@ -6,8 +6,8 @@ const Footer6 = () => {
 	const { footerType } = useFooterContext();
 	return (
 		<footer>
-			<div className="footer-inner bg-gradient-to-b from-green-600 to-black rounded-t-[40px] md:rounded-t-[60px] lg:rounded-t-[100px]">
-				<div className="pt-20 pb-60px md:pt-100px md:pb-20 lg:pb-90px xl:pt-30 xl:pb-100px">
+			<div className="footer-inner bg-gradient-to-b from-green-600 to-black rounded-t-[32px] md:rounded-t-[48px] lg:rounded-t-[80px]">
+				<div className="pt-16 pb-24 md:pt-60px md:pb-40px lg:pb-60px xl:pt-60px xl:pb-70px">
 					<div className="container">
 						<div
 							className="flex flex-wrap  gap-x-10
@@ -17,7 +17,7 @@ const Footer6 = () => {
 								className="max-w-full w-full   md:max-w-[calc(50%-20px)] lg:max-w-[390px]  xl:max-w-[260px]  2xl:max-w-[360px]   wow fadeInUp"
 								data-wow-delay=".3s"
 							>
-								<div className="max-w-180px w-full mb-6">
+								<div className="max-w-220px w-full mb-6">
 									<Link href="/">
 										<img src="/img/logo/black.png" alt="" />
 									</Link>
@@ -139,68 +139,35 @@ const Footer6 = () => {
 								</h6>
 								<ul className="nav flex flex-col  gap-3">
 									<li className="nav_item group relative">
+										<p className="text-size-15 font-normal text-white-color capitalize">
+											Office 13609, 182-184 High Street North,<br />
+											East Ham, London, United Kingdom, E6 2JA
+										</p>
+									</li>
+									<li className="nav_item group relative">
 										<Link
-											href="mailto:hello-designer@gerold.com"
+											href="mailto:muhammad.huzaifa@amazonskipperteam.com"
 											className="text-size-15 font-normal text-white-color hover:text-primary-color dark:hover:text-primary-color capitalize  "
 										>
-											hello-designer@gerold.com
+											muhammad.huzaifa@amazonskipperteam.com
 										</Link>
 									</li>
 
 									<li className="nav_item group relative">
 										<Link
-											href="tel:+011236548096"
+											href="tel:+19342013452"
 											className="text-size-15 font-normal text-white-color hover:text-primary-color dark:hover:text-primary-color capitalize  "
 										>
-											+01 123 654 8096
-										</Link>
-									</li>
-
-									<li className="nav_item group relative">
-										<Link
-											href="tel:+011236548096"
-											className="text-size-15 font-normal text-white-color hover:text-primary-color dark:hover:text-primary-color capitalize  "
-										>
-											+01 123 654 8096
+											+1 934 201 3452
 										</Link>
 									</li>
 								</ul>
 							</div>
 
 							<div
-								className="w-full max-w-full md:max-w-[calc(50%-20px)] lg:w-auto lg:max-w-[inherit] wow fadeInUp wow fadeInUp"
+								className="w-full max-w-full md:max-w-[calc(50%-20px)] lg:w-auto lg:max-w-[inherit] wow fadeInUp"
 								data-wow-delay=".9s"
-							>
-								<h6 className="text-xl leading-1.2 uppercase font-semibold text-white-color mb-5">
-									Subscribe to My <br />
-									Newsletter!
-								</h6>
-
-								<form className="flex items-center gap-2">
-									{/* <!-- inputs --> */}
-
-									{/* <!-- first name --> */}
-									<div className="flex-grow">
-										<input
-											type="search"
-											placeholder="Enter First Name"
-											className="text-black-color w-full pl-5 pr-5 py-4 border-2 border-black-color focus:border-primary-color dark:focus:border-black-color rounded-[60px] outline-none focus:outline-none transition-all duration-300 placeholder:text-black-colorr dark:placeholder:text-black-color bg-white-color leading-1"
-										/>
-									</div>
-
-									<div className="flex-shrink-0 ">
-										<button
-											type="submit"
-											className="text-size-25px w-60px h-60px text-white-color group-hover:text-white-color  bg-black-color   rounded-100% leading-1 transition-all duration-300  inline-flex justify-center items-center group"
-										>
-											<span className="relative overflow-hidden -rotate-45">
-												<i className="fa-regular fa-arrow-right text-lg group-hover:translate-x-150% transition-all duration-500 inline-block"></i>
-												<i className="fa-regular fa-arrow-right text-lg absolute left-0 top-0 -translate-x-150% group-hover:-translate-x-0 transition-all duration-500"></i>
-											</span>
-										</button>
-									</div>
-								</form>
-							</div>
+							></div>
 						</div>
 					</div>
 				</div>
@@ -254,13 +221,13 @@ const Footer6 = () => {
 									</li>
 								</ul>
 							</div>
-							<div className="copyright text-white-color  whitespace-nowrap text-sm  uppercase ">
-								©All rights reserved by
+							<div className="copyright text-white-color whitespace-nowrap text-sm uppercase">
+								© All rights reserved by{" "}
 								<Link
 									href="/"
 									className="text-white-color hover:text-primary-color dark:hover:text-primary-color"
 								>
-									ThemeJunction
+									Amazonskipper
 								</Link>
 							</div>
 						</div>
