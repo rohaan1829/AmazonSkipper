@@ -177,7 +177,7 @@ const AboutMain = () => {
               {/* Left Column - Text Content */}
               <div className="space-y-6 md:space-y-8 order-2 lg:order-1 wow fadeInLeft" data-wow-delay=".12s">
                 <div className="prose prose-lg md:prose-xl max-w-none">
-                  <p className="text-lg md:text-xl lg:text-2xl text-[#4CAF50] leading-relaxed font-light">
+                  <p className="text-lg md:text-xl lg:text-2xl text-[#4CAF50] leading-relaxed font-bold">
                     Huzaifa isn't your typical CEO. He's a fighter and a survivor who turned a five-year battle with cancer into a data-driven disruption of Amazon advertising.
                   </p>
                 </div>
@@ -220,11 +220,11 @@ const AboutMain = () => {
                   {/* Image Container */}
                   <div className="relative rounded-30px overflow-hidden h-full border border-[#4CAF50]/30 shadow-2xl">
                     <Image
-                      src="/img/hero/huzaifa.png"
+                      src="/img/hero/Huzaifa's Portrait.png"
                       alt="Huzaifa - Founder & CEO of Amazon Skipper"
                       width={600}
                       height={600}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain object-top bg-black"
                       priority
                     />
                     {/* Overlay Gradient for better text visibility if needed */}
