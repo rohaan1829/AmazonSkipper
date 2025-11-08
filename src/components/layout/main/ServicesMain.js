@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import getALlServices from "@/libs/getALlServices";
 import Image from "next/image";
+import BrandMarque from "@/components/sections/marquee/BrandMarque";
 
 const ServicesMain = () => {
   const [services, setServices] = useState([]);
@@ -47,38 +48,25 @@ const ServicesMain = () => {
     { value: 98, label: "Client Satisfaction %" }
   ];
 
-  const allServicesList = [
-    { name: "Amazon Display Ads", category: "left" },
-    { name: "Amazon Product Ads", category: "left" },
-    { name: "Amazon Sponsored Products", category: "left" },
-    { name: "Amazon Sponsored Brands Video", category: "left" },
-    { name: "Campaign Creation", category: "left" },
-    { name: "Manual Campaigns", category: "left" },
-    { name: "Advertising Budget Management", category: "right" },
-    { name: "Keyword Analysis", category: "right" },
-    { name: "Audience Targeting", category: "right" },
-    { name: "Ongoing Optimization", category: "right" },
-    { name: "Comprehensive Strategy", category: "right" },
-    { name: "Weekly Reporting", category: "right" }
-  ];
-
-  const expertiseFeatures = [
+  const onboardingSteps = [
     {
-      title: "Lower Your Advertising Cost",
-      description: "Reduce your cost of sales and drive higher conversion rates with our team of experts behind $82 million in Amazon PPC profits (and counting)."
+      title: "Discover & Strategize",
+      description:
+        "We start by understanding your business, products, audience, and Amazon goals. Using data-driven insights, we create a tailored strategy that identifies key opportunities and sets a clear path for growth.",
+      icon: "fa-compass-drafting",
     },
     {
-      title: "Crush Your Business Goals",
-      description: "Massive growth is our standard. Our data-driven strategies will position your business to exceed your advertising revenue goals while maximizing your profit margins."
+      title: "Launch & Optimize",
+      description:
+        "We handle everything from building and launching your campaigns to optimizing bids, targeting, and creatives. You focus on your business while we fine-tune performance to maximize your ROI.",
+      icon: "fa-rocket-launch",
     },
     {
-      title: "Dominate Your Product Category",
-      description: "Solidify your brand positioning with predictive insights, capture market share with relevant keywords, and stay ahead of competitors by winning potential customers first."
+      title: "Scale & Elevate",
+      description:
+        "With results rolling in, we help you scale profitably—expanding into new markets, refining strategies, and continuously improving to keep you ahead of the competition.",
+      icon: "fa-arrows-up-to-line",
     },
-    {
-      title: "Amazon Advertising That Scales With You",
-      description: "Get a dedicated account manager focused on driving long-term success with comprehensive PPC advertising strategies designed to support real growth."
-    }
   ];
 
   const clientOutcomes = [
@@ -271,37 +259,45 @@ const ServicesMain = () => {
                 </p>
               </div>
 
-              {/* Right Column - Visual Elements */}
-              <div className="lg:col-span-5 relative">
-                {/* Floating Stats Cards */}
-                <div className="absolute -top-10 -right-10 bg-gradient-to-br from-[#4CAF50]/20 to-[#4CAF50]/5 backdrop-blur-md border border-[#4CAF50]/30 rounded-20px p-6 shadow-2xl transform hover:scale-110 transition-transform duration-500">
-                  <div className="text-4xl font-black text-[#4CAF50] mb-2">50%</div>
-                  <div className="text-white/80 text-sm font-semibold">Cost Reduction</div>
-                </div>
-
-                <div className="absolute top-1/2 -left-10 bg-gradient-to-br from-[#FF6B35]/20 to-[#FF6B35]/5 backdrop-blur-md border border-[#FF6B35]/30 rounded-20px p-6 shadow-2xl transform hover:scale-110 transition-transform duration-500">
-                  <div className="text-4xl font-black text-[#FF6B35] mb-2">47</div>
-                  <div className="text-white/80 text-sm font-semibold">Days to Results</div>
-                </div>
-
-                {/* Central Visual Element */}
-                <div className="relative mt-20 lg:mt-0">
-                  <div className="relative w-full aspect-square max-w-md mx-auto">
-                    {/* Animated Rings */}
-                    <div className="absolute inset-0 rounded-full border-2 border-[#4CAF50]/20 animate-spin-slow" style={{animationDuration: '20s'}}></div>
-                    <div className="absolute inset-4 rounded-full border-2 border-[#FF6B35]/20 animate-spin-slow" style={{animationDuration: '15s', animationDirection: 'reverse'}}></div>
-                    
-                    {/* Central Circle */}
-                    <div className="absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] rounded-full flex items-center justify-center shadow-[0_0_60px_rgba(76,175,80,0.5)]">
-                      <div className="text-center">
-                        <div className="text-5xl font-black text-white mb-1">10x</div>
-                        <div className="text-white/90 text-sm font-semibold">Average ROAS</div>
+              {/* Right Column - Visual Card Placeholder */}
+              <div className="lg:col-span-5">
+                <div className="relative rounded-30px p-1 bg-gradient-to-br from-[#4CAF50] via-[#2E7D32] to-[#FF6B35] shadow-[0_25px_70px_rgba(76,175,80,0.25)]">
+                  <div className="absolute inset-0 rounded-30px bg-[#4CAF50]/20 blur-3xl opacity-40 -z-10"></div>
+                  <div className="relative rounded-25px bg-[#070707]/90 dark:bg-[#040404]/95 border border-white/10 min-h-[430px] flex flex-col">
+                    <div className="px-8 pt-8 pb-6 flex flex-col gap-6">
+                      <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#4CAF50]/10 border border-[#4CAF50]/30 rounded-full text-[#4CAF50] text-xs font-semibold uppercase tracking-[0.25em] w-fit">
+                        Hero Visual
+                      </span>
+                      <h3 className="text-2xl md:text-3xl font-black text-white leading-snug">
+                        Showcase Your Brand’s Signature Moment
+                      </h3>
+                      <p className="text-gray-400 text-base md:text-lg leading-relaxed">
+                        Drop an image or short looping video that captures your Amazon dominance. Product hero shots, live dashboards, or team-in-action visuals thrive here—anything that proves you build category leaders.
+                      </p>
+                      <div className="flex-1 border border-dashed border-white/20 rounded-20px bg-white/5 dark:bg-white/5 flex items-center justify-center text-gray-500 text-xs md:text-sm uppercase tracking-[0.4em]">
+                        Visual Placeholder
+                      </div>
+                    </div>
+                    <div className="px-8 py-6 border-t border-white/10 flex flex-wrap items-center gap-4 justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                          50%
+                        </div>
+                        <span className="text-gray-300 text-sm md:text-base tracking-wide">
+                          Avg. Spend Reduction
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#FF6B35] to-[#E55A2B] flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                          47
+                        </div>
+                        <span className="text-gray-300 text-sm md:text-base tracking-wide">
+                          Days To Results
+                        </span>
                       </div>
                     </div>
                   </div>
                 </div>
-
-                {/* CTA Button - Bold Design */}
                 <div className="flex items-center justify-center mt-12 lg:mt-16">
                   <button className="group relative px-10 py-5 bg-gradient-to-r from-[#4CAF50] to-[#2E7D32] rounded-15px text-white font-bold text-lg md:text-xl transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_30px_rgba(76,175,80,0.6)] overflow-hidden">
                     <span className="relative z-10 flex items-center gap-3">
@@ -316,7 +312,84 @@ const ServicesMain = () => {
           </div>
         </div>
 
-        
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2">
+            <div className="w-1 h-3 bg-white/50 rounded-full"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trusted Brands Marquee */}
+      <section className="py-60px md:py-80px bg-[#f5f0e8] dark:bg-[#050505]">
+        <div className="container text-center mb-30px">
+          <p className="text-xs md:text-sm font-semibold uppercase tracking-[0.4em] text-gray-500 dark:text-gray-400 mb-3">
+            Brands That Trust Amazon Skipper
+          </p>
+          <h2 className="text-2xl md:text-3xl font-black text-[#121212] dark:text-white">
+            Powering Growth For Category-Leading Sellers
+          </h2>
+        </div>
+        <div className="max-w-6xl mx-auto px-6">
+          <BrandMarque type={2} />
+        </div>
+      </section>
+
+      {/* Onboarding Process Section */}
+      <section className="py-100px bg-gradient-to-br from-[#0b0b0b] via-[#121212] to-[#050505] scroll-mt-[130px] relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute -top-10 -left-10 w-72 h-72 rounded-full bg-[#4CAF50]/20 blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-[22rem] h-[22rem] rounded-full bg-[#FF6B35]/15 blur-[120px]"></div>
+        </div>
+        <div className="container relative z-10">
+          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-16 mb-16">
+            <div className="max-w-3xl">
+              <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[#4CAF50]/40 text-[#4CAF50] text-xs font-semibold uppercase tracking-[0.35em]">
+                How We Onboard
+              </span>
+              <h2 className="mt-6 text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight">
+                A Seamless Partnership Built To Win Amazon
+              </h2>
+              <p className="mt-6 text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl">
+                Every engagement begins with clarity, accelerates with precision execution, and never stops evolving. Here’s how we bring brands onboard and deliver momentum from day one.
+              </p>
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="absolute hidden lg:block left-1/2 top-12 bottom-12 w-px bg-gradient-to-b from-transparent via-[#4CAF50]/50 to-transparent translate-x-[-50%]"></div>
+            <div className="grid gap-14 lg:gap-20">
+              {onboardingSteps.map((step, index) => (
+                <div
+                  key={step.title}
+                  className="relative flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12 group"
+                >
+                  <div className="flex items-center gap-6 lg:w-[18rem]">
+                    <div className="relative">
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] shadow-[0_20px_45px_rgba(76,175,80,0.35)] flex items-center justify-center text-2xl font-black text-white">
+                        {index + 1}
+                      </div>
+                      <div className="absolute inset-0 rounded-2xl blur-2xl bg-[#4CAF50]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div className="hidden lg:block w-24 h-[1px] bg-gradient-to-r from-[#4CAF50]/40 to-transparent"></div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="relative bg-white/5 border border-white/10 rounded-25px p-8 md:p-10 backdrop-blur-sm transition-transform duration-300 group-hover:-translate-y-1 group-hover:border-[#4CAF50]/40 group-hover:shadow-[0_25px_70px_rgba(76,175,80,0.25)]">
+                      <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-gradient-to-br from-[#4CAF50]/20 to-[#2E7D32]/20 flex items-center justify-center text-[#4CAF50]">
+                        <i className={`fas ${step.icon} text-lg`}></i>
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                        {step.title}
+                      </h3>
+                      <p className="text-gray-300 leading-[1.8] text-base md:text-lg">
+                        {step.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Enhanced Service Cards (match Recent Work slider behavior) */}
@@ -401,193 +474,6 @@ const ServicesMain = () => {
           </div>
         </div>
       </section> */}
-
-      {/* Our Approach Section */}
-      <section id="approach" className="py-100px bg-white dark:bg-[#121212] scroll-mt-[130px]">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#1a1a1a] dark:text-white mb-4">
-              Our Approach
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              A strategic methodology designed to deliver measurable results and sustainable growth for your Amazon business
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Approach Step 1 */}
-            <div className="bg-[#f5f0e8] dark:bg-[#1a1a1a] rounded-20px p-8 hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] rounded-full flex items-center justify-center mb-6">
-                <span className="text-white text-2xl font-bold">1</span>
-              </div>
-              <h3 className="text-2xl font-bold text-[#1a1a1a] dark:text-white mb-4">
-                Discovery & Analysis
-              </h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                We begin with a comprehensive audit of your current Amazon presence, identifying opportunities and areas for optimization.
-              </p>
-            </div>
-
-            {/* Approach Step 2 */}
-            <div className="bg-[#f5f0e8] dark:bg-[#1a1a1a] rounded-20px p-8 hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] rounded-full flex items-center justify-center mb-6">
-                <span className="text-white text-2xl font-bold">2</span>
-              </div>
-              <h3 className="text-2xl font-bold text-[#1a1a1a] dark:text-white mb-4">
-                Strategy Development
-              </h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Based on our findings, we create a customized strategy tailored to your specific goals and market position.
-              </p>
-            </div>
-
-            {/* Approach Step 3 */}
-            <div className="bg-[#f5f0e8] dark:bg-[#1a1a1a] rounded-20px p-8 hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] rounded-full flex items-center justify-center mb-6">
-                <span className="text-white text-2xl font-bold">3</span>
-              </div>
-              <h3 className="text-2xl font-bold text-[#1a1a1a] dark:text-white mb-4">
-                Implementation
-              </h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Our expert team executes the plan with precision, setting up campaigns and optimizing listings for maximum impact.
-              </p>
-            </div>
-
-            {/* Approach Step 4 */}
-            <div className="bg-[#f5f0e8] dark:bg-[#1a1a1a] rounded-20px p-8 hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] rounded-full flex items-center justify-center mb-6">
-                <span className="text-white text-2xl font-bold">4</span>
-              </div>
-              <h3 className="text-2xl font-bold text-[#1a1a1a] dark:text-white mb-4">
-                Continuous Optimization
-              </h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                We monitor performance daily, making data-driven adjustments to ensure your campaigns remain competitive and profitable.
-              </p>
-            </div>
-          </div>
-
-          {/* Additional Info Row */}
-          <div className="mt-16 grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-[#4CAF50] mb-2">47</div>
-              <p className="text-gray-600 dark:text-gray-400">Days to Results</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-[#4CAF50] mb-2">24/7</div>
-              <p className="text-gray-600 dark:text-gray-400">Monitoring & Support</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-[#4CAF50] mb-2">100%</div>
-              <p className="text-gray-600 dark:text-gray-400">Dedicated Focus</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Complete PPC Management Services Section */}
-      <section id="services" className="py-100px bg-[#f5f0e8] dark:bg-[#0a0a0a] scroll-mt-[130px] relative overflow-hidden">
-        {/* Subtle Background Pattern */}
-        <div className="absolute inset-0 opacity-[0.02]" style={{
-          backgroundImage: 'radial-gradient(circle, rgba(76, 175, 80, 0.1) 1px, transparent 1px)',
-          backgroundSize: '40px 40px'
-        }}></div>
-
-        <div className="container relative z-10">
-          {/* Main Heading */}
-          <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-[#1a1a1a] dark:text-white uppercase tracking-tight mb-16 leading-[1.1] max-w-6xl mx-auto">
-              AN AMAZON PPC MANAGEMENT AGENCY
-              <span className="block text-[#4CAF50] mt-3">THAT DOES IT ALL</span>
-            </h2>
-
-            {/* Services List - Two Columns with Better Spacing */}
-            <div className="grid md:grid-cols-2 gap-12 md:gap-20 max-w-6xl mx-auto mb-20">
-              {/* Left Column */}
-              <div className="space-y-5">
-                {allServicesList.filter(service => service.category === "left").map((service, idx) => (
-                  <div 
-                    key={idx} 
-                    className="flex items-center gap-5 group cursor-default"
-                    style={{ animationDelay: `${idx * 0.05}s` }}
-                  >
-                    <div className="flex-shrink-0 w-7 h-7 rounded-full bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] flex items-center justify-center shadow-lg group-hover:scale-125 group-hover:shadow-[0_0_20px_rgba(76,175,80,0.5)] transition-all duration-300">
-                      <i className="fas fa-check text-white text-sm font-bold"></i>
-                    </div>
-                    <p className="text-lg md:text-xl lg:text-2xl text-[#1a1a1a] dark:text-gray-200 font-semibold group-hover:text-[#4CAF50] dark:group-hover:text-[#4CAF50] transition-all duration-300">
-                      {service.name}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Right Column */}
-              <div className="space-y-5">
-                {allServicesList.filter(service => service.category === "right").map((service, idx) => (
-                  <div 
-                    key={idx} 
-                    className="flex items-center gap-5 group cursor-default"
-                    style={{ animationDelay: `${idx * 0.05}s` }}
-                  >
-                    <div className="flex-shrink-0 w-7 h-7 rounded-full bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] flex items-center justify-center shadow-lg group-hover:scale-125 group-hover:shadow-[0_0_20px_rgba(76,175,80,0.5)] transition-all duration-300">
-                      <i className="fas fa-check text-white text-sm font-bold"></i>
-                    </div>
-                    <p className="text-lg md:text-xl lg:text-2xl text-[#1a1a1a] dark:text-gray-200 font-semibold group-hover:text-[#4CAF50] dark:group-hover:text-[#4CAF50] transition-all duration-300">
-                      {service.name}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Secondary Heading */}
-          <div className="text-center mb-20">
-            <h3 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-[#1a1a1a] dark:text-white uppercase tracking-tight leading-[1.1] max-w-5xl mx-auto">
-              AMAZON MARKETPLACE EXPERTS,
-              <span className="block text-[#FF6B35] mt-2">DEDICATED TO YOUR GROWTH</span>
-            </h3>
-          </div>
-
-          {/* Four Feature Columns - Enhanced Layout */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 xl:gap-8">
-            {expertiseFeatures.map((feature, idx) => (
-              <div
-                key={idx}
-                className="relative group bg-white/30 dark:bg-[#1a1a1a]/30 backdrop-blur-sm rounded-20px p-6 lg:p-8 hover:bg-white/50 dark:hover:bg-[#1a1a1a]/50 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
-              >
-                {/* Vertical Divider */}
-                {idx > 0 && (
-                  <div className="hidden lg:block absolute left-0 top-8 bottom-8 w-0.5 bg-gradient-to-b from-transparent via-[#FF6B35]/40 to-transparent"></div>
-                )}
-                
-                {/* Content */}
-                <div className="relative z-10">
-                  {/* Heading with Animated Underline */}
-                  <div className="mb-6">
-                    <h4 className="text-xl md:text-2xl lg:text-3xl font-black text-[#1a1a1a] dark:text-white mb-5 leading-tight">
-                      {feature.title}
-                    </h4>
-                    <div className="relative h-1.5 overflow-hidden rounded-full bg-gray-200 dark:bg-gray-800">
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#FF6B35] via-[#FF6B35] to-transparent w-0 group-hover:w-full transition-all duration-700 ease-out"></div>
-                      <div className="h-full w-20 bg-gradient-to-r from-[#FF6B35] to-transparent"></div>
-                    </div>
-                  </div>
-
-                  {/* Description - Optimized Typography */}
-                  <p className="text-base md:text-lg text-gray-700 dark:text-gray-400 leading-[1.8] group-hover:text-gray-900 dark:group-hover:text-gray-200 transition-colors duration-300">
-                    {feature.description}
-                  </p>
-                </div>
-
-                {/* Decorative Corner Accent */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#4CAF50]/0 to-[#FF6B35]/0 group-hover:from-[#4CAF50]/10 group-hover:to-[#FF6B35]/10 rounded-bl-[80px] transition-all duration-500 pointer-events-none"></div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Success Stories Section */}
       <section id="success-stories" className="py-100px bg-gradient-to-br from-[#121212] via-[#1a1a1a] to-[#121212] dark:from-[#0a0a0a] dark:via-[#121212] dark:to-[#0a0a0a] relative overflow-hidden scroll-mt-[130px]">
