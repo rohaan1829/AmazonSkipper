@@ -22,6 +22,9 @@ const Index9Main = () => {
 			<div className="wow fadeInUp" data-wow-delay=".18s">
 				<Skills4 />
 			</div>
+			<div className="wow fadeInUp" data-wow-delay=".36s">
+				<FeatureMarque2 type={3} isRotate={true} />
+			</div>
 			{/* <Blogs5 /> */}
 			<div className="wow fadeInUp" data-wow-delay=".24s">
 				<About6 />
