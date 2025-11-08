@@ -1,3 +1,5 @@
+ "use client";
+
 import About6 from "@/components/sections/about/About6";
 //import Blogs5 from "@/components/sections/blogs/Blogs5";
 import Brands2 from "@/components/sections/brands/Brands2";
@@ -9,8 +11,54 @@ import Portfolio9 from "@/components/sections/portfolio/Portfolio9";
 import Skills4 from "@/components/sections/skills/Skills4";
 // import Testimonials9 from "@/components/sections/testimonials/Testimonials9";
 import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
+import { useState } from "react";
+
+const faqs = [
+	{
+		question: "What is Amazon Skipper?",
+		answer:
+			"Amazon Skipper is an eCommerce growth agency helping Amazon sellers scale with clarity and control. Since 2018, we’ve focused on one goal — bringing sellers peace of mind while their brands grow steadily across Amazon, Shopify, and TikTok Shop.",
+	},
+	{
+		question: "What services do you offer?",
+		answer:
+			"We help brands with complete Amazon growth — from product launch and PPC management to listing optimization, strategy, and expansion. In short: everything it takes to grow your brand without burning out.",
+	},
+	{
+		question: "Is everything handled in-house?",
+		answer:
+			"Yes — our specialists handle PPC, listings, creative, and analytics internally. That’s how we maintain consistent quality and strategy alignment across your entire account.",
+	},
+	{
+		question: "Can you guarantee results?",
+		answer:
+			"We guarantee effort, expertise, and a proven process. If specific targets aren’t met under a results-based partnership, our refund or adjustment policy kicks in — it’s part of our risk-reversal promise.",
+	},
+	{
+		question: "How long does it take to see results after working with Amazon Skipper?",
+		answer:
+			"It depends on your product stage and category. Most brands start seeing measurable improvements — in spend efficiency, sessions, or sales — within the first 4–8 weeks of structured management.",
+	},
+	{
+		question: "Do you manage creatives too (images, videos, A+ content)?",
+		answer:
+			"Yes, we do. Our creative team designs optimized listing visuals, A+ modules, and short-form brand content that align with your positioning and conversion goals.",
+	},
+	{
+		question: "What makes you different from other Amazon agencies?",
+		answer:
+			"We don’t just manage ads — we manage peace of mind. Our approach blends performance with structure, ensuring you scale profitably without the chaos that usually comes with “growth.”",
+	},
+	{
+		question: "What’s included in your Brand Audit Call?",
+		answer:
+			"A 15–20 minute overview of your current setup — PPC structure, listings, and performance gaps. You’ll leave with a clear picture of what’s blocking your profit and what we’d fix first.",
+	},
+];
 
 const Index9Main = () => {
+	const [activeFaq, setActiveFaq] = useState(0);
+
 	return (
 		<main className="overflow-hidden">
 			<div className="wow fadeIn" data-wow-delay=".05s">
@@ -22,20 +70,72 @@ const Index9Main = () => {
 			<div className="wow fadeInUp" data-wow-delay=".18s">
 				<Skills4 />
 			</div>
-			<div className="wow fadeInUp" data-wow-delay=".36s">
+			<div className="wow fadeInUp" data-wow-delay=".24s">
 				<FeatureMarque2 type={3} isRotate={true} />
 			</div>
 			{/* <Blogs5 /> */}
-			<div className="wow fadeInUp" data-wow-delay=".24s">
+			<div className="wow fadeInUp" data-wow-delay=".28s">
 				<About6 />
 			</div>
 			{/* <Services6 type={2} /> */}
-			<div className="wow fadeInUp" data-wow-delay=".3s">
+			<div className="wow fadeInUp" data-wow-delay=".32s">
 				<Portfolio9 />
 			</div>
 			<div className="wow fadeInUp" data-wow-delay=".36s">
 				<FeatureMarque2 type={3} isRotate={true} />
 			</div>
+			<section className="py-70px md:py-100px bg-white dark:bg-[#121212]">
+				<div className="container">
+					<div className="text-center mb-40px">
+						<h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#121212] dark:text-white">
+							FAQ's
+						</h2>
+					</div>
+					<div className="max-w-5xl mx-auto">
+						<div className="rounded-25px bg-white dark:bg-black/40 border border-[#e5e7eb] dark:border-white/10 shadow-[0_25px_60px_-45px_rgba(0,0,0,0.45)] p-25px sm:p-35px">
+							<ul className="space-y-10 sm:space-y-12">
+								{faqs.map(({ question, answer }, idx) => {
+									const isActive = activeFaq === idx;
+									return (
+										<li
+											key={question}
+											className="border-b border-[#e5e7eb] dark:border-white/10 last:border-none pb-10 last:pb-0"
+										>
+											<button
+												type="button"
+												onClick={() => setActiveFaq(prev => (prev === idx ? -1 : idx))}
+												aria-expanded={isActive}
+												className="flex w-full items-start justify-between gap-4 text-left"
+											>
+												<div>
+													<span className="mb-3 inline-flex items-center rounded-full bg-[#4CAF50]/10 dark:bg-[#4CAF50]/20 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#4CAF50]">
+														Q{idx + 1}
+													</span>
+													<h3 className="text-xl sm:text-2xl font-semibold leading-[1.35] text-[#121212] dark:text-white">
+														{question}
+													</h3>
+												</div>
+												<div
+													className={`flex-shrink-0 rounded-full border border-[#4CAF50]/40 dark:border-white/20 text-[#4CAF50] dark:text-white w-11 h-11 inline-flex items-center justify-center transition-transform duration-300 ${isActive ? "rotate-45" : ""}`}
+												>
+													<i className="fa-regular fa-plus text-lg"></i>
+												</div>
+											</button>
+											<div
+												className={`transition-all duration-300 ease-in-out overflow-hidden ${isActive ? "mt-6 max-h-[420px]" : "max-h-0"}`}
+											>
+												<p className="text-base md:text-lg leading-relaxed text-[#374151] dark:text-white/80 pr-4">
+													{answer}
+												</p>
+											</div>
+										</li>
+									);
+								})}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
 			{/* <Resume5 type={2} /> */}
 			{/* <Testimonials9 /> */}
 			
