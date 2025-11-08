@@ -35,11 +35,11 @@ const Hero9 = () => {
 			</div>
 			<div className="container">
 				<div className="relative pt-2 sm:pt-4 md:pt-4 lg:pt-3">
-				<div className="image mx-auto w-full max-w-[520px] sm:max-w-[320px] md:max-w-[460px] lg:max-w-[440px] 2xl:max-w-[580px] relative z-0 after:absolute after:left-0 after:bottom-0 after:h-[310px] after:w-full after:bg-gradient-15-light dark:after:bg-gradient-15">
+				<div className="image mx-auto w-full max-w-[560px] sm:max-w-[340px] md:max-w-[480px] lg:max-w-[460px] xl:max-w-[520px] 2xl:max-w-[580px] relative z-0 after:absolute after:left-0 after:bottom-0 after:h-[250px] after:w-full after:bg-gradient-15-light dark:after:bg-gradient-15">
 				<img
-					src="/img/hero/huzaifa.png"
+					src="/img/hero/Huzaifa's Portrait.png"
 					alt="Huzaifa"
-					className="w-full h-auto
+					className="w-full h-auto max-h-[520px] sm:max-h-[420px] md:max-h-[480px] lg:max-h-[500px] 2xl:max-h-[540px] object-contain object-top
 							[clip-path:path('M0_200A315_315_0_0_1_630_200L630_900L0_900Z')]"
 				/>
 				
