@@ -100,52 +100,43 @@ const Hero9 = () => {
 								</div>
 							</div>
 							
-							{/* Clutch and Trustpilot Badges */}
-							<div className="flex flex-wrap gap-2 items-center mt-2">
+							{/* Clutch, AD & Trustpilot Logos */}
+							<div className="flex flex-wrap items-center gap-3 mt-4">
 								<a
 									href="https://clutch.co/profile/amazon-skipper"
 									target="_blank"
 									rel="noopener noreferrer"
-									className="inline-block hover:opacity-80 transition-opacity"
+									className="inline-block hover:opacity-90 transition-opacity"
 								>
-									<div className="flex items-center gap-1 bg-white dark:bg-[#1a1a1a] px-2 py-1 rounded border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
-										<div className="flex items-center">
-											<span className="text-sm font-bold text-[#4CAF50]">4.9</span>
-											<div className="flex ml-0.5">
-												{[...Array(5)].map((_, i) => (
-													<svg key={i} className="w-2.5 h-2.5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-														<path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-													</svg>
-												))}
-											</div>
-										</div>
-										<div className="text-[9px] text-gray-600 dark:text-gray-400">
-											<span className="font-semibold text-gray-900 dark:text-white">Clutch</span>
-										</div>
-									</div>
+									<img
+										src="/img/hero/clutch.png"
+										alt="Clutch"
+										className="h-14 w-auto object-contain drop-shadow-sm"
+									/>
 								</a>
-								
+								<a
+									href="#"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="inline-block hover:opacity-90 transition-opacity"
+								>
+									<img
+										src="/img/hero/ad.png"
+										alt="Amazon Verified"
+										className="h-14 w-auto object-contain drop-shadow-sm"
+									/>
+								</a>
 								<a
 									href="https://www.trustpilot.com/review/amazonskipper.com"
 									target="_blank"
 									rel="noopener noreferrer"
-									className="inline-block hover:opacity-80 transition-opacity"
+									className="inline-block hover:opacity-90 transition-opacity"
 								>
-									<div className="flex items-center gap-1 bg-white dark:bg-[#1a1a1a] px-2 py-1 rounded border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
-										<div className="flex items-center">
-											<span className="text-sm font-bold text-[#00B67A]">4.8</span>
-											<div className="flex ml-0.5">
-												{[...Array(5)].map((_, i) => (
-													<svg key={i} className="w-2.5 h-2.5 text-[#00B67A] fill-current" viewBox="0 0 20 20">
-														<path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-													</svg>
-												))}
-											</div>
-										</div>
-										<div className="text-[9px] text-gray-600 dark:text-gray-400">
-											<span className="font-semibold text-gray-900 dark:text-white">Trustpilot</span>
-										</div>
-									</div>
+									<img
+										src="/img/hero/trustpilot.png"
+										alt="Trustpilot"
+										className="h-14 w-auto object-contain drop-shadow-sm"
+									/>
 								</a>
 							</div>
 						</div>
@@ -221,7 +212,7 @@ const Hero9 = () => {
 							className="-ml-[95px] sm:-ml-[122px] mt-9 px-4 py-0.5 text-size-17 font-medium rounded-full bg-primary-color text-white-color hover:bg-[#2E7D32] transition-colors duration-300"
 							href="#"
 						>
-							Spend Smarter
+							Watch the Video to Get Reward
 						</Link>
 					</div>
 					<div className="w-full max-w-300px relative md:absolute  md:right-auto lg:right-0 xl:right-0 2xl:right-[1%] 3xl:-right-[9%] top-2 md:top-auto lg:top-[23%] xl:top-[22%] md:bottom-0  md:left-1/2 lg:left-auto  md:-translate-x-1/2 lg:translate-x-0 lg:-translate-y-1/2  mx-auto md:mx-0 z-1 ">
