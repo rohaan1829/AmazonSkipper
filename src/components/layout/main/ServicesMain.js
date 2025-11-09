@@ -35,10 +35,17 @@ const ServicesMain = () => {
       answer: "Our data-driven approach combines advanced analytics, machine learning, and years of Amazon expertise. We focus on long-term sustainable growth rather than quick fixes."
     }
   ]);
+  const [portfolioItems, setPortfolioItems] = useState([]);
 
   useEffect(() => {
     const allServices = getALlServices();
     setServices(allServices);
+  }, []);
+  useEffect(() => {
+    fetch("/fakedata/portfolio.json")
+      .then((res) => res.json())
+      .then((data) => setPortfolioItems(Array.isArray(data) ? data : []))
+      .catch(() => setPortfolioItems([]));
   }, []);
 
   const stats = [
@@ -202,7 +209,10 @@ const ServicesMain = () => {
   return (
     <main>
       {/* Hero Services Header - Eye-Opening Design */}
-      <section id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-[#0a0a0a] pt-130px md:pt-150px lg:pt-160px">
+      <section
+        id="hero"
+        className="relative flex items-center overflow-hidden bg-[#0a0a0a] pt-110px md:pt-130px lg:pt-140px pb-40px md:pb-60px"
+      >
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#4CAF50]/20 rounded-full blur-[120px] animate-pulse"></div>
@@ -227,7 +237,7 @@ const ServicesMain = () => {
             <div className="grid lg:grid-cols-12 gap-8 items-center">
               
               {/* Left Column - Main Content */}
-              <div className="lg:col-span-7 space-y-8">
+              <div className="lg:col-span-7 space-y-6">
                 {/* Badge */}
                 <div className="inline-block mb-4">
                   <span className="px-6 py-2 bg-[#4CAF50]/10 border border-[#4CAF50]/30 rounded-full text-[#4CAF50] text-sm font-semibold uppercase tracking-wider backdrop-blur-sm">
@@ -236,23 +246,26 @@ const ServicesMain = () => {
                 </div>
 
                 {/* Main Headline - Creative Typography */}
-                <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[0.95] text-white mb-8">
-                  <span className="block transform hover:scale-105 transition-transform duration-500">
+                <h1 className="flex flex-col gap-4 text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-black leading-[0.95] text-white mb-6">
+                  <span className="transform hover:scale-105 transition-transform duration-500">
                     Stop
                   </span>
-                  <span className="block text-[#4CAF50] transform hover:scale-105 transition-transform duration-500" style={{textShadow: '0 0 40px rgba(76, 175, 80, 0.5)'}}>
+                  <span
+                    className="text-[#4CAF50] transform hover:scale-105 transition-transform duration-500"
+                    style={{ textShadow: "0 0 40px rgba(76, 175, 80, 0.5)" }}
+                  >
                     Wasting Money
                   </span>
-                  <span className="block transform hover:scale-105 transition-transform duration-500">
+                  <span className="transform hover:scale-105 transition-transform duration-500">
                     on Amazon Ads
                   </span>
-                  <span className="block text-[#FF6B35] text-4xl md:text-5xl lg:text-6xl mt-4 font-bold">
+                  <span className="text-[#FF6B35] text-4xl md:text-5xl lg:text-6xl font-bold">
                     Start Winning.
                   </span>
                 </h1>
 
                 {/* Description Paragraph - 50-70 words */}
-                <p className="text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-2xl mb-10 font-light">
+                <p className="text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-2xl mb-6 font-light">
                   Most Amazon sellers are bleeding cash on ineffective ad campaigns while competitors dominate. We've cracked the code: 
                   our clients slash ad spend by 50% in just 47 days while doubling conversions. No guesswork. No excuses. 
                   Just proven systems that work. Join 500+ sellers who've transformed their businesses. Your breakthrough starts now.
@@ -263,7 +276,7 @@ const ServicesMain = () => {
               <div className="lg:col-span-5">
                 <div className="relative rounded-30px p-1 bg-gradient-to-br from-[#4CAF50] via-[#2E7D32] to-[#FF6B35] shadow-[0_25px_70px_rgba(76,175,80,0.25)]">
                   <div className="absolute inset-0 rounded-30px bg-[#4CAF50]/20 blur-3xl opacity-40 -z-10"></div>
-                  <div className="relative rounded-25px bg-[#070707]/90 dark:bg-[#040404]/95 border border-white/10 min-h-[430px] flex flex-col">
+                  <div className="relative rounded-25px bg-[#070707]/90 dark:bg-[#040404]/95 border border-white/10 min-h-[360px] flex flex-col">
                     <div className="px-8 pt-8 pb-6 flex flex-col gap-6">
                       <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#4CAF50]/10 border border-[#4CAF50]/30 rounded-full text-[#4CAF50] text-xs font-semibold uppercase tracking-[0.25em] w-fit">
                         Hero Visual
@@ -271,34 +284,43 @@ const ServicesMain = () => {
                       <h3 className="text-2xl md:text-3xl font-black text-white leading-snug">
                         Showcase Your Brand’s Signature Moment
                       </h3>
-                      <p className="text-gray-400 text-base md:text-lg leading-relaxed">
-                        Drop an image or short looping video that captures your Amazon dominance. Product hero shots, live dashboards, or team-in-action visuals thrive here—anything that proves you build category leaders.
-                      </p>
-                      <div className="flex-1 border border-dashed border-white/20 rounded-20px bg-white/5 dark:bg-white/5 flex items-center justify-center text-gray-500 text-xs md:text-sm uppercase tracking-[0.4em]">
-                        Visual Placeholder
+                      
+                      <div className="flex-1 rounded-20px overflow-hidden border border-white/10 bg-white/5">
+                        {portfolioItems.length > 0 ? (
+                          <Swiper
+                            spaceBetween={16}
+                            slidesPerView={1}
+                            loop={true}
+                            speed={1200}
+                            autoplay={{ delay: 2500, disableOnInteraction: false }}
+                            pagination={{ clickable: true }}
+                            modules={[Pagination, Autoplay]}
+                          >
+                            {portfolioItems.map((item) => (
+                              <SwiperSlide key={item.id}>
+                                <div className="relative w-full aspect-[16/10]">
+                                  <Image
+                                    src={item.img}
+                                    alt={item.title}
+                                    fill
+                                    className="object-contain object-center"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
+                                  />
+                                </div>
+                              </SwiperSlide>
+                            ))}
+                          </Swiper>
+                        ) : (
+                          <div className="w-full h-full min-h-[260px] flex items-center justify-center text-gray-500 text-xs md:text-sm uppercase tracking-[0.4em]">
+                            Loading...
+                          </div>
+                        )}
                       </div>
                     </div>
-                    <div className="px-8 py-6 border-t border-white/10 flex flex-wrap items-center gap-4 justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                          50%
-                        </div>
-                        <span className="text-gray-300 text-sm md:text-base tracking-wide">
-                          Avg. Spend Reduction
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#FF6B35] to-[#E55A2B] flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                          47
-                        </div>
-                        <span className="text-gray-300 text-sm md:text-base tracking-wide">
-                          Days To Results
-                        </span>
-                      </div>
-                    </div>
+                    
                   </div>
                 </div>
-                <div className="flex items-center justify-center mt-12 lg:mt-16">
+                <div className="flex items-center justify-center mt-8 lg:mt-12">
                   <button className="group relative px-10 py-5 bg-gradient-to-r from-[#4CAF50] to-[#2E7D32] rounded-15px text-white font-bold text-lg md:text-xl transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_30px_rgba(76,175,80,0.6)] overflow-hidden">
                     <span className="relative z-10 flex items-center gap-3">
                       Claim Your Free Audit
@@ -312,11 +334,7 @@ const ServicesMain = () => {
           </div>
         </div>
 
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2">
-            <div className="w-1 h-3 bg-white/50 rounded-full"></div>
-          </div>
-        </div>
+
       </section>
 
       {/* Trusted Brands Marquee */}
@@ -335,7 +353,7 @@ const ServicesMain = () => {
       </section>
 
       {/* Onboarding Process Section */}
-      <section className="py-80px bg-gradient-to-br from-[#0b0b0b] via-[#121212] to-[#050505] scroll-mt-[130px] relative overflow-hidden">
+      <section className="py-100px bg-gradient-to-br from-[#0b0b0b] via-[#121212] to-[#050505] scroll-mt-[130px] relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-10 -left-10 w-72 h-72 rounded-full bg-[#4CAF50]/20 blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-[22rem] h-[22rem] rounded-full bg-[#FF6B35]/15 blur-[120px]"></div>
@@ -388,6 +406,31 @@ const ServicesMain = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats/Results Section */}
+      <section id="results" className="py-100px bg-gradient-to-r from-[#4CAF50] to-[#2E7D32] scroll-mt-[130px]">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Proven Results
+            </h2>
+            <p className="text-xl text-white/90">
+              Our track record speaks for itself
+            </p>
+          </div>
+          <div className="grid md:grid-cols-4 gap-8 text-center text-white">
+            {stats.map((stat, idx) => (
+              <div key={idx} className="group">
+                <div className="text-5xl font-bold mb-2 group-hover:scale-110 transition-transform">
+                  {stat.value}
+                  {stat.label.includes('%') && <span className="text-3xl">%</span>}
+                </div>
+                <p className="text-xl opacity-90">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -476,7 +519,7 @@ const ServicesMain = () => {
       </section> */}
 
       {/* Success Stories Section */}
-      <section id="success-stories" className="py-80px bg-gradient-to-br from-[#121212] via-[#1a1a1a] to-[#121212] dark:from-[#0a0a0a] dark:via-[#121212] dark:to-[#0a0a0a] relative overflow-hidden scroll-mt-[130px]">
+      <section id="success-stories" className="py-100px bg-gradient-to-br from-[#121212] via-[#1a1a1a] to-[#121212] dark:from-[#0a0a0a] dark:via-[#121212] dark:to-[#0a0a0a] relative overflow-hidden scroll-mt-[130px]">
         {/* Background Effects */}
         <div className="absolute inset-0 bg-gradient-to-tr from-[#4CAF50]/10 via-transparent to-[#4CAF50]/5"></div>
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#4CAF50]/10 rounded-full blur-3xl"></div>
@@ -632,7 +675,7 @@ const ServicesMain = () => {
       </section>
 
       {/* Client Outcomes Section */}
-      <section id="outcomes" className="py-80px bg-gradient-to-br from-[#0a0a0a] via-[#121212] to-[#1a1a1a] dark:from-[#050505] dark:via-[#0a0a0a] dark:to-[#121212] relative overflow-hidden scroll-mt-[130px]">
+      <section id="outcomes" className="py-100px bg-gradient-to-br from-[#0a0a0a] via-[#121212] to-[#1a1a1a] dark:from-[#050505] dark:via-[#0a0a0a] dark:to-[#121212] relative overflow-hidden scroll-mt-[130px]">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#4CAF50]/5 rounded-full blur-[150px] animate-pulse"></div>
@@ -730,7 +773,7 @@ const ServicesMain = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-80px bg-white dark:bg-[#121212] scroll-mt-[130px]">
+      <section id="testimonials" className="py-100px bg-white dark:bg-[#121212] scroll-mt-[130px]">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-[#1a1a1a] dark:text-white">
@@ -818,33 +861,8 @@ const ServicesMain = () => {
         </div>
       </section>
 
-      {/* Stats/Results Section */}
-      <section id="results" className="py-80px bg-gradient-to-r from-[#4CAF50] to-[#2E7D32] scroll-mt-[130px]">
-        <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-4">
-              Proven Results
-            </h2>
-            <p className="text-xl text-white/90">
-              Our track record speaks for itself
-            </p>
-          </div>
-          <div className="grid md:grid-cols-4 gap-8 text-center text-white">
-            {stats.map((stat, idx) => (
-              <div key={idx} className="group">
-                <div className="text-5xl font-bold mb-2 group-hover:scale-110 transition-transform">
-                  {stat.value}
-                  {stat.label.includes('%') && <span className="text-3xl">%</span>}
-                </div>
-                <p className="text-xl opacity-90">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Accordion Section */}
-      <section id="faq" className="py-80px bg-white dark:bg-[#1a1a1a] scroll-mt-[130px]">
+      <section id="faq" className="py-100px bg-white dark:bg-[#1a1a1a] scroll-mt-[130px]">
         <div className="container max-w-4xl">
           <h2 className="text-4xl font-bold text-center mb-16 text-[#121212] dark:text-white">
             Frequently Asked Questions
@@ -873,7 +891,7 @@ const ServicesMain = () => {
       </section>
 
       {/* Call-to-Action with Video Background */}
-      <section id="cta" className="relative py-80px overflow-hidden scroll-mt-[130px]">
+      <section id="cta" className="relative py-100px overflow-hidden scroll-mt-[130px]">
         <div className="absolute inset-0 bg-gradient-to-r from-[#121212]/90 to-[#4CAF50]/90"></div>
         <div className="container relative z-10">
           <div className="text-center text-white">

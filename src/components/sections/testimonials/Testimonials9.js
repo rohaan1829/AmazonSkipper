@@ -5,11 +5,12 @@ import getTestimonials from "@/libs/getTestimonials";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const Testimonials9 = () => {
+const Testimonials9 = ({ compact = false, idAttr = "testimonials", sectionClassName = "" }) => {
 	const testimonials = getTestimonials()?.slice(0, 4);
+	const wrapperPadding = compact ? "" : "pb-60px md:pb-20 lg:pb-30";
 	return (
-		<section id="testimonials">
-			<div className=" dark:bg-primary-color-light  pb-60px md:pb-20 lg:pb-30 relative  overflow-hidden">
+		<section id={idAttr} className={sectionClassName}>
+			<div className={`dark:bg-primary-color-light ${wrapperPadding} relative overflow-hidden`}>
 				<div className="container">
 					<div className="flex flex-col lg:flex-row gap-35px">
 						<div className="w-full max-w-420px lg:max-w-365px xl:max-w-420px">
