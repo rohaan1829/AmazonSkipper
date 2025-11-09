@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useMemo } from "react";
+import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
 
 const getCaseStudies = () => [
   {
@@ -129,8 +130,8 @@ const CaseStudyCard = ({ study, index }) => {
   const isEven = index % 2 === 0;
 
 	return (
-    <Link
-      href={`/case-studies/${study.id}`}
+		<Link
+			href={`/case-studies/${study.id}`}
       className={`group relative block h-full overflow-hidden rounded-3xl border ${styles.border} ${styles.bg} p-8 shadow-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_32px_80px_-60px_rgba(15,23,42,0.85)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white/60`}
     >
       <div className={`grid h-full items-stretch gap-8 lg:grid-cols-2 ${isEven ? "" : "lg:grid-cols-[1.2fr_0.8fr]"}`}>
@@ -187,12 +188,6 @@ const CaseStudiesMain = () => {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-2 mb-6">
-              <span className="h-2 w-2 rounded-full bg-[#4CAF50]"></span>
-            <span className="text-xs font-bold uppercase tracking-wider text-white/80">
-							Case Studies
-						</span>
-            </div>
           <h1 className="text-5xl lg:text-6xl font-black leading-tight text-white mb-6 max-w-4xl mx-auto">
 							Amazon growth stories engineered for predictable revenue
 						</h1>
@@ -209,25 +204,27 @@ const CaseStudiesMain = () => {
             ))}
 						</div>
 
-          {/* Stats Section */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="rounded-3xl border border-[#4CAF50]/30 bg-gradient-to-br from-[#14532d] to-[#065f46] p-8 text-center">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#bbf7d0] mb-2">
-                Average Impact
+          {/* CTA Section */}
+          <section className="relative mt-24 overflow-hidden rounded-[40px] border border-[#4CAF50]/30 bg-gradient-to-br from-black via-[#121212] to-[#4CAF50] px-6 py-16 sm:px-10 lg:px-16">
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-[#4CAF50] blur-3xl"></div>
+              <div className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-[#4CAF50] blur-3xl"></div>
+            </div>
+
+            <div className="relative z-10 flex flex-col items-center text-center gap-6 max-w-3xl mx-auto">
+              <h2 className="text-4xl font-black leading-tight text-white sm:text-5xl lg:text-6xl">
+                Fix My ACoS Now
+              </h2>
+              <p className="text-lg text-white/80 sm:text-xl">
+                If your ad spend feels like a black hole, this is your turning point. Let’s rebuild your numbers with structure.
               </p>
-              <p className="text-6xl font-black text-white mb-2">355%</p>
-              <p className="text-sm text-[#bbf7d0]">Revenue growth delivered</p>
+
+              <ButtonPrimary type={2} isIcon={true} url="/#contact">
+                Fix My ACoS Now
+              </ButtonPrimary>
 									</div>
-            <div className="rounded-3xl border border-white/20 bg-white/5 p-8 text-center">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70 mb-2">
-                Brands Partnered
-              </p>
-              <p className="text-6xl font-black text-white mb-2">100+</p>
-              <p className="text-sm text-white/70">
-                Across Amazon, Shopify & TikTok Shop
-              </p>
-									</div>
-					</div>
+          </section>
+
 				</div>
 			</section>
 		</main>
