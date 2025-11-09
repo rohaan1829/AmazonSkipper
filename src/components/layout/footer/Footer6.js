@@ -94,39 +94,22 @@ const Footer6 = () => {
 								<ul className="nav flex flex-col  gap-3">
 									<li className="nav_item group relative">
 										<Link
-											href="#"
-											className="text-size-15 font-normal text-white-color hover:text-primary-color dark:hover:text-primary-color capitalize  "
+											href="/privacy-policy"
+											className="text-size-15 font-normal text-white-color hover:text-primary-color dark:hover:text-primary-color capitalize transition-all duration-200 "
 										>
-											Policy Privacy
+											Privacy Policy
 										</Link>
 									</li>
 
 									<li className="nav_item group relative">
 										<Link
-											href="#"
-											className="text-size-15 font-normal text-white-color hover:text-primary-color dark:hover:text-primary-color capitalize  "
+											href="/refund-and-cancellation"
+											className="text-size-15 font-normal text-white-color hover:text-primary-color dark:hover:text-primary-color capitalize transition-all duration-200 "
 										>
-											Term & Conditions
+											Refund & Cancellation
 										</Link>
 									</li>
 
-									<li className="nav_item group relative">
-										<Link
-											href="#"
-											className="text-size-15 font-normal text-white-color hover:text-primary-color dark:hover:text-primary-color capitalize  "
-										>
-											Refund and Cancellation
-										</Link>
-									</li>
-
-									<li className="nav_item group relative">
-										<Link
-											href="#"
-											className="text-size-15 font-normal text-white-color hover:text-primary-color dark:hover:text-primary-color capitalize  "
-										>
-											Disclaimer
-										</Link>
-									</li>
 								</ul>
 							</div>
 
@@ -143,7 +126,8 @@ const Footer6 = () => {
 											Office 13609, 182-184 High Street North,<br />
 											East Ham, London, United Kingdom, E6 2JA
 											<br />
-											Office #26, Kohinoor Plaza 1, Jaranwala Road,<br />
+											Office #26<br />
+											Kohinoor Plaza 1, Jaranwala Road,<br />
 											Faisalabad, Pakistan
 										</p>
 									</li>
