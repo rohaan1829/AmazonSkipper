@@ -186,16 +186,89 @@ const CaseStudiesMain = () => {
 				</div>
 
         <div className="max-w-7xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-16">
-          <h1 className="text-5xl lg:text-6xl font-black leading-tight text-white mb-6 max-w-4xl mx-auto">
+          {/* Hero */}
+          <section className="relative overflow-hidden rounded-[30px] bg-black px-6 py-20 sm:px-10 lg:px-16 mb-20 text-center">
+            <div className="absolute inset-0 opacity-35 pointer-events-none">
+              <div className="absolute top-1/3 left-[22%] h-64 w-64 rounded-full bg-[#22C55E]/40 blur-[100px]"></div>
+              <div className="absolute bottom-1/4 right-[18%] h-56 w-56 rounded-full bg-[#22C55E]/25 blur-[90px]"></div>
+              <div className="absolute top-[18%] right-[30%] h-52 w-52 rounded-full bg-[#22d3ee]/20 blur-[95px]"></div>
+              <div className="absolute bottom-[12%] left-[18%] h-44 w-44 rounded-full bg-[#15803D]/25 blur-[80px]"></div>
+            </div>
+            <div className="hidden sm:block">
+              {[
+                { size: 22, x: "right-[18%]", y: "-top-4", anim: "floatSlow 9s", opacity: "opacity-90" },
+                { size: 18, x: "left-[12%]", y: "top-[48%]", anim: "floatMedium 7s", opacity: "opacity-70" },
+                { size: 16, x: "left-[6%]", y: "top-[32%]", anim: "floatFast 6s", opacity: "opacity-65" },
+                { size: 18, x: "right-[30%]", y: "bottom-8", anim: "floatFast 5s", opacity: "opacity-75" },
+                { size: 16, x: "left-[26%]", y: "-bottom-6", anim: "floatMedium 8s", opacity: "opacity-60" },
+                { size: 14, x: "left-[32%]", y: "top-[12%]", anim: "floatMedium 9s", opacity: "opacity-75" },
+                { size: 13, x: "left-[4%]", y: "top-[18%]", anim: "floatFast 5.5s", opacity: "opacity-55" },
+                { size: 13, x: "left-[20%]", y: "top-[65%]", anim: "floatMedium 7.5s", opacity: "opacity-60" },
+                { size: 12, x: "left-[8%]", y: "bottom-[22%]", anim: "floatSlow 8.5s", opacity: "opacity-65" },
+                { size: 14, x: "right-[8%]", y: "top-[25%]", anim: "floatSlow 10s", opacity: "opacity-65" },
+                { size: 12, x: "left-[28%]", y: "top-[10%]", anim: "floatFast 6s", opacity: "opacity-80" },
+                { size: 12, x: "right-[15%]", y: "bottom-[18%]", anim: "floatMedium 6.5s", opacity: "opacity-60" },
+                { size: 14, x: "left-[10%]", y: "top-[5%]", anim: "floatFast 6.5s", opacity: "opacity-55" },
+                { size: 11, x: "left-[18%]", y: "top-[38%]", anim: "floatSlow 7.5s", opacity: "opacity-65" },
+                { size: 10, x: "left-[34%]", y: "top-[45%]", anim: "floatMedium 6.8s", opacity: "opacity-75" },
+                { size: 11, x: "left-[14%]", y: "bottom-[30%]", anim: "floatFast 5.8s", opacity: "opacity-70" },
+                { size: 9, x: "left-[30%]", y: "bottom-[12%]", anim: "floatMedium 8.2s", opacity: "opacity-60" },
+                { size: 13, x: "right-[12%]", y: "top-[12%]", anim: "floatSlow 7.8s", opacity: "opacity-70" },
+                { size: 11, x: "right-[22%]", y: "top-[38%]", anim: "floatFast 6.1s", opacity: "opacity-70" },
+                { size: 9, x: "right-[10%]", y: "top-[55%]", anim: "floatMedium 7.7s", opacity: "opacity-65" },
+                { size: 10, x: "right-[26%]", y: "bottom-[26%]", anim: "floatFast 6.9s", opacity: "opacity-60" },
+                { size: 12, x: "right-[5%]", y: "bottom-[10%]", anim: "floatMedium 8.6s", opacity: "opacity-55" },
+              ].map(({ size, x, y, anim, opacity }, idx) => (
+                <Image
+                  key={idx}
+                  src="/img/shapes/5.jpg"
+                  alt="Decorative accent"
+                  width={size}
+                  height={size}
+                  className={`pointer-events-none absolute ${y} ${x} ${opacity} drop-shadow-[0_18px_40px_rgba(34,197,94,0.22)]`}
+                  style={{ animation: `${anim} ease-in-out infinite` }}
+                  priority
+                />
+              ))}
+            </div>
+            <div className="relative z-10 max-w-3xl mx-auto text-white">
+              <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-black leading-tight">
 							Amazon growth stories engineered for predictable revenue
 						</h1>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              Real brands. Real numbers. Explore how we turn chaotic ad accounts into disciplined
-              profit engines — and what a calm, scaling Amazon brand actually looks like.
-						</p>
+              <p className="mt-6 text-lg leading-relaxed text-white/70">
+                Real brands. Real numbers. Explore how we turn chaotic ad accounts into disciplined
+                profit engines — and what a calm, scaling Amazon brand actually looks like.
+              </p>
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
+                <ButtonPrimary type={2} isIcon={true} url="/#contact">
+                  Fix My ACoS Now
+                </ButtonPrimary>
+                <Link
+                  href="#case-studies-grid"
+                  className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white/75 transition hover:border-white hover:text-white"
+                >
+                  See Our Results
+                </Link>
+              </div>
 					</div>
+          </section>
+          <style jsx>{`
+            @keyframes floatSlow {
+              0% { transform: translateY(0px); }
+              50% { transform: translateY(-8px); }
+              100% { transform: translateY(0px); }
+            }
+            @keyframes floatMedium {
+              0% { transform: translateY(0px); }
+              50% { transform: translateY(-12px); }
+              100% { transform: translateY(0px); }
+            }
+            @keyframes floatFast {
+              0% { transform: translateY(0px); }
+              50% { transform: translateY(-16px); }
+              100% { transform: translateY(0px); }
+            }
+          `}</style>
 
           {/* Case Studies Grid */}
           <div className="space-y-12 mb-20">
@@ -209,7 +282,7 @@ const CaseStudiesMain = () => {
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-[#4CAF50] blur-3xl"></div>
               <div className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-[#4CAF50] blur-3xl"></div>
-            </div>
+								</div>
 
             <div className="relative z-10 flex flex-col items-center text-center gap-6 max-w-3xl mx-auto">
               <h2 className="text-4xl font-black leading-tight text-white sm:text-5xl lg:text-6xl">
