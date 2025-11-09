@@ -4,11 +4,12 @@ import getTestimonials from "@/libs/getTestimonials";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const Testimonials6 = () => {
+const Testimonials6 = ({ compact = false, idAttr = "testimonials", sectionClassName = "" }) => {
 	const testimonials = getTestimonials();
+	const wrapperPadding = compact ? "" : "pb-60px md:pb-20 lg:pb-30 px-15px md:px-0";
 	return (
-		<section id="testimonials">
-			<div className=" pb-60px md:pb-20 lg:pb-30 px-15px md:px-0  dark:bg-transparent">
+		<section id={idAttr} className={sectionClassName}>
+			<div className={` ${wrapperPadding}  dark:bg-transparent`}>
 				<div className="container-fluid">
 					<div className="testimonials ">
 						{/* <!-- section heading --> */}

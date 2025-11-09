@@ -17,7 +17,7 @@
     {
       "name":"Testimonials",
       "path":"#testimonials",
-      "path2":"/#testimonials"  
+      "path2":"/testimonials"  
     },
     {
       "name":"About Us",

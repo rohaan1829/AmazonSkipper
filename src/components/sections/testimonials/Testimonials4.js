@@ -5,12 +5,13 @@ import getTestimonials from "@/libs/getTestimonials";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const Testimonials4 = () => {
+const Testimonials4 = ({ compact = false, idAttr = "testimonials", sectionClassName = "" }) => {
 	const testimonials = getTestimonials()?.slice(0, 4);
+	const sectionPadding = compact ? "" : "pb-20 md:pb-100px xl:pb-30";
 	return (
 		<section
-			id="testimonials"
-			className="relative pb-20 md:pb-100px xl:pb-30  after:absolute after:top-10 after:-translate-y-5 after:left-5 after:w-650px after:h-550px after:blur-[150px] after:rounded-50% after:bg-gradient-circle-2 after:-z-1  after:-translate-x-1/2 after:opacity-60 "
+			id={idAttr}
+			className={`relative ${sectionPadding} after:absolute after:top-10 after:-translate-y-5 after:left-5 after:w-650px after:h-550px after:blur-[150px] after:rounded-50% after:bg-gradient-circle-2 after:-z-1  after:-translate-x-1/2 after:opacity-60 ${sectionClassName}`}
 		>
 			<div className="container">
 				{/* <!-- section heading --> */}

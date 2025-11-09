@@ -49,6 +49,8 @@ const Navbar = ({ isActiveMobileMenu, setIsActiveMobileMenu, isSticky }) => {
 											? "/services"
 											: name.toLowerCase() === "works"
 											? "/portfolio"
+											: name.toLowerCase() === "testimonials"
+											? "/testimonials"
 											: name.toLowerCase() === "about us"
 											? "/about"
 											: name.toLowerCase() === "case studies"
