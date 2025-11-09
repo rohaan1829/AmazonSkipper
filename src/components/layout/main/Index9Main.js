@@ -11,6 +11,7 @@ import Portfolio9 from "@/components/sections/portfolio/Portfolio9";
 //import Services6 from "@/components/sections/services/Services6";
 import Skills4 from "@/components/sections/skills/Skills4";
 import Testimonials9 from "@/components/sections/testimonials/Testimonials9";
+import FunfacTsection1 from "@/components/sections/funfact/FunfacTsection1";
 import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
 import { useState } from "react";
 
@@ -65,13 +66,18 @@ const Index9Main = () => {
 			<div className="wow fadeIn" data-wow-delay=".05s">
 				<Hero9 />
 			</div>
+			<section className="wow fadeInUp bg-black py-16" data-wow-delay=".08s">
+				<div className="container">
+					<FunfacTsection1 />
+				</div>
+			</section>
 			<div className="wow fadeInUp" data-wow-delay=".12s">
 				<Brands2 />
 			</div>
 			<div className="wow fadeInUp" data-wow-delay=".18s">
 				<Skills4 />
 			</div>
-			<div className="wow fadeInUp" data-wow-delay=".24s">
+			<div className="wow fadeInUp" data-wow-delay=".22s">
 				<FeatureMarque2 type={3} isRotate={true} />
 			</div>
 			<div className="wow fadeInUp" data-wow-delay=".30s">
