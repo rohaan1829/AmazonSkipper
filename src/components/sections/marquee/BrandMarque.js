@@ -2,7 +2,9 @@
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import brandImages from "../../../../public/fakedata/brand-marquee.json";
+import type2Images from "../../../../public/fakedata/brand-marquee-type2.json";
 const BrandMarque = ({ type }) => {
+	const images = type === 2 && Array.isArray(type2Images) && type2Images.length ? type2Images : brandImages;
 	return (
 		<div
 			className={`${
@@ -20,13 +22,16 @@ const BrandMarque = ({ type }) => {
 					<Swiper
 						slidesPerView="auto"
 						spaceBetween={80}
-						centeredSlides={true}
-						speed={1500}
+						centeredSlides={false}
+						speed={3000}
 						loop={true}
 						freeMode={true}
+						freeModeMomentum={false}
 						allowTouchMove={false}
 						autoplay={{
 							delay: 0,
+							disableOnInteraction: false,
+							pauseOnMouseEnter: false,
 						}}
 						breakpoints={{
 							320: {
@@ -49,8 +54,8 @@ const BrandMarque = ({ type }) => {
 								: "py-3 lg:py-5 xl:py-30px "
 						}`}
 					>
-						{brandImages?.length
-							? brandImages?.map(({ darkImg, lightImg }, idx) => (
+						{images?.length
+							? [...images, ...images].map(({ darkImg, lightImg }, idx) => (
 									<SwiperSlide key={idx} className="max-w-125px sm:max-w-140px">
 										<div className="max-w-100px md:max-w-full">
 											<img

@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Lesure",
+    "darkImg": "/img/serviceBrands/lesure.jpg",
+    "lightImg": "/img/serviceBrands/lesure.jpg"
+  },
+  {
+    "title": "Solimo",
+    "darkImg": "/img/serviceBrands/solimo.jpg",
+    "lightImg": "/img/serviceBrands/solimo.jpg"
+  },
+  {
+    "title": "PetSafe",
+    "darkImg": "https://www.petsafe.com/static/yellow-logo-3adbc27af5957f75728116d18d09c654.svg",
+    "lightImg": "https://www.petsafe.com/static/yellow-logo-3adbc27af5957f75728116d18d09c654.svg"
+  },
+  {
+    "title": "Cuisinart",
+    "darkImg": "https://www.cuisinart.com/on/demandware.static/Sites-us-cuisinart-sfra-Site/-/default/dw528ac02e/images/logo.svg",
+    "lightImg": "https://www.cuisinart.com/on/demandware.static/Sites-us-cuisinart-sfra-Site/-/default/dw528ac02e/images/logo.svg"
+  },
+  {
+    "title": "OXO",
+    "darkImg": "https://www.oxo.com/static/version1761814760/frontend/MagebitHoT/oxo/en_US/images/logo.svg",
+    "lightImg": "https://www.oxo.com/static/version1761814760/frontend/MagebitHoT/oxo/en_US/images/logo.svg"
+  }
+]
+

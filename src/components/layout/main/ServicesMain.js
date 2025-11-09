@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
@@ -319,9 +320,17 @@ const ServicesMain = () => {
       icon: "fa-chart-pie",
       color: "from-[#4CAF50] to-[#2E7D32]",
     },
+    {
+      id: 9,
+      title: "Executive Growth Alignment",
+      summary:
+        "",
+      detail:
+        "",
+      icon: "fa-handshake-simple",
+      color: "from-[#FF6B35] to-[#E55A2B]",
+    },
   ];
-  const leftPpcCapabilities = ppcCapabilities.slice(0, 4);
-  const rightPpcCapabilities = ppcCapabilities.slice(4);
   const ppcSteps = [
     {
       id: 1,
@@ -434,13 +443,16 @@ const ServicesMain = () => {
                 We rebuild your PPC engine from the ground up, optimizing every keyword, bid, and placement so your spend finally turns into predictable growth.
                 </p>
                 <div className="flex items-center gap-10 mt-12 md:mt-16">
-                  <button className="group relative px-10 py-5 bg-gradient-to-r from-[#4CAF50] to-[#2E7D32] rounded-15px text-white font-bold text-lg md:text-xl transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_30px_rgba(76,175,80,0.6)] overflow-hidden">
+                  <Link
+                    href="/contact"
+                    className="group relative px-10 py-5 bg-gradient-to-r from-[#4CAF50] to-[#2E7D32] rounded-15px text-white font-bold text-lg md:text-xl transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_30px_rgba(76,175,80,0.6)] overflow-hidden"
+                  >
                     <span className="relative z-10 flex items-center gap-3">
                       Claim Your Free Audit
                       <i className="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
                     </span>
                     <div className="absolute inset-0 bg-gradient-to-r from-[#2E7D32] to-[#4CAF50] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  </button>
+                  </Link>
                 </div>
               </div>
 
@@ -483,9 +495,9 @@ const ServicesMain = () => {
                                 <p className="text-sm text-white/70">
                                   {featuredCaseStudy.metric}
                                 </p>
-                              </div>
-                            </div>
-                          </div>
+                      </div>
+                    </div>
+                        </div>
                         </div>
                       )}
 
@@ -517,8 +529,8 @@ const ServicesMain = () => {
                             <i className="fas fa-star"></i>
                             <span className="text-sm text-white/70">
                               {featuredTestimonial.achievement}
-                            </span>
-                          </div>
+                        </span>
+                      </div>
                         </div>
                       )}
                     </div>
@@ -537,8 +549,6 @@ const ServicesMain = () => {
             </div>
           </div>
         </div>
-
-
       </section>
 
       {/* PPC Capabilities Section */}
@@ -554,95 +564,109 @@ const ServicesMain = () => {
         </div>
 
         <div className="container relative z-10">
-          <div className="grid lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-12">
-              <div className="flex flex-col gap-10 xl:grid xl:grid-cols-[1fr_minmax(0,0.8fr)_1fr] xl:items-start xl:gap-12">
-                <div className="order-2 xl:order-1 grid sm:grid-cols-2 gap-6">
-                  {leftPpcCapabilities.map((capability, idx) => (
-                    <div
-                      key={capability.id}
-                      className="group relative bg-[#101010]/90 backdrop-blur border border-white/5 rounded-25px p-6 hover:border-[#4CAF50]/35 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(76,175,80,0.22)] overflow-hidden"
-                    >
-                      <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500" style={{
-                        background: `linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 50%)`
-                      }}></div>
-                      <div className="relative z-10 flex flex-col gap-3">
-                        <div className="flex items-center gap-4">
-                          <div className={`w-11 h-11 rounded-2xl bg-gradient-to-br ${capability.color} text-white flex items-center justify-center text-base shadow-[0_15px_38px_rgba(76,175,80,0.32)]`}>
-                            <i className={`fas ${capability.icon}`}></i>
-                          </div>
-                          <div>
-                            <p className="text-xs uppercase tracking-[0.35em] text-white/50 font-semibold">
-                              Step 0{idx + 1}
-                            </p>
-                            <h3 className="text-lg font-semibold text-white mt-1">
-                              {capability.title}
-                            </h3>
-                          </div>
-                        </div>
-                        <p className="text-sm text-white/75 leading-relaxed">
-                          {capability.summary}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="order-1 xl:order-2 relative px-8 py-12 rounded-30px border border-white/10 bg-[#101010]/90 backdrop-blur text-center flex flex-col items-center gap-6 shadow-[0_25px_80px_rgba(0,0,0,0.35)]">
-                  <span className="inline-flex items-center gap-2 px-5 py-2 bg-[#FF6B35]/15 border border-[#FF6B35]/30 text-[#FF6B35] rounded-full text-xs font-semibold uppercase tracking-[0.35em]">
-                    Calm, Profitable PPC
-                  </span>
-                  <h2 className="text-3xl md:text-4xl font-black text-white leading-tight max-w-xl">
-                    Everything Your PPC Needs to Stay Profitable & Peaceful
-                  </h2>
-                  <p className="text-base md:text-lg text-gray-300 leading-relaxed max-w-xl">
-                    Your Amazon PPC shouldn’t feel like firefighting. We bring strategy, structure, and consistency to every campaign so spend stays smart and sales stay steady.
-                  </p>
-                  <div className="flex flex-wrap justify-center gap-3">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#4CAF50]/15 text-[#4CAF50] text-xs font-semibold uppercase tracking-[0.35em]">
-                      <i className="fas fa-shield-check"></i>
-                      Precision-Controlled Spend
-                    </div>
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FF6B35]/15 text-[#FF6B35] text-xs font-semibold uppercase tracking-[0.35em]">
-                      <i className="fas fa-wave-square"></i>
-                      Agile Optimization
-                    </div>
-                  </div>
-                  <div className="hidden xl:block absolute inset-y-6 left-1/2 w-px bg-gradient-to-b from-transparent via-white/10 to-transparent -translate-x-1/2"></div>
-                </div>
-
-                <div className="order-3 xl:order-3 grid sm:grid-cols-2 gap-6">
-                  {rightPpcCapabilities.map((capability, idx) => (
-                    <div
-                      key={capability.id}
-                      className="group relative bg-[#101010]/90 backdrop-blur border border-white/5 rounded-25px p-6 hover:border-[#4CAF50]/35 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(76,175,80,0.22)] overflow-hidden"
-                    >
-                      <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500" style={{
-                        background: `linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 50%)`
-                      }}></div>
-                      <div className="relative z-10 flex flex-col gap-3">
-                        <div className="flex items-center gap-4">
-                          <div className={`w-11 h-11 rounded-2xl bg-gradient-to-br ${capability.color} text-white flex items-center justify-center text-base shadow-[0_15px_38px_rgba(76,175,80,0.32)]`}>
-                            <i className={`fas ${capability.icon}`}></i>
-                          </div>
-                          <div>
-                            <p className="text-xs uppercase tracking-[0.35em] text-white/50 font-semibold">
-                              Step 0{idx + 1 + leftPpcCapabilities.length}
-                            </p>
-                            <h3 className="text-lg font-semibold text-white mt-1">
-                              {capability.title}
-                            </h3>
-                          </div>
-                        </div>
-                        <p className="text-sm text-white/75 leading-relaxed">
-                          {capability.summary}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+          {/* Section Header */}
+          <div className="text-center flex flex-col items-center gap-6 px-4">
+            <span className="inline-flex items-center gap-2 px-5 py-2 bg-[#FF6B35]/15 border border-[#FF6B35]/30 text-[#FF6B35] rounded-full text-xs font-semibold uppercase tracking-[0.35em]">
+              Calm, Profitable PPC
+            </span>
+            <h2 className="text-3xl md:text-4xl font-black text-white leading-tight max-w-xl">
+              Everything Your PPC Needs to Stay Profitable & Peaceful
+            </h2>
+            <p className="text-base md:text-lg text-gray-300 leading-relaxed max-w-xl">
+              Your Amazon PPC shouldn’t feel like firefighting. We bring structure, clarity, and consistency to every campaign so spend stays smart and sales stay steady.
+            </p>
+            <p className="text-sm md:text-base text-gray-400 leading-relaxed max-w-xl">
+              Dedicated growth pods handle targeting, optimization, and reporting end-to-end—giving your team clarity while your brand keeps scaling smoothly.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#4CAF50]/15 text-[#4CAF50] text-xs font-semibold uppercase tracking-[0.35em]">
+                <i className="fas fa-shield-check"></i>
+                Precision-Controlled Spend
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FF6B35]/15 text-[#FF6B35] text-xs font-semibold uppercase tracking-[0.35em]">
+                <i className="fas fa-wave-square"></i>
+                Agile Optimization
               </div>
             </div>
+          </div>
+
+          {/* Capabilities Grid */}
+          <div className="mt-12 grid gap-9 sm:grid-cols-2 xl:grid-cols-3">
+            {ppcCapabilities.map((capability, idx) => (
+              <div
+                key={capability.id}
+                className={`group relative overflow-hidden rounded-25px px-10 py-10 min-h-[260px] transition-all duration-500 ${
+                  idx === ppcCapabilities.length - 1
+                    ? "bg-gradient-to-br from-[#10210f]/95 via-[#071407]/95 to-[#0f0905]/95 border border-[#4CAF50]/60 shadow-[0_38px_120px_rgba(76,175,80,0.38)] hover:border-[#FF6B35]/60 hover:shadow-[0_50px_150px_rgba(76,175,80,0.45)] hover:-translate-y-1.5"
+                    : "bg-[#0e0e0e]/95 border border-white/8 hover:-translate-y-1 hover:border-[#4CAF50]/35 hover:shadow-[0_30px_90px_rgba(76,175,80,0.20)]"
+                }`}
+              >
+                {/* Accent top bar */}
+                <div
+                  className={`absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r ${capability.color} ${
+                    idx === ppcCapabilities.length - 1 ? "opacity-0" : ""
+                  }`}
+                ></div>
+                {idx === ppcCapabilities.length - 1 && (
+                  <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute inset-3 rounded-[22px] bg-gradient-to-br from-[#4CAF50]/18 via-[#2E7D32]/12 to-[#FF6B35]/16 opacity-90 animate-pulse"></div>
+                    <div className="absolute inset-0 rounded-[25px] border border-[#4CAF50]/25 opacity-70"></div>
+                  </div>
+                )}
+                {/* Subtle hover glow */}
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500"
+                  style={{ background: 'radial-gradient(1200px 400px at 100% -10%, rgba(255,255,255,0.12), transparent 50%)' }}
+                ></div>
+
+                <div className="relative z-10 flex flex-col gap-4">
+                  <div className="flex items-center gap-4">
+                    <div
+                      className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${capability.color} text-white flex items-center justify-center text-lg shadow-[0_22px_60px_rgba(76,175,80,0.33)] ${
+                        idx === ppcCapabilities.length - 1 ? "shadow-[0_25px_75px_rgba(76,175,80,0.45)] scale-105" : ""
+                      }`}
+                    >
+                      <i className={`fas ${capability.icon}`}></i>
+                    </div>
+                    <div>
+                      {idx !== ppcCapabilities.length - 1 && (
+                        <p className="text-xs uppercase tracking-[0.35em] text-white/60 font-semibold">
+                          Step 0{idx + 1}
+                        </p>
+                      )}
+                      <h3
+                        className={`text-xl font-semibold text-white mt-1 ${
+                          idx === ppcCapabilities.length - 1 ? "text-2xl" : ""
+                        }`}
+                      >
+                        {idx === ppcCapabilities.length - 1 ? "Executive Growth Alignment" : capability.title}
+                      </h3>
+                    </div>
+                  </div>
+                  {capability.summary && (
+                    <p className="text-sm text-white/75 leading-relaxed">
+                      {capability.summary}
+                    </p>
+                  )}
+                  {capability.detail && (
+                    <p className="text-xs text-white/55 leading-relaxed">
+                      {capability.detail}
+                    </p>
+                  )}
+                  {idx === ppcCapabilities.length - 1 && (
+                    <div className="pt-5">
+                      <Link
+                        href="/contact"
+                        className="w-full inline-flex items-center justify-center gap-3 px-5 py-3 rounded-18px bg-gradient-to-r from-[#4CAF50] to-[#2E7D32] text-white text-xs font-semibold uppercase tracking-[0.3em] transition-all duration-300 hover:shadow-[0_18px_55px_rgba(76,175,80,0.24)] hover:-translate-y-0.5"
+                      >
+                        <i className="fas fa-phone-volume text-base"></i>
+                        Schedule Executive Review
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -659,9 +683,9 @@ const ServicesMain = () => {
         </div>
 
         <div className="container relative z-10">
-          <div className="grid lg:grid-cols-12 gap-12">
-            <div className="lg:col-span-4">
-              <div className="sticky top-[140px] space-y-8">
+          <div className="grid lg:grid-cols-12 gap-12 lg:items-center">
+            <div className="lg:col-span-4 flex">
+              <div className="space-y-8 w-full lg:max-w-md lg:ml-auto">
                 <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#4CAF50]/10 border border-[#4CAF50]/30 text-[#4CAF50] rounded-full text-xs font-semibold uppercase tracking-[0.35em]">
                   Our 5-Step System
                 </span>
@@ -682,6 +706,15 @@ const ServicesMain = () => {
                     <i className="fas fa-forward"></i>
                     Built to scale with momentum
                   </div>
+                </div>
+                <div className="pt-2">
+                  <Link
+                    href="/contact"
+                    className="w-full inline-flex items-center justify-center gap-3 px-6 py-4 rounded-20px bg-gradient-to-r from-[#4CAF50] to-[#2E7D32] text-white font-semibold text-xs md:text-sm uppercase tracking-[0.3em] transition-all duration-300 hover:shadow-[0_25px_70px_rgba(76,175,80,0.25)] hover:-translate-y-0.5"
+                  >
+                    <i className="fas fa-calendar-check text-base"></i>
+                    Book Your Strategy Call
+                  </Link>
                 </div>
               </div>
             </div>
@@ -719,10 +752,7 @@ const ServicesMain = () => {
                                 </h3>
                               </div>
                             </div>
-                            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white/70 text-xs font-semibold">
-                              <i className="fas fa-circle-notch animate-spin"></i>
-                              Iteration
-                            </span>
+                           
                           </div>
 
                           <div className="space-y-3">
@@ -745,6 +775,7 @@ const ServicesMain = () => {
       </section>
 
       {/* Client Performance Highlights */}
+      {false && (
       <section className="py-60px md:py-80px bg-gradient-to-br from-[#0b0b0b] via-[#111111] to-[#050505]">
         <div className="container">
           <div className="grid lg:grid-cols-[1.1fr_1.3fr] gap-12 items-start">
@@ -826,6 +857,7 @@ const ServicesMain = () => {
           </div>
         </div>
       </section>
+      )}
 
       {/* Trusted Brands Marquee */}
       <section className="py-60px md:py-80px bg-[#f5f0e8] dark:bg-[#050505]">
@@ -1165,6 +1197,7 @@ const ServicesMain = () => {
       </section>
 
       {/* Client Outcomes Section */}
+      {false && (
       <section id="outcomes" className="py-100px bg-gradient-to-br from-[#0a0a0a] via-[#121212] to-[#1a1a1a] dark:from-[#050505] dark:via-[#0a0a0a] dark:to-[#121212] relative overflow-hidden scroll-mt-[130px]">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
@@ -1261,6 +1294,7 @@ const ServicesMain = () => {
           </div>
         </div>
       </section>
+      )}
 
       {/* Testimonials Section */}
       <section id="testimonials" className="py-100px bg-white dark:bg-[#121212] scroll-mt-[130px]">
@@ -1393,12 +1427,18 @@ const ServicesMain = () => {
               and increased their profits significantly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-[#4CAF50] hover:bg-[#2E7D32] rounded-15px text-white font-bold text-lg transition-all duration-300 transform hover:scale-105">
+              <Link
+                href="/contact"
+                className="px-8 py-4 bg-[#4CAF50] hover:bg-[#2E7D32] rounded-15px text-white font-bold text-lg transition-all duration-300 transform hover:scale-105 text-center"
+              >
                 Get Started Today
-              </button>
-              <button className="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-[#121212] rounded-15px font-bold text-lg transition-all duration-300">
+              </Link>
+              <Link
+                href="/contact"
+                className="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-[#121212] rounded-15px font-bold text-lg transition-all duration-300 text-center"
+              >
                 Schedule a Call
-              </button>
+              </Link>
             </div>
           </div>
         </div>
