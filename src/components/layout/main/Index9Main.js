@@ -1,6 +1,7 @@
  "use client";
 
 import About6 from "@/components/sections/about/About6";
+import Contact3 from "@/components/sections/contact/Contact3";
 //import Blogs5 from "@/components/sections/blogs/Blogs5";
 import Brands2 from "@/components/sections/brands/Brands2";
 import Hero9 from "@/components/sections/heros/Hero9";
@@ -139,6 +140,8 @@ const Index9Main = () => {
 			{/* <Resume5 type={2} /> */}
 			{/* <Testimonials9 /> */}
 			
+			<Contact3 />
+
 			{/* CTA Section */}
 			<section id="cta" className="py-100px md:py-120px lg:py-140px bg-white dark:bg-[#121212] relative overflow-hidden">
 				<div className="container relative z-10 px-6 md:px-8">

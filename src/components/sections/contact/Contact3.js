@@ -150,17 +150,60 @@ const Contact3 = () => {
 												className="text-gray-color dark:text-white-color w-full px-5 py-4 border-2 border-body-color dark:border-bg-color-2 focus:border-primary-color rounded-lg outline-none focus:outline-none transition-all duration-300 placeholder:text-body-color dark:placeholder:text-gray-color bg-transparent leading-1"
 											/>
 										</div>
+										{/* <!-- ASIN / URL --> */}
+										<div className="sm:col-start-1 sm:col-span-2 sm:mb-5">
+											<p className=" mb-15px font-semibold text-primary-color-light dark:text-white-color uppercase ">
+												Can you please share your or your competitor’s ASIN/URL?
+											</p>
+											<input
+												name="conAsin"
+												id="conAsin"
+												type="text"
+												placeholder="https://amazon.com/your-product..."
+												className="text-gray-color dark:text-white-color w-full px-5 py-4 border-2 border-body-color dark:border-bg-color-2 focus:border-primary-color rounded-lg outline-none focus:outline-none transition-all duration-300 placeholder:text-body-color dark:placeholder:text-gray-color bg-transparent leading-1"
+											/>
+										</div>
+										{/* <!-- Budget --> */}
+										<div className="sm:col-start-1 sm:col-span-2 sm:mb-5">
+											<p className=" mb-15px font-semibold text-primary-color-light dark:text-white-color uppercase ">
+												What is your budget (per month) for this project?
+											</p>
+											<div className="grid gap-3">
+												{[
+													"$1000-$2000",
+													"$2000-$4000",
+													"$4000-$6000",
+													"$6000-$8000",
+													"Not sure",
+												].map((option) => (
+													<label
+														key={option}
+														className="flex items-center gap-3 rounded-lg border-2 border-body-color dark:border-bg-color-2 px-4 py-3 transition-all duration-300 hover:border-primary-color has-[input:checked]:border-[#22C55E] has-[input:checked]:bg-[#22C55E]/15"
+													>
+														<input
+															type="radio"
+															name="conBudget"
+															value={option}
+															className="peer h-4 w-4 accent-[#22C55E]"
+														/>
+														<span className="text-gray-color dark:text-white-color text-sm md:text-base transition-colors duration-300 peer-checked:text-[#22C55E]">
+															{option}
+														</span>
+													</label>
+												))}
+											</div>
+										</div>
 
 										<div className="sm:col-start-1 sm:col-span-2">
 											<p className=" mb-15px font-semibold text-primary-color-light dark:text-white-color uppercase ">
-												Message*
+												Additional comments
 											</p>
 											<textarea
 												name="conMessage"
 												id="conMessage"
 												cols="1"
 												rows="10"
-												placeholder="Message"
+												placeholder="Share any context or goals we should know about"
 												className="text-gray-color dark:text-white-color w-full px-5 py-4 border-2 border-body-color dark:border-bg-color-2 focus:border-primary-color rounded-lg outline-none focus:outline-none transition-all duration-300 placeholder:text-body-color dark:placeholder:text-gray-color bg-transparent leading-1"
 											/>
 										</div>

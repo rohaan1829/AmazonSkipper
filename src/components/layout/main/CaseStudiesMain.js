@@ -1,582 +1,237 @@
 "use client";
-import { useEffect, useState } from "react";
-import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
+
+import Link from "next/link";
 import Image from "next/image";
-import getCaseStudies from "@/libs/getCaseStudies";
+import { useMemo } from "react";
 
-// Case Study Item Component
-const CaseStudyItem = ({ caseStudy, index }) => {
-  const [isClient, setIsClient] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-  const [animatedMetrics, setAnimatedMetrics] = useState({
-    revenue: 0,
-    acos: caseStudy?.after?.metrics?.acos?.before || 42,
-    tacos: caseStudy?.after?.metrics?.tacos?.before || 28,
-  });
+const getCaseStudies = () => [
+  {
+    id: 1,
+    header: {
+      title: "A Compelling Turnaround: From Stagnation to Momentum",
+      description:
+        "Want a blueprint for turning an under-performing Amazon brand into a runaway success? Read on to see how a natural-protein-bar maker overcame fierce competition, poor visibility, and soaring ad costs — and emerged stronger than ever. This journey illustrates how clear strategy and disciplined execution can make numbers soar.",
+    },
+    after: {
+      metrics: {
+        revenue: { before: 50000, after: 150000 },
+        acos: { before: 35, after: 22 },
+        tacos: { before: 18, after: 12 },
+      },
+    },
+    color: "pink",
+  },
+  {
+    id: 2,
+    header: {
+      title: "Turning the Tide for an Eco-Cleaning Brand: A Fresh Start on Amazon",
+      description:
+        "Looking for inspiration on reviving a stalled Amazon presence? See how a company that sells biodegradable cleaning sprays escaped lacklustre sales, tamed its ad spend and charted a new path to growth. This story proves that smart tactics and consistent refinements can make a struggling brand thrive.",
+    },
+    after: {
+      metrics: {
+        revenue: { before: 75000, after: 225000 },
+        acos: { before: 40, after: 28 },
+        tacos: { before: 20, after: 14 },
+      },
+    },
+    color: "orange",
+  },
+  {
+    id: 3,
+    header: {
+      title: "Brewing Success for a Specialty Coffee Brand: From Low Sales to Roaring Hot",
+      description:
+        "Ever wonder how a small coffee brand can rise above the noise on Amazon? This story chronicles how a roaster of artisan beans moved from stagnation to explosive growth. With clever adjustments and relentless optimisation, they turned sips into a thriving business.",
+    },
+    after: {
+      metrics: {
+        revenue: { before: 100000, after: 350000 },
+        acos: { before: 32, after: 24 },
+        tacos: { before: 16, after: 10 },
+      },
+    },
+    color: "cyan",
+  },
+  {
+    id: 4,
+    header: {
+      title: "Rescuing a Plant-Based Pet Food Brand: Creating a Feeding Frenzy on Amazon",
+      description:
+        "Need proof that a stagnant Amazon business can roar back to life? Here’s how a company making plant-based pet food escaped supply-chain woes and runaway ad costs to achieve spectacular growth. This tale shows that with the right approach, even underdogs can dominate their niche.",
+    },
+    after: {
+      metrics: {
+        revenue: { before: 30000, after: 120000 },
+        acos: { before: 45, after: 30 },
+        tacos: { before: 22, after: 15 },
+      },
+    },
+    color: "pink",
+  },
+  {
+    id: 5,
+    header: {
+      title: "Revitalising an Artisan Skincare Brand: From Slow Sales to Soaring Success",
+      description:
+        "Curious how a niche beauty label can shine on Amazon’s crowded shelves? This case chronicles how a maker of small-batch moisturisers and soaps transformed its performance. With inventive solutions and disciplined spending, the brand went from obscurity to becoming a sought-after name.",
+    },
+    after: {
+      metrics: {
+        revenue: { before: 55000, after: 200000 },
+        acos: { before: 38, after: 24 },
+        tacos: { before: 19, after: 11 },
+      },
+    },
+    color: "purple",
+  },
+];
 
-  useEffect(() => {
-    setIsClient(true);
-    
-    // Scroll animation observer - wait for element to be in DOM
-    let scrollObserver = null;
-    let timeoutId = null;
+const CaseStudyCard = ({ study, index }) => {
+  const { header, color } = study;
 
-    const setupScrollAnimation = () => {
-      const caseStudyElement = document.getElementById(`case-study-${index}`);
-      if (!caseStudyElement) {
-        // Retry if element not found yet
-        timeoutId = setTimeout(setupScrollAnimation, 100);
-        return;
-      }
-
-      // Check if element is already in view (for first case study)
-      const rect = caseStudyElement.getBoundingClientRect();
-      const isInView = rect.top < window.innerHeight && rect.bottom > 0;
-      if (isInView && index === 0) {
-        // First case study - show immediately if already in view
-        setIsVisible(true);
-        return;
-      }
-
-      scrollObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setIsVisible(true);
-              if (scrollObserver) {
-                scrollObserver.disconnect();
-              }
-            }
-          });
-        },
-        { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
-      );
-
-      scrollObserver.observe(caseStudyElement);
-    };
-
-    setupScrollAnimation();
-
-    return () => {
-      if (timeoutId) clearTimeout(timeoutId);
-      if (scrollObserver) scrollObserver.disconnect();
-    };
-  }, [index]);
-
-  useEffect(() => {
-    setIsClient(true);
-    
-    if (!caseStudy?.after?.metrics) return;
-    
-    const { revenue, acos, tacos } = caseStudy.after.metrics;
-    
-    // Animate metrics on scroll
-    const animateMetrics = () => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              // Animate revenue
-              let current = revenue.before;
-              const target = revenue.after;
-              const increment = (target - current) / 60;
-              const revenueInterval = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                  current = target;
-                  clearInterval(revenueInterval);
-                }
-                setAnimatedMetrics((prev) => ({
-                  ...prev,
-                  revenue: Math.round(current),
-                }));
-              }, 30);
-
-              // Animate ACoS
-              let acosCurrent = acos.before;
-              const acosTarget = acos.after;
-              const acosIncrement = (acosCurrent - acosTarget) / 60;
-              const acosInterval = setInterval(() => {
-                acosCurrent -= Math.abs(acosIncrement);
-                if (acosCurrent <= acosTarget) {
-                  acosCurrent = acosTarget;
-                  clearInterval(acosInterval);
-                }
-                setAnimatedMetrics((prev) => ({
-                  ...prev,
-                  acos: Math.round(acosCurrent * 10) / 10,
-                }));
-              }, 30);
-
-              // Animate TACoS
-              let tacosCurrent = tacos.before;
-              const tacosTarget = tacos.after;
-              const tacosIncrement = (tacosCurrent - tacosTarget) / 60;
-              const tacosInterval = setInterval(() => {
-                tacosCurrent -= Math.abs(tacosIncrement);
-                if (tacosCurrent <= tacosTarget) {
-                  tacosCurrent = tacosTarget;
-                  clearInterval(tacosInterval);
-                }
-                setAnimatedMetrics((prev) => ({
-                  ...prev,
-                  tacos: Math.round(tacosCurrent * 10) / 10,
-                }));
-              }, 30);
-
-              observer.disconnect();
-            }
-          });
-        },
-        { threshold: 0.3 }
-      );
-
-      const metricsSection = document.getElementById(`metrics-section-${index}`);
-      if (metricsSection) {
-        observer.observe(metricsSection);
-      }
-
-      return () => observer.disconnect();
-    };
-
-    animateMetrics();
-  }, [caseStudy, index]);
-
-  const formatCurrency = (num) => {
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-      maximumFractionDigits: 0,
-    }).format(num);
+  const colorStyles = {
+    pink: {
+      bg: "bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-950/30 dark:to-pink-900/20",
+      border: "border-pink-200 dark:border-pink-800/30",
+      accent: "text-pink-600 dark:text-pink-400",
+      highlight: "bg-pink-500/10 border-pink-300 dark:border-pink-700",
+      graph: "bg-pink-100 dark:bg-pink-900/20",
+      barAccent: "bg-pink-500",
+    },
+    orange: {
+      bg: "bg-gradient-to-br from-orange-50 to-amber-100 dark:from-orange-950/30 dark:to-amber-900/20",
+      border: "border-orange-200 dark:border-orange-800/30",
+      accent: "text-orange-600 dark:text-orange-400",
+      highlight: "bg-orange-500/10 border-orange-300 dark:border-orange-700",
+      graph: "bg-orange-100 dark:bg-orange-900/20",
+      barAccent: "bg-orange-500",
+    },
+    cyan: {
+      bg: "bg-gradient-to-br from-cyan-50 to-blue-100 dark:from-cyan-950/30 dark:to-blue-900/20",
+      border: "border-cyan-200 dark:border-cyan-800/30",
+      accent: "text-cyan-600 dark:text-cyan-400",
+      highlight: "bg-cyan-500/10 border-cyan-300 dark:border-cyan-700",
+      graph: "bg-cyan-100 dark:bg-cyan-900/20",
+      barAccent: "bg-cyan-500",
+    },
+    purple: {
+      bg: "bg-gradient-to-br from-purple-50 to-indigo-100 dark:from-purple-950/30 dark:to-indigo-900/20",
+      border: "border-purple-200 dark:border-purple-800/30",
+      accent: "text-purple-600 dark:text-purple-400",
+      highlight: "bg-purple-500/10 border-purple-300 dark:border-purple-700",
+      graph: "bg-purple-100 dark:bg-purple-900/20",
+      barAccent: "bg-purple-500",
+    },
   };
 
-  const formatPercent = (num) => {
-    return `${num.toFixed(1)}%`;
-  };
+  const styles = colorStyles[color];
+  const isEven = index % 2 === 0;
 
-  if (!caseStudy) return null;
-
-  const { revenue, acos, tacos } = caseStudy.after.metrics;
-  const revenueIncrease = ((revenue.after / revenue.before - 1) * 100).toFixed(0);
-  const acosReduction = (acos.before - acos.after).toFixed(0);
-  const tacosReduction = (((tacos.before - tacos.after) / tacos.before) * 100).toFixed(0);
-
-  return (
-    <div 
-      id={`case-study-${index}`}
-      className={`${index > 0 ? "mt-20 md:mt-24" : ""} transition-all duration-700 ease-out ${
-        isVisible 
-          ? "opacity-100 translate-y-0" 
-          : "opacity-0 translate-y-8"
-      }`}
+	return (
+    <Link
+      href={`/case-studies/${study.id}`}
+      className={`group relative block h-full overflow-hidden rounded-3xl border ${styles.border} ${styles.bg} p-8 shadow-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_32px_80px_-60px_rgba(15,23,42,0.85)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white/60`}
     >
-      {/* Case Study Header */}
-      <div className="mb-16 md:mb-20">
-        <div className="inline-block px-4 py-2 bg-[#4CAF50]/10 text-[#4CAF50] rounded-full text-sm font-semibold mb-6 uppercase tracking-wider">
-          {caseStudy.header.badge}
-        </div>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#1a1a1a] dark:text-white mb-6 leading-tight">
-          {caseStudy.header.title}
-        </h2>
-        <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed max-w-4xl">
-          {caseStudy.header.description}
-        </p>
-      </div>
+      <div className={`grid h-full items-stretch gap-8 lg:grid-cols-2 ${isEven ? "" : "lg:grid-cols-[1.2fr_0.8fr]"}`}>
+        {/* Content Section */}
+        <div className={`flex h-full flex-col justify-center ${isEven ? "order-1" : "order-2"}`}>
+          <div className="flex items-center gap-2 mb-4">
+            <span className="h-2 w-2 rounded-full bg-black dark:bg-white"></span>
+            <span className="h-2 w-2 rounded-full bg-black dark:bg-white"></span>
+            <span className="h-2 w-2 rounded-full bg-black dark:bg-white"></span>
+						</div>
 
-      {/* Before Section */}
-      <div className={`mb-20 md:mb-24 transition-all duration-700 ease-out delay-[100ms] ${
-        isVisible 
-          ? "opacity-100 translate-y-0" 
-          : "opacity-0 translate-y-6"
-      }`}>
-        <div className="bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 rounded-30px p-8 md:p-12 border-2 border-red-200 dark:border-red-800/50">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-xl">✕</span>
-            </div>
-            <h3 className="text-3xl md:text-4xl font-black text-[#1a1a1a] dark:text-white">
-              {caseStudy.before.title}
-            </h3>
-          </div>
-          <p className="text-lg md:text-xl text-gray-800 dark:text-gray-200 mb-8 leading-relaxed">
-            {caseStudy.before.description}
+          <h3 className="text-3xl lg:text-4xl font-black leading-tight text-[#101828] dark:text-white mb-4">
+							{header?.title}
+						</h3>
+
+          <p className="text-base text-[#475467] dark:text-gray-300 mb-8 leading-relaxed">
+            {header?.description}
           </p>
 
-          {/* Before Metrics */}
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            {caseStudy.before.metrics.map((metric, idx) => (
-              <div key={idx} className="bg-white dark:bg-[#1a1a1a] rounded-20px p-6 border-2 border-red-200 dark:border-red-800/50">
-                <div className="text-3xl md:text-4xl font-black text-red-600 dark:text-red-400 mb-2">
-                  {metric.value}
-                </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider">
-                  {metric.label}
-                </div>
-                <div className="text-xs text-red-600 dark:text-red-400 mt-2 font-semibold">
-                  {metric.status}
-                </div>
-              </div>
-            ))}
-          </div>
+					</div>
 
-          <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 italic">
-            {caseStudy.before.summary}
-          </p>
-        </div>
-      </div>
-
-      {/* Strategy Section */}
-      <div className={`mb-20 md:mb-24 transition-all duration-700 ease-out delay-[200ms] ${
-        isVisible 
-          ? "opacity-100 translate-y-0" 
-          : "opacity-0 translate-y-6"
-      }`}>
-        <div className="bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] rounded-30px p-8 md:p-12 border border-[#4CAF50]/30">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-              <span className="text-[#4CAF50] font-bold text-xl">✓</span>
-            </div>
-            <h3 className="text-3xl md:text-4xl font-black text-white">
-              {caseStudy.strategy.title}
-            </h3>
-          </div>
-          <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
-            {caseStudy.strategy.description}
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {caseStudy.strategy.items.map((strategy, idx) => (
-              <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-20px p-6 border border-white/20">
-                <h4 className="text-xl font-bold text-white mb-3">{strategy.title}</h4>
-                <p className="text-white/80 leading-relaxed">{strategy.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* After Section - Metrics */}
-      <div 
-        id={`metrics-section-${index}`} 
-        className={`mb-20 md:mb-24 transition-all duration-700 ease-out delay-[300ms] ${
-          isVisible 
-            ? "opacity-100 translate-y-0" 
-            : "opacity-0 translate-y-6"
-        }`}
-      >
-        <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-30px p-8 md:p-12 border-2 border-[#4CAF50] dark:border-[#4CAF50]/50">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-12 bg-[#4CAF50] rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-xl">✓</span>
-            </div>
-            <h3 className="text-3xl md:text-4xl font-black text-[#1a1a1a] dark:text-white">
-              {caseStudy.after.title}
-            </h3>
-          </div>
-          <p className="text-lg md:text-xl text-gray-800 dark:text-gray-200 mb-8 leading-relaxed">
-            {caseStudy.after.description}
-          </p>
-
-          {/* After Metrics - Animated Dashboard Style */}
-          <div className="bg-white dark:bg-[#1a1a1a] rounded-30px p-6 md:p-8 border-2 border-[#4CAF50]/30 mb-8">
-            {/* Dashboard Header */}
-            <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-200 dark:border-gray-700">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-[#4CAF50] rounded-lg flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">AS</span>
-                </div>
-                <div>
-                  <div className="text-sm font-semibold text-gray-900 dark:text-white">Amazon Seller</div>
-                  <div className="text-xs text-gray-500 dark:text-gray-400">Performance Dashboard</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-xs">🇺🇸</span>
-                <span className="text-xs text-gray-600 dark:text-gray-400">US Marketplace</span>
-              </div>
-            </div>
-
-            {/* Key Metrics Cards */}
-            <div className="grid md:grid-cols-2 gap-4 mb-6">
-              <div className="bg-gradient-to-br from-[#4CAF50]/10 to-[#4CAF50]/5 rounded-20px p-6 border border-[#4CAF50]/20">
-                <div className="text-sm text-gray-600 dark:text-gray-400 mb-2 uppercase tracking-wider">
-                  Sales Today
-                </div>
-                <div className="text-3xl font-black text-[#4CAF50] mb-1">
-                  {isClient ? formatCurrency(animatedMetrics.revenue / 30) : "$0"}
-                </div>
-                <div className="text-xs text-green-600 dark:text-green-400 font-semibold">
-                  ↗ {revenueIncrease}% vs Previous
-                </div>
-              </div>
-              <div className="bg-gradient-to-br from-[#4CAF50]/10 to-[#4CAF50]/5 rounded-20px p-6 border border-[#4CAF50]/20">
-                <div className="text-sm text-gray-600 dark:text-gray-400 mb-2 uppercase tracking-wider">
-                  Units Sold Today
-                </div>
-                <div className="text-3xl font-black text-[#4CAF50] mb-1">
-                  {isClient ? Math.round(animatedMetrics.revenue / 30 / 12) : "0"}
-                </div>
-                <div className="text-xs text-green-600 dark:text-green-400 font-semibold">
-                  ↗ Consistent Growth
-                </div>
-              </div>
-            </div>
-
-            {/* Product Sales Overview */}
-            <div className="bg-gray-50 dark:bg-[#0a0a0a] rounded-20px p-6 mb-6">
-              <div className="flex items-center justify-between mb-4">
-                <div className="text-sm font-semibold text-gray-900 dark:text-white">
-                  Product Sales
-                </div>
-                <div className="text-xs text-gray-500 dark:text-gray-400">
-                  Last 30 days
-                </div>
-              </div>
-              <div className="flex items-baseline gap-4">
-                <div className="text-4xl font-black text-[#4CAF50]">
-                  {isClient ? formatCurrency(animatedMetrics.revenue) : "$0"}
-                </div>
-                <div className="text-sm text-green-600 dark:text-green-400 font-semibold">
-                  ↗ {revenueIncrease}%↑ Previous 30 days
-                </div>
-              </div>
-              <div className="text-xs text-gray-500 dark:text-gray-400 mt-2">
-                vs {formatCurrency(revenue.before)} previously
-              </div>
-              
-              {/* Simple Bar Chart Visualization */}
-              <div className="mt-6 flex items-end gap-1 h-24">
-                {Array.from({length: 30}).map((_, i) => {
-                  // Use deterministic pattern based on index to avoid hydration mismatch
-                  const seed = (i * 7 + 13) % 100;
-                  const height = 30 + (seed * 0.6) + (i > 15 ? 20 : 0);
-                  return (
-                    <div
-                      key={i}
-                      className="flex-1 bg-gradient-to-t from-[#4CAF50] to-[#2E7D32] rounded-t-lg opacity-80 hover:opacity-100 transition-opacity"
-                      style={{ height: `${height}%` }}
-                    ></div>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Highlight Box */}
-            <div className="bg-gradient-to-r from-orange-400/20 via-[#4CAF50]/20 to-purple-400/20 rounded-20px p-6 mb-6 border-2 border-[#4CAF50]/30 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#4CAF50]/10 rounded-full blur-3xl"></div>
-              <div className="relative z-10">
-                <div className="text-2xl md:text-3xl font-black text-[#1a1a1a] dark:text-white mb-2">
-                  {isClient ? formatCurrency(animatedMetrics.revenue) : formatCurrency(revenue.after)} in 6 Months
-                </div>
-                <div className="text-lg text-gray-700 dark:text-gray-300">
-                  While achieving {isClient ? formatPercent(animatedMetrics.acos) : formatPercent(acos.after)} ACoS
-                </div>
-                <div className="mt-4 inline-block px-4 py-2 bg-[#4CAF50] text-white rounded-full text-sm font-bold">
-                  ↗ {revenueIncrease}% Growth
-                </div>
-              </div>
-            </div>
-
-            {/* Performance Metrics */}
-            <div className="grid md:grid-cols-3 gap-4">
-              <div className="bg-gradient-to-br from-[#4CAF50]/10 to-transparent rounded-20px p-6 border border-[#4CAF50]/20 relative group hover:scale-105 transition-transform">
-                <div className="absolute top-2 right-2 w-8 h-8 bg-[#4CAF50]/20 rounded-full flex items-center justify-center group-hover:bg-[#4CAF50] transition-colors">
-                  <span className="text-[#4CAF50] group-hover:text-white text-lg">🔍</span>
-                </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 mb-2 uppercase tracking-wider">
-                  {revenue.label}
-                </div>
-                <div className="text-2xl font-black text-[#4CAF50] mb-1">
-                  {isClient ? formatCurrency(animatedMetrics.revenue) : formatCurrency(revenue.after)}
-                </div>
-                <div className="text-xs text-gray-500 dark:text-gray-400">
-                  Monthly Revenue
-                </div>
-              </div>
-              <div className="bg-gradient-to-br from-[#4CAF50]/10 to-transparent rounded-20px p-6 border border-[#4CAF50]/20 relative group hover:scale-105 transition-transform">
-                <div className="absolute top-2 right-2 w-8 h-8 bg-[#4CAF50]/20 rounded-full flex items-center justify-center group-hover:bg-[#4CAF50] transition-colors">
-                  <span className="text-[#4CAF50] group-hover:text-white text-lg">🔍</span>
-                </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 mb-2 uppercase tracking-wider">
-                  {acos.label}
-                </div>
-                <div className="text-2xl font-black text-[#4CAF50] mb-1">
-                  {isClient ? formatPercent(animatedMetrics.acos) : formatPercent(acos.after)}
-                </div>
-                <div className="text-xs text-gray-500 dark:text-gray-400">
-                  {acosReduction}pt Reduction
-                </div>
-              </div>
-              <div className="bg-gradient-to-br from-[#4CAF50]/10 to-transparent rounded-20px p-6 border border-[#4CAF50]/20 relative group hover:scale-105 transition-transform">
-                <div className="absolute top-2 right-2 w-8 h-8 bg-[#4CAF50]/20 rounded-full flex items-center justify-center group-hover:bg-[#4CAF50] transition-colors">
-                  <span className="text-[#4CAF50] group-hover:text-white text-lg">🔍</span>
-                </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 mb-2 uppercase tracking-wider">
-                  {tacos.label}
-                </div>
-                <div className="text-2xl font-black text-[#4CAF50] mb-1">
-                  {isClient ? formatPercent(animatedMetrics.tacos) : formatPercent(tacos.after)}
-                </div>
-                <div className="text-xs text-gray-500 dark:text-gray-400">
-                  {tacosReduction}% Reduction
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Additional Results */}
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white dark:bg-[#1a1a1a] rounded-20px p-6 border border-[#4CAF50]/30">
-              <div className="text-4xl md:text-5xl font-black text-[#4CAF50] mb-2">
-                {revenueIncrease}%
-              </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-2">
-                Increase in Revenue
-              </div>
-              <div className="text-xs text-gray-500 dark:text-gray-400">
-                From {formatCurrency(revenue.before)} to {formatCurrency(revenue.after)} monthly
-              </div>
-            </div>
-            <div className="bg-white dark:bg-[#1a1a1a] rounded-20px p-6 border border-[#4CAF50]/30">
-              <div className="text-4xl md:text-5xl font-black text-[#4CAF50] mb-2">
-                {acosReduction}pt
-              </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-2">
-                ACoS Reduction
-              </div>
-              <div className="text-xs text-gray-500 dark:text-gray-400">
-                From {acos.before}% to {acos.after}%
-              </div>
-            </div>
-            <div className="bg-white dark:bg-[#1a1a1a] rounded-20px p-6 border border-[#4CAF50]/30">
-              <div className="text-4xl md:text-5xl font-black text-[#4CAF50] mb-2">
-                {tacosReduction}%
-              </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-2">
-                TACoS Reduction
-              </div>
-              <div className="text-xs text-gray-500 dark:text-gray-400">
-                From {tacos.before}% to {tacos.after}%
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-8 p-6 bg-white/50 dark:bg-[#1a1a1a]/50 rounded-20px backdrop-blur-sm">
-            <p className="text-base md:text-lg text-gray-800 dark:text-gray-200 leading-relaxed">
-              {caseStudy.after.summary}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+        {/* Dashboard Mockup */}
+        <div className={`relative ${isEven ? "order-2" : "order-1"} flex h-full`}>
+          <div
+            className={`relative flex h-full w-full items-center justify-center overflow-hidden rounded-2xl border-2 ${styles.border} ${styles.graph} p-4 shadow-lg`}
+          >
+            <Image
+              src="/img/portfolio/graph.png"
+              alt="Performance dashboard preview"
+              width={900}
+              height={640}
+              className="w-full h-auto rounded-xl border border-white/40 shadow-[0_18px_45px_-30px_rgba(15,23,42,0.7)]"
+              priority={index < 2}
+            />
+					</div>
+				</div>
+			</div>
+		</Link>
+	);
 };
 
-// Main Component
 const CaseStudiesMain = () => {
-  const caseStudies = getCaseStudies();
-  const featuredCaseStudy = caseStudies.find(cs => cs.featured) || caseStudies[0];
+	const caseStudies = useMemo(() => getCaseStudies(), []);
 
-  return (
-    <main className="overflow-hidden">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-white via-[#f8f9fa] to-white dark:from-black dark:via-[#0a0a0a] dark:to-[#121212] pt-130px md:pt-150px lg:pt-160px">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#4CAF50]/10 rounded-full blur-[120px] animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#4CAF50]/5 rounded-full blur-[120px] animate-pulse" style={{animationDelay: '1s'}}></div>
-          <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-[#4CAF50]/5 rounded-full blur-[150px] transform -translate-x-1/2 -translate-y-1/2"></div>
-          
-          {/* Grid Pattern Overlay */}
-          <div className="absolute inset-0 opacity-[0.02]" style={{
-            backgroundImage: 'linear-gradient(rgba(76, 175, 80, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(76, 175, 80, 0.1) 1px, transparent 1px)',
-            backgroundSize: '50px 50px'
-          }}></div>
-        </div>
+	return (
+    <main className="min-h-screen bg-black overflow-hidden">
+      <section className="relative overflow-hidden pt-32 pb-16 px-4 sm:px-6 lg:px-8">
+        {/* Background Effects */}
+        <div className="absolute inset-0 -z-10 opacity-30">
+          <div className="absolute -top-24 -left-16 h-96 w-96 rounded-full bg-[#4CAF50]/20 blur-3xl"></div>
+          <div className="absolute top-1/2 -right-24 h-96 w-96 rounded-full bg-blue-500/20 blur-3xl"></div>
+				</div>
 
-        <div className="container relative z-10 px-6 md:px-8">
-          <div className="max-w-6xl mx-auto text-center">
-            {/* Badge */}
-            <div className="inline-block mb-6">
-              <span className="px-6 py-2 bg-[#4CAF50]/10 border border-[#4CAF50]/30 rounded-full text-[#4CAF50] text-sm font-semibold uppercase tracking-wider backdrop-blur-sm">
-                {featuredCaseStudy.hero.badge}
-              </span>
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-2 mb-6">
+              <span className="h-2 w-2 rounded-full bg-[#4CAF50]"></span>
+            <span className="text-xs font-bold uppercase tracking-wider text-white/80">
+							Case Studies
+						</span>
             </div>
+          <h1 className="text-5xl lg:text-6xl font-black leading-tight text-white mb-6 max-w-4xl mx-auto">
+							Amazon growth stories engineered for predictable revenue
+						</h1>
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              Real brands. Real numbers. Explore how we turn chaotic ad accounts into disciplined
+              profit engines — and what a calm, scaling Amazon brand actually looks like.
+						</p>
+					</div>
 
-            {/* Main Headline */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[1.1] text-[#1a1a1a] dark:text-white mb-8">
-              {featuredCaseStudy.hero.title.split(' ')[0]} <span className="text-[#4CAF50]" style={{textShadow: '0 0 40px rgba(76, 175, 80, 0.3)'}}>{featuredCaseStudy.hero.titleHighlight}</span>
-            </h1>
-
-            {/* Description */}
-            <p className="text-lg md:text-xl lg:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed max-w-4xl mx-auto mb-10 font-light">
-              {featuredCaseStudy.hero.description}
-            </p>
-
-            {/* Stats Counter */}
-            <div className="flex flex-wrap justify-center gap-8 md:gap-12 mt-12">
-              {featuredCaseStudy.hero.stats.map((stat, idx) => (
-                <div key={idx} className="text-center">
-                  <div className="text-4xl md:text-5xl font-black text-[#4CAF50] mb-2">{stat.value}</div>
-                  <div className="text-sm md:text-base text-gray-600 dark:text-gray-400 uppercase tracking-wider">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Main Case Studies Section */}
-      <section className="py-100px md:py-120px lg:py-140px bg-white dark:bg-[#121212] relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-[0.02]" style={{
-          backgroundImage: 'radial-gradient(circle, rgba(76, 175, 80, 0.1) 1px, transparent 1px)',
-          backgroundSize: '40px 40px'
-        }}></div>
-
-        <div className="container relative z-10 px-6 md:px-8">
-          <div className="max-w-7xl mx-auto">
-            {/* Render all case studies */}
-            {caseStudies.map((caseStudy, index) => (
-              <CaseStudyItem key={caseStudy.id} caseStudy={caseStudy} index={index} />
+          {/* Case Studies Grid */}
+          <div className="space-y-12 mb-20">
+            {caseStudies.map((study, index) => (
+              <CaseStudyCard key={study.id} study={study} index={index} />
             ))}
+						</div>
 
-            {/* CTA Section - Only show once at the end */}
-            {caseStudies.length > 0 && (
-              <div className="text-center bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] rounded-30px p-12 md:p-16 border border-[#4CAF50]/30 relative overflow-hidden mt-20">
-                <div className="absolute inset-0 opacity-10">
-                  <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-                  <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-                </div>
-                <div className="relative z-10">
-                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6">
-                    {caseStudies[0].cta.title}
-                  </h3>
-                  <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto">
-                    {caseStudies[0].cta.description}
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    {caseStudies[0].cta.buttons.map((button, idx) => (
-                      button.type === "primary" ? (
-                        <ButtonPrimary key={idx} type={2} isIcon={true} url={button.url}>
-                          {button.text}
-                        </ButtonPrimary>
-                      ) : (
-                        <button key={idx} className="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-[#4CAF50] rounded-15px font-bold text-lg transition-all duration-300 transform hover:scale-105">
-                          {button.text}
-                        </button>
-                      )
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-    </main>
-  );
+          {/* Stats Section */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="rounded-3xl border border-[#4CAF50]/30 bg-gradient-to-br from-[#14532d] to-[#065f46] p-8 text-center">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#bbf7d0] mb-2">
+                Average Impact
+              </p>
+              <p className="text-6xl font-black text-white mb-2">355%</p>
+              <p className="text-sm text-[#bbf7d0]">Revenue growth delivered</p>
+									</div>
+            <div className="rounded-3xl border border-white/20 bg-white/5 p-8 text-center">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70 mb-2">
+                Brands Partnered
+              </p>
+              <p className="text-6xl font-black text-white mb-2">100+</p>
+              <p className="text-sm text-white/70">
+                Across Amazon, Shopify & TikTok Shop
+              </p>
+									</div>
+					</div>
+				</div>
+			</section>
+		</main>
+	);
 };
 
 export default CaseStudiesMain;
-
