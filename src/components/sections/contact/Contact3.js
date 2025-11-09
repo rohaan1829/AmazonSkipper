@@ -38,10 +38,10 @@ const Contact3 = () => {
 												Phone
 											</p>
 											<Link
-												href="tel:0123456789"
-												className="text-primary-color-light dark:text-body-color-3 text-lg  font-normal hover:text-primary-color dark:hover:text-primary-color"
+												href="tel:+19342013452"
+												className="text-primary-color-light dark:text-body-color-3 text-lg  font-normal hover:text-[#16A34A] dark:hover:text-[#22C55E]"
 											>
-												+01 123 654 8096
+												+1 9342013452
 											</Link>
 										</div>
 									</li>
@@ -57,10 +57,10 @@ const Contact3 = () => {
 												Email
 											</p>
 											<Link
-												href="mailto:mail@mail.com"
-												className="text-primary-color-light dark:text-body-color-3 text-lg  font-normal hover:text-primary-color dark:hover:text-primary-color"
+												href="mailto:muhammad.huzaifa@amazonskipperteam.com"
+												className="text-primary-color-light dark:text-body-color-3 text-lg font-normal hover:text-[#16A34A] dark:hover:text-[#22C55E] break-all"
 											>
-												gerolddesign@mail.com
+												muhammad.huzaifa@amazonskipperteam.com
 											</Link>
 										</div>
 									</li>
@@ -76,10 +76,10 @@ const Contact3 = () => {
 												Address
 											</p>
 											<Link
-												href="#"
-												className="text-primary-color-light dark:text-body-color-3 text-lg  font-normal hover:text-primary-color dark:hover:text-primary-color"
+												href="https://maps.google.com/?q=Office%2013609%20182-184%20High%20Street%20North,%20East%20Ham,%20London,%20United%20Kingdom,%20E6%202JA"
+												className="text-primary-color-light dark:text-body-color-3 text-lg  font-normal hover:text-[#16A34A] dark:hover:text-[#22C55E]"
 											>
-												Warne Park Street Pine, FL 33157, New York
+												Office 13609 182-184 High Street North, East Ham, London, United Kingdom, E6 2JA
 											</Link>
 										</div>
 									</li>

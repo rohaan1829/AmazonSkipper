@@ -10,7 +10,7 @@ import Portfolio9 from "@/components/sections/portfolio/Portfolio9";
 //import Resume5 from "@/components/sections/resume/Resume5";
 //import Services6 from "@/components/sections/services/Services6";
 import Skills4 from "@/components/sections/skills/Skills4";
-// import Testimonials9 from "@/components/sections/testimonials/Testimonials9";
+import Testimonials9 from "@/components/sections/testimonials/Testimonials9";
 import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
 import { useState } from "react";
 
@@ -73,6 +73,9 @@ const Index9Main = () => {
 			</div>
 			<div className="wow fadeInUp" data-wow-delay=".24s">
 				<FeatureMarque2 type={3} isRotate={true} />
+			</div>
+			<div className="wow fadeInUp" data-wow-delay=".30s">
+				<Testimonials9 />
 			</div>
 			{/* <Blogs5 /> */}
 			<div className="wow fadeInUp" data-wow-delay=".28s">
