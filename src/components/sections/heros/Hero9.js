@@ -111,7 +111,7 @@ const Hero9 = () => {
 									<img
 										src="/img/hero/clutch.png"
 										alt="Clutch"
-										className="h-14 w-auto object-contain drop-shadow-sm"
+										className="h-[74px] w-auto object-contain drop-shadow-sm md:h-[82px] lg:h-[90px]"
 									/>
 								</a>
 								<a
@@ -123,7 +123,7 @@ const Hero9 = () => {
 									<img
 										src="/img/hero/ad.png"
 										alt="Amazon Verified"
-										className="h-14 w-auto object-contain drop-shadow-sm"
+										className="h-[74px] w-auto object-contain drop-shadow-sm md:h-[82px] lg:h-[90px]"
 									/>
 								</a>
 								<a
@@ -135,7 +135,7 @@ const Hero9 = () => {
 									<img
 										src="/img/hero/trustpilot.png"
 										alt="Trustpilot"
-										className="h-14 w-auto object-contain drop-shadow-sm"
+										className="h-[74px] w-auto object-contain drop-shadow-sm md:h-[82px] lg:h-[90px]"
 									/>
 								</a>
 							</div>
