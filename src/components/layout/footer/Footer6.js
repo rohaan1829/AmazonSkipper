@@ -142,6 +142,9 @@ const Footer6 = () => {
 										<p className="text-size-15 font-normal text-white-color capitalize">
 											Office 13609, 182-184 High Street North,<br />
 											East Ham, London, United Kingdom, E6 2JA
+											<br />
+											Office #26, Kohinoor Plaza 1, Jaranwala Road,<br />
+											Faisalabad, Pakistan
 										</p>
 									</li>
 									<li className="nav_item group relative">
@@ -161,13 +164,34 @@ const Footer6 = () => {
 											+1 934 201 3452
 										</Link>
 									</li>
+									<li className="nav_item group relative">
+										<Link
+											href="tel:+923326322643"
+											className="text-size-15 font-normal text-white-color hover:text-primary-color dark:hover:text-primary-color capitalize  "
+										>
+											+92 332 6322 643
+										</Link>
+									</li>
 								</ul>
 							</div>
 
 							<div
 								className="w-full max-w-full md:max-w-[calc(50%-20px)] lg:w-auto lg:max-w-[inherit] wow fadeInUp"
 								data-wow-delay=".9s"
-							></div>
+							>
+								<h6 className="text-xl leading-1.2 uppercase font-semibold text-white-color mb-25px md:mb-35px">
+									Marketplaces We Serve
+								</h6>
+								<ul className="nav flex flex-col gap-3 text-white-color/80">
+									{["United States", "Canada", "United Kingdom", "France", "Italy", "Australia"].map(
+										item => (
+											<li key={item} className="nav_item">
+												<span className="text-size-15 font-normal capitalize">{item}</span>
+											</li>
+										),
+									)}
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
