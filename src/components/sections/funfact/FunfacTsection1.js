@@ -7,7 +7,7 @@ const FunfacTsection1 = () => {
 			<div className="funfact-area relative after:absolute after:top-1/2 after:-translate-y-1/2 after:right-5 after:w-650px after:h-550px after:blur-[150px] after:rounded-50% after:bg-gradient-circle-2 after:-z-1  after:translate-x-1/2 after:opacity-60">
 				<div className="container">
 					{/* <!-- section heading --> */}
-					<div className="mb-10 md:mb-50px xl:mb-60px ">
+					<div className="mb-10 md:mb-50px xl:mb-60px flex flex-col items-center text-center">
 						<div className="mb-25px  ">
 							<span
 								className="text-xs  uppercase text-primary-color  font-medium relative inline-block tracking-0.2em  wow fadeInUp"
@@ -17,7 +17,7 @@ const FunfacTsection1 = () => {
 							</span>
 						</div>
 						<h2
-							className="text-3xl md:text-size-35 lg:text-size-40 xl:text-size-45 font-semibold  leading-1.2 -tracking-0.02em inline-block text-seondary-color dark:text-white-color wow fadeInUp"
+							className="text-2xl md:text-3xl lg:text-[32px] xl:text-[36px] font-semibold leading-tight -tracking-0.02em inline-block text-seondary-color dark:text-white-color wow fadeInUp"
 							data-wow-delay=".4s"
 						>
 							Measuring Success

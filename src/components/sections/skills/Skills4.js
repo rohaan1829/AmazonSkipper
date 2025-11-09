@@ -1,5 +1,6 @@
 "use client";
 
+import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
 import { motion } from "framer-motion";
 
 const onboardingSteps = [
@@ -112,6 +113,17 @@ const Skills4 = () => {
 								</div>
 							</motion.div>
 						))}
+					</div>
+
+					<div className="mt-16 text-center">
+						<p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+							Scaling fast is easy. Scaling safely is strategy. Discover how we grow brands without burning budgets.
+						</p>
+						<div className="mt-8 flex justify-center">
+							<ButtonPrimary type={2} isIcon={true} url="/#contact">
+								Let’s Scale Smarter
+							</ButtonPrimary>
+						</div>
 					</div>
 				</div>
 			</div>

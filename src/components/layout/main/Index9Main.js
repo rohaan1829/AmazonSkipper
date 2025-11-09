@@ -72,16 +72,16 @@ const Index9Main = () => {
 				</div>
 			</section>
 			<div className="wow fadeInUp" data-wow-delay=".12s">
-				<Brands2 />
-			</div>
-			<div className="wow fadeInUp" data-wow-delay=".18s">
-				<Skills4 />
-			</div>
-			<div className="wow fadeInUp" data-wow-delay=".22s">
 				<FeatureMarque2 type={3} isRotate={true} />
 			</div>
-			<div className="wow fadeInUp" data-wow-delay=".30s">
-				<Testimonials9 />
+			<div className="wow fadeInUp" data-wow-delay=".16s">
+				<Brands2 />
+			</div>
+			<div className="wow fadeInUp" data-wow-delay=".20s">
+				<Skills4 />
+			</div>
+			<div className="wow fadeInUp" data-wow-delay=".24s">
+				<FeatureMarque2 type={3} isRotate={true} />
 			</div>
 			{/* <Blogs5 /> */}
 			<div className="wow fadeInUp" data-wow-delay=".28s">

@@ -34,52 +34,41 @@ const FunFact5 = () => {
 			{Odometer ? (
 				<div
 					ref={ref}
-					className="flex flex-wrap xl:flex-nowrap items-center justify-center gap-30px text-primary-color dark:text-body-color"
+					className="flex flex-wrap xl:flex-nowrap items-center justify-center gap-20px text-primary-color dark:text-body-color"
 				>
-					<div className="funfact-item max-w-full w-full sm:w-240px md:w-310px lg:w-290px xl:w-310px flex flex-wrap sm:flex-nowrap flex-col justify-center items-center text-center bg-cream-light-color dark:bg-transparent  border border-body-color dark:border-bg-color-2 py-45px sm:py-50px md:pt-90px md:pb-97px px-15px md:px-30px rounded-10px">
-						<div className="number inline-flex items-center text-size-45 md:text-size-55 xl:text-size-64 font-bold leading-1 ">
-							<Odometer
-								className="!font-sora tracking-[0.04em]"
-								value={value}
-							/>{" "}
+					<div className="funfact-item max-w-full w-full sm:w-180px md:w-220px lg:w-210px xl:w-220px flex flex-col justify-center items-center text-center bg-cream-light-color dark:bg-transparent border border-body-color dark:border-bg-color-2 py-28px sm:py-32px md:py-40px px-10px md:px-18px rounded-10px">
+						<div className="number inline-flex items-center justify-center text-size-32 md:text-size-40 xl:text-size-48 font-bold leading-[1.05]">
+							<Odometer className="!font-sora tracking-[0.04em]" value={value} />
 							<span className="symbol"> +</span>
 						</div>
-						<div className="text leading-1 "> Job achievements</div>
+						<div className="text leading-1 text-center text-sm md:text-base lg:text-lg">Job achievements</div>
 					</div>
 
-					<div className="funfact-item max-w-full w-full sm:w-240px md:w-310px lg:w-290px xl:w-310px flex flex-wrap sm:flex-nowrap flex-col justify-center items-center text-center bg-cream-light-color dark:bg-transparent  border border-body-color dark:border-bg-color-2 py-45px sm:py-50px md:pt-90px md:pb-97px px-15px md:px-30px rounded-10px">
-						<div className="number inline-flex items-center text-size-45 md:text-size-55 xl:text-size-64 font-bold leading-1 ">
-							<Odometer
-								className="!font-sora tracking-[0.04em]"
-								value={value2}
-							/>{" "}
+					<div className="funfact-item max-w-full w-full sm:w-180px md:w-220px lg:w-210px xl:w-220px flex flex-col justify-center items-center text-center bg-cream-light-color dark:bg-transparent border border-body-color dark:border-bg-color-2 py-28px sm:py-32px md:py-40px px-10px md:px-18px rounded-10px">
+						<div className="number inline-flex items-center justify-center text-size-32 md:text-size-40 xl:text-size-48 font-bold leading-[1.05]">
+							<Odometer className="!font-sora tracking-[0.04em]" value={value2} />
 							<span className="symbol">%</span>
 						</div>
-						<div className="text leading-1"> Job achievements</div>
+						<div className="text leading-1 text-center text-sm md:text-base lg:text-lg">Job achievements</div>
 					</div>
 
-					<div className="funfact-item max-w-full w-full sm:w-240px md:w-310px lg:w-290px xl:w-310px flex flex-wrap sm:flex-nowrap flex-col justify-center items-center text-center bg-cream-light-color dark:bg-transparent  border border-body-color dark:border-bg-color-2 py-45px sm:py-50px md:pt-90px md:pb-97px px-15px md:px-30px rounded-10px">
-						<div className="number inline-flex items-center text-size-45 md:text-size-55 xl:text-size-64 font-bold leading-1 ">
-							<Odometer
-								className="!font-sora tracking-[0.04em]"
-								value={value3}
-							/>{" "}
+					<div className="funfact-item max-w-full w-full sm:w-180px md:w-220px lg:w-210px xl:w-220px flex flex-col justify-center items-center text-center bg-cream-light-color dark:bg-transparent border border-body-color dark:border-bg-color-2 py-28px sm:py-32px md:py-40px px-10px md:px-18px rounded-10px">
+						<div className="number inline-flex items-center justify-center text-size-32 md:text-size-40 xl:text-size-48 font-bold leading-[1.05]">
+							<Odometer className="!font-sora tracking-[0.04em]" value={value3} />
 							<span className="symbol">+</span>
 						</div>
-						<div className="text leading-1"> Years of Experience</div>
+						<div className="text leading-1 text-center text-sm md:text-base lg:text-lg">Years of Experience</div>
 					</div>
+
 					<div
-						className="funfact-item max-w-full w-full sm:w-240px md:w-310px lg:w-290px xl:w-310px flex flex-wrap sm:flex-nowrap flex-col justify-center items-center text-center bg-cream-light-color dark:bg-transparent  border border-body-color dark:border-bg-color-2 py-45px sm:py-50px md:pt-90px md:pb-97px px-15px md:px-30px rounded-10px"
+						className="funfact-item max-w-full w-full sm:w-180px md:w-220px lg:w-210px xl:w-220px flex flex-col justify-center items-center text-center bg-cream-light-color dark:bg-transparent border border-body-color dark:border-bg-color-2 py-28px sm:py-32px md:py-40px px-10px md:px-18px rounded-10px"
 						data-wow-delay=".6s"
 					>
-						<div className="number inline-flex items-center text-size-45 md:text-size-55 xl:text-size-64 font-bold leading-1 ">
-							<Odometer
-								className="!font-sora tracking-[0.04em]"
-								value={value4}
-							/>{" "}
+						<div className="number inline-flex items-center justify-center text-size-32 md:text-size-40 xl:text-size-48 font-bold leading-[1.05]">
+							<Odometer className="!font-sora tracking-[0.04em]" value={value4} />
 							<span className="symbol">K</span>
 						</div>
-						<div className="text leading-1"> Happy Clients</div>
+						<div className="text leading-1 text-center text-sm md:text-base lg:text-lg">Happy Clients</div>
 					</div>
 				</div>
 			) : (

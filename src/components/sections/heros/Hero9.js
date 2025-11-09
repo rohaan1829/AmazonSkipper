@@ -101,7 +101,7 @@ const Hero9 = () => {
 							</div>
 							
 							{/* Clutch, AD & Trustpilot Logos */}
-							<div className="flex flex-wrap items-center gap-3 mt-4">
+							<div className="flex flex-nowrap items-center gap-3 overflow-x-auto md:overflow-visible">
 								<a
 									href="https://clutch.co/profile/amazon-skipper"
 									target="_blank"
@@ -111,7 +111,7 @@ const Hero9 = () => {
 									<img
 										src="/img/hero/clutch.png"
 										alt="Clutch"
-										className="h-[74px] w-auto object-contain drop-shadow-sm md:h-[82px] lg:h-[90px]"
+										className="h-[90px] w-auto object-contain drop-shadow-sm md:h-[100px] lg:h-[108px]"
 									/>
 								</a>
 								<a
@@ -123,7 +123,7 @@ const Hero9 = () => {
 									<img
 										src="/img/hero/ad.png"
 										alt="Amazon Verified"
-										className="h-[74px] w-auto object-contain drop-shadow-sm md:h-[82px] lg:h-[90px]"
+										className="h-[90px] w-auto object-contain drop-shadow-sm md:h-[100px] lg:h-[108px]"
 									/>
 								</a>
 								<a
@@ -135,7 +135,7 @@ const Hero9 = () => {
 									<img
 										src="/img/hero/trustpilot.png"
 										alt="Trustpilot"
-										className="h-[74px] w-auto object-contain drop-shadow-sm md:h-[82px] lg:h-[90px]"
+										className="h-[96px] w-auto object-contain drop-shadow-sm md:h-[108px] lg:h-[116px]"
 									/>
 								</a>
 							</div>
@@ -192,7 +192,7 @@ const Hero9 = () => {
 								</span>
 							</div>
 							<button className="md:text-[19px] leading-[1.52] font-medium text-white bg-[#4CAF50] hover:bg-[#2E7D32] dark:bg-[#4CAF50] dark:hover:bg-[#2E7D32] transition-all duration-300 cursor-pointer px-4 py-2 rounded-lg border border-[#4CAF50] hover:border-[#2E7D32] shadow-md hover:shadow-lg">
-								Schedule a Demo
+								Get $500 Gift Card
 							</button>
 							<div>
 								<span className="w-[13px] h-[13px] border-2 border-black-color dark:border-white-color bg-white-color dark:bg-black-color rounded-100% absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2  [&:nth-child(2)]:left-full last:left-full last:top-full"></span>
