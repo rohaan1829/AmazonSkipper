@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -35,17 +35,9 @@ const ServicesMain = () => {
       answer: "Our data-driven approach combines advanced analytics, machine learning, and years of Amazon expertise. We focus on long-term sustainable growth rather than quick fixes."
     }
   ]);
-  const [portfolioItems, setPortfolioItems] = useState([]);
-
   useEffect(() => {
     const allServices = getALlServices();
     setServices(allServices);
-  }, []);
-  useEffect(() => {
-    fetch("/fakedata/portfolio.json")
-      .then((res) => res.json())
-      .then((data) => setPortfolioItems(Array.isArray(data) ? data : []))
-      .catch(() => setPortfolioItems([]));
   }, []);
 
   const stats = [
@@ -206,6 +198,178 @@ const ServicesMain = () => {
     }
   ];
 
+  const featuredCaseStudy = successStories[0];
+  const featuredTestimonial = testimonials[0];
+  const performanceHighlights = [
+    {
+      id: 1,
+      client: "TechGear Solutions",
+      ppcSpend: "$1.2M managed",
+      projectsCompleted: "18 projects wrapped",
+      result: "47% lower ACOS in 60 days",
+      summary:
+        "Managed by our senior PPC pod with dedicated creatives, analytics, and conversion teams aligned to daily growth rituals.",
+    },
+    {
+      id: 2,
+      client: "Home Essentials Plus",
+      ppcSpend: "$860K managed",
+      projectsCompleted: "14 launches executed",
+      result: "3x ROAS across core catalog",
+      summary:
+        "Launch, scale, and optimize cycles wired into actionable dashboards, auditable data, and SKU-level performance loops.",
+    },
+    {
+      id: 3,
+      client: "Fitness Pro Gear",
+      ppcSpend: "$540K managed",
+      projectsCompleted: "11 growth initiatives",
+      result: "62% spike in conversions",
+      summary:
+        "Aggressive keyword pruning paired with creative refreshes and on-page CRO frameworks to unlock rapid scaling.",
+    },
+    {
+      id: 4,
+      client: "BeautyCare Co",
+      ppcSpend: "$1.05M managed",
+      projectsCompleted: "16 performance sprints",
+      result: "35% increase in repeat orders",
+      summary:
+        "Lifecycle PPC strategy combining DSP, Sponsored Brands video, and post-purchase retargeting to raise LTV.",
+    },
+  ];
+  const ppcCapabilities = [
+    {
+      id: 1,
+      title: "Sponsored Products",
+      summary:
+        " Visibility that converts.",
+      detail:
+        "We fine-tune bids and placements to make your top listings dominate profitable search spots.",
+      icon: "fa-bullseye",
+      color: "from-[#4CAF50] to-[#2E7D32]",
+    },
+    {
+      id: 2,
+      title: "Sponsored Brands & Video Ads",
+      summary:
+        "Show your story where it sells.",
+      detail:
+        "We design brand-driven ads that build trust and pull shoppers straight into your listings.",
+      icon: "fa-photo-film",
+      color: "from-[#FF6B35] to-[#E55A2B]",
+    },
+    {
+      id: 3,
+      title: "Display & Retargeting Ads",
+      summary:
+        "Never lose a visitor twice.",
+      detail:
+        "Our smart retargeting campaigns bring back browsers and turn missed clicks into recovered sales.",
+      icon: "fa-retweet",
+      color: "from-[#4CAF50] to-[#2E7D32]",
+    },
+    {
+      id: 4,
+      title: "Campaign Creation & Structure",
+      summary:
+        " Clean campaigns. Clear data.",
+      detail:
+        "Built from scratch or restructured for precision, control, and scalability that lasts.",
+      icon: "fa-diagram-project",
+      color: "from-[#4CAF50] to-[#2E7D32]",
+    },
+    {
+      id: 5,
+      title: "Keyword & Audience Optimization",
+      summary:
+        "Every search matters..",
+      detail:
+        "We identify high-intent keywords and audiences that deliver consistent, sustainable conversions",
+      icon: "fa-magnifying-glass-chart",
+      color: "from-[#FF6B35] to-[#E55A2B]",
+    },
+    {
+      id: 6,
+      title: "Budget & Bid Management",
+      summary:
+        "Spend with purpose.",
+      detail:
+        "Every dollar is tracked, tested, and allocated to maximize ROI without bloating ACOS.",
+      icon: "fa-gauge-high",
+      color: "from-[#4CAF50] to-[#2E7D32]",
+    },
+    {
+      id: 7,
+      title: "Continuous Testing & Refinement",
+      summary:
+        "Amazon changes fast - we stay faster",
+      detail:
+        "Daily monitoring and adjustments keep your campaigns sharp and performing at their best.",
+      icon: "fa-flask",
+      color: "from-[#FF6B35] to-[#E55A2B]",
+    },
+    {
+      id: 8,
+      title: "Weekly Reporting & Growth Insights",
+      summary:
+        "Know what’s working, what’s next",
+      detail:
+        "Transparent reports and growth reviews help you see progress and plan your next move with confidence.",
+      icon: "fa-chart-pie",
+      color: "from-[#4CAF50] to-[#2E7D32]",
+    },
+  ];
+  const leftPpcCapabilities = ppcCapabilities.slice(0, 4);
+  const rightPpcCapabilities = ppcCapabilities.slice(4);
+  const ppcSteps = [
+    {
+      id: 1,
+      title: "Audit & Discovery",
+      headline: "We find what’s fueling growth—and what’s leaking cash.",
+      description:
+        "We dig into your listings, ad structure, spend trends, keyword data, and competition. The result: a crystal-clear snapshot of what’s working and a hit list of silent budget drains.",
+      icon: "fa-magnifying-glass",
+      gradient: "from-[#4CAF50] to-[#2E7D32]",
+    },
+    {
+      id: 2,
+      title: "Strategy & Setup",
+      headline: "We rebuild campaigns engineered for profitable intent.",
+      description:
+        "Goals, margins, positioning—everything informs a tailor-made PPC architecture. Campaigns are restructured, targeting is refined, and ads are aligned with product promise so every click has a job.",
+      icon: "fa-sitemap",
+      gradient: "from-[#FF6B35] to-[#E55A2B]",
+    },
+    {
+      id: 3,
+      title: "Launch & Test",
+      headline: "We go live with precision tracking from day one.",
+      description:
+        "Audiences, ad types, and keywords are tested in controlled sprints to surface quick wins fast. Conversion data flows instantly so we know what to amplify and what to pause.",
+      icon: "fa-rocket",
+      gradient: "from-[#4CAF50] to-[#2E7D32]",
+    },
+    {
+      id: 4,
+      title: "Optimize & Adapt",
+      headline: "Amazon shifts daily—your campaigns should too.",
+      description:
+        "Bids are tuned, keywords expanded, losers trimmed, and creative refreshed in real time. We adapt to algorithm updates before they hit your metrics.",
+      icon: "fa-sliders",
+      gradient: "from-[#FF6B35] to-[#E55A2B]",
+    },
+    {
+      id: 5,
+      title: "Report, Review & Scale",
+      headline: "We keep growth transparent, strategic, and repeatable.",
+      description:
+        "You get storytelling reports and live dashboards that make sense at a glance. Together we plan the next move—more ad types, new marketplaces, or a bigger product push.",
+      icon: "fa-chart-line",
+      gradient: "from-[#4CAF50] to-[#2E7D32]",
+    },
+  ];
+
   return (
     <main>
       {/* Hero Services Header - Eye-Opening Design */}
@@ -237,7 +401,7 @@ const ServicesMain = () => {
             <div className="grid lg:grid-cols-12 gap-8 items-center">
               
               {/* Left Column - Main Content */}
-              <div className="lg:col-span-7 space-y-6">
+              <div className="lg:col-span-7 space-y-4">
                 {/* Badge */}
                 <div className="inline-block mb-4">
                   <span className="px-6 py-2 bg-[#4CAF50]/10 border border-[#4CAF50]/30 rounded-full text-[#4CAF50] text-sm font-semibold uppercase tracking-wider backdrop-blur-sm">
@@ -246,7 +410,7 @@ const ServicesMain = () => {
                 </div>
 
                 {/* Main Headline - Creative Typography */}
-                <h1 className="flex flex-col gap-4 text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-black leading-[0.95] text-white mb-6">
+                <h1 className="flex flex-col gap-4 text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-black leading-[0.95] text-white mb-4">
                   <span className="transform hover:scale-105 transition-transform duration-500">
                     Stop
                   </span>
@@ -266,61 +430,10 @@ const ServicesMain = () => {
 
                 {/* Description Paragraph - 50-70 words */}
                 <p className="text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-2xl mb-6 font-light">
-                  Most Amazon sellers are bleeding cash on ineffective ad campaigns while competitors dominate. We've cracked the code: 
-                  our clients slash ad spend by 50% in just 47 days while doubling conversions. No guesswork. No excuses. 
-                  Just proven systems that work. Join 500+ sellers who've transformed their businesses. Your breakthrough starts now.
+                Every click should move you closer to profit, not burn your budget. Most sellers lose thousands because campaigns run on guesswork instead of data.
+                We rebuild your PPC engine from the ground up, optimizing every keyword, bid, and placement so your spend finally turns into predictable growth.
                 </p>
-              </div>
-
-              {/* Right Column - Visual Card Placeholder */}
-              <div className="lg:col-span-5">
-                <div className="relative rounded-30px p-1 bg-gradient-to-br from-[#4CAF50] via-[#2E7D32] to-[#FF6B35] shadow-[0_25px_70px_rgba(76,175,80,0.25)]">
-                  <div className="absolute inset-0 rounded-30px bg-[#4CAF50]/20 blur-3xl opacity-40 -z-10"></div>
-                  <div className="relative rounded-25px bg-[#070707]/90 dark:bg-[#040404]/95 border border-white/10 min-h-[360px] flex flex-col">
-                    <div className="px-8 pt-8 pb-6 flex flex-col gap-6">
-                      <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#4CAF50]/10 border border-[#4CAF50]/30 rounded-full text-[#4CAF50] text-xs font-semibold uppercase tracking-[0.25em] w-fit">
-                        Hero Visual
-                      </span>
-                      <h3 className="text-2xl md:text-3xl font-black text-white leading-snug">
-                        Showcase Your Brand’s Signature Moment
-                      </h3>
-                      
-                      <div className="flex-1 rounded-20px overflow-hidden border border-white/10 bg-white/5">
-                        {portfolioItems.length > 0 ? (
-                          <Swiper
-                            spaceBetween={16}
-                            slidesPerView={1}
-                            loop={true}
-                            speed={1200}
-                            autoplay={{ delay: 2500, disableOnInteraction: false }}
-                            pagination={{ clickable: true }}
-                            modules={[Pagination, Autoplay]}
-                          >
-                            {portfolioItems.map((item) => (
-                              <SwiperSlide key={item.id}>
-                                <div className="relative w-full aspect-[16/10]">
-                                  <Image
-                                    src={item.img}
-                                    alt={item.title}
-                                    fill
-                                    className="object-contain object-center"
-                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
-                                  />
-                                </div>
-                              </SwiperSlide>
-                            ))}
-                          </Swiper>
-                        ) : (
-                          <div className="w-full h-full min-h-[260px] flex items-center justify-center text-gray-500 text-xs md:text-sm uppercase tracking-[0.4em]">
-                            Loading...
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                    
-                  </div>
-                </div>
-                <div className="flex items-center justify-center mt-8 lg:mt-12">
+                <div className="flex items-center gap-10 mt-12 md:mt-16">
                   <button className="group relative px-10 py-5 bg-gradient-to-r from-[#4CAF50] to-[#2E7D32] rounded-15px text-white font-bold text-lg md:text-xl transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_30px_rgba(76,175,80,0.6)] overflow-hidden">
                     <span className="relative z-10 flex items-center gap-3">
                       Claim Your Free Audit
@@ -330,11 +443,388 @@ const ServicesMain = () => {
                   </button>
                 </div>
               </div>
+
+              {/* Right Column - Visual Card Placeholder */}
+              <div className="lg:col-span-5">
+                <div className="relative rounded-30px p-1 bg-gradient-to-br from-[#4CAF50] via-[#2E7D32] to-[#FF6B35] shadow-[0_25px_70px_rgba(76,175,80,0.25)]">
+                  <div className="absolute inset-0 rounded-30px bg-[#4CAF50]/20 blur-3xl opacity-40 -z-10"></div>
+                  <div className="relative rounded-25px bg-[#070707]/90 dark:bg-[#040404]/95 border border-white/10 min-h-[360px] flex flex-col">
+                    <div className="px-8 pt-8 pb-6 flex flex-col gap-6">
+                      
+                      <h3 className="text-2xl md:text-3xl font-black text-white leading-snug">
+                        See How Top Sellers Scale With Us
+                      </h3>
+
+                      {featuredCaseStudy && (
+                        <div className="relative rounded-20px overflow-hidden border border-white/10 bg-white/5">
+                          <div className="relative aspect-[16/10] w-full">
+                            <Image
+                              src={featuredCaseStudy.thumbnail}
+                              alt={featuredCaseStudy.clientName}
+                              fill
+                              className="object-cover"
+                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
+                              priority
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                            <div className="absolute bottom-4 left-4 right-4">
+                              <div className="flex flex-wrap items-center gap-3">
+                                <span className="px-3 py-1 bg-[#4CAF50]/20 text-[#4CAF50] rounded-full text-xs font-semibold uppercase tracking-[0.25em]">
+                                  {featuredCaseStudy.industry}
+                                </span>
+                                <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-semibold uppercase tracking-[0.25em]">
+                                  {featuredCaseStudy.achievement}
+                                </span>
+                              </div>
+                              <div className="mt-4">
+                                <h4 className="text-white text-xl font-semibold">
+                                  {featuredCaseStudy.company}
+                                </h4>
+                                <p className="text-sm text-white/70">
+                                  {featuredCaseStudy.metric}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      {featuredTestimonial && (
+                        <div className="flex flex-col gap-4 rounded-20px border border-white/10 bg-white/5 p-6">
+                          <div className="flex items-center gap-4">
+                            <div className="relative w-14 h-14 rounded-full overflow-hidden border border-white/20">
+                              <Image
+                                src={featuredTestimonial.image}
+                                alt={featuredTestimonial.authorName}
+                                fill
+                                className="object-cover"
+                                sizes="56px"
+                              />
+                            </div>
+                            <div>
+                              <p className="text-white font-semibold text-base leading-tight">
+                                {featuredTestimonial.authorName}
+                              </p>
+                              <p className="text-sm text-white/60">
+                                {featuredTestimonial.authorTitle}
+                              </p>
+                            </div>
+                          </div>
+                          <p className="text-sm md:text-base text-white/80 leading-relaxed italic">
+                            “{featuredTestimonial.quote}”
+                          </p>
+                          <div className="flex items-center gap-2 text-[#4CAF50]">
+                            <i className="fas fa-star"></i>
+                            <span className="text-sm text-white/70">
+                              {featuredTestimonial.achievement}
+                            </span>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                    {featuredCaseStudy && (
+                      <div className="px-8 py-6 border-t border-white/10 flex flex-wrap items-center justify-center gap-3 text-center">
+                        
+                        <div className="flex items-center gap-3 text-white/70 text-sm md:text-base">
+                          <i className="fas fa-play-circle text-[#FF6B35] text-xl"></i>
+                          Watch full story
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
 
+      </section>
+
+      {/* PPC Capabilities Section */}
+      <section id="ppc-suite" className="py-100px bg-gradient-to-br from-[#080808] via-[#0f0f0f] to-[#060606] scroll-mt-[130px] relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute -top-10 -left-10 w-72 h-72 rounded-full bg-[#4CAF50]/20 blur-3xl"></div>
+          <div className="absolute top-1/2 right-[-8rem] w-[26rem] h-[26rem] rounded-full bg-[#FF6B35]/15 blur-[160px]"></div>
+          <div className="absolute bottom-[-4rem] left-1/3 w-[28rem] h-[28rem] rounded-full bg-[#4CAF50]/12 blur-[160px]"></div>
+          <div className="absolute inset-0 opacity-[0.025]" style={{
+            backgroundImage: 'linear-gradient(rgba(76, 175, 80, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(239, 108, 0, 0.12) 1px, transparent 1px)',
+            backgroundSize: '70px 70px'
+          }}></div>
+        </div>
+
+        <div className="container relative z-10">
+          <div className="grid lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-12">
+              <div className="flex flex-col gap-10 xl:grid xl:grid-cols-[1fr_minmax(0,0.8fr)_1fr] xl:items-start xl:gap-12">
+                <div className="order-2 xl:order-1 grid sm:grid-cols-2 gap-6">
+                  {leftPpcCapabilities.map((capability, idx) => (
+                    <div
+                      key={capability.id}
+                      className="group relative bg-[#101010]/90 backdrop-blur border border-white/5 rounded-25px p-6 hover:border-[#4CAF50]/35 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(76,175,80,0.22)] overflow-hidden"
+                    >
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500" style={{
+                        background: `linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 50%)`
+                      }}></div>
+                      <div className="relative z-10 flex flex-col gap-3">
+                        <div className="flex items-center gap-4">
+                          <div className={`w-11 h-11 rounded-2xl bg-gradient-to-br ${capability.color} text-white flex items-center justify-center text-base shadow-[0_15px_38px_rgba(76,175,80,0.32)]`}>
+                            <i className={`fas ${capability.icon}`}></i>
+                          </div>
+                          <div>
+                            <p className="text-xs uppercase tracking-[0.35em] text-white/50 font-semibold">
+                              Step 0{idx + 1}
+                            </p>
+                            <h3 className="text-lg font-semibold text-white mt-1">
+                              {capability.title}
+                            </h3>
+                          </div>
+                        </div>
+                        <p className="text-sm text-white/75 leading-relaxed">
+                          {capability.summary}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="order-1 xl:order-2 relative px-8 py-12 rounded-30px border border-white/10 bg-[#101010]/90 backdrop-blur text-center flex flex-col items-center gap-6 shadow-[0_25px_80px_rgba(0,0,0,0.35)]">
+                  <span className="inline-flex items-center gap-2 px-5 py-2 bg-[#FF6B35]/15 border border-[#FF6B35]/30 text-[#FF6B35] rounded-full text-xs font-semibold uppercase tracking-[0.35em]">
+                    Calm, Profitable PPC
+                  </span>
+                  <h2 className="text-3xl md:text-4xl font-black text-white leading-tight max-w-xl">
+                    Everything Your PPC Needs to Stay Profitable & Peaceful
+                  </h2>
+                  <p className="text-base md:text-lg text-gray-300 leading-relaxed max-w-xl">
+                    Your Amazon PPC shouldn’t feel like firefighting. We bring strategy, structure, and consistency to every campaign so spend stays smart and sales stay steady.
+                  </p>
+                  <div className="flex flex-wrap justify-center gap-3">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#4CAF50]/15 text-[#4CAF50] text-xs font-semibold uppercase tracking-[0.35em]">
+                      <i className="fas fa-shield-check"></i>
+                      Precision-Controlled Spend
+                    </div>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FF6B35]/15 text-[#FF6B35] text-xs font-semibold uppercase tracking-[0.35em]">
+                      <i className="fas fa-wave-square"></i>
+                      Agile Optimization
+                    </div>
+                  </div>
+                  <div className="hidden xl:block absolute inset-y-6 left-1/2 w-px bg-gradient-to-b from-transparent via-white/10 to-transparent -translate-x-1/2"></div>
+                </div>
+
+                <div className="order-3 xl:order-3 grid sm:grid-cols-2 gap-6">
+                  {rightPpcCapabilities.map((capability, idx) => (
+                    <div
+                      key={capability.id}
+                      className="group relative bg-[#101010]/90 backdrop-blur border border-white/5 rounded-25px p-6 hover:border-[#4CAF50]/35 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(76,175,80,0.22)] overflow-hidden"
+                    >
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500" style={{
+                        background: `linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 50%)`
+                      }}></div>
+                      <div className="relative z-10 flex flex-col gap-3">
+                        <div className="flex items-center gap-4">
+                          <div className={`w-11 h-11 rounded-2xl bg-gradient-to-br ${capability.color} text-white flex items-center justify-center text-base shadow-[0_15px_38px_rgba(76,175,80,0.32)]`}>
+                            <i className={`fas ${capability.icon}`}></i>
+                          </div>
+                          <div>
+                            <p className="text-xs uppercase tracking-[0.35em] text-white/50 font-semibold">
+                              Step 0{idx + 1 + leftPpcCapabilities.length}
+                            </p>
+                            <h3 className="text-lg font-semibold text-white mt-1">
+                              {capability.title}
+                            </h3>
+                          </div>
+                        </div>
+                        <p className="text-sm text-white/75 leading-relaxed">
+                          {capability.summary}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PPC Five-Step System */}
+      <section id="ppc-process" className="py-100px bg-gradient-to-br from-[#060606] via-[#090909] to-[#050505] relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-[-8rem] right-[-6rem] w-[28rem] h-[28rem] rounded-full bg-[#4CAF50]/15 blur-[160px]"></div>
+          <div className="absolute bottom-[-10rem] left-[-6rem] w-[30rem] h-[30rem] rounded-full bg-[#FF6B35]/12 blur-[190px]"></div>
+          <div className="absolute inset-0 opacity-[0.02]" style={{
+            backgroundImage: 'linear-gradient(rgba(76, 175, 80, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 107, 53, 0.09) 1px, transparent 1px)',
+            backgroundSize: '90px 90px'
+          }}></div>
+        </div>
+
+        <div className="container relative z-10">
+          <div className="grid lg:grid-cols-12 gap-12">
+            <div className="lg:col-span-4">
+              <div className="sticky top-[140px] space-y-8">
+                <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#4CAF50]/10 border border-[#4CAF50]/30 text-[#4CAF50] rounded-full text-xs font-semibold uppercase tracking-[0.35em]">
+                  Our 5-Step System
+                </span>
+                <div className="space-y-4">
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight">
+                    The Only 5 Steps You’ll Ever Need for Profitable PPC
+                  </h2>
+                  <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                    Every profitable campaign starts with structure and ends with consistency. We rebuild your Amazon ads step-by-step so results become predictable, not hopeful.
+                  </p>
+                </div>
+                <div className="rounded-25px border border-white/10 bg-white/[0.05] px-6 py-5 space-y-3 backdrop-blur-md">
+                  <p className="text-white font-semibold text-lg">The Goal</p>
+                  <p className="text-sm md:text-base text-white/70 leading-relaxed">
+                    Less noise. More control. Steady sales growth without the guesswork. That’s how we make Amazon ads work for you, not against you.
+                  </p>
+                  <div className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-[#FF6B35]/15 text-[#FF6B35] text-xs font-semibold uppercase tracking-[0.3em]">
+                    <i className="fas fa-forward"></i>
+                    Built to scale with momentum
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-8">
+              <div className="relative pl-10">
+                <div className="absolute top-3 bottom-3 left-3 w-[2px] bg-gradient-to-b from-[#4CAF50]/0 via-[#4CAF50]/60 to-[#FF6B35]/0"></div>
+                <div className="space-y-12">
+                  {ppcSteps.map((step, idx) => (
+                    <div
+                      key={step.id}
+                      className="group relative pl-14"
+                    >
+                      <div className="absolute left-0 top-2 flex flex-col items-center gap-4">
+                        <span className="w-6 h-6 rounded-full border-2 border-[#4CAF50]/40 bg-[#101010] text-white text-xs font-semibold flex items-center justify-center">
+                          {idx + 1}
+                        </span>
+                        <div className="w-[1px] flex-1 bg-gradient-to-b from-[#4CAF50]/40 via-white/10 to-transparent"></div>
+                      </div>
+
+                      <div className="relative overflow-hidden rounded-25px border border-white/10 bg-gradient-to-br from-white/[0.06] via-white/[0.03] to-white/[0.01] backdrop-blur-md p-8 md:p-10 transition-all duration-500 group-hover:-translate-y-1 group-hover:border-[#4CAF50]/35 group-hover:shadow-[0_25px_70px_rgba(76,175,80,0.18)]">
+                        <div className={`absolute inset-0 bg-gradient-to-br ${step.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+                        <div className="relative z-10 flex flex-col gap-5">
+                          <div className="flex flex-wrap items-center justify-between gap-4">
+                            <div className="flex items-center gap-4">
+                              <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${step.gradient} text-white flex items-center justify-center text-lg shadow-[0_18px_45px_rgba(76,175,80,0.3)]`}>
+                                <i className={`fas ${step.icon}`}></i>
+                              </div>
+                              <div>
+                                <p className="text-xs uppercase tracking-[0.35em] text-white/50 font-semibold">
+                                  Step 0{step.id}
+                                </p>
+                                <h3 className="text-2xl md:text-3xl font-semibold text-white">
+                                  {step.title}
+                                </h3>
+                              </div>
+                            </div>
+                            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white/70 text-xs font-semibold">
+                              <i className="fas fa-circle-notch animate-spin"></i>
+                              Iteration
+                            </span>
+                          </div>
+
+                          <div className="space-y-3">
+                            <p className="text-lg md:text-xl text-white font-semibold leading-snug">
+                              {step.headline}
+                            </p>
+                            <p className="text-sm md:text-base text-white/70 leading-relaxed">
+                              {step.description}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Client Performance Highlights */}
+      <section className="py-60px md:py-80px bg-gradient-to-br from-[#0b0b0b] via-[#111111] to-[#050505]">
+        <div className="container">
+          <div className="grid lg:grid-cols-[1.1fr_1.3fr] gap-12 items-start">
+            <div className="space-y-6">
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#4CAF50]/10 border border-[#4CAF50]/30 rounded-full text-[#4CAF50] text-xs font-semibold uppercase tracking-[0.35em]">
+                Proven PPC Ops
+              </span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight">
+                Budgets We Command. Results We Deliver.
+              </h2>
+              <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                Each engagement is anchored by a hybrid pod—media buying, analytics, and creative—built to extract profitable growth from sizeable ad spend.
+              </p>
+              <div className="grid gap-4">
+                <div className="flex items-center gap-3 text-white/80">
+                  <div className="w-11 h-11 rounded-full bg-[#4CAF50]/15 border border-[#4CAF50]/40 flex items-center justify-center text-[#4CAF50]">
+                    <i className="fas fa-chart-line"></i>
+                  </div>
+                  <div>
+                    <p className="text-base font-semibold text-white">7-figure Ad Portfolios</p>
+                    <p className="text-sm text-white/60">Managed with daily optimization cadences and weekly growth sprints.</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 text-white/80">
+                  <div className="w-11 h-11 rounded-full bg-[#FF6B35]/15 border border-[#FF6B35]/40 flex items-center justify-center text-[#FF6B35]">
+                    <i className="fas fa-tachometer-alt"></i>
+                  </div>
+                  <div>
+                    <p className="text-base font-semibold text-white">Conversion Engineered</p>
+                    <p className="text-sm text-white/60">SKU-level targeting, audience layering, and funnel sequencing dial in profitable scale.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2">
+              {performanceHighlights.map((highlight) => (
+                <div
+                  key={highlight.id}
+                  className="group relative overflow-hidden rounded-25px border border-white/10 bg-white/5 backdrop-blur-md p-6 flex flex-col gap-5 hover:border-[#4CAF50]/40 transition-all duration-300 hover:shadow-[0_25px_70px_rgba(76,175,80,0.18)]"
+                >
+                  <div className="flex items-center justify-between gap-4">
+                    <div>
+                      <p className="text-sm uppercase tracking-[0.3em] text-[#4CAF50]/90 font-semibold">
+                        {highlight.client}
+                      </p>
+                      <p className="text-xs text-white/60 mt-1">
+                        {highlight.projectsCompleted}
+                      </p>
+                    </div>
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] text-white flex items-center justify-center shadow-lg">
+                      <i className="fas fa-rocket"></i>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <div className="flex flex-wrap items-center gap-2 text-sm font-semibold">
+                      <span className="px-3 py-1 rounded-full bg-[#4CAF50]/20 text-[#4CAF50]">
+                        {highlight.ppcSpend}
+                      </span>
+                      <span className="text-white/80">
+                        {highlight.result}
+                      </span>
+                    </div>
+                    <div className="h-[2px] bg-gradient-to-r from-[#4CAF50]/40 via-white/15 to-transparent rounded-full"></div>
+                  </div>
+
+                  <p className="text-sm text-white/75 leading-relaxed">
+                    {highlight.summary}
+                  </p>
+
+                  <div className="flex items-center gap-2 text-xs text-white/50 mt-auto">
+                    <i className="fas fa-user-gear text-[#FF6B35]"></i>
+                    Senior Growth Pod Assigned
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Trusted Brands Marquee */}
