@@ -573,14 +573,14 @@ const CaseStudyDetailMain = ({ activeCaseStudyId }) => {
 						<div className="hidden lg:block h-full w-px bg-gradient-to-b from-transparent via-white/30 to-transparent dark:via-[#4CAF50]/40"></div>
 
 						<div className="relative hidden lg:block h-full overflow-hidden rounded-[36px]">
-							<Image
-								src="/img/portfolio/graph.png"
+								<Image
+									src="/img/portfolio/graph.png"
 								alt="Case study performance"
 								fill
 								className="object-cover brightness-105 saturate-110"
 								sizes="(min-width: 1024px) 40vw, 100vw"
-								priority
-							/>
+									priority
+								/>
 							<div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/25 to-transparent"></div>
 						</div>
 					</div>

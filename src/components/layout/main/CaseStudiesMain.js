@@ -230,7 +230,7 @@ const CaseStudiesMain = () => {
                   priority
                 />
               ))}
-            </div>
+				</div>
             <div className="relative z-10 max-w-3xl mx-auto text-white">
               <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-black leading-tight">
 							Amazon growth stories engineered for predictable revenue

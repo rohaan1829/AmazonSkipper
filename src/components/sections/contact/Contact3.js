@@ -23,10 +23,6 @@ const Contact3 = () => {
 								>
 									Let’s Get In Touch
 								</h2>
-								<p className=" text-base text-body-color-3 leading-1.5 mb-0">
-									I design and code beautifully simple things and i love what i
-									do. Just simple like that!
-								</p>
 							</div>
 							<div className="contact-info-list px-15px py-30px lg:p-30px lg:pb-35px border-2 border-body-color dark:border-bg-color-2  transition-all duration-500 rounded-15px relative z-0 ">
 								<ul className="flex flex-col ">

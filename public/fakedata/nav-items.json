@@ -31,7 +31,7 @@
     },
     {
       "name":"Contact",
-      "path":"#contact",
-      "path2":"/home-9/#contact"  
+      "path":"/contact",
+      "path2":"/contact"  
     }
 ]

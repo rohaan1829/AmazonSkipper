@@ -20,7 +20,7 @@ const AboutMain = () => {
   return (
     <main>
       {/* Hero About Header */}
-      <section id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-white dark:bg-gradient-to-br dark:from-black dark:via-[#0a0a0a] dark:to-[#121212] pt-130px md:pt-150px lg:pt-160px">
+      <section id="hero" className="relative min-h-[80vh] flex items-center overflow-hidden bg-white dark:bg-gradient-to-br dark:from-black dark:via-[#0a0a0a] dark:to-[#121212] pt-90px md:pt-110px lg:pt-120px">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#4CAF50]/20 rounded-full blur-[120px] animate-pulse"></div>
@@ -36,17 +36,66 @@ const AboutMain = () => {
 
         <div className="container relative z-10 px-6 md:px-8">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center max-w-5xl mx-auto">
-              {/* Badge */}
-              <div className="inline-block mb-6 wow fadeInDown" data-wow-delay=".05s">
-                <span className="px-6 py-2 bg-[#4CAF50]/10 border border-[#4CAF50]/30 rounded-full text-[#4CAF50] text-sm font-semibold uppercase tracking-wider backdrop-blur-sm">
-                  About Amazon Skipper
-                </span>
+            <div className="relative text-center max-w-5xl mx-auto">
+              <div className="hidden sm:block">
+                {[
+                  { size: 22, x: "right-[-10%]", y: "-top-4", anim: "floatSlow 9s", opacity: "opacity-90" },
+                  { size: 18, x: "left-[-18%]", y: "top-[18%]", anim: "floatMedium 7s", opacity: "opacity-65" },
+                  { size: 16, x: "left-[-14%]", y: "top-[36%]", anim: "floatFast 6s", opacity: "opacity-60" },
+                  { size: 18, x: "right-[-22%]", y: "bottom-6", anim: "floatFast 5s", opacity: "opacity-70" },
+                  { size: 16, x: "left-[-10%]", y: "bottom-[6%]", anim: "floatMedium 8s", opacity: "opacity-55" },
+                  { size: 14, x: "left-[-16%]", y: "top-[10%]", anim: "floatMedium 9s", opacity: "opacity-60" },
+                  { size: 13, x: "left-[-20%]", y: "top-[28%]", anim: "floatFast 5.5s", opacity: "opacity-50" },
+                  { size: 13, x: "left-[-12%]", y: "top-[60%]", anim: "floatMedium 7.5s", opacity: "opacity-55" },
+                  { size: 12, x: "left-[-24%]", y: "bottom-[12%]", anim: "floatSlow 8.5s", opacity: "opacity-60" },
+                  { size: 14, x: "right-[-12%]", y: "top-[30%]", anim: "floatSlow 10s", opacity: "opacity-60" },
+                  { size: 12, x: "left-[-8%]", y: "top-[8%]", anim: "floatFast 6s", opacity: "opacity-70" },
+                  { size: 12, x: "right-[-18%]", y: "bottom-[12%]", anim: "floatMedium 6.5s", opacity: "opacity-55" },
+                  { size: 14, x: "left-[-22%]", y: "top-[4%]", anim: "floatFast 6.5s", opacity: "opacity-50" },
+                  { size: 11, x: "left-[-6%]", y: "top-[44%]", anim: "floatSlow 7.5s", opacity: "opacity-60" },
+                  { size: 10, x: "left-[-16%]", y: "top-[52%]", anim: "floatMedium 6.8s", opacity: "opacity-65" },
+                  { size: 11, x: "left-[-18%]", y: "bottom-[22%]", anim: "floatFast 5.8s", opacity: "opacity-60" },
+                  { size: 9, x: "left-[-10%]", y: "bottom-[10%]", anim: "floatMedium 8.2s", opacity: "opacity-55" },
+                  { size: 13, x: "right-[-14%]", y: "top-[12%]", anim: "floatSlow 7.8s", opacity: "opacity-65" },
+                  { size: 11, x: "right-[-20%]", y: "top-[40%]", anim: "floatFast 6.1s", opacity: "opacity-65" },
+                  { size: 9, x: "right-[-10%]", y: "top-[58%]", anim: "floatMedium 7.7s", opacity: "opacity-60" },
+                  { size: 10, x: "right-[-6%]", y: "bottom-[24%]", anim: "floatFast 6.9s", opacity: "opacity-55" },
+                  { size: 12, x: "right-[-24%]", y: "bottom-[8%]", anim: "floatMedium 8.6s", opacity: "opacity-50" },
+                  { size: 12, x: "left-[-26%]", y: "top-[20%]", anim: "floatSlow 8.8s", opacity: "opacity-45" },
+                  { size: 11, x: "left-[-28%]", y: "top-[48%]", anim: "floatMedium 7.2s", opacity: "opacity-50" },
+                  { size: 13, x: "left-[-12%]", y: "top-[72%]", anim: "floatFast 6.4s", opacity: "opacity-55" },
+                  { size: 11, x: "left-[-30%]", y: "bottom-[26%]", anim: "floatMedium 7.6s", opacity: "opacity-50" },
+                  { size: 10, x: "left-[-14%]", y: "top-[84%]", anim: "floatSlow 9.2s", opacity: "opacity-45" },
+                  { size: 9, x: "left-[-22%]", y: "top-[90%]", anim: "floatFast 5.6s", opacity: "opacity-50" },
+                  { size: 12, x: "right-[-26%]", y: "top-[16%]", anim: "floatMedium 8.4s", opacity: "opacity-50" },
+                  { size: 11, x: "right-[-30%]", y: "top-[32%]", anim: "floatFast 6.3s", opacity: "opacity-55" },
+                  { size: 13, x: "right-[-32%]", y: "top-[52%]", anim: "floatSlow 9.3s", opacity: "opacity-45" },
+                  { size: 12, x: "right-[-12%]", y: "top-[72%]", anim: "floatMedium 7.1s", opacity: "opacity-55" },
+                  { size: 10, x: "right-[-18%]", y: "top-[84%]", anim: "floatFast 6.7s", opacity: "opacity-50" },
+                  { size: 11, x: "right-[-22%]", y: "bottom-[20%]", anim: "floatMedium 8.1s", opacity: "opacity-45" },
+                  { size: 9, x: "right-[-8%]", y: "bottom-[34%]", anim: "floatSlow 9.4s", opacity: "opacity-45" },
+                  { size: 10, x: "right-[-4%]", y: "bottom-[40%]", anim: "floatFast 5.9s", opacity: "opacity-50" },
+                  { size: 11, x: "right-[-18%]", y: "top-[4%]", anim: "floatMedium 7.8s", opacity: "opacity-50" },
+                  { size: 9, x: "left-[-34%]", y: "top-[30%]", anim: "floatFast 5.7s", opacity: "opacity-45" },
+                  { size: 10, x: "left-[-30%]", y: "top-[60%]", anim: "floatMedium 8.9s", opacity: "opacity-45" },
+                  { size: 9, x: "left-[-24%]", y: "top-[76%]", anim: "floatSlow 9.6s", opacity: "opacity-45" }
+                ].map(({ size, x, y, anim, opacity }, idx) => (
+                  <Image
+                    key={`about-hero-shape-${idx}`}
+                    src="/img/shapes/5.jpg"
+                    alt="Decorative accent"
+                    width={size}
+                    height={size}
+                    className={`pointer-events-none absolute ${y} ${x} ${opacity} drop-shadow-[0_18px_40px_rgba(34,197,94,0.22)]`}
+                    style={{ animation: `${anim} ease-in-out infinite` }}
+                    priority
+                  />
+                ))}
               </div>
-
+              {/* Badge */}
               {/* Main Headline */}
               <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[1.1] text-[#1a1a1a] dark:text-white mb-8 wow fadeInUp" data-wow-delay=".1s">
-                The "<span className="whitespace-nowrap">Amazon Skipper</span>" <span className="text-[#4CAF50]" style={{textShadow: '0 0 40px rgba(76, 175, 80, 0.5)'}}>Story</span>
+                The <span className="whitespace-nowrap text-[#4CAF50]" style={{ textShadow: '0 0 40px rgba(76, 175, 80, 0.5)' }}>Amazon Skipper</span> <span className="text-white">Story</span>
               </h1>
 
               {/* Description Paragraph */}
@@ -63,6 +112,23 @@ const AboutMain = () => {
                   See Our Results
                 </button>
               </div>
+              <style jsx>{`
+                @keyframes floatSlow {
+                  0% { transform: translateY(0px); }
+                  50% { transform: translateY(-8px); }
+                  100% { transform: translateY(0px); }
+                }
+                @keyframes floatMedium {
+                  0% { transform: translateY(0px); }
+                  50% { transform: translateY(-12px); }
+                  100% { transform: translateY(0px); }
+                }
+                @keyframes floatFast {
+                  0% { transform: translateY(0px); }
+                  50% { transform: translateY(-16px); }
+                  100% { transform: translateY(0px); }
+                }
+              `}</style>
             </div>
           </div>
         </div>
@@ -119,9 +185,6 @@ const AboutMain = () => {
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
             <div className="text-center mb-16 md:mb-20 wow fadeInUp" data-wow-delay=".05s">
-              <span className="inline-block px-4 py-2 bg-[#4CAF50]/20 text-[#4CAF50] rounded-full text-sm font-semibold mb-6 uppercase tracking-wider">
-                Our Values
-              </span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#1a1a1a] dark:text-white mb-6 leading-tight">
                 Our Vision For Your
                 <span className="block text-[#4CAF50]">Amazon Growth</span>
@@ -162,9 +225,6 @@ const AboutMain = () => {
           <div className="max-w-7xl mx-auto">
             {/* Section Header */}
             <div className="text-center mb-16 md:mb-20 wow fadeInUp" data-wow-delay=".05s">
-              <span className="inline-block px-4 py-2 bg-[#4CAF50]/10 text-[#4CAF50] dark:bg-[#4CAF50]/20 rounded-full text-sm font-semibold mb-6 uppercase tracking-wider">
-                The Founder
-              </span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#1a1a1a] dark:text-white mb-6 leading-tight">
                 Meet Huzaifa
                 <span className="block text-[#4CAF50]">The Brain Behind Amazon Skipper</span>
