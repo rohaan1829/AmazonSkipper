@@ -548,17 +548,20 @@ const CaseStudyDetailMain = ({ activeCaseStudyId }) => {
 		<main className="overflow-hidden">
 			<section className="relative z-0 min-h-[60vh] flex items-center overflow-hidden bg-cream-light-color dark:bg-black-color pt-130px md:pt-150px lg:pt-160px pb-70px md:pb-100px">
 				<div className="absolute inset-0 -z-10">
-					<div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-primary-color-light/20 blur-3xl"></div>
-					<div className="absolute bottom-10 right-10 w-52 h-52 rounded-full bg-[#4CAF50]/20 blur-3xl"></div>
+					<div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-primary-color-light/25 blur-[110px]"></div>
+					<div className="absolute bottom-10 right-16 w-52 h-52 rounded-full bg-[#4CAF50]/20 blur-[120px]"></div>
 				</div>
-				<div className="container">
-					<div className="grid gap-40px lg:grid-cols-[minmax(0,0.7fr)_minmax(0,0.3fr)] items-center">
-						<div>
-							<h1 className="mt-4 mb-25px text-4xl sm:text-size-45 lg:text-size-55 xl:text-size-65 font-semibold uppercase leading-1.1 text-seondary-color dark:text-white-color">
-								{targetCaseStudy.hero?.title || "Case Studies"}
+				<div className="container relative">
+					<div className="grid gap-16 lg:grid-cols-[minmax(0,1.05fr)_1px_minmax(0,0.85fr)] items-center">
+						<div className="text-left">
+							<span className="inline-flex items-center gap-2 rounded-full bg-[#4CAF50]/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#4CAF50] dark:text-[#7DFFAE]">
+								Case Studies
+							</span>
+							<h1 className="mt-6 mb-5 text-4xl sm:text-size-45 lg:text-size-55 xl:text-size-60 font-semibold leading-tight text-seondary-color dark:text-white-color">
+								Case Studies
 							</h1>
-							<p className="max-w-[640px] text-base md:text-lg leading-1.7 text-body-color dark:text-gray-color-4">
-								{targetCaseStudy.hero?.description}
+							<p className="max-w-[640px] text-base md:text-lg leading-relaxed text-body-color dark:text-gray-color-4">
+								Witness how we help businesses transform from struggling to successful on Amazon. Become an Amazon success story with our tailored solutions and proven track record.
 							</p>
 							<div className="mt-35px flex flex-wrap gap-20px">
 								<ButtonPrimary href="/#contact" isIcon={true}>
@@ -566,17 +569,19 @@ const CaseStudyDetailMain = ({ activeCaseStudyId }) => {
 								</ButtonPrimary>
 							</div>
 						</div>
-						<div className="relative hidden lg:block">
-							<div className="rounded-25px bg-white-color dark:bg-[#111111] shadow-[0_35px_70px_-40px_rgba(0,0,0,0.35)] border border-[#000]/5 dark:border-white/10 p-30px flex flex-col gap-25px">
-								<Image
-									src="/img/portfolio/graph.png"
-									alt="Performance graph"
-									width={480}
-									height={320}
-									className="w-full rounded-2xl"
-									priority
-								/>
-							</div>
+
+						<div className="hidden lg:block h-full w-px bg-gradient-to-b from-transparent via-white/30 to-transparent dark:via-[#4CAF50]/40"></div>
+
+						<div className="relative hidden lg:block h-full overflow-hidden rounded-[36px]">
+							<Image
+								src="/img/portfolio/graph.png"
+								alt="Case study performance"
+								fill
+								className="object-cover brightness-105 saturate-110"
+								sizes="(min-width: 1024px) 40vw, 100vw"
+								priority
+							/>
+							<div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/25 to-transparent"></div>
 						</div>
 					</div>
 				</div>
