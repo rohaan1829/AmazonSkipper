@@ -1129,6 +1129,8 @@ const ServicesMain = () => {
             </p>
           </div>
 
+        
+
           {/* Featured Video (Large) */}
           {successStories[0] && (
             <div className="mb-12">
@@ -1261,18 +1263,14 @@ const ServicesMain = () => {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* CTA - Explore Case Studies */}
-      <section className="py-80px bg-white dark:bg-[#050505]">
-        <div className="container">
-          <div className="mt-6 md:mt-10">
-            <div className="relative max-w-5xl mx-auto overflow-hidden rounded-[32px] border border-[#4CAF50]/25 bg-gradient-to-br from-black via-[#0b1f14] to-[#22C55E]/40 px-8 py-10 sm:px-10 md:px-14 md:py-12 shadow-[0_30px_90px_-45px_rgba(34,197,94,0.6)]">
+            
+        <div className="max-w-5xl mx-auto mb-16 mt-10">
+            <div className="relative overflow-hidden rounded-[32px] border border-[#4CAF50]/25 bg-gradient-to-br from-black via-[#0b1f14] to-[#22C55E]/40 px-8 py-10 sm:px-10 md:px-14 md:py-12 shadow-[0_30px_90px_-45px_rgba(34,197,94,0.6)]">
               <div className="absolute inset-0 pointer-events-none opacity-30">
                 <div className="absolute -top-24 left-1/3 h-56 w-56 rounded-full bg-[#22C55E] blur-[130px]" />
                 <div className="absolute bottom-[-25%] right-1/4 h-64 w-64 rounded-full bg-[#0EA5E9] blur-[150px]" />
               </div>
-              <div className="relative z-10 flex flex-col gap-6 text-center sm:text-left sm:flex-row sm:items-center sm:justify-between">
+              <div className="relative z-10 flex flex-col items-center gap-6 text-center">
                 <div className="max-w-3xl">
                   <p className="text-white text-lg md:text-xl font-semibold leading-relaxed">
                     Want to see the exact systems we deploy to turn chaotic ad accounts into calm, scaling machines? Dive into the playbooks behind our biggest wins.
@@ -1286,7 +1284,6 @@ const ServicesMain = () => {
               </div>
             </div>
           </div>
-        </div>
       </section>
 
       {/* Client Outcomes Section */}
@@ -1476,10 +1473,6 @@ const ServicesMain = () => {
             </Swiper>
           </div>
         </div>
-      </section>
-
-      {/* CTA - Book Strategy Call */}
-      <section className="py-80px bg-white dark:bg-[#050505]">
         <div className="container">
           <div className="mt-6 md:mt-10">
             <div className="relative max-w-5xl mx-auto overflow-hidden rounded-[32px] border border-[#4CAF50]/25 bg-gradient-to-br from-black via-[#0b1f14] to-[#22C55E]/40 px-8 py-10 sm:px-10 md:px-14 md:py-12 shadow-[0_30px_90px_-45px_rgba(34,197,94,0.6)]">
@@ -1487,7 +1480,7 @@ const ServicesMain = () => {
                 <div className="absolute -top-24 left-1/3 h-56 w-56 rounded-full bg-[#22C55E] blur-[130px]" />
                 <div className="absolute bottom-[-25%] right-1/4 h-64 w-64 rounded-full bg-[#0EA5E9] blur-[150px]" />
               </div>
-              <div className="relative z-10 flex flex-col gap-6 text-center sm:text-left sm:flex-row sm:items-center sm:justify-between">
+              <div className="relative z-10 flex flex-col items-center gap-6 text-center">
                 <div className="max-w-3xl">
                   <p className="text-white text-lg md:text-xl font-semibold leading-relaxed">
                     Ready for a tailored roadmap? We’ll audit your ad spend, listings, and growth levers to map the fastest path to calmer, more profitable scaling.
@@ -1502,7 +1495,11 @@ const ServicesMain = () => {
             </div>
           </div>
         </div>
+    
       </section>
+
+      {/* CTA - Book Strategy Call */}
+    
 
       {/* FAQ Accordion Section */}
       <section id="faq" className="py-100px bg-white dark:bg-[#1a1a1a] scroll-mt-[130px]">
