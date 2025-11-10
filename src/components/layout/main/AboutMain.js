@@ -2,19 +2,105 @@
 import { useEffect, useState } from "react";
 import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
 import Image from "next/image";
+import FunfacTsection1 from "@/components/sections/funfact/FunfacTsection1";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const AboutMain = () => {
   const [isClient, setIsClient] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState(1);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  const stats = [
-    { value: "500+", label: "Successful Campaigns" },
-    { value: "98%", label: "Client Satisfaction" },
-    { value: "$82M+", label: "PPC Profits Managed" },
-    { value: "47", label: "Days to Results" }
+  const testimonials = [
+    {
+      id: 1,
+      achievement: "Hitting 10x ROAS",
+      quote:
+        "Arqam has been extremely reliable in managing our Amazon efforts. His communication is faultless, and we're looking forward to the continued growth under his management.",
+      authorName: "Jack Consalvi",
+      authorTitle: "CEO",
+      image: "/img/testimonials/user/1.jpg",
+      rating: 5,
+    },
+    {
+      id: 2,
+      achievement: "50% Ad Spend Reduction",
+      quote:
+        "The team exceeded our expectations. Within just 30 days, we saw significant improvements in our campaign performance and reduced our ad spend dramatically.",
+      authorName: "Sarah Johnson",
+      authorTitle: "Marketing Director",
+      image: "/img/testimonials/user/2.jpg",
+      rating: 5,
+    },
+    {
+      id: 3,
+      achievement: "Triple Revenue Growth",
+      quote:
+        "Working with this team has transformed our Amazon business. Their strategic approach and attention to detail have helped us scale efficiently.",
+      authorName: "Michael Chen",
+      authorTitle: "Founder",
+      image: "/img/testimonials/user/3.jpg",
+      rating: 5,
+    },
+    {
+      id: 4,
+      achievement: "Outstanding ROI Results",
+      quote:
+        "The expertise and dedication shown by the team is unmatched. They've become an integral part of our success on Amazon.",
+      authorName: "Emily Rodriguez",
+      authorTitle: "E-commerce Manager",
+      image: "/img/testimonials/user/4.jpg",
+      rating: 5,
+    },
+  ];
+
+  const successStories = [
+    {
+      id: 1,
+      clientName: "Sarah Martinez",
+      company: "TechGear Solutions",
+      achievement: "10x ROAS in 60 Days",
+      videoUrl: "https://www.youtube.com/embed/fgdcjsg0n6I",
+      thumbnail: "/img/testimonials/user/1.jpg",
+      metric: "50% Cost Reduction",
+      industry: "Electronics",
+    },
+    {
+      id: 2,
+      clientName: "David Chen",
+      company: "Home Essentials Plus",
+      achievement: "300% Revenue Growth",
+      videoUrl: "https://www.youtube.com/embed/5U66ATCyg4I?si=DXIVm5jJDIYOACaA",
+      thumbnail: "/img/testimonials/user/2.jpg",
+      metric: "45% ACoS Improvement",
+      industry: "Home & Kitchen",
+    },
+    {
+      id: 3,
+      clientName: "Emily Rodriguez",
+      company: "Fitness Pro Gear",
+      achievement: "5x Ad Performance",
+      videoUrl: "https://www.youtube.com/embed/fgdcjsg0n6I",
+      thumbnail: "/img/testimonials/user/3.jpg",
+      metric: "60% Lower CPC",
+      industry: "Health & Fitness",
+    },
+    {
+      id: 4,
+      clientName: "Michael Thompson",
+      company: "BeautyCare Co",
+      achievement: "8x Return on Investment",
+      videoUrl: "https://www.youtube.com/embed/5U66ATCyg4I?si=DXIVm5jJDIYOACaA",
+      thumbnail: "/img/testimonials/user/4.jpg",
+      metric: "35% Sales Increase",
+      industry: "Beauty & Personal Care",
+    },
   ];
 
   return (
@@ -303,59 +389,257 @@ const AboutMain = () => {
 
       {/* Stats Section */}
       <section id="stats" className="py-100px bg-gradient-to-br from-black via-[#1a1a1a] to-black relative overflow-hidden">
-        {/* Green Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#4CAF50]/30 via-transparent to-[#4CAF50]/20"></div>
-        {/* Background Pattern */}
         <div className="absolute inset-0 opacity-[0.1]" style={{
           backgroundImage: 'radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px)',
           backgroundSize: '30px 30px'
         }}></div>
 
         <div className="container relative z-10 px-6 md:px-8">
-          <div className="text-center mb-16 wow fadeInUp" data-wow-delay=".05s">
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-              Our Track Record
-            </h2>
-            <p className="text-xl md:text-2xl text-white/90">
-              Numbers that speak for themselves
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 text-center text-white max-w-6xl mx-auto">
-            {stats.map((stat, idx) => (
-              <div
-                key={idx}
-                className="group transform hover:scale-110 transition-all duration-300 wow fadeInUp"
-                data-wow-delay={`${0.08 * idx + 0.1}s`}
-              >
-                <div className="bg-white/10 backdrop-blur-sm rounded-20px p-8 border border-white/20 hover:border-white/40 transition-all duration-300">
-                  <div className="text-5xl md:text-6xl font-black mb-3 group-hover:scale-110 transition-transform">
-                    {stat.value}
-                  </div>
-                  <p className="text-lg md:text-xl opacity-90 font-medium">{stat.label}</p>
-                </div>
+          <div className="max-w-5xl mx-auto mb-12">
+            <div className="relative overflow-hidden rounded-[30px] border border-[#4CAF50]/30 bg-gradient-to-br from-black via-[#121212] to-[#4CAF50] px-8 py-12 sm:px-12 md:px-16 md:py-14 shadow-[0_40px_120px_-60px_rgba(34,197,94,0.55)]">
+              <div className="absolute inset-0 opacity-10 pointer-events-none">
+                <div className="absolute top-1/4 left-1/4 w-56 h-56 bg-[#4CAF50] rounded-full blur-3xl"></div>
+                <div className="absolute bottom-1/4 right-1/4 w-56 h-56 bg-[#0EA5E9] rounded-full blur-3xl"></div>
               </div>
-            ))}
+              <div className="relative z-10 flex flex-col items-center text-center gap-4">
+                <h3 className="text-3xl md:text-4xl font-black text-white">Let’s Scale Smarter</h3>
+                <p className="text-base md:text-lg text-white/80 leading-relaxed max-w-3xl">
+                  Scaling fast is easy. Scaling safely is strategy. Discover how we grow brands without burning budgets.
+                </p>
+                <ButtonPrimary type={2} isIcon={true} href="/#contact">
+                  Let’s Scale Smarter
+                </ButtonPrimary>
+              </div>
+            </div>
           </div>
+          <FunfacTsection1 />
         </div>
       </section>
 
+      {isClient && (
+        <section className="relative py-24 bg-black">
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-[#0f172a]/20 to-transparent blur-3xl opacity-60"></div>
+          </div>
+          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <span className="inline-flex items-center rounded-full border border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.4em] text-white/60">
+                Voices From Clients
+              </span>
+              <h2 className="mt-6 text-4xl md:text-5xl font-black text-white leading-tight">
+                Testimonials
+              </h2>
+              <p className="mt-4 text-lg text-white/70 max-w-3xl mx-auto">
+                Real operators sharing the wins we engineered together — the calm after the chaos of runaway ad spend.
+              </p>
+            </div>
+            <div className="relative px-8 sm:px-12 lg:px-0">
+              <button
+                className="testimonials-slider-prev absolute left-0 lg:left-[-64px] top-1/2 -translate-y-1/2 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white/80 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/10"
+                aria-label="Previous testimonial"
+              >
+                <i className="fa-regular fa-chevron-left"></i>
+              </button>
+              <button
+                className="testimonials-slider-next absolute right-0 lg:right-[-64px] top-1/2 -translate-y-1/2 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white/80 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/10"
+                aria-label="Next testimonial"
+              >
+                <i className="fa-regular fa-chevron-right"></i>
+              </button>
+              <Swiper
+                spaceBetween={30}
+                slidesPerView={1}
+                loop
+                autoplay={{
+                  delay: 5000,
+                  disableOnInteraction: false,
+                }}
+                navigation={{
+                  prevEl: ".testimonials-slider-prev",
+                  nextEl: ".testimonials-slider-next",
+                }}
+                modules={[Navigation, Autoplay]}
+                className="testimonials-slider"
+              >
+                {testimonials.map(testimonial => (
+                  <SwiperSlide key={testimonial.id}>
+                    <div className="flex flex-col items-center text-center">
+                      <div className="mb-8">
+                        <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border border-white/10 shadow-[0_20px_45px_-30px_rgba(59,130,246,0.6)]">
+                          <Image
+                            src={testimonial.image}
+                            alt={testimonial.authorName}
+                            width={160}
+                            height={160}
+                            className="h-full w-full object-cover"
+                          />
+                        </div>
+                      </div>
+                      <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6">
+                        {testimonial.achievement}
+                      </h3>
+                      <blockquote className="text-lg sm:text-xl text-white/70 italic mb-8 max-w-3xl leading-relaxed">
+                        “{testimonial.quote}”
+                      </blockquote>
+                      <p className="text-xl sm:text-2xl font-black text-white mb-2">
+                        {testimonial.authorName}
+                      </p>
+                      <p className="text-base text-white/60 mb-4">{testimonial.authorTitle}</p>
+                      <div className="flex gap-1 justify-center">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <i key={i} className="fas fa-star text-amber-400 text-lg"></i>
+                        ))}
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {isClient && (
+        <section className="relative py-28 bg-gradient-to-br from-[#0f172a] via-black to-[#0f172a]">
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a]/30 via-transparent to-[#0f172a]/40"></div>
+            <div className="absolute top-1/3 -left-24 h-80 w-80 rounded-full bg-[#4CAF50]/20 blur-3xl"></div>
+            <div className="absolute bottom-0 right-1/4 h-96 w-96 rounded-full bg-blue-500/20 blur-3xl"></div>
+          </div>
+          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <span className="inline-flex items-center rounded-full border border-white/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.4em] text-white/60">
+                Video Proof
+              </span>
+              <h2 className="mt-6 text-4xl md:text-5xl font-black text-white leading-tight">
+                Watch Their Amazon Turnarounds
+              </h2>
+              <p className="mt-4 text-lg text-white/70 max-w-3xl mx-auto">
+                Straight from the founders and operators who partnered with us to steady their ad spend and unlock predictable revenue.
+              </p>
+            </div>
+            {successStories[0] && (
+              <div className="mb-14">
+                <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md shadow-[0_30px_90px_-45px_rgba(15,23,42,0.75)] group">
+                  <div className="relative aspect-video">
+                    {selectedVideo === successStories[0].id ? (
+                      <iframe
+                        className="absolute inset-0 h-full w-full"
+                        src={successStories[0].videoUrl}
+                        title={successStories[0].clientName}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      ></iframe>
+                    ) : (
+                      <div
+                        onClick={() => setSelectedVideo(successStories[0].id)}
+                        className="absolute inset-0 flex cursor-pointer items-center justify-center bg-black/20 transition-all duration-300 hover:bg-black/30"
+                      >
+                        <div
+                          className="absolute inset-0 bg-cover bg-center opacity-90"
+                          style={{
+                            backgroundImage: `url(https://img.youtube.com/vi/${successStories[0].videoUrl.split("/embed/")[1]?.split("?")[0]}/maxresdefault.jpg)`,
+                          }}
+                        ></div>
+                        <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-white text-[#4CAF50] shadow-2xl transition-all duration-300 hover:scale-105">
+                          <i className="fas fa-play text-2xl ml-1"></i>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6 sm:p-8">
+                    <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <h3 className="text-2xl sm:text-3xl font-bold text-white">
+                          {successStories[0].clientName}
+                        </h3>
+                        <p className="text-white/70">{successStories[0].company}</p>
+                      </div>
+                      <div className="flex flex-wrap gap-3">
+                        <span className="rounded-full bg-[#4CAF50]/20 px-4 py-2 text-sm font-semibold text-[#4CAF50]">
+                          {successStories[0].achievement}
+                        </span>
+                        <span className="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white">
+                          {successStories[0].metric}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {successStories.slice(1).map(story => (
+                <div
+                  key={story.id}
+                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-[#4CAF50]/40 hover:shadow-[0_28px_70px_-40px_rgba(34,197,94,0.55)]"
+                >
+                  <div className="relative aspect-video">
+                    {selectedVideo === story.id ? (
+                      <iframe
+                        className="absolute inset-0 h-full w-full"
+                        src={story.videoUrl}
+                        title={story.clientName}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      ></iframe>
+                    ) : (
+                      <div
+                        onClick={() => setSelectedVideo(story.id)}
+                        className="absolute inset-0 flex cursor-pointer items-center justify-center bg-black/20 transition-all duration-300 hover:bg-black/30"
+                      >
+                        <div
+                          className="absolute inset-0 bg-cover bg-center opacity-90"
+                          style={{
+                            backgroundImage: `url(https://img.youtube.com/vi/${story.videoUrl.split("/embed/")[1]?.split("?")[0]}/maxresdefault.jpg)`,
+                          }}
+                        ></div>
+                        <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-white text-[#4CAF50] shadow-xl transition-all duration-300 hover:scale-110">
+                          <i className="fas fa-play text-xl ml-1"></i>
+                        </div>
+                        <div className="absolute left-4 top-4 rounded-full bg-[#4CAF50]/90 px-3 py-1 text-xs font-semibold text-white">
+                          {story.industry}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                  <div className="space-y-3 bg-gradient-to-t from-black/85 via-black/50 to-black/20 p-6">
+                    <h4 className="text-xl font-bold text-white">{story.clientName}</h4>
+                    <p className="text-sm text-white/60">{story.company}</p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="rounded-full bg-[#4CAF50]/20 px-3 py-1 text-xs font-semibold text-[#4CAF50]">
+                        {story.achievement}
+                      </span>
+                      <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-white">
+                        {story.metric}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Call-to-Action Section */}
-      <section id="cta" className="relative py-100px md:py-120px overflow-hidden bg-black">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#4CAF50]/10 rounded-full blur-[120px] animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#4CAF50]/5 rounded-full blur-[120px] animate-pulse" style={{animationDelay: '1s'}}></div>
+      <section id="cta" className="relative py-100px md:py-120px overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#121212] to-[#4CAF50]/40"></div>
+        <div className="absolute inset-0 opacity-20 pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-[#22C55E] rounded-full blur-[120px]"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#22d3ee] rounded-full blur-[130px]"></div>
         </div>
 
         <div className="container relative z-10 px-6 md:px-8">
-          <div className="text-center text-white max-w-4xl mx-auto wow fadeInUp" data-wow-delay=".05s">
+          <div className="max-w-4xl mx-auto rounded-[32px] border border-white/15 bg-white/5 backdrop-blur-md p-10 md:p-14 text-center text-white shadow-[0_40px_120px_-60px_rgba(34,197,94,0.55)] wow fadeInUp" data-wow-delay=".05s">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
               Get My Growth Audit
             </h2>
-            <p className="text-xl md:text-2xl mb-10 text-white/90 leading-relaxed">
+            <p className="text-xl md:text-2xl mb-10 text-white/80 leading-relaxed">
               Find exactly where your ad spend, listings, or strategy are leaking profit — before it costs another dollar.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center wow fadeInUp" data-wow-delay=".15s">
+            <div className="flex justify-center wow fadeInUp" data-wow-delay=".15s">
               <ButtonPrimary type={2} isIcon={true} href="/#contact">
                 Get My Growth Audit
               </ButtonPrimary>
