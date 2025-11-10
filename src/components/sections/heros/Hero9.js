@@ -191,9 +191,12 @@ const Hero9 = () => {
 									</svg>
 								</span>
 							</div>
-							<button className="md:text-[19px] leading-[1.52] font-medium text-white bg-[#4CAF50] hover:bg-[#2E7D32] dark:bg-[#4CAF50] dark:hover:bg-[#2E7D32] transition-all duration-300 cursor-pointer px-4 py-2 rounded-lg border border-[#4CAF50] hover:border-[#2E7D32] shadow-md hover:shadow-lg">
+							<Link
+								href="#contact"
+								className="md:text-[19px] leading-[1.52] font-medium text-white bg-[#4CAF50] hover:bg-[#2E7D32] dark:bg-[#4CAF50] dark:hover:bg-[#2E7D32] transition-all duration-300 cursor-pointer px-4 py-2 rounded-lg border border-[#4CAF50] hover:border-[#2E7D32] shadow-md hover:shadow-lg inline-flex items-center justify-center"
+							>
 								Get $500 Gift Card
-							</button>
+							</Link>
 							<div>
 								<span className="w-[13px] h-[13px] border-2 border-black-color dark:border-white-color bg-white-color dark:bg-black-color rounded-100% absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2  [&:nth-child(2)]:left-full last:left-full last:top-full"></span>
 								<span className="w-[13px] h-[13px] border-2 border-black-color dark:border-white-color bg-white-color dark:bg-black-color rounded-100% absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2  [&:nth-child(2)]:left-full last:left-full last:top-full"></span>
