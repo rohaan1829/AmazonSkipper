@@ -1,62 +1,102 @@
 [
 	{
 		"id": 1,
-		"authorName": "Tim Bailey",
-		"authorDesig": "SEO Specialist, Theme Junction",
+		"authorName": "Olivia Grant",
+		"authorDesig": "Founder, LumaNest Home",
 		"img": "/img/testimonials/user/1.jpg",
 		"logoImg": "/img/testimonials/logo/1.png",
 		"logoImgLight": "/img/testimonials/logo/1-dark.png",
 		"thumbImg": "/img/testimonials/user/testmonial-7-thumb.jpg",
-		"desc": "“Taylor is a professional Designer he really helps my business by providing value to my business."
+		"desc": "“Our monthly sales tripled after Skipper took over. Their brand management and creative strategy changed everything.”"
 	},
 	{
 		"id": 2,
-		"authorName": "Brandon Fraser",
-		"authorDesig": "Senior Software Dev, Cosmic Sport",
+		"authorName": "Ryan Mitchell",
+		"authorDesig": "Co-Founder, PetVibe Co.",
 		"img": "/img/testimonials/user/2.jpg",
 		"logoImg": "/img/testimonials/logo/2.png",
 		"logoImgLight": "/img/testimonials/logo/2-dark.png",
 		"thumbImg": "/img/testimonials/user/h10-test.png",
-		"desc": "“Taylor is a professional Designer he really helps my business by providing value to my business."
+		"desc": "“We went from flat sales to six figures in under 4 months. Skipper’s ad control and visuals did the magic.”"
 	},
 	{
 		"id": 3,
-		"authorName": "Tim Bailey",
-		"authorDesig": "SEO Specialist, Theme Junction",
+		"authorName": "Sarah Collins",
+		"authorDesig": "Owner, ZenCraft Studio",
 		"img": "/img/testimonials/user/1.jpg",
 		"logoImg": "/img/testimonials/logo/1.png",
 		"logoImgLight": "/img/testimonials/logo/1-dark.png",
 		"thumbImg": "/img/testimonials/user/testmonial-7-thumb.jpg",
-		"desc": "“Taylor is a professional Designer he really helps my business by providing value to my business."
+		"desc": "“From $20K to $120K in 6 months — and I barely touched Seller Central. Skipper handled it all.”"
 	},
 	{
 		"id": 4,
-		"authorName": "Brandon Fraser",
-		"authorDesig": "Senior Software Dev, Cosmic Sport",
+		"authorName": "Ethan Cole",
+		"authorDesig": "Managing Director, Orbit Office Supplies",
 		"img": "/img/testimonials/user/2.jpg",
 		"logoImg": "/img/testimonials/logo/2.png",
 		"logoImgLight": "/img/testimonials/logo/2-dark.png",
 		"thumbImg": "/img/testimonials/user/h10-test.png",
-		"desc": "“Taylor is a professional Designer he really helps my business by providing value to my business."
+		"desc": "“Our listings now rank high and stay there. Revenue up 5x since partnering with Skipper — can’t ask for better.”"
 	},
 	{
-		"id": 1,
-		"authorName": "Tim Bailey",
-		"authorDesig": "SEO Specialist, Theme Junction",
+		"id": 5,
+		"authorName": "Laura Bennett",
+		"authorDesig": "CEO, EcoEase Living",
 		"img": "/img/testimonials/user/1.jpg",
 		"logoImg": "/img/testimonials/logo/1.png",
 		"logoImgLight": "/img/testimonials/logo/1-dark.png",
 		"thumbImg": "/img/testimonials/user/testmonial-7-thumb.jpg",
-		"desc": "“Taylor is a professional Designer he really helps my business by providing value to my business."
+		"desc": "“They rebuilt our storefront and listings. Within weeks, our ACoS dropped and sales crossed $200K.”"
 	},
 	{
-		"id": 2,
-		"authorName": "Brandon Fraser",
-		"authorDesig": "Senior Software Dev, Cosmic Sport",
+		"id": 6,
+		"authorName": "Daniel Ruiz",
+		"authorDesig": "Co-Founder, FetchMate Pets",
 		"img": "/img/testimonials/user/2.jpg",
 		"logoImg": "/img/testimonials/logo/2.png",
 		"logoImgLight": "/img/testimonials/logo/2-dark.png",
+		"thumbImg": "/img/testimonials/user/h10-test.png",
+		"desc": "“We used to struggle breaking $50K/month. Now it’s consistent six-figure revenue — thanks to their creative direction and strategy.”"
+	},
+	{
+		"id": 7,
+		"authorName": "Emily James",
+		"authorDesig": "Founder, ModernBake Co.",
+		"img": "/img/testimonials/user/1.jpg",
+		"logoImg": "/img/testimonials/logo/1.png",
+		"logoImgLight": "/img/testimonials/logo/1-dark.png",
 		"thumbImg": "/img/testimonials/user/testmonial-7-thumb.jpg",
-		"desc": "“Taylor is a professional Designer he really helps my business by providing value to my business."
+		"desc": "“After the rebranding, everything clicked — our visuals, ads, and growth. Sales jumped 4x in just one quarter.”"
+	},
+	{
+		"id": 8,
+		"authorName": "Adam Lee",
+		"authorDesig": "Founder, FitVerse Gear",
+		"img": "/img/testimonials/user/2.jpg",
+		"logoImg": "/img/testimonials/logo/2.png",
+		"logoImgLight": "/img/testimonials/logo/2-dark.png",
+		"thumbImg": "/img/testimonials/user/h10-test.png",
+		"desc": "“Our fitness line exploded after their A+ content revamp. Ads are leaner, profits are cleaner, sales are booming.”"
+	},
+	{
+		"id": 9,
+		"authorName": "Hannah Kim",
+		"authorDesig": "Creative Director, HomeFlow Decor",
+		"img": "/img/testimonials/user/1.jpg",
+		"logoImg": "/img/testimonials/logo/1.png",
+		"logoImgLight": "/img/testimonials/logo/1-dark.png",
+		"thumbImg": "/img/testimonials/user/testmonial-7-thumb.jpg",
+		"desc": "“Skipper turned our slow-moving catalog into a bestseller lineup. We’ve hit record months back-to-back.”"
+	},
+	{
+		"id": 10,
+		"authorName": "Jake Wilson",
+		"authorDesig": "COO, PawJoy Supplies",
+		"img": "/img/testimonials/user/2.jpg",
+		"logoImg": "/img/testimonials/logo/2.png",
+		"logoImgLight": "/img/testimonials/logo/2-dark.png",
+		"thumbImg": "/img/testimonials/user/h10-test.png",
+		"desc": "“We crossed $300K/month after their team overhauled our listings. Brand feels premium, and it finally pays off.”"
 	}
 ]

@@ -49,12 +49,8 @@ const TestimonialsCard9 = ({ testimonial }) => {
 					</div>
 				</div>
 
-				<p className="text-primary-color-light dark:text-body-color-3 text-base sm:text-lg lg:text-xl leading-1.5 sm:leading-1.5 lg:leading-1.5  ">
-					“Taylor is a professional Designer really helps my business by
-					providing value to my business. Taylor is a professional Designer he
-					really helps my business by providing value to my business. Taylor is
-					a professional. Helps business providing value to my business.
-					professional Designer he really helps my business
+				<p className="text-primary-color-light dark:text-body-color-3 text-base sm:text-lg lg:text-xl leading-1.5 sm:leading-1.5 lg:leading-1.5">
+					{desc}
 				</p>
 			</div>
 		</div>

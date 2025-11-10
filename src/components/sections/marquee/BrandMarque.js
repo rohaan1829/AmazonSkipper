@@ -25,8 +25,10 @@ const BrandMarque = ({ type }) => {
 						centeredSlides={false}
 						speed={3000}
 						loop={true}
-						freeMode={true}
-						freeModeMomentum={false}
+						freeMode={{
+							enabled: true,
+							momentum: false,
+						}}
 						allowTouchMove={false}
 						autoplay={{
 							delay: 0,

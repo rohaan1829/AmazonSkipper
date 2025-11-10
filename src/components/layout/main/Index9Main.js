@@ -88,6 +88,9 @@ const Index9Main = () => {
 			<div className="wow fadeInUp" data-wow-delay=".28s">
 				<About6 />
 			</div>
+			<div className="wow fadeInUp" data-wow-delay=".40s">
+				<Testimonials9 sectionClassName="py-80px md:py-100px bg-[#050505] dark:bg-[#0a0a0a]" />
+			</div>
 			{/* <Services6 type={2} /> */}
 			<div className="wow fadeInUp" data-wow-delay=".32s">
 				<Portfolio9 />
@@ -95,6 +98,7 @@ const Index9Main = () => {
 			<div className="wow fadeInUp" data-wow-delay=".36s">
 				<FeatureMarque2 type={3} isRotate={true} />
 			</div>
+			
 			<section className="py-70px md:py-100px bg-white dark:bg-[#121212]">
 				<div className="container">
 					<div className="text-center mb-40px">
