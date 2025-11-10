@@ -147,18 +147,28 @@ const Brands2 = ({ type }) => {
                       height: isActive ? ACTIVE_H : SIDE_H,
                     }}
                   >
-                    <div className="relative rounded-3xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.75)]">
-                      <img
-                        src={item.img}
-                        alt={item.title}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
-                        <h3 className="text-white text-xl md:text-2xl font-semibold drop-shadow">
-                          {item.title}
-                        </h3>
-						</div>
-					</div>
+                    <Link href="/case-studies" className="group block h-full">
+                      <div className="relative rounded-3xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.75)] h-full">
+                        <img
+                          src={item.img}
+                          alt={item.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent flex flex-col justify-end p-6 lg:p-7">
+                          <h3 className="text-white text-xl md:text-2xl font-semibold drop-shadow">
+                            {item.title}
+                          </h3>
+                          <div className="mt-4 flex items-center gap-3 text-white/70">
+                            <span className="text-sm md:text-base">
+                              View full case study
+                            </span>
+                            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition-all duration-300 group-hover:bg-[#22C55E] group-hover:text-black">
+                              <i className="fa-regular fa-arrow-up-right"></i>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
                   </motion.div>
                 );
               })}

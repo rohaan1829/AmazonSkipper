@@ -21,7 +21,7 @@ const Logo = ({ isSticky }) => {
 				} `}
 				src={
 					headerType === 4 || headerType === 9 || headerType === 10
-						? "/img/logo/black.png"
+						? "/img/logo/black.jpg"
 						: "/img/logo/logo.png"
 				}
 				alt=""
