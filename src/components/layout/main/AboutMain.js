@@ -165,18 +165,21 @@ const AboutMain = () => {
                   { size: 9, x: "left-[-34%]", y: "top-[30%]", anim: "floatFast 5.7s", opacity: "opacity-45" },
                   { size: 10, x: "left-[-30%]", y: "top-[60%]", anim: "floatMedium 8.9s", opacity: "opacity-45" },
                   { size: 9, x: "left-[-24%]", y: "top-[76%]", anim: "floatSlow 9.6s", opacity: "opacity-45" }
-                ].map(({ size, x, y, anim, opacity }, idx) => (
-                  <Image
-                    key={`about-hero-shape-${idx}`}
-                    src="/img/shapes/5.jpg"
-                    alt="Decorative accent"
-                    width={size}
-                    height={size}
-                    className={`pointer-events-none absolute ${y} ${x} ${opacity} drop-shadow-[0_18px_40px_rgba(34,197,94,0.22)]`}
-                    style={{ animation: `${anim} ease-in-out infinite` }}
-                    priority
-                  />
-                ))}
+                ].map(({ size, x, y, anim, opacity }, idx) => {
+                  const adjustedSize = size * 1.35;
+                  return (
+                    <Image
+                      key={`about-hero-shape-${idx}`}
+                      src="/img/shapes/5.jpg"
+                      alt="Decorative accent"
+                      width={adjustedSize}
+                      height={adjustedSize}
+                      className={`pointer-events-none absolute ${y} ${x} ${opacity} drop-shadow-[0_18px_40px_rgba(34,197,94,0.22)]`}
+                      style={{ animation: `${anim} ease-in-out infinite` }}
+                      priority
+                    />
+                  );
+                })}
               </div>
               {/* Badge */}
               {/* Main Headline */}
