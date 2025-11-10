@@ -32,7 +32,9 @@ const Footer6 = () => {
 								<ul className="nav flex items-center    gap-2">
 									<li className="nav_item group relative ">
 										<Link
-											href="#"
+											href="https://www.facebook.com/profile.php?id=61560301466107"
+											target="_blank"
+											rel="noopener noreferrer"
 											className="text-size-15 font-normal text-white-color  capitalize flex gap-2 items-center "
 										>
 											<span
@@ -45,7 +47,9 @@ const Footer6 = () => {
 									</li>
 									<li className="nav_item group relative ">
 										<Link
-											href="#"
+											href="https://www.instagram.com/amazonskiper"
+											target="_blank"
+											rel="noopener noreferrer"
 											className="text-size-15 font-normal text-white-color  capitalize flex gap-2 items-center "
 										>
 											<span
@@ -58,7 +62,9 @@ const Footer6 = () => {
 									</li>
 									<li className="nav_item group relative ">
 										<Link
-											href="#"
+											href="https://twitter.com/amazonskiper"
+											target="_blank"
+											rel="noopener noreferrer"
 											className="text-size-15 font-normal text-white-color  capitalize flex gap-2 items-center "
 										>
 											<span
@@ -71,7 +77,9 @@ const Footer6 = () => {
 									</li>
 									<li className="nav_item group relative ">
 										<Link
-											href="#"
+											href="https://www.linkedin.com/in/virtuallyhuzaifa/"
+											target="_blank"
+											rel="noopener noreferrer"
 											className="text-size-15 font-normal text-white-color  capitalize flex gap-2 items-center "
 										>
 											<span

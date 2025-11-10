@@ -20,74 +20,15 @@ const FunFact10 = () => {
 	useEffect(() => {
 		if (inView) {
 			const timeoutId = setTimeout(() => {
-				setValue(30);
-				setValue2(100);
-				setValue3(300);
+				setValue(0);
+				setValue2(0);
+				setValue3(0);
 			}, 250);
 			return () => clearTimeout(timeoutId);
 		}
 	}, [inView]);
 
-	return (
-		<>
-			{Odometer ? (
-				<div
-					ref={ref}
-					className="funfact-9 flex md:inline-flex  flex-wrap items-center md:items-start justify-center md:justify-start gap-y-1.5 md:gap-y-2 lg:gap-y-3 xl:gap-y-6  text-primary-color dark:text-white bg-white-color dark:bg-primary-color-light  rounded-15px"
-				>
-					<div className="funfact-item-2 flex  flex-col  text-center md:text-start justify-center lg:justify-start items-center sm:items-start px-[34px] pt-22px pb-[26px] sm:pr-5 md:px-5 xl:px-[34px] sm:border-r border-border-color dark:border-border-color-3 last:border-r-0 ">
-						<div className="number inline-flex items-center text-size-32 sm:text-size-45 md:text-5xl  font-bold leading-1 dark:text-white">
-							<Odometer
-								className="!font-sora tracking-[0.04em] dark:!text-white"
-								value={value}
-							/>{" "}
-							<span className="symbol"> +</span>
-						</div>
-						<div className="text-size-13 sm:text-base text-seondary-color dark:text-white leading-1 ">
-							{" "}
-							Years of
-							<br />
-							Experience
-						</div>
-					</div>
-
-					<div className="funfact-item-2 flex  flex-col  text-center md:text-start justify-center lg:justify-start items-center sm:items-start px-[34px] pt-22px pb-[26px] sm:pr-5 md:px-5 xl:px-[34px] sm:border-r border-border-color dark:border-border-color-3 last:border-r-0 ">
-						<div className="number inline-flex items-center text-size-32 sm:text-size-45 md:text-5xl  font-bold leading-1 dark:text-white">
-							<Odometer
-								className="!font-sora tracking-[0.04em] dark:!text-white"
-								value={value2}
-							/>{" "}
-							<span className="symbol">+</span>
-						</div>
-						<div className="text-size-13 sm:text-base text-seondary-color dark:text-white  leading-1">
-							{" "}
-							Project
-							<br />
-							Completed
-						</div>
-					</div>
-
-					<div className="funfact-item-2 flex  flex-col  text-center md:text-start justify-center lg:justify-start items-center sm:items-start px-[34px] pt-22px pb-[26px] sm:pr-5 md:px-5 xl:px-[34px] sm:border-r border-border-color dark:border-border-color-3 last:border-r-0 ">
-						<div className="number inline-flex items-center text-size-32 sm:text-size-45 md:text-5xl  font-bold leading-1 dark:text-white">
-							<Odometer
-								className="!font-sora tracking-[0.04em] dark:!text-white"
-								value={value3}
-							/>{" "}
-							<span className="symbol"> +</span>
-						</div>
-						<div className="text-size-13 sm:text-base text-seondary-color dark:text-white leading-1">
-							{" "}
-							Successful
-							<br />
-							Project
-						</div>
-					</div>
-				</div>
-			) : (
-				""
-			)}
-		</>
-	);
+	return null;
 };
 
 export default FunFact10;

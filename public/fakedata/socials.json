@@ -1,18 +1,18 @@
 [
     {
-        "iconName":"fa-brands fa-twitter",
-        "path":"https://www.facebook.com"
+        "iconName": "fab fa-facebook-f",
+        "path": "https://www.facebook.com/profile.php?id=61560301466107"
     },
     {
-        "iconName":"fa-light fa-basketball",
-        "path":"https://www.basketball.com"
+        "iconName": "fab fa-instagram",
+        "path": "https://www.instagram.com/amazonskiper"
     },
     {
-        "iconName":"fa-brands fa-linkedin-in",
-        "path":"https://www.linkedin.com"
+        "iconName": "fab fa-x-twitter",
+        "path": "https://twitter.com/amazonskiper"
     },
     {
-        "iconName":"fa-brands fa-github",
-        "path":"https://www.github.com"
+        "iconName": "fab fa-linkedin-in",
+        "path": "https://www.linkedin.com/in/virtuallyhuzaifa/"
     }
 ]

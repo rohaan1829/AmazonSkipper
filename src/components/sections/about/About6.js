@@ -296,13 +296,21 @@ const About6 = () => {
 									<div className="relative  ">
 										<FunFact10 />
 									</div>
-									<div
-										className="mt-35px xl:mt-35px wow fadeInUp"
-										data-wow-delay=".3s"
-									>
-										<ButtonPrimary type={2} isIcon={true} href="/#contact">
-											Stop Guessing. Start Scaling.
-										</ButtonPrimary>
+									<div className="mt-35px xl:mt-35px wow fadeInUp" data-wow-delay=".3s">
+										<div className="relative overflow-hidden rounded-[28px] border border-[#4CAF50]/25 bg-gradient-to-br from-black via-[#0a1f14] to-[#22C55E]/40 p-6 sm:p-7 md:p-8 shadow-[0_30px_80px_-40px_rgba(34,197,94,0.55)]">
+											<div className="absolute inset-0 pointer-events-none opacity-30">
+												<div className="absolute -top-20 left-1/3 h-40 w-40 rounded-full bg-[#22C55E] blur-[120px]" />
+												<div className="absolute bottom-[-25%] right-1/4 h-44 w-44 rounded-full bg-[#0EA5E9] blur-[140px]" />
+											</div>
+											<div className="relative z-10 space-y-4">
+												<p className="text-sm md:text-base text-white/80 leading-relaxed">
+													Every brand loses money somewhere — we’ll show you where, and how to fix it for good.
+												</p>
+												<ButtonPrimary type={2} isIcon={true} href="/#contact">
+													Find My Profit Leaks
+												</ButtonPrimary>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>

@@ -14,7 +14,7 @@ const caseStudies = [
 
 const videoTestimonials = [
   { id: "testimonial-1", videoId: "5U66ATCyg4I", title: "Mark's Success Story", category: "Video" },
-  { id: "testimonial-2", videoId: "5U66ATCyg4I", title: "Mark's Success Story", category: "Video" },
+  { id: "testimonial-2", videoId: "fgdcjsg0n6I", title: "Sarah's Success Story", category: "Video" },
   { id: "testimonial-3", videoId: "5U66ATCyg4I", title: "Mark's Success Story", category: "Video" },
 ];
 
@@ -172,16 +172,25 @@ const Brands2 = ({ type }) => {
               ›
             </button>
           </div>
-          <div className="mt-0 md:mt-1 text-center max-w-3xl mx-auto">
-            <p className="text-lg md:text-xl text-black/80 dark:text-white/80 mb-6">
-              Our process has helped dozens of sellers go from chaos to control — here’s how it actually works.
-            </p>
-            <Link
-              href="/case-studies"
-              className="inline-flex items-center justify-center bg-gradient-to-r from-black via-[#0f3d1f] to-[#4CAF50] hover:from-[#050505] hover:via-[#14532d] hover:to-[#22c55e] text-white font-semibold text-base md:text-lg px-6 md:px-10 py-3 md:py-3.5 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              See the Skipper Framework
-            </Link>
+          <div className="mt-6 md:mt-10">
+            <div className="relative max-w-5xl mx-auto -translate-y-[20%] sm:-translate-y-[15%] md:-translate-y-[10%] lg:-translate-y-[5%] overflow-hidden rounded-[32px] border border-[#4CAF50]/25 bg-gradient-to-br from-black via-[#0f2d1a] to-[#4CAF50]/35 px-8 py-10 sm:px-10 md:px-14 md:py-12 shadow-[0_30px_90px_-45px_rgba(34,197,94,0.55)]">
+              <div className="absolute inset-0 pointer-events-none opacity-25">
+                <div className="absolute -top-24 left-1/3 h-56 w-56 rounded-full bg-[#22C55E] blur-[120px]" />
+                <div className="absolute bottom-[-20%] right-1/4 h-64 w-64 rounded-full bg-[#0EA5E9] blur-[140px]" />
+              </div>
+              <div className="relative z-10 flex flex-col gap-6 text-center sm:text-left sm:flex-row sm:items-center sm:justify-between">
+                <div className="max-w-3xl">
+                  <p className="text-white text-lg md:text-xl font-semibold leading-relaxed">
+                    Our process has helped dozens of sellers go from chaos to control — here’s how it actually works.
+                  </p>
+                </div>
+                <Link href="/case-studies">
+                  <button className="inline-flex items-center justify-center rounded-full bg-black px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white transition-all duration-300 hover:bg-[#22C55E] hover:text-black">
+                    See the Skipper Framework
+                  </button>
+                </Link>
+              </div>
+            </div>
           </div>
 				</div>
 			</section>
@@ -287,6 +296,28 @@ const Brands2 = ({ type }) => {
           </div>
 				</div>
 			</section>
+      <section className="py-16 md:py-20 bg-black">
+        <div className="container">
+          <div className="relative overflow-hidden rounded-[32px] border border-[#4CAF50]/25 bg-gradient-to-br from-black via-[#0b1f14] to-[#14532d]/70 px-8 py-10 sm:px-12 md:px-16 md:py-14 shadow-[0_30px_90px_-40px_rgba(34,197,94,0.65)]">
+            <div className="absolute inset-0 pointer-events-none opacity-30">
+              <div className="absolute -top-24 left-1/2 h-56 w-56 -translate-x-1/2 bg-[#22C55E] blur-[140px]" />
+              <div className="absolute bottom-[-30%] right-1/4 h-64 w-64 bg-[#0EA5E9] blur-[150px]" />
+            </div>
+            <div className="relative z-10 flex flex-col gap-6 text-center sm:text-left sm:flex-row sm:items-center sm:justify-between">
+              <div className="max-w-3xl">
+                <p className="text-2xl md:text-3xl font-semibold leading-tight text-white">
+                  From ad chaos to clarity — see what happens when your strategy starts working for you, not against you.
+                </p>
+              </div>
+              <Link href="/#contact">
+                <button className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-black transition-all duration-300 hover:bg-[#22C55E] hover:text-black shadow-lg">
+                  Unlock Predictable Growth
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 		</div>
 	);
 };

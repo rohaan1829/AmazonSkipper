@@ -13,7 +13,7 @@ const FunfacTsection1 = () => {
 								className="text-xs  uppercase text-primary-color  font-medium relative inline-block tracking-0.2em  wow fadeInUp"
 								data-wow-delay=".3s"
 							>
-								Behind the Pixels
+							
 							</span>
 						</div>
 						<h2
