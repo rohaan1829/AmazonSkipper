@@ -164,48 +164,103 @@ const ServicesMain = () => {
     {
       id: 1,
       achievement: "Monthly Sales Tripled",
-      quote: "Our monthly sales tripled after Skipper took over. Their brand management and creative strategy changed everything.",
+      quote:
+        "Our monthly sales tripled after Skipper took over. Their brand management and creative strategy changed everything.",
       authorName: "Olivia Grant",
       authorTitle: "Founder, LumaNest Home",
       image: "/img/testimonials/user/1.jpg",
-      rating: 5
+      rating: 5,
     },
     {
       id: 2,
       achievement: "Six-Figure Breakthrough",
-      quote: "We went from flat sales to six figures in under 4 months. Skipper’s ad control and visuals did the magic.",
+      quote:
+        "We went from flat sales to six figures in under 4 months. Skipper’s ad control and visuals did the magic.",
       authorName: "Ryan Mitchell",
       authorTitle: "Co-Founder, PetVibe Co.",
       image: "/img/testimonials/user/2.jpg",
-      rating: 5
+      rating: 5,
     },
     {
       id: 3,
       achievement: "6x Revenue Climb",
-      quote: "From $20K to $120K in 6 months — and I barely touched Seller Central. Skipper handled it all.",
+      quote:
+        "From $20K to $120K in 6 months — and I barely touched Seller Central. Skipper handled it all.",
       authorName: "Sarah Collins",
       authorTitle: "Owner, ZenCraft Studio",
       image: "/img/testimonials/user/3.jpg",
-      rating: 5
+      rating: 5,
     },
     {
       id: 4,
       achievement: "Rankings Locked In",
-      quote: "Our listings now rank high and stay there. Revenue up 5x since partnering with Skipper — can’t ask for better.",
+      quote:
+        "Our listings now rank high and stay there. Revenue up 5x since partnering with Skipper — can’t ask for better.",
       authorName: "Ethan Cole",
       authorTitle: "Director, Orbit Office Supplies",
       image: "/img/testimonials/user/4.jpg",
-      rating: 5
+      rating: 5,
     },
     {
       id: 5,
       achievement: "ACoS Slashed, Sales Surged",
-      quote: "They rebuilt our storefront and listings. Within weeks, our ACoS dropped and sales crossed $200K.",
+      quote:
+        "They rebuilt our storefront and listings. Within weeks, our ACoS dropped and sales crossed $200K.",
       authorName: "Laura Bennett",
       authorTitle: "COO, EcoEase Living",
-      image: "/img/testimonials/user/5.jpg",
-      rating: 5
-    }
+      image: "/img/testimonials/user/testmonial-7-thumb.jpg",
+      rating: 5,
+    },
+    {
+      id: 6,
+      achievement: "Consistent Six Figures",
+      quote:
+        "We used to struggle breaking $50K/month. Now it’s consistent six-figure revenue — thanks to their creative direction and strategy.",
+      authorName: "Daniel Ruiz",
+      authorTitle: "Founder, FetchMate Pets",
+      image: "/img/testimonials/user/h5-test-1.png",
+      rating: 5,
+    },
+    {
+      id: 7,
+      achievement: "Brand Reborn",
+      quote:
+        "After the rebranding, everything clicked — our visuals, ads, and growth. Sales jumped 4x in just one quarter.",
+      authorName: "Emily James",
+      authorTitle: "CEO, ModernBake Co.",
+      image: "/img/testimonials/user/h5-test-2.png",
+      rating: 5,
+    },
+    {
+      id: 8,
+      achievement: "A+ Content Wins",
+      quote:
+        "Our fitness line exploded after their A+ content revamp. Ads are leaner, profits are cleaner, sales are booming.",
+      authorName: "Adam Lee",
+      authorTitle: "Co-Founder, FitVerse Gear",
+      image: "/img/testimonials/user/h8-test-1.png",
+      rating: 5,
+    },
+    {
+      id: 9,
+      achievement: "Catalog Turnaround",
+      quote:
+        "Skipper turned our slow-moving catalog into a bestseller lineup. We’ve hit record months back-to-back.",
+      authorName: "Hannah Kim",
+      authorTitle: "Creative Director, HomeFlow Decor",
+      image: "/img/testimonials/user/h8-test-2.png",
+      rating: 5,
+    },
+    {
+      id: 10,
+      achievement: "Premium Brand Lift",
+      quote:
+        "We crossed $300K/month after their team overhauled our listings. Brand feels premium, and it finally pays off.",
+      authorName: "Jake Wilson",
+      authorTitle: "Owner, PawJoy Supplies",
+      image: "/img/testimonials/user/h10-test.png",
+      rating: 5,
+    },
   ];
 
   const featuredCaseStudy = successStories[0];
@@ -1208,6 +1263,32 @@ const ServicesMain = () => {
         </div>
       </section>
 
+      {/* CTA - Explore Case Studies */}
+      <section className="py-80px bg-white dark:bg-[#050505]">
+        <div className="container">
+          <div className="mt-6 md:mt-10">
+            <div className="relative max-w-5xl mx-auto overflow-hidden rounded-[32px] border border-[#4CAF50]/25 bg-gradient-to-br from-black via-[#0b1f14] to-[#22C55E]/40 px-8 py-10 sm:px-10 md:px-14 md:py-12 shadow-[0_30px_90px_-45px_rgba(34,197,94,0.6)]">
+              <div className="absolute inset-0 pointer-events-none opacity-30">
+                <div className="absolute -top-24 left-1/3 h-56 w-56 rounded-full bg-[#22C55E] blur-[130px]" />
+                <div className="absolute bottom-[-25%] right-1/4 h-64 w-64 rounded-full bg-[#0EA5E9] blur-[150px]" />
+              </div>
+              <div className="relative z-10 flex flex-col gap-6 text-center sm:text-left sm:flex-row sm:items-center sm:justify-between">
+                <div className="max-w-3xl">
+                  <p className="text-white text-lg md:text-xl font-semibold leading-relaxed">
+                    Want to see the exact systems we deploy to turn chaotic ad accounts into calm, scaling machines? Dive into the playbooks behind our biggest wins.
+                  </p>
+                </div>
+                <Link href="/case-studies">
+                  <button className="inline-flex items-center justify-center rounded-full bg-black px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white transition-all duration-300 hover:bg-[#22C55E] hover:text-black">
+                    Explore Case Studies
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Client Outcomes Section */}
       {false && (
       <section id="outcomes" className="py-100px bg-gradient-to-br from-[#0a0a0a] via-[#121212] to-[#1a1a1a] dark:from-[#050505] dark:via-[#0a0a0a] dark:to-[#121212] relative overflow-hidden scroll-mt-[130px]">
@@ -1393,6 +1474,32 @@ const ServicesMain = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA - Book Strategy Call */}
+      <section className="py-80px bg-white dark:bg-[#050505]">
+        <div className="container">
+          <div className="mt-6 md:mt-10">
+            <div className="relative max-w-5xl mx-auto overflow-hidden rounded-[32px] border border-[#4CAF50]/25 bg-gradient-to-br from-black via-[#0b1f14] to-[#22C55E]/40 px-8 py-10 sm:px-10 md:px-14 md:py-12 shadow-[0_30px_90px_-45px_rgba(34,197,94,0.6)]">
+              <div className="absolute inset-0 pointer-events-none opacity-30">
+                <div className="absolute -top-24 left-1/3 h-56 w-56 rounded-full bg-[#22C55E] blur-[130px]" />
+                <div className="absolute bottom-[-25%] right-1/4 h-64 w-64 rounded-full bg-[#0EA5E9] blur-[150px]" />
+              </div>
+              <div className="relative z-10 flex flex-col gap-6 text-center sm:text-left sm:flex-row sm:items-center sm:justify-between">
+                <div className="max-w-3xl">
+                  <p className="text-white text-lg md:text-xl font-semibold leading-relaxed">
+                    Ready for a tailored roadmap? We’ll audit your ad spend, listings, and growth levers to map the fastest path to calmer, more profitable scaling.
+                  </p>
+                </div>
+                <Link href="/contact">
+                  <button className="inline-flex items-center justify-center rounded-full bg-black px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white transition-all duration-300 hover:bg-[#22C55E] hover:text-black">
+                    Book Strategy Call
+                  </button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

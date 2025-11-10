@@ -191,7 +191,7 @@ const Brands2 = ({ type }) => {
               <div className="relative z-10 flex flex-col gap-6 text-center sm:text-left sm:flex-row sm:items-center sm:justify-between">
                 <div className="max-w-3xl">
                   <p className="text-white text-lg md:text-xl font-semibold leading-relaxed">
-                    Our process has helped dozens of sellers go from chaos to control — here’s how it actually works.
+                    Our process has helped dozens of sellers go from chaos to control - here’s how it actually works.
                   </p>
                 </div>
                 <Link href="/case-studies">

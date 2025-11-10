@@ -96,42 +96,102 @@ const getCaseStudies = () => [
 const testimonials = [
   {
     id: 1,
-    achievement: "Hitting 10x ROAS",
+    achievement: "Monthly Sales Tripled",
     quote:
-      "Arqam has been extremely reliable in managing our Amazon efforts. His communication is faultless, and we're looking forward to the continued growth under his management.",
-    authorName: "Jack Consalvi",
-    authorTitle: "CEO",
+      "Our monthly sales tripled after Skipper took over. Their brand management and creative strategy changed everything.",
+    authorName: "Olivia Grant",
+    authorTitle: "Founder, LumaNest Home",
     image: "/img/testimonials/user/1.jpg",
     rating: 5,
   },
   {
     id: 2,
-    achievement: "50% Ad Spend Reduction",
+    achievement: "Six-Figure Breakthrough",
     quote:
-      "The team exceeded our expectations. Within just 30 days, we saw significant improvements in our campaign performance and reduced our ad spend dramatically.",
-    authorName: "Sarah Johnson",
-    authorTitle: "Marketing Director",
+      "We went from flat sales to six figures in under 4 months. Skipper’s ad control and visuals did the magic.",
+    authorName: "Ryan Mitchell",
+    authorTitle: "Co-Founder, PetVibe Co.",
     image: "/img/testimonials/user/2.jpg",
     rating: 5,
   },
   {
     id: 3,
-    achievement: "Triple Revenue Growth",
+    achievement: "6x Revenue Climb",
     quote:
-      "Working with this team has transformed our Amazon business. Their strategic approach and attention to detail have helped us scale efficiently.",
-    authorName: "Michael Chen",
-    authorTitle: "Founder",
+      "From $20K to $120K in 6 months — and I barely touched Seller Central. Skipper handled it all.",
+    authorName: "Sarah Collins",
+    authorTitle: "Owner, ZenCraft Studio",
     image: "/img/testimonials/user/3.jpg",
     rating: 5,
   },
   {
     id: 4,
-    achievement: "Outstanding ROI Results",
+    achievement: "Rankings Locked In",
     quote:
-      "The expertise and dedication shown by the team is unmatched. They've become an integral part of our success on Amazon.",
-    authorName: "Emily Rodriguez",
-    authorTitle: "E-commerce Manager",
+      "Our listings now rank high and stay there. Revenue up 5x since partnering with Skipper — can’t ask for better.",
+    authorName: "Ethan Cole",
+    authorTitle: "Director, Orbit Office Supplies",
     image: "/img/testimonials/user/4.jpg",
+    rating: 5,
+  },
+  {
+    id: 5,
+    achievement: "ACoS Slashed, Sales Surged",
+    quote:
+      "They rebuilt our storefront and listings. Within weeks, our ACoS dropped and sales crossed $200K.",
+    authorName: "Laura Bennett",
+    authorTitle: "COO, EcoEase Living",
+    image: "/img/testimonials/user/testmonial-7-thumb.jpg",
+    rating: 5,
+  },
+  {
+    id: 6,
+    achievement: "Consistent Six Figures",
+    quote:
+      "We used to struggle breaking $50K/month. Now it’s consistent six-figure revenue — thanks to their creative direction and strategy.",
+    authorName: "Daniel Ruiz",
+    authorTitle: "Founder, FetchMate Pets",
+    image: "/img/testimonials/user/h5-test-1.png",
+    rating: 5,
+  },
+  {
+    id: 7,
+    achievement: "Brand Reborn",
+    quote:
+      "After the rebranding, everything clicked — our visuals, ads, and growth. Sales jumped 4x in just one quarter.",
+    authorName: "Emily James",
+    authorTitle: "CEO, ModernBake Co.",
+    image: "/img/testimonials/user/h5-test-2.png",
+    rating: 5,
+  },
+  {
+    id: 8,
+    achievement: "A+ Content Wins",
+    quote:
+      "Our fitness line exploded after their A+ content revamp. Ads are leaner, profits are cleaner, sales are booming.",
+    authorName: "Adam Lee",
+    authorTitle: "Co-Founder, FitVerse Gear",
+    image: "/img/testimonials/user/h8-test-1.png",
+    rating: 5,
+  },
+  {
+    id: 9,
+    achievement: "Catalog Turnaround",
+    quote:
+      "Skipper turned our slow-moving catalog into a bestseller lineup. We’ve hit record months back-to-back.",
+    authorName: "Hannah Kim",
+    authorTitle: "Creative Director, HomeFlow Decor",
+    image: "/img/testimonials/user/h8-test-2.png",
+    rating: 5,
+  },
+  {
+    id: 10,
+    achievement: "Premium Brand Lift",
+    quote:
+      "We crossed $300K/month after their team overhauled our listings. Brand feels premium, and it finally pays off.",
+    authorName: "Jake Wilson",
+    authorTitle: "Owner, PawJoy Supplies",
+    image: "/img/testimonials/user/h10-test.png",
     rating: 5,
   },
 ];
