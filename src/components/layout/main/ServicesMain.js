@@ -124,7 +124,7 @@ const ServicesMain = () => {
       company: "TechGear Solutions",
       achievement: "10x ROAS in 60 Days",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with actual video URL
-      thumbnail: "/img/testimonials/user/1.jpg",
+      thumbnail: "/img/portfolio/graph.png",
       metric: "50% Cost Reduction",
       industry: "Electronics"
     },
@@ -163,44 +163,59 @@ const ServicesMain = () => {
   const testimonials = [
     {
       id: 1,
-      achievement: "Hitting 10x ROAS",
-      quote: "Arqam has been extremely reliable in managing our Amazon efforts. His communication is faultless, and we're looking forward to the continued growth under his management.",
-      authorName: "Jack Consalvi",
-      authorTitle: "CEO",
+      achievement: "Monthly Sales Tripled",
+      quote: "Our monthly sales tripled after Skipper took over. Their brand management and creative strategy changed everything.",
+      authorName: "Olivia Grant",
+      authorTitle: "Founder, LumaNest Home",
       image: "/img/testimonials/user/1.jpg",
       rating: 5
     },
     {
       id: 2,
-      achievement: "50% Ad Spend Reduction",
-      quote: "The team exceeded our expectations. Within just 30 days, we saw significant improvements in our campaign performance and reduced our ad spend dramatically.",
-      authorName: "Sarah Johnson",
-      authorTitle: "Marketing Director",
+      achievement: "Six-Figure Breakthrough",
+      quote: "We went from flat sales to six figures in under 4 months. Skipper’s ad control and visuals did the magic.",
+      authorName: "Ryan Mitchell",
+      authorTitle: "Co-Founder, PetVibe Co.",
       image: "/img/testimonials/user/2.jpg",
       rating: 5
     },
     {
       id: 3,
-      achievement: "Triple Revenue Growth",
-      quote: "Working with this team has transformed our Amazon business. Their strategic approach and attention to detail have helped us scale efficiently.",
-      authorName: "Michael Chen",
-      authorTitle: "Founder",
+      achievement: "6x Revenue Climb",
+      quote: "From $20K to $120K in 6 months — and I barely touched Seller Central. Skipper handled it all.",
+      authorName: "Sarah Collins",
+      authorTitle: "Owner, ZenCraft Studio",
       image: "/img/testimonials/user/3.jpg",
       rating: 5
     },
     {
       id: 4,
-      achievement: "Outstanding ROI Results",
-      quote: "The expertise and dedication shown by the team is unmatched. They've become an integral part of our success on Amazon.",
-      authorName: "Emily Rodriguez",
-      authorTitle: "E-commerce Manager",
+      achievement: "Rankings Locked In",
+      quote: "Our listings now rank high and stay there. Revenue up 5x since partnering with Skipper — can’t ask for better.",
+      authorName: "Ethan Cole",
+      authorTitle: "Director, Orbit Office Supplies",
       image: "/img/testimonials/user/4.jpg",
+      rating: 5
+    },
+    {
+      id: 5,
+      achievement: "ACoS Slashed, Sales Surged",
+      quote: "They rebuilt our storefront and listings. Within weeks, our ACoS dropped and sales crossed $200K.",
+      authorName: "Laura Bennett",
+      authorTitle: "COO, EcoEase Living",
+      image: "/img/testimonials/user/5.jpg",
       rating: 5
     }
   ];
 
   const featuredCaseStudy = successStories[0];
-  const featuredTestimonial = testimonials[0];
+  const featuredTestimonial = {
+    achievement: successStories[0].achievement,
+    quote: "Skipper delivered 10x ROAS in just 60 days. They’re the partner TechGear Solutions needed to scale with confidence.",
+    authorName: successStories[0].clientName,
+    authorTitle: successStories[0].company,
+    image: "/img/testimonials/user/1.jpg",
+  };
   const performanceHighlights = [
     {
       id: 1,
@@ -481,12 +496,7 @@ const ServicesMain = () => {
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                             <div className="absolute bottom-4 left-4 right-4">
                               <div className="flex flex-wrap items-center gap-3">
-                                <span className="px-3 py-1 bg-[#4CAF50]/20 text-[#4CAF50] rounded-full text-xs font-semibold uppercase tracking-[0.25em]">
-                                  {featuredCaseStudy.industry}
-                                </span>
-                                <span className="px-3 py-1 bg-white/10 text-white rounded-full text-xs font-semibold uppercase tracking-[0.25em]">
-                                  {featuredCaseStudy.achievement}
-                                </span>
+                              
                               </div>
                               <div className="mt-4">
                                 <h4 className="text-white text-xl font-semibold">
@@ -537,10 +547,15 @@ const ServicesMain = () => {
                     {featuredCaseStudy && (
                       <div className="px-8 py-6 border-t border-white/10 flex flex-wrap items-center justify-center gap-3 text-center">
                         
-                        <div className="flex items-center gap-3 text-white/70 text-sm md:text-base">
+                        <a
+                          href="https://www.youtube.com/watch?v=fgdcjsg0n6I"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-3 text-white/70 text-sm md:text-base hover:text-white transition-colors"
+                        >
                           <i className="fas fa-play-circle text-[#FF6B35] text-xl"></i>
                           Watch full story
-                        </div>
+                        </a>
                       </div>
                     )}
                   </div>
@@ -629,11 +644,6 @@ const ServicesMain = () => {
                       <i className={`fas ${capability.icon}`}></i>
                     </div>
                     <div>
-                      {idx !== ppcCapabilities.length - 1 && (
-                        <p className="text-xs uppercase tracking-[0.35em] text-white/60 font-semibold">
-                          Step 0{idx + 1}
-                        </p>
-                      )}
                       <h3
                         className={`text-xl font-semibold text-white mt-1 ${
                           idx === ppcCapabilities.length - 1 ? "text-2xl" : ""
@@ -649,7 +659,7 @@ const ServicesMain = () => {
                     </p>
                   )}
                   {capability.detail && (
-                    <p className="text-xs text-white/55 leading-relaxed">
+                    <p className="text-sm text-white/60 leading-relaxed">
                       {capability.detail}
                     </p>
                   )}
@@ -875,6 +885,7 @@ const ServicesMain = () => {
       </section>
 
       {/* Onboarding Process Section */}
+      {false && (
       <section className="py-100px bg-gradient-to-br from-[#0b0b0b] via-[#121212] to-[#050505] scroll-mt-[130px] relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-10 -left-10 w-72 h-72 rounded-full bg-[#4CAF50]/20 blur-3xl"></div>
@@ -931,6 +942,7 @@ const ServicesMain = () => {
           </div>
         </div>
       </section>
+      )}
 
       {/* Stats/Results Section */}
       <section id="results" className="py-100px bg-gradient-to-r from-[#4CAF50] to-[#2E7D32] scroll-mt-[130px]">
