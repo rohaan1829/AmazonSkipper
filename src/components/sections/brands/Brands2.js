@@ -6,10 +6,10 @@ import Link from "next/link";
 import BlogCard5 from "@/components/shared/cards/BlogCard5";
 
 const caseStudies = [
-  { title: "Amazon PPC Optimization Success", img: "/img/portfolio/pppc.png" },
-  { title: "Reducing Ad Spend by 45%", img: "/img/portfolio/spend.png" },
-  { title: "Brand Campaign Transformation", img: "/img/portfolio/brand.png" },
-  { title: "Product Launch Ad Strategy", img: "/img/portfolio/product.png" },
+  { title: "A Compelling Turnaround: From Stagnation to Momentum", img: "/img/portfolio/pppc.png" },
+  { title: "Turning the Tide for an Eco‑Cleaning Brand: A Fresh Start on Amazon", img: "/img/portfolio/spend.png" },
+  { title: "Brewing Success for a Specialty Coffee Brand: From Low Sales to Roaring Hot", img: "/img/portfolio/brand.png" },
+  { title: "Rescuing a Plant‑Based Pet Food Brand: Creating a Feeding Frenzy on Amazon", img: "/img/portfolio/product.png" },
 ];
 
 const videoTestimonials = [
