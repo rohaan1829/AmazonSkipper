@@ -1,17 +1,33 @@
 "use client";
 import { useFooterContext } from "@/context_api/FooterContext";
 import Link from "next/link";
+import getNavItems from "@/libs/getNavItems";
 
 const Footer6 = () => {
 	const { footerType } = useFooterContext();
+	const navItems = getNavItems() ?? [];
+
+	const resolveHref = item => {
+		const name = item?.name?.toLowerCase() ?? "";
+
+		if (name === "services") return "/services";
+		if (name === "works") return "/portfolio";
+		if (name === "testimonials") return "/testimonials";
+		if (name === "about us") return "/about";
+		if (name === "case studies") return "/case-studies";
+		if (name.includes("faq")) return "/faq";
+		if (name === "contact") return "/contact";
+
+		return item?.path2 ?? item?.path ?? "/";
+	};
+
 	return (
 		<footer>
-			<div className="footer-inner bg-gradient-to-b from-green-600 to-black rounded-t-[32px] md:rounded-t-[48px] lg:rounded-t-[80px]">
-				<div className="pt-16 pb-24 md:pt-60px md:pb-40px lg:pb-60px xl:pt-60px xl:pb-70px">
+			<div className="footer-inner bg-gradient-to-b from-green-600 to-black rounded-t-[24px] md:rounded-t-[36px] lg:rounded-t-[56px]">
+				<div className="pt-6 pb-8 md:pt-20px md:pb-14px lg:pb-18px xl:pt-20px xl:pb-24px">
 					<div className="container">
 						<div
-							className="flex flex-wrap  gap-x-10
-           lg:gap-x-10px gap-y-50px justify-between "
+							className="flex flex-wrap gap-x-6 lg:gap-x-6 gap-y-20px justify-between"
 						>
 							<div
 								className="max-w-full w-full   md:max-w-[calc(50%-20px)] lg:max-w-[390px]  xl:max-w-[260px]  2xl:max-w-[360px]   wow fadeInUp"
@@ -22,10 +38,11 @@ const Footer6 = () => {
 										<img src="/img/logo/black.png" alt="" />
 									</Link>
 								</div>
-								<div className=" text-white-color mb-4">
-									<p>
-										I break down complex user the experience problems the create
-										integrity focused to solutions that’s connect.
+								<div className="text-white-color mb-4">
+									<p className="text-size-15 leading-relaxed text-white/80">
+										At Amazonskipper, we do not rely on luck or guesswork. We study the numbers,
+										build resilient systems, and engineer reliable Amazon outcomes for brands that
+										want predictable growth.
 									</p>
 								</div>
 
@@ -174,7 +191,7 @@ const Footer6 = () => {
 								<h6 className="text-xl leading-1.2 uppercase font-semibold text-white-color mb-25px md:mb-35px">
 									Marketplaces We Serve
 								</h6>
-								<ul className="nav flex flex-col gap-3 text-white-color/80">
+								<ul className="nav flex flex-col gap-3 text-white">
 									{["United States", "Canada", "United Kingdom", "France", "Italy", "Australia"].map(
 										item => (
 											<li key={item} className="nav_item">
@@ -192,49 +209,19 @@ const Footer6 = () => {
 
 				<div className="footer-copyright">
 					<div className="container">
-						<div className="flex flex-wrap gap-4 md:gap-30px justify-center xl:justify-between items-center py-5 md:py-30px border-t border-white-color-3 ">
+						<div className="flex flex-wrap gap-3 md:gap-14px justify-center xl:justify-between items-center py-1.5 md:py-10px border-t border-white-color-3 ">
 							<div>
-								<span className="text-xs leading-2 sm:leading-2 uppercase font-semibold text-white-color block relative pl-4 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-[7px] before:h-[7px]  before:bg-green1 before:rounded-100% ">
-									AVAILABLE FOR FREELANCE
-								</span>
-							</div>
-							<div>
-								<ul className="nav flex gap-5   md:gap-x-35px gap-y-3">
-									<li className="nav_item group relative">
-										<Link
-											href="#portfolio"
-											className="text-sm  text-white-color hover:text-primary-color uppercase "
-										>
-											Work.
-										</Link>
-									</li>
-
-									<li className="nav_item group relative">
-										<Link
-											href="#services"
-											className="text-sm  text-white-color hover:text-primary-color uppercase "
-										>
-											Services.
-										</Link>
-									</li>
-
-									<li className="nav_item group relative">
-										<Link
-											href="#about"
-											className="text-sm  text-white-color hover:text-primary-color uppercase "
-										>
-											About.
-										</Link>
-									</li>
-
-									<li className="nav_item group relative">
-										<Link
-											href="#contact"
-											className="text-sm  text-white-color hover:text-primary-color uppercase   "
-										>
-											Contact.
-										</Link>
-									</li>
+								<ul className="nav flex flex-wrap gap-4 md:gap-x-28px gap-y-3 text-sm text-white/70 uppercase tracking-wide">
+									{navItems.map(item => (
+										<li key={item?.name ?? item?.path ?? item?.path2} className="nav_item group relative">
+											<Link
+												href={resolveHref(item)}
+												className="transition-colors duration-200 hover:text-[#22C55E]"
+											>
+												{item?.name}.
+											</Link>
+										</li>
+									))}
 								</ul>
 							</div>
 							<div className="copyright text-white-color whitespace-nowrap text-sm uppercase">
