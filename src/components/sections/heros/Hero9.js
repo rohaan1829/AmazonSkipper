@@ -135,7 +135,7 @@ const Hero9 = () => {
 									<img
 										src="/img/hero/trustpilot.png"
 										alt="Trustpilot"
-										className="h-[96px] w-auto object-contain drop-shadow-sm md:h-[108px] lg:h-[116px]"
+										className="h-[104px] w-auto object-contain drop-shadow-sm md:h-[116px] lg:h-[124px]"
 									/>
 								</a>
 							</div>
