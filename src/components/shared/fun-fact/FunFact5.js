@@ -20,10 +20,10 @@ const FunFact5 = () => {
 	useEffect(() => {
 		if (inView) {
 			const timeoutId = setTimeout(() => {
-				setValue(14);
-				setValue2(50);
-				setValue3(1.5);
-				setValue4(50);
+				setValue(25);
+				setValue2(277);
+				setValue3(300);
+				setValue4(150);
 			}, 250);
 			return () => clearTimeout(timeoutId);
 		}
@@ -34,41 +34,49 @@ const FunFact5 = () => {
 			{Odometer ? (
 				<div
 					ref={ref}
-					className="flex flex-wrap xl:flex-nowrap items-center justify-center gap-20px text-primary-color dark:text-body-color"
+					className="grid w-full max-w-6xl mx-auto grid-cols-1 gap-6 text-primary-color dark:text-body-color sm:grid-cols-2 xl:grid-cols-4"
 				>
-					<div className="funfact-item max-w-full w-full sm:w-180px md:w-220px lg:w-210px xl:w-220px flex flex-col justify-center items-center text-center bg-cream-light-color dark:bg-transparent border border-body-color dark:border-bg-color-2 py-28px sm:py-32px md:py-40px px-10px md:px-18px rounded-10px">
-						<div className="number inline-flex items-center justify-center text-size-32 md:text-size-40 xl:text-size-48 font-bold leading-[1.05]">
-							<Odometer className="!font-sora tracking-[0.04em]" value={value} />
-							<span className="symbol"> +</span>
+					<div className="funfact-item flex h-full min-h-[190px] w-full min-w-[260px] flex-col items-center justify-center rounded-2xl border border-body-color bg-cream-light-color px-12 py-10 text-center dark:border-bg-color-2 dark:bg-transparent">
+						<div className="number inline-flex items-center justify-center text-size-40 md:text-size-48 xl:text-size-56 font-black leading-[1.05]">
+							<Odometer className="!font-sora tracking-[0.02em]" value={value} />
+							<span className="symbol">&nbsp;MIL +</span>
 						</div>
-						<div className="text leading-1 text-center text-sm md:text-base lg:text-lg">Job achievements</div>
+						<p className="mt-4 text-xs font-semibold uppercase tracking-[0.32em] text-primary-color dark:text-white">
+							Revenue This Year
+						</p>
 					</div>
 
-					<div className="funfact-item max-w-full w-full sm:w-180px md:w-220px lg:w-210px xl:w-220px flex flex-col justify-center items-center text-center bg-cream-light-color dark:bg-transparent border border-body-color dark:border-bg-color-2 py-28px sm:py-32px md:py-40px px-10px md:px-18px rounded-10px">
-						<div className="number inline-flex items-center justify-center text-size-32 md:text-size-40 xl:text-size-48 font-bold leading-[1.05]">
-							<Odometer className="!font-sora tracking-[0.04em]" value={value2} />
-							<span className="symbol">%</span>
+					<div className="funfact-item flex h-full min-h-[190px] w-full min-w-[260px] flex-col items-center justify-center rounded-2xl border border-body-color bg-cream-light-color px-12 py-10 text-center dark:border-bg-color-2 dark:bg-transparent">
+						<div className="number inline-flex items-center justify-center text-size-40 md:text-size-48 xl:text-size-56 font-black leading-[1.05]">
+							<Odometer className="!font-sora tracking-[0.02em]" value={value2} />
+							<span className="symbol">% +</span>
 						</div>
-						<div className="text leading-1 text-center text-sm md:text-base lg:text-lg">Job achievements</div>
+						<p className="mt-4 text-xs font-semibold uppercase tracking-[0.32em] text-primary-color dark:text-white">
+							Average Revenue Growth
+						</p>
 					</div>
 
-					<div className="funfact-item max-w-full w-full sm:w-180px md:w-220px lg:w-210px xl:w-220px flex flex-col justify-center items-center text-center bg-cream-light-color dark:bg-transparent border border-body-color dark:border-bg-color-2 py-28px sm:py-32px md:py-40px px-10px md:px-18px rounded-10px">
-						<div className="number inline-flex items-center justify-center text-size-32 md:text-size-40 xl:text-size-48 font-bold leading-[1.05]">
-							<Odometer className="!font-sora tracking-[0.04em]" value={value3} />
+					<div className="funfact-item flex h-full min-h-[190px] w-full min-w-[260px] flex-col items-center justify-center rounded-2xl border border-body-color bg-cream-light-color px-12 py-10 text-center dark:border-bg-color-2 dark:bg-transparent">
+						<div className="number inline-flex items-center justify-center text-size-40 md:text-size-48 xl:text-size-56 font-black leading-[1.05]">
+							<Odometer className="!font-sora tracking-[0.02em]" value={value3} />
 							<span className="symbol">+</span>
 						</div>
-						<div className="text leading-1 text-center text-sm md:text-base lg:text-lg">Years of Experience</div>
+						<p className="mt-4 text-xs font-semibold uppercase tracking-[0.32em] text-primary-color dark:text-white">
+							Brands We Helped
+						</p>
 					</div>
 
 					<div
-						className="funfact-item max-w-full w-full sm:w-180px md:w-220px lg:w-210px xl:w-220px flex flex-col justify-center items-center text-center bg-cream-light-color dark:bg-transparent border border-body-color dark:border-bg-color-2 py-28px sm:py-32px md:py-40px px-10px md:px-18px rounded-10px"
+						className="funfact-item flex h-full min-h-[190px] w-full min-w-[260px] flex-col items-center justify-center rounded-2xl border border-body-color bg-cream-light-color px-12 py-10 text-center dark:border-bg-color-2 dark:bg-transparent"
 						data-wow-delay=".6s"
 					>
-						<div className="number inline-flex items-center justify-center text-size-32 md:text-size-40 xl:text-size-48 font-bold leading-[1.05]">
-							<Odometer className="!font-sora tracking-[0.04em]" value={value4} />
-							<span className="symbol">K</span>
+						<div className="number inline-flex items-center justify-center text-size-40 md:text-size-48 xl:text-size-56 font-black leading-[1.05]">
+							<Odometer className="!font-sora tracking-[0.02em]" value={value4} />
+							<span className="symbol">+</span>
 						</div>
-						<div className="text leading-1 text-center text-sm md:text-base lg:text-lg">Happy Clients</div>
+						<p className="mt-4 text-xs font-semibold uppercase tracking-[0.32em] text-primary-color dark:text-white">
+							Brands Currently Working With Us
+						</p>
 					</div>
 				</div>
 			) : (
