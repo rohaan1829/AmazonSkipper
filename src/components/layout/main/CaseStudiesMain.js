@@ -142,7 +142,7 @@ const successStories = [
     clientName: "Sarah Martinez",
     company: "TechGear Solutions",
     achievement: "10x ROAS in 60 Days",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/embed/fgdcjsg0n6I",
     thumbnail: "/img/testimonials/user/1.jpg",
     metric: "50% Cost Reduction",
     industry: "Electronics",
@@ -152,7 +152,7 @@ const successStories = [
     clientName: "David Chen",
     company: "Home Essentials Plus",
     achievement: "300% Revenue Growth",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/embed/5U66ATCyg4I",
     thumbnail: "/img/testimonials/user/2.jpg",
     metric: "45% ACoS Improvement",
     industry: "Home & Kitchen",
@@ -162,7 +162,7 @@ const successStories = [
     clientName: "Emily Rodriguez",
     company: "Fitness Pro Gear",
     achievement: "5x Ad Performance",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/embed/fgdcjsg0n6I",
     thumbnail: "/img/testimonials/user/3.jpg",
     metric: "60% Lower CPC",
     industry: "Health & Fitness",
@@ -172,10 +172,53 @@ const successStories = [
     clientName: "Michael Thompson",
     company: "BeautyCare Co",
     achievement: "8x Return on Investment",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/embed/5U66ATCyg4I?si=DXIVm5jJDIYOACaA",
     thumbnail: "/img/testimonials/user/4.jpg",
     metric: "35% Sales Increase",
     industry: "Beauty & Personal Care",
+  },
+];
+
+const faqs = [
+  {
+    question: "What is Amazon Skipper?",
+    answer:
+      "Amazon Skipper is an eCommerce growth agency helping Amazon sellers scale with clarity and control. Since 2018, we’ve focused on one goal — bringing sellers peace of mind while their brands grow steadily across Amazon, Shopify, and TikTok Shop.",
+  },
+  {
+    question: "What services do you offer?",
+    answer:
+      "We help brands with complete Amazon growth — from product launch and PPC management to listing optimization, strategy, and expansion. In short: everything it takes to grow your brand without burning out.",
+  },
+  {
+    question: "Is everything handled in-house?",
+    answer:
+      "Yes — our specialists handle PPC, listings, creative, and analytics internally. That’s how we maintain consistent quality and strategy alignment across your entire account.",
+  },
+  {
+    question: "Can you guarantee results?",
+    answer:
+      "We guarantee effort, expertise, and a proven process. If specific targets aren’t met under a results-based partnership, our refund or adjustment policy kicks in — it’s part of our risk-reversal promise.",
+  },
+  {
+    question: "How long does it take to see results after working with Amazon Skipper?",
+    answer:
+      "It depends on your product stage and category. Most brands start seeing measurable improvements — in spend efficiency, sessions, or sales — within the first 4–8 weeks of structured management.",
+  },
+  {
+    question: "Do you manage creatives too (images, videos, A+ content)?",
+    answer:
+      "Yes, we do. Our creative team designs optimized listing visuals, A+ modules, and short-form brand content that align with your positioning and conversion goals.",
+  },
+  {
+    question: "What makes you different from other Amazon agencies?",
+    answer:
+      "We don’t just manage ads — we manage peace of mind. Our approach blends performance with structure, ensuring you scale profitably without the chaos that usually comes with “growth.”",
+  },
+  {
+    question: "What’s included in your Brand Audit Call?",
+    answer:
+      "A 15–20 minute overview of your current setup — PPC structure, listings, and performance gaps. You’ll leave with a clear picture of what’s blocking your profit and what we’d fix first.",
   },
 ];
 
@@ -276,6 +319,7 @@ const CaseStudyCard = ({ study, index }) => {
 const CaseStudiesMain = () => {
 	const caseStudies = useMemo(() => getCaseStudies(), []);
   const [selectedVideo, setSelectedVideo] = useState(successStories[0]?.id ?? null);
+  const [activeFaq, setActiveFaq] = useState(0);
 
 	return (
     <main className="min-h-screen bg-black overflow-hidden">
@@ -384,6 +428,27 @@ const CaseStudiesMain = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-[#0f172a]/20 to-transparent blur-3xl opacity-60"></div>
             </div>
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="mb-16">
+                <div className="relative overflow-hidden rounded-[30px] border border-[#4CAF50]/30 bg-gradient-to-br from-black via-[#121212] to-[#4CAF50] px-8 py-12 sm:px-12 md:px-16 md:py-14 shadow-[0_40px_120px_-60px_rgba(34,197,94,0.55)]">
+                  <div className="absolute inset-0 opacity-10 pointer-events-none">
+                    <div className="absolute top-1/4 left-1/4 h-56 w-56 rounded-full bg-[#4CAF50] blur-3xl"></div>
+                    <div className="absolute bottom-1/4 right-1/4 h-56 w-56 rounded-full bg-[#0EA5E9] blur-3xl"></div>
+                  </div>
+                  <div className="relative z-10 flex flex-col items-center text-center gap-6">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">
+                      Curious what actually drives our 6-month turnarounds?
+                    </h3>
+                    <p className="text-base md:text-lg text-white/80 leading-relaxed max-w-3xl">
+                      Take a behind-the-scenes look at our approach and see how calm growth actually gets engineered.
+                    </p>
+                    <div className="flex justify-center">
+                      <ButtonPrimary type={2} isIcon={true} url="/#contact">
+                        Show Me How It Works
+                      </ButtonPrimary>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div className="text-center mb-16">
                 <span className="inline-flex items-center rounded-full border border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.4em] text-white/60">
                   Voices From Clients
@@ -502,22 +567,20 @@ const CaseStudiesMain = () => {
                           allowFullScreen
                         ></iframe>
                       ) : (
-                        <>
-                          <Image
-                            src={successStories[0].thumbnail}
-                            alt={successStories[0].clientName}
-                            fill
-                            className="object-cover opacity-80 transition-opacity group-hover:opacity-60"
-                          />
+                        <div
+                          onClick={() => setSelectedVideo(successStories[0].id)}
+                          className="absolute inset-0 flex cursor-pointer items-center justify-center bg-black/20 transition-all duration-300 hover:bg-black/30"
+                        >
                           <div
-                            onClick={() => setSelectedVideo(successStories[0].id)}
-                            className="absolute inset-0 flex cursor-pointer items-center justify-center"
-                          >
-                            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white text-[#4CAF50] shadow-2xl transition-all duration-300 hover:scale-105">
-                              <i className="fas fa-play text-2xl ml-1"></i>
-                            </div>
+                            className="absolute inset-0 bg-cover bg-center opacity-90"
+                            style={{
+                              backgroundImage: `url(https://img.youtube.com/vi/${successStories[0].videoUrl.split("/embed/")[1]?.split("?")[0]}/maxresdefault.jpg)`,
+                            }}
+                          ></div>
+                          <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-white text-[#4CAF50] shadow-2xl transition-all duration-300 hover:scale-105">
+                            <i className="fas fa-play text-2xl ml-1"></i>
                           </div>
-                        </>
+                        </div>
                       )}
                     </div>
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6 sm:p-8">
@@ -558,25 +621,23 @@ const CaseStudiesMain = () => {
                           allowFullScreen
                         ></iframe>
                       ) : (
-                        <>
-                          <Image
-                            src={story.thumbnail}
-                            alt={story.clientName}
-                            fill
-                            className="object-cover opacity-80 transition-opacity group-hover:opacity-60"
-                          />
+                        <div
+                          onClick={() => setSelectedVideo(story.id)}
+                          className="absolute inset-0 flex cursor-pointer items-center justify-center bg-black/20 transition-all duration-300 hover:bg-black/30"
+                        >
                           <div
-                            onClick={() => setSelectedVideo(story.id)}
-                            className="absolute inset-0 flex cursor-pointer items-center justify-center"
-                          >
-                            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white text-[#4CAF50] shadow-xl transition-all duration-300 hover:scale-110">
-                              <i className="fas fa-play text-xl ml-1"></i>
-                            </div>
+                            className="absolute inset-0 bg-cover bg-center opacity-90"
+                            style={{
+                              backgroundImage: `url(https://img.youtube.com/vi/${story.videoUrl.split("/embed/")[1]?.split("?")[0]}/maxresdefault.jpg)`,
+                            }}
+                          ></div>
+                          <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-white text-[#4CAF50] shadow-xl transition-all duration-300 hover:scale-110">
+                            <i className="fas fa-play text-xl ml-1"></i>
                           </div>
                           <div className="absolute left-4 top-4 rounded-full bg-[#4CAF50]/90 px-3 py-1 text-xs font-semibold text-white">
                             {story.industry}
                           </div>
-                        </>
+                        </div>
                       )}
                     </div>
                     <div className="space-y-3 bg-gradient-to-t from-black/85 via-black/50 to-black/20 p-6">
@@ -593,6 +654,67 @@ const CaseStudiesMain = () => {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+          </section>
+
+          {/* FAQ Section */}
+          <section className="relative py-24">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-12">
+                <span className="inline-flex items-center rounded-full border border-white/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.4em] text-white/60">
+                  Have Questions?
+                </span>
+                <h2 className="mt-6 text-4xl md:text-5xl font-black text-white leading-tight">
+                  Case Study FAQs
+                </h2>
+                <p className="mt-4 text-lg text-white/70 max-w-3xl mx-auto">
+                  The answers Amazon operators ask us most when they’re sizing up whether our process is the calm, predictable growth engine they’ve been missing.
+                </p>
+              </div>
+
+              <div className="max-w-4xl mx-auto">
+                <div className="rounded-[26px] border border-white/10 bg-white/5 p-6 sm:p-8 backdrop-blur">
+                  <ul className="space-y-6">
+                    {faqs.map(({ question, answer }, idx) => {
+                      const isActive = activeFaq === idx;
+                      return (
+                        <li
+                          key={question}
+                          className="border-b border-white/10 last:border-none pb-6 last:pb-0"
+                        >
+                          <button
+                            type="button"
+                            onClick={() => setActiveFaq(prev => (prev === idx ? -1 : idx))}
+                            aria-expanded={isActive}
+                            className="flex w-full items-start justify-between gap-4 text-left"
+                          >
+                            <div>
+                              <span className="mb-3 inline-flex items-center rounded-full bg-[#4CAF50]/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#4CAF50]">
+                                Q{idx + 1}
+                              </span>
+                              <h3 className="text-xl sm:text-2xl font-semibold leading-[1.35] text-white">
+                                {question}
+                              </h3>
+                            </div>
+                            <div
+                              className={`flex-shrink-0 rounded-full border border-[#4CAF50]/40 text-[#4CAF50] w-10 h-10 inline-flex items-center justify-center transition-transform duration-300 ${isActive ? "rotate-45" : ""}`}
+                            >
+                              <i className="fa-regular fa-plus text-base"></i>
+                            </div>
+                          </button>
+                          <div
+                            className={`transition-all duration-300 ease-in-out overflow-hidden ${isActive ? "mt-4 max-h-[420px]" : "max-h-0"}`}
+                          >
+                            <p className="text-base md:text-lg leading-relaxed text-white/75 pr-2">
+                              {answer}
+                            </p>
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
               </div>
             </div>
           </section>
