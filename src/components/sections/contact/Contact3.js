@@ -1,69 +1,69 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 
-const initialForm = {
-	firstName: "",
-	lastName: "",
-	email: "",
-	phone: "",
-	asin: "",
-	budget: "",
-	message: "",
-};
+const WEB3FORMS_ACCESS_KEY = "81b771a1-1c8e-49e5-b12a-33de32382620";
 
 const Contact3 = () => {
-	const [form, setForm] = useState(initialForm);
 	const [status, setStatus] = useState({ type: "idle", message: "" });
-
-	const budgetOptions = useMemo(
-		() => ["$1000-$2000", "$2000-$4000", "$4000-$6000", "$6000-$8000", "Not sure"],
-		[]
-	);
-
-	const handleChange = (event) => {
-		const { name, value } = event.target;
-		setForm((prev) => ({ ...prev, [name]: value }));
-	};
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
-		setStatus({ type: "loading", message: "" });
+
+		const formElement = event.currentTarget;
+		const formData = new FormData(formElement);
 
 		const payload = {
-			firstName: form.firstName.trim(),
-			lastName: form.lastName.trim(),
-			email: form.email.trim(),
-			phone: form.phone.trim(),
-			asin: form.asin.trim(),
-			budget: form.budget,
-			message: form.message.trim(),
+			firstName: formData.get("conName")?.toString().trim() ?? "",
+			lastName: formData.get("conLName")?.toString().trim() ?? "",
+			email: formData.get("conEmail")?.toString().trim() ?? "",
+			phone: formData.get("conPhone")?.toString().trim() ?? "",
+			asin: formData.get("conAsin")?.toString().trim() ?? "",
+			budget: formData.get("conBudget")?.toString().trim() ?? "",
+			message: formData.get("conMessage")?.toString().trim() ?? "",
 		};
 
 		if (!payload.firstName || !payload.lastName || !payload.email || !payload.phone) {
-			setStatus({ type: "error", message: "Please fill in the required fields." });
+			setStatus({ type: "error", message: "Please fill in all required fields." });
 			return;
 		}
 
+		setStatus({ type: "loading", message: "" });
+
 		try {
-			const response = await fetch("/api/contact", {
+			const response = await fetch("https://api.web3forms.com/submit", {
 				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify(payload),
+				headers: {
+					"Content-Type": "application/json",
+					Accept: "application/json",
+				},
+				body: JSON.stringify({
+					access_key: WEB3FORMS_ACCESS_KEY,
+					subject: "New contact request from Amazon Skipper website",
+					from_name: `${payload.firstName} ${payload.lastName}`.trim(),
+					email: payload.email,
+					phone: payload.phone,
+					asin_or_url: payload.asin || "Not provided",
+					project_budget: payload.budget || "Not specified",
+					message: payload.message || "No additional comments",
+				}),
 			});
 
-			if (!response.ok) {
-				throw new Error("Request failed");
+			const result = await response.json();
+
+			if (!response.ok || !result.success) {
+				const errorMessage = result?.message || "Unable to submit the form right now.";
+				throw new Error(errorMessage);
 			}
 
-			setForm(initialForm);
+			formElement.reset();
 			setStatus({ type: "success", message: "Thanks! We’ll be in touch shortly." });
 		} catch (error) {
-			console.error("Contact form error:", error);
+			console.error("Web3Forms submission error:", error);
 			setStatus({
 				type: "error",
-				message: "Something went wrong. Please try again or email us directly.",
+				message: error instanceof Error ? error.message : "Something went wrong. Please try again later.",
 			});
 		}
 	};
@@ -127,7 +127,7 @@ const Contact3 = () => {
 												href="mailto:roaan.dev@gmail.com"
 												className="text-primary-color-light dark:text-body-color-3 text-lg font-normal hover:text-[#16A34A] dark:hover:text-[#22C55E] break-all"
 											>
-												muhammad.huzaifa@amazonskipperteam.com
+												roaan.dev@gmail.com 
 											</Link>
 										</div>
 									</li>
@@ -159,7 +159,10 @@ const Contact3 = () => {
 									id="contact-form"
 									onSubmit={handleSubmit}
 									className="contact px-15px py-30px md:px-5 lg:px-30px lg:py-10 xl:px-10 border-2 border-body-color dark:border-bg-color-2 rounded-15px"
+									noValidate
 								>
+									<input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+									<input type="hidden" name="botcheck" className="hidden" />
 									{/* <!-- inputs --> */}
 									<div className="grid grid-cols-1 sm:grid-cols-2 gap-y-30px gap-x-4">
 										{/* <!-- first name --> */}
@@ -168,10 +171,8 @@ const Contact3 = () => {
 												First Name*
 											</p>
 											<input
-												name="firstName"
+												name="conName"
 												id="conName"
-												value={form.firstName}
-												onChange={handleChange}
 												type="text"
 												placeholder="First name"
 												className="text-gray-color dark:text-white-color w-full px-5 py-4 border-2 border-body-color dark:border-bg-color-2 focus:border-primary-color rounded-lg outline-none focus:outline-none transition-all duration-300 placeholder:text-body-color dark:placeholder:text-gray-color bg-transparent leading-1"
@@ -183,10 +184,8 @@ const Contact3 = () => {
 												Last Name*
 											</p>
 											<input
-												name="lastName"
+												name="conLName"
 												id="conLName"
-												value={form.lastName}
-												onChange={handleChange}
 												type="text"
 												placeholder="Last name"
 												className="text-gray-color dark:text-white-color w-full px-5 py-4 border-2 border-body-color dark:border-bg-color-2 focus:border-primary-color rounded-lg outline-none focus:outline-none transition-all duration-300 placeholder:text-body-color dark:placeholder:text-gray-color bg-transparent leading-1"
@@ -198,10 +197,8 @@ const Contact3 = () => {
 												Email*
 											</p>
 											<input
-												name="email"
+												name="conEmail"
 												id="conEmail"
-												value={form.email}
-												onChange={handleChange}
 												type="email"
 												placeholder="Email address"
 												className="text-gray-color dark:text-white-color w-full px-5 py-4 border-2 border-body-color dark:border-bg-color-2 focus:border-primary-color rounded-lg outline-none focus:outline-none transition-all duration-300 placeholder:text-body-color dark:placeholder:text-gray-color bg-transparent leading-1"
@@ -213,10 +210,8 @@ const Contact3 = () => {
 												Phone Name*
 											</p>
 											<input
-												name="phone"
+												name="conPhone"
 												id="conPhone"
-												value={form.phone}
-												onChange={handleChange}
 												type="text"
 												placeholder="Phone number"
 												className="text-gray-color dark:text-white-color w-full px-5 py-4 border-2 border-body-color dark:border-bg-color-2 focus:border-primary-color rounded-lg outline-none focus:outline-none transition-all duration-300 placeholder:text-body-color dark:placeholder:text-gray-color bg-transparent leading-1"
@@ -228,10 +223,8 @@ const Contact3 = () => {
 												Can you please share your or your competitor’s ASIN/URL?
 											</p>
 											<input
-												name="asin"
+												name="conAsin"
 												id="conAsin"
-												value={form.asin}
-												onChange={handleChange}
 												type="text"
 												placeholder="https://amazon.com/your-product..."
 												className="text-gray-color dark:text-white-color w-full px-5 py-4 border-2 border-body-color dark:border-bg-color-2 focus:border-primary-color rounded-lg outline-none focus:outline-none transition-all duration-300 placeholder:text-body-color dark:placeholder:text-gray-color bg-transparent leading-1"
@@ -243,17 +236,21 @@ const Contact3 = () => {
 												What is your budget (per month) for this project?
 											</p>
 											<div className="grid gap-3">
-												{budgetOptions.map((option) => (
+												{[
+													"$1000-$2000",
+													"$2000-$4000",
+													"$4000-$6000",
+													"$6000-$8000",
+													"Not sure",
+												].map((option) => (
 													<label
 														key={option}
 														className="flex items-center gap-3 rounded-lg border-2 border-body-color dark:border-bg-color-2 px-4 py-3 transition-all duration-300 hover:border-primary-color has-[input:checked]:border-[#22C55E] has-[input:checked]:bg-[#22C55E]/15"
 													>
 														<input
 															type="radio"
-															name="budget"
+															name="conBudget"
 															value={option}
-															checked={form.budget === option}
-															onChange={handleChange}
 															className="peer h-4 w-4 accent-[#22C55E]"
 														/>
 														<span className="text-gray-color dark:text-white-color text-sm md:text-base transition-colors duration-300 peer-checked:text-[#22C55E]">
@@ -269,10 +266,8 @@ const Contact3 = () => {
 												Additional comments
 											</p>
 											<textarea
-												name="message"
+												name="conMessage"
 												id="conMessage"
-												value={form.message}
-												onChange={handleChange}
 												cols="1"
 												rows="10"
 												placeholder="Share any context or goals we should know about"

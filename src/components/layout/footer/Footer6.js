@@ -22,11 +22,11 @@ const Footer3 = () => {
 	};
 	return (
 		<footer>
-			<div className="footer-inner bg-gradient-to-b from-green-600 to-black">
+			<div className="footer-inner bg-black">
 				<div className="container">
-					<div className="flex flex-wrap gap-10 md:gap-10px justify-between px-15px py-35px lg:px-30px lg:py-50px  xl:px-50px xl:py-60px border-2 border-body-color dark:border-bg-color-2 rounded-15px bg-[#3E8A41]">
+					<div className="flex flex-wrap gap-10 md:gap-10px justify-between px-15px py-35px lg:px-30px lg:py-50px xl:px-50px xl:py-60px border-2 border-body-color dark:border-bg-color-2 rounded-15px bg-black text-white">
 						<div>
-							<h6 className="text-sm leading-1.2 uppercase text-black dark:text-gray-color-4 font-normal mb-25px md:mb-35px">
+							<h6 className="text-sm leading-1.2 uppercase text-white font-normal mb-25px md:mb-35px">
 								Sitemap
 							</h6>
 							<ul className="nav flex flex-col gap-3">
@@ -34,7 +34,7 @@ const Footer3 = () => {
 									<li key={item?.name ?? item?.path ?? item?.path2} className="nav_item group relative">
 										<Link
 											href={resolveHref(item)}
-											className="text-size-15 font-normal text-black dark:text-white-color hover:text-primary-color dark:hover:text-primary-color capitalize transition-colors duration-200"
+										className="text-size-15 font-normal text-white hover:text-primary-color dark:hover:text-primary-color capitalize transition-colors duration-200"
 										>
 											{item?.name}
 										</Link>
@@ -48,13 +48,13 @@ const Footer3 = () => {
 						</div>
 
 						<div>
-							<h6 className="text-sm leading-1.2 uppercase text-black dark:text-gray-color-4 font-normal mb-25px md:mb-35px">
+							<h6 className="text-sm leading-1.2 uppercase text-white font-normal mb-25px md:mb-35px">
 								Marketplaces We Serve
 							</h6>
 							<ul className="nav flex flex-col gap-3">
 								{["United States", "Canada", "United Kingdom", "France", "Italy", "Australia"].map(item => (
 									<li key={item} className="nav_item group relative">
-										<span className="text-size-15 font-normal text-black dark:text-white-color capitalize">
+										<span className="text-size-15 font-normal text-white capitalize">
 											{item}
 										</span>
 									</li>
@@ -67,14 +67,14 @@ const Footer3 = () => {
 						</div>
 
 						<div>
-							<h6 className="text-sm leading-1.2 uppercase text-black dark:text-gray-color-4 font-normal mb-25px md:mb-35px">
+							<h6 className="text-sm leading-1.2 uppercase text-white font-normal mb-25px md:mb-35px">
 								Contact
 							</h6>
 							<ul className="nav flex flex-col  gap-3">
 								<li className="nav_item group relative">
 									<Link
 										href="mailto:muhammad.huzaifa@amazonskipperteam.com"
-										className="text-size-15 font-normal text-black dark:text-white-color hover:text-primary-color dark:hover:text-primary-color lowercase"
+										className="text-size-15 font-normal text-white hover:text-primary-color dark:hover:text-primary-color lowercase"
 									>
 										muhammad.huzaifa@amazonskipperteam.com
 									</Link>
@@ -83,14 +83,14 @@ const Footer3 = () => {
 								<li className="nav_item group relative">
 									<Link
 										href="tel:+19342013452"
-										className="text-size-15 font-normal text-black dark:text-white-color hover:text-primary-color dark:hover:text-primary-color capitalize"
+										className="text-size-15 font-normal text-white hover:text-primary-color dark:hover:text-primary-color capitalize"
 									>
 										+1 934 201 3452
 									</Link>
 								</li>
 
 								<li className="nav_item group relative">
-									<p className="text-size-15 font-normal text-black dark:text-white-color capitalize">
+									<p className="text-size-15 font-normal text-white capitalize">
 										Office 13609, 182-184 High Street North,<br />
 										East Ham, London, United Kingdom, E6 2JA
 									</p>
@@ -103,14 +103,14 @@ const Footer3 = () => {
 						</div>
 
 						<div>
-							<h6 className="text-sm leading-1.2 uppercase text-black dark:text-gray-color-4 font-normal mb-25px md:mb-35px">
+							<h6 className="text-sm leading-1.2 uppercase text-white font-normal mb-25px md:mb-35px">
 								Socials
 							</h6>
 							<ul className="nav flex flex-col gap-10px">
 								<li className="nav_item group relative">
 									<Link
 										href="https://www.facebook.com/profile.php?id=61560301466107"
-										className="text-size-15 font-normal text-black dark:text-white-color hover:text-primary-color dark:hover:text-primary-color capitalize flex gap-2 items-center"
+										className="text-size-15 font-normal text-white hover:text-primary-color dark:hover:text-primary-color capitalize flex gap-2 items-center"
 										target="_blank"
 										rel="noopener noreferrer"
 									>
@@ -125,7 +125,7 @@ const Footer3 = () => {
 								<li className="nav_item group relative">
 									<Link
 										href="https://www.instagram.com/amazonskiper"
-										className="text-size-15 font-normal text-black dark:text-white-color hover:text-primary-color dark:hover:text-primary-color capitalize flex gap-2 items-center"
+										className="text-size-15 font-normal text-white hover:text-primary-color dark:hover:text-primary-color capitalize flex gap-2 items-center"
 										target="_blank"
 										rel="noopener noreferrer"
 									>
@@ -140,7 +140,7 @@ const Footer3 = () => {
 								<li className="nav_item group relative">
 									<Link
 										href="https://www.linkedin.com/in/virtuallyhuzaifa/"
-										className="text-size-15 font-normal text-black dark:text-white-color hover:text-primary-color dark:hover:text-primary-color capitalize flex gap-2 items-center"
+										className="text-size-15 font-normal text-white hover:text-primary-color dark:hover:text-primary-color capitalize flex gap-2 items-center"
 										target="_blank"
 										rel="noopener noreferrer"
 									>
@@ -155,7 +155,7 @@ const Footer3 = () => {
 								<li className="nav_item group relative">
 									<Link
 										href="https://twitter.com/amazonskiper"
-										className="text-size-15 font-normal text-black dark:text-white-color hover:text-primary-color dark:hover:text-primary-color capitalize flex gap-2 items-center"
+										className="text-size-15 font-normal text-white hover:text-primary-color dark:hover:text-primary-color capitalize flex gap-2 items-center"
 										target="_blank"
 										rel="noopener noreferrer"
 									>
@@ -175,14 +175,14 @@ const Footer3 = () => {
 						</div>
 
 						<div>
-							<h6 className="text-sm leading-1.2 uppercase text-black dark:text-gray-color-4 font-normal mb-25px md:mb-35px">
+							<h6 className="text-sm leading-1.2 uppercase text-white font-normal mb-25px md:mb-35px">
 								Legal Details
 							</h6>
 							<ul className="nav flex flex-col  gap-3">
 								<li className="nav_item group relative">
 									<Link
 										href="/privacy-policy"
-										className="text-size-15 font-normal text-black dark:text-white-color hover:text-primary-color dark:hover:text-primary-color capitalize  "
+										className="text-size-15 font-normal text-white hover:text-primary-color dark:hover:text-primary-color capitalize"
 									>
 										Privacy Policy
 									</Link>
@@ -191,7 +191,7 @@ const Footer3 = () => {
 								<li className="nav_item group relative">
 									<Link
 										href="/refund-and-cancellation"
-										className="text-size-15 font-normal text-black dark:text-white-color hover:text-primary-color dark:hover:text-primary-color capitalize  "
+										className="text-size-15 font-normal text-white hover:text-primary-color dark:hover:text-primary-color capitalize"
 									>
 										Refund & Cancellation
 									</Link>
@@ -199,8 +199,8 @@ const Footer3 = () => {
 							</ul>
 						</div>
 					</div>
-					<div className="flex flex-col items-center py-25px md:py-35px  px-15px">
-						<div className="copyright text-gray-color dark:text-body-color whitespace-nowrap text-sm md:text-base ">
+					<div className="flex flex-col items-center py-25px md:py-35px px-15px">
+						<div className="copyright text-gray-color dark:text-body-color whitespace-nowrap text-sm md:text-base">
 							© 2025 All rights reserved by{" "}
 							<Link
 								href="/"
