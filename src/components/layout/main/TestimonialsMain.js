@@ -12,7 +12,7 @@ const TestimonialsMain = () => {
       clientName: "Sarah Martinez",
       company: "TechGear Solutions",
       achievement: "10x ROAS in 60 Days",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      videoUrl: "https://www.youtube.com/embed/5U66ATCyg4I?si=DXIVm5jJDIYOACaA",
       thumbnail: "/img/testimonials/user/1.jpg",
       metric: "50% Cost Reduction",
       industry: "Electronics"
@@ -22,7 +22,7 @@ const TestimonialsMain = () => {
       clientName: "David Chen",
       company: "Home Essentials Plus",
       achievement: "300% Revenue Growth",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      videoUrl: "https://www.youtube.com/embed/5U66ATCyg4I?si=DXIVm5jJDIYOACaA",
       thumbnail: "/img/testimonials/user/2.jpg",
       metric: "45% ACoS Improvement",
       industry: "Home & Kitchen"
@@ -32,7 +32,7 @@ const TestimonialsMain = () => {
       clientName: "Emily Rodriguez",
       company: "Fitness Pro Gear",
       achievement: "5x Ad Performance",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      videoUrl: "https://www.youtube.com/embed/5U66ATCyg4I?si=DXIVm5jJDIYOACaA",
       thumbnail: "/img/testimonials/user/3.jpg",
       metric: "60% Lower CPC",
       industry: "Health & Fitness"
@@ -42,7 +42,7 @@ const TestimonialsMain = () => {
       clientName: "Michael Thompson",
       company: "BeautyCare Co",
       achievement: "8x Return on Investment",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      videoUrl: "https://www.youtube.com/embed/5U66ATCyg4I?si=DXIVm5jJDIYOACaA",
       thumbnail: "/img/testimonials/user/4.jpg",
       metric: "35% Sales Increase",
       industry: "Beauty & Personal Care"
@@ -86,7 +86,7 @@ const TestimonialsMain = () => {
                   <div className="aspect-video">
                     <iframe
                       className="w-full h-full"
-                      src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                      src="https://www.youtube.com/embed/5U66ATCyg4I?si=DXIVm5jJDIYOACaA"
                       title="Client Stories"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
