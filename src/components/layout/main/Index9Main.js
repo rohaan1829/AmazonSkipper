@@ -5,6 +5,7 @@ import Contact3 from "@/components/sections/contact/Contact3";
 //import Blogs5 from "@/components/sections/blogs/Blogs5";
 import Brands2 from "@/components/sections/brands/Brands2";
 import Hero9 from "@/components/sections/heros/Hero9";
+import BrandMarque from "@/components/sections/marquee/BrandMarque";
 import FeatureMarque2 from "@/components/sections/marquee/FeatureMarque2";
 import Portfolio9 from "@/components/sections/portfolio/Portfolio9";
 //import Resume5 from "@/components/sections/resume/Resume5";
@@ -72,7 +73,7 @@ const Index9Main = () => {
 				</div>
 			</section>
 			<div className="wow fadeInUp" data-wow-delay=".12s">
-				<FeatureMarque2 type={3} isRotate={true} />
+				<BrandMarque type={2} />
 			</div>
 			<div className="wow fadeInUp" data-wow-delay=".16s">
 				<Brands2 />
