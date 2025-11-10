@@ -115,14 +115,22 @@ const Skills4 = () => {
 						))}
 					</div>
 
-					<div className="mt-16 text-center">
-						<p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-							Scaling fast is easy. Scaling safely is strategy. Discover how we grow brands without burning budgets.
-						</p>
-						<div className="mt-8 flex justify-center">
-							<ButtonPrimary type={2} isIcon={true} url="/#contact">
-								Let’s Scale Smarter
-							</ButtonPrimary>
+					<div className="mt-16">
+						<div className="relative mx-auto max-w-4xl overflow-hidden rounded-[28px] border border-[#4CAF50]/25 bg-gradient-to-br from-black via-[#0b1f14] to-[#14532d]/70 px-8 py-10 sm:px-10 md:px-12 md:py-12 text-center shadow-[0_30px_90px_-40px_rgba(34,197,94,0.6)]">
+							<div className="absolute inset-0 pointer-events-none opacity-30">
+								<div className="absolute -top-24 left-1/3 h-48 w-48 rounded-full bg-[#22C55E] blur-[130px]" />
+								<div className="absolute bottom-[-30%] right-1/4 h-56 w-56 rounded-full bg-[#0EA5E9] blur-[150px]" />
+							</div>
+							<div className="relative z-10 space-y-6">
+								<p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+									Scaling fast is easy. Scaling safely is strategy. Discover how we grow brands without burning budgets.
+								</p>
+								<div className="flex justify-center">
+									<ButtonPrimary type={2} isIcon={true} url="/#contact">
+										Let's Scale Smarter
+									</ButtonPrimary>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

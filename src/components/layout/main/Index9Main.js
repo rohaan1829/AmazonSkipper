@@ -144,6 +144,27 @@ const Index9Main = () => {
 							</ul>
 						</div>
 					</div>
+					<div className="mt-16 max-w-5xl mx-auto">
+						<div className="relative overflow-hidden rounded-[32px] border border-[#4CAF50]/25 bg-gradient-to-br from-black via-[#0b1f14] to-[#22C55E]/40 px-8 py-10 sm:px-12 md:px-16 md:py-14 shadow-[0_30px_90px_-45px_rgba(34,197,94,0.6)]">
+							<div className="absolute inset-0 pointer-events-none opacity-30">
+								<div className="absolute -top-24 left-1/3 h-56 w-56 rounded-full bg-[#22C55E] blur-[130px]" />
+								<div className="absolute bottom-[-25%] right-1/4 h-64 w-64 rounded-full bg-[#0EA5E9] blur-[150px]" />
+							</div>
+							<div className="relative z-10 flex flex-col gap-6 text-center sm:text-left sm:flex-row sm:items-center sm:justify-between">
+								<div className="max-w-3xl space-y-3">
+									<h3 className="text-2xl md:text-3xl font-semibold leading-tight text-white">
+										Build My Calm Growth Plan
+									</h3>
+									<p className="text-base md:text-lg text-white/80 leading-relaxed">
+										You don’t need louder ads — you need a predictable system. Let’s build your peace-of-mind plan today.
+									</p>
+								</div>
+								<ButtonPrimary type={2} isIcon={true} url="/#contact">
+									Build My Calm Growth Plan
+								</ButtonPrimary>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 			{/* <Resume5 type={2} /> */}
