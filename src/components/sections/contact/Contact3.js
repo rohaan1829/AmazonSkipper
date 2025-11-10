@@ -1,6 +1,73 @@
+"use client";
+
+import { useMemo, useState } from "react";
 import Link from "next/link";
 
+const initialForm = {
+	firstName: "",
+	lastName: "",
+	email: "",
+	phone: "",
+	asin: "",
+	budget: "",
+	message: "",
+};
+
 const Contact3 = () => {
+	const [form, setForm] = useState(initialForm);
+	const [status, setStatus] = useState({ type: "idle", message: "" });
+
+	const budgetOptions = useMemo(
+		() => ["$1000-$2000", "$2000-$4000", "$4000-$6000", "$6000-$8000", "Not sure"],
+		[]
+	);
+
+	const handleChange = (event) => {
+		const { name, value } = event.target;
+		setForm((prev) => ({ ...prev, [name]: value }));
+	};
+
+	const handleSubmit = async (event) => {
+		event.preventDefault();
+		setStatus({ type: "loading", message: "" });
+
+		const payload = {
+			firstName: form.firstName.trim(),
+			lastName: form.lastName.trim(),
+			email: form.email.trim(),
+			phone: form.phone.trim(),
+			asin: form.asin.trim(),
+			budget: form.budget,
+			message: form.message.trim(),
+		};
+
+		if (!payload.firstName || !payload.lastName || !payload.email || !payload.phone) {
+			setStatus({ type: "error", message: "Please fill in the required fields." });
+			return;
+		}
+
+		try {
+			const response = await fetch("/api/contact", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(payload),
+			});
+
+			if (!response.ok) {
+				throw new Error("Request failed");
+			}
+
+			setForm(initialForm);
+			setStatus({ type: "success", message: "Thanks! We’ll be in touch shortly." });
+		} catch (error) {
+			console.error("Contact form error:", error);
+			setStatus({
+				type: "error",
+				message: "Something went wrong. Please try again or email us directly.",
+			});
+		}
+	};
+
 	return (
 		<section id="contact">
 			<div className=" dark:bg-black-color py-60px md:py-20 lg:py-100px xl:py-30">
@@ -57,7 +124,7 @@ const Contact3 = () => {
 												Email
 											</p>
 											<Link
-												href="mailto:muhammad.huzaifa@amazonskipperteam.com"
+												href="mailto:roaan.dev@gmail.com"
 												className="text-primary-color-light dark:text-body-color-3 text-lg font-normal hover:text-[#16A34A] dark:hover:text-[#22C55E] break-all"
 											>
 												muhammad.huzaifa@amazonskipperteam.com
@@ -90,6 +157,7 @@ const Contact3 = () => {
 							<div className="wow fadeInRight" data-wow-delay=".3s">
 								<form
 									id="contact-form"
+									onSubmit={handleSubmit}
 									className="contact px-15px py-30px md:px-5 lg:px-30px lg:py-10 xl:px-10 border-2 border-body-color dark:border-bg-color-2 rounded-15px"
 								>
 									{/* <!-- inputs --> */}
@@ -100,8 +168,10 @@ const Contact3 = () => {
 												First Name*
 											</p>
 											<input
-												name="conName"
+												name="firstName"
 												id="conName"
+												value={form.firstName}
+												onChange={handleChange}
 												type="text"
 												placeholder="First name"
 												className="text-gray-color dark:text-white-color w-full px-5 py-4 border-2 border-body-color dark:border-bg-color-2 focus:border-primary-color rounded-lg outline-none focus:outline-none transition-all duration-300 placeholder:text-body-color dark:placeholder:text-gray-color bg-transparent leading-1"
@@ -113,8 +183,10 @@ const Contact3 = () => {
 												Last Name*
 											</p>
 											<input
-												name="conLName"
+												name="lastName"
 												id="conLName"
+												value={form.lastName}
+												onChange={handleChange}
 												type="text"
 												placeholder="Last name"
 												className="text-gray-color dark:text-white-color w-full px-5 py-4 border-2 border-body-color dark:border-bg-color-2 focus:border-primary-color rounded-lg outline-none focus:outline-none transition-all duration-300 placeholder:text-body-color dark:placeholder:text-gray-color bg-transparent leading-1"
@@ -126,8 +198,10 @@ const Contact3 = () => {
 												Email*
 											</p>
 											<input
-												name="conEmail"
+												name="email"
 												id="conEmail"
+												value={form.email}
+												onChange={handleChange}
 												type="email"
 												placeholder="Email address"
 												className="text-gray-color dark:text-white-color w-full px-5 py-4 border-2 border-body-color dark:border-bg-color-2 focus:border-primary-color rounded-lg outline-none focus:outline-none transition-all duration-300 placeholder:text-body-color dark:placeholder:text-gray-color bg-transparent leading-1"
@@ -139,8 +213,10 @@ const Contact3 = () => {
 												Phone Name*
 											</p>
 											<input
-												name="conPhone"
+												name="phone"
 												id="conPhone"
+												value={form.phone}
+												onChange={handleChange}
 												type="text"
 												placeholder="Phone number"
 												className="text-gray-color dark:text-white-color w-full px-5 py-4 border-2 border-body-color dark:border-bg-color-2 focus:border-primary-color rounded-lg outline-none focus:outline-none transition-all duration-300 placeholder:text-body-color dark:placeholder:text-gray-color bg-transparent leading-1"
@@ -152,8 +228,10 @@ const Contact3 = () => {
 												Can you please share your or your competitor’s ASIN/URL?
 											</p>
 											<input
-												name="conAsin"
+												name="asin"
 												id="conAsin"
+												value={form.asin}
+												onChange={handleChange}
 												type="text"
 												placeholder="https://amazon.com/your-product..."
 												className="text-gray-color dark:text-white-color w-full px-5 py-4 border-2 border-body-color dark:border-bg-color-2 focus:border-primary-color rounded-lg outline-none focus:outline-none transition-all duration-300 placeholder:text-body-color dark:placeholder:text-gray-color bg-transparent leading-1"
@@ -165,21 +243,17 @@ const Contact3 = () => {
 												What is your budget (per month) for this project?
 											</p>
 											<div className="grid gap-3">
-												{[
-													"$1000-$2000",
-													"$2000-$4000",
-													"$4000-$6000",
-													"$6000-$8000",
-													"Not sure",
-												].map((option) => (
+												{budgetOptions.map((option) => (
 													<label
 														key={option}
 														className="flex items-center gap-3 rounded-lg border-2 border-body-color dark:border-bg-color-2 px-4 py-3 transition-all duration-300 hover:border-primary-color has-[input:checked]:border-[#22C55E] has-[input:checked]:bg-[#22C55E]/15"
 													>
 														<input
 															type="radio"
-															name="conBudget"
+															name="budget"
 															value={option}
+															checked={form.budget === option}
+															onChange={handleChange}
 															className="peer h-4 w-4 accent-[#22C55E]"
 														/>
 														<span className="text-gray-color dark:text-white-color text-sm md:text-base transition-colors duration-300 peer-checked:text-[#22C55E]">
@@ -195,8 +269,10 @@ const Contact3 = () => {
 												Additional comments
 											</p>
 											<textarea
-												name="conMessage"
+												name="message"
 												id="conMessage"
+												value={form.message}
+												onChange={handleChange}
 												cols="1"
 												rows="10"
 												placeholder="Share any context or goals we should know about"
@@ -206,11 +282,18 @@ const Contact3 = () => {
 										<div className="sm:col-start-1 sm:col-span-2">
 											<button
 												type="submit"
+												disabled={status.type === "loading"}
 												className="text-size-15 font-bold text-white-color capitalize py-5 px-35px bg-200 bg-gradient-secondary hover:bg-[-100%] rounded-full inline-flex gap-10px items-center leading-1 transition-all duration-300 group"
 											>
-												Send Message
+												{status.type === "loading" ? "Sending..." : "Send Message"}
 												<i className="fa-regular fa-arrow-right transition-all duration-400 -rotate-45 group-hover:rotate-0"></i>
 											</button>
+											{status.type === "error" && (
+												<p className="mt-3 text-sm text-[#F97316]">{status.message}</p>
+											)}
+											{status.type === "success" && (
+												<p className="mt-3 text-sm text-[#22C55E]">{status.message}</p>
+											)}
 										</div>
 									</div>
 								</form>
