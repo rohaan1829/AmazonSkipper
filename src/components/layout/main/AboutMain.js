@@ -243,8 +243,8 @@ const AboutMain = () => {
               </div>
               {/* Badge */}
               {/* Main Headline */}
-              <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[1.1] text-[#1a1a1a] dark:text-white mb-8 wow fadeInUp" data-wow-delay=".1s">
-                The <span className="whitespace-nowrap text-[#4CAF50]" style={{ textShadow: '0 0 40px rgba(76, 175, 80, 0.5)' }}>Amazon Skipper</span> <span className="text-white">Story</span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[1.15] sm:leading-[1.1] text-[#1a1a1a] dark:text-white mb-8 wow fadeInUp px-4 sm:px-0" data-wow-delay=".1s">
+                The <span className="text-[#4CAF50]" style={{ textShadow: '0 0 40px rgba(76, 175, 80, 0.5)' }}>Amazon Skipper</span> <span className="text-white">Story</span>
               </h1>
 
               {/* Description Paragraph */}

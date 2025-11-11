@@ -12,7 +12,7 @@ const Hero9 = () => {
 	const closeModal = () => setIsModalOpen(false);
 
 	return (
-		<section className="hero-section relative min-h-[calc(100svh-40px)] pt-105px sm:pt-[118px] md:pt-[120px] lg:pt-[132px] xl:pt-[135px] 2xl:pt-[138px] pb-20px sm:pb-30px overflow-hidden bg-transparent dark:bg-black">
+		<section className="hero-section relative min-h-[calc(100svh-40px)] pt-[150px] sm:pt-[118px] md:pt-[120px] lg:pt-[132px] xl:pt-[135px] 2xl:pt-[138px] pb-20px sm:pb-30px overflow-hidden bg-transparent dark:bg-black">
 			{/* Black Gradient Background - Dark Mode */}
 			<div className="absolute inset-0 bg-gradient-to-br from-black via-[#1a1a1a] to-black opacity-100 dark:block hidden"></div>
 			<div className="absolute inset-0 bg-gradient-to-tr from-black via-transparent to-black opacity-95 dark:block hidden"></div>
@@ -82,6 +82,21 @@ const Hero9 = () => {
 				</div>
 				</div>
 
+				<div className="mt-6 flex flex-col items-center gap-3 sm:hidden">
+					<Link
+						href="/contact"
+						className="inline-flex items-center justify-center px-5 py-2 text-base font-medium rounded-full bg-primary-color text-white-color hover:bg-[#2E7D32] transition-colors duration-300"
+					>
+						Watch the Video to Get Reward
+					</Link>
+					<Link
+						href="/contact"
+						className="inline-flex items-center justify-center px-5 py-3 text-base font-medium rounded-lg border border-[#4CAF50] bg-[#4CAF50] text-white hover:bg-[#2E7D32] hover:border-[#2E7D32] transition-all duration-300 shadow-md hover:shadow-lg"
+					>
+						Get $500 Gift Card
+					</Link>
+				</div>
+
 					{/* Left Side Text */}
 					<div className="w-full max-w-300px relative md:absolute md:left-auto lg:left-0 xl:left-0 2xl:left-[1%] 3xl:-left-[9%] top-2 md:top-auto lg:top-[23%] xl:top-[22%] md:bottom-0 md:right-1/2 lg:right-auto md:translate-x-1/2 lg:translate-x-0 lg:-translate-y-1/2 mx-auto md:mx-0 z-1">
 						<div>
@@ -143,7 +158,7 @@ const Hero9 = () => {
 					</div>
 
 					{/* <!-- transparent area --> */}
-					<div className=" absolute -top-3 sm:-top-0.5  lg:top-[26%] xl:top-[27%] 2xl:top-[28%] left-auto lg:left-[6%] xl:left-[10%] right-[30px] sm:right-0 md:right-[15%] lg:right-auto">
+					<div className="hidden lg:block absolute -top-3 sm:-top-0.5  lg:top-[26%] xl:top-[27%] 2xl:top-[28%] left-auto lg:left-[6%] xl:left-[10%] right-[30px] sm:right-0 md:right-[15%] lg:right-auto">
 						<div className="flex gap-1.5 px-15px lg:px-24px py-18px sm:py-24px lg:py-32px rounded-10px border border-dashed border-[#4CAF50]/90 dark:border-[#4CAF50]/30 bg-gradient-to-br from-white via-[#f8f9fa] to-[#4CAF50]/80 dark:from-[#121212] dark:via-[#1a1a1a] dark:to-[#4CAF50]/15 backdrop-blur-[45px] z-1 shadow-lg shadow-[#4CAF50]/60 dark:shadow-[#4CAF50]/10">
 							<div className="w-[26px] flex-shrink-0">
 								<span>
@@ -193,7 +208,7 @@ const Hero9 = () => {
 							</div>
 							<Link
 								href="/contact"
-								className="md:text-[19px] leading-[1.52] font-medium text-white bg-[#4CAF50] hover:bg-[#2E7D32] dark:bg-[#4CAF50] dark:hover:bg-[#2E7D32] transition-all duration-300 cursor-pointer px-4 py-2 rounded-lg border border-[#4CAF50] hover:border-[#2E7D32] shadow-md hover:shadow-lg inline-flex items-center justify-center"
+								className="hidden sm:inline-flex md:text-[19px] leading-[1.52] font-medium text-white bg-[#4CAF50] hover:bg-[#2E7D32] dark:bg-[#4CAF50] dark:hover:bg-[#2E7D32] transition-all duration-300 cursor-pointer px-4 py-2 rounded-lg border border-[#4CAF50] hover:border-[#2E7D32] shadow-md hover:shadow-lg items-center justify-center"
 							>
 								Get $500 Gift Card
 							</Link>
@@ -202,7 +217,7 @@ const Hero9 = () => {
 								<span className="w-[13px] h-[13px] border-2 border-black-color dark:border-white-color bg-white-color dark:bg-black-color rounded-100% absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2  [&:nth-child(2)]:left-full last:left-full last:top-full"></span>
 								<span className="w-[13px] h-[13px] border-2 border-black-color dark:border-white-color bg-white-color dark:bg-black-color rounded-100% absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2  [&:nth-child(2)]:left-full last:left-full last:top-full "></span>
 							</div>
-							<div className="absolute  -left-[25px]  -bottom-[30px] sm:-left-[38px] sm:-bottom-[43px] w-full max-w-[35px] sm:max-w-[51px] ">
+						<div className="hidden sm:block absolute  -left-[25px]  -bottom-[30px] sm:-left-[38px] sm:-bottom-[43px] w-full max-w-[35px] sm:max-w-[51px] ">
 								<img
 									src="/img/icons/hero-9-pointer.svg"
 									className="w-full"
@@ -212,7 +227,7 @@ const Hero9 = () => {
 						</div>
 
 						<Link
-							className="-ml-[95px] sm:-ml-[122px] mt-9 px-4 py-0.5 text-size-17 font-medium rounded-full bg-primary-color text-white-color hover:bg-[#2E7D32] transition-colors duration-300"
+							className="hidden sm:inline-flex sm:-ml-[122px] mt-9 px-4 py-0.5 text-size-17 font-medium rounded-full bg-primary-color text-white-color hover:bg-[#2E7D32] transition-colors duration-300"
 							href="/contact"
 						>
 							Watch the Video to Get Reward
@@ -220,17 +235,15 @@ const Hero9 = () => {
 					</div>
 					<div className="w-full max-w-300px relative md:absolute  md:right-auto lg:right-0 xl:right-0 2xl:right-[1%] 3xl:-right-[9%] top-2 md:top-auto lg:top-[23%] xl:top-[22%] md:bottom-0  md:left-1/2 lg:left-auto  md:-translate-x-1/2 lg:translate-x-0 lg:-translate-y-1/2  mx-auto md:mx-0 z-1 ">
 						<div>
-							<div
-								className="text-seondary-color dark:text-white-color-4 leading-1.3 mb-26px text-lg md:text-xl lg:text-2xl font-medium"
-							>
+							<div className="text-white sm:text-seondary-color dark:text-white-color-4 leading-1.3 mb-26px text-lg md:text-xl lg:text-2xl font-medium">
 								<div className="text-left">
 									<div className="mb-2">
-										<span className="text-[#4CAF50] font-bold">No Empty Promise, Just Proven Results</span>
+										<span className="text-white sm:text-[#4CAF50] font-bold">No Empty Promise, Just Proven Results</span>
 									</div>
 									<div>
-										<span className="text-seondary-color dark:text-white-color"> - Or We'll Refund You </span>
+										<span className="text-white sm:text-seondary-color dark:text-white-color"> - Or We'll Refund You </span>
 										<span className="bg-gradient-to-r from-[#FF6B6B] to-[#E53E3E] bg-clip-text text-transparent font-bold">100%</span>
-										<span className="text-seondary-color dark:text-white-color">.</span>
+										<span className="text-white sm:text-seondary-color dark:text-white-color">.</span>
 									</div>
 								</div>
 							</div>
