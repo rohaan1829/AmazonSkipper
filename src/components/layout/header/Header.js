@@ -60,7 +60,7 @@ const Header = ({ isSticky }) => {
 						headerType === 6 ||
 						headerType === 9 ||
 						headerType === 10
-							? "px-15px  2xl:px-65px"
+							? "px-15px lg:px-20px xl:px-30px 2xl:px-65px"
 							: "container"
 					}`}
 				>
@@ -75,17 +75,17 @@ const Header = ({ isSticky }) => {
 								headerType === 10
 									? "max-w-140px sm:max-w-210px flex items-center h-75px sm:h-85px md:h-[103px]  border-r border-border-coloer dark:border-bg-color-2 w-full leading-1 pr-15px sm:pr-0"
 									: headerType === 4 || headerType === 6 || headerType === 9
-									? `max-w-205px lg:max-w-130px xl:max-w-205px w-full -mt-2 sm:-mt-1 md:mt-0`
+									? `max-w-205px lg:max-w-140px xl:max-w-180px 2xl:max-w-205px w-full -mt-2 sm:-mt-1 md:mt-0`
 									: ""
 							}
 						>
 							<ul
 								className={`flex items-center ${
-									headerType === 5 ? "gap-x-25px" : "gap-x-15px xl:gap-x-35px"
+									headerType === 5 ? "gap-x-20px lg:gap-x-25px" : "gap-x-12px lg:gap-x-15px xl:gap-x-35px"
 								}`}
 							>
 								<li>
-									<Logo isSticky={isSticky} sizeMultiplier={1.20} />
+									<Logo isSticky={isSticky} sizeMultiplier={0.95} />
 								</li>
 								{headerType === 3 ||
 								headerType === 4 ||
@@ -128,11 +128,11 @@ const Header = ({ isSticky }) => {
 									headerType === 9 || headerType === 10 ? "flex" : "hidden"
 								} ${
 									headerType === 9 || headerType === 10 || headerType === 5
-										? "lg:flex items-center gap-25px"
+										? "lg:flex items-center gap-4 xl:gap-25px"
 										: "lg:block "
 								} ${
 									headerType === 10
-										? "lg:pl-30px lg:border-l border-border-coloer dark:border-bg-color-2"
+										? "lg:pl-20px xl:pl-30px lg:border-l border-border-coloer dark:border-bg-color-2"
 										: ""
 								}`}
 							>

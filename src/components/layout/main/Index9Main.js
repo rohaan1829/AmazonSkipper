@@ -1,4 +1,4 @@
- "use client";
+"use client";
 
 import About6 from "@/components/sections/about/About6";
 import Contact3 from "@/components/sections/contact/Contact3";

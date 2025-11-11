@@ -16,6 +16,14 @@ import "./globals.css";
 export const metadata = {
 	title: "Amazon Skipper - Your Amazon Business Solution",
 	description: "Amazon Skipper - Professional Amazon business services and solutions to help you succeed on Amazon marketplace",
+	icons: {
+		icon: [
+			{ url: "/img/logo/AMSfavicon.png", type: "image/png" },
+			{ url: "/icon.png", type: "image/png" },
+		],
+		shortcut: "/img/logo/AMSfavicon.png",
+		apple: "/img/logo/AMSfavicon.png",
+	},
 };
 
 export default function RootLayout({ children }) {
