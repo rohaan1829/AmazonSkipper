@@ -1,7 +1,8 @@
 "use client";
-import { useFooterContext } from "@/context_api/FooterContext";
-import Link from "next/link";
 import getNavItems from "@/libs/getNavItems";
+import { useFooterContext } from "@/context_api/FooterContext";
+import Image from "next/image";
+import Link from "next/link";
 
 const Footer3 = () => {
 	const { footerType } = useFooterContext();
@@ -22,9 +23,9 @@ const Footer3 = () => {
 	};
 	return (
 		<footer>
-			<div className="footer-inner bg-black">
+			<div className="footer-inner bg-gradient-to-br from-[#050505] via-[#0b1f14] to-[#22C55E]/70 pt-16 md:pt-20 lg:pt-24">
 				<div className="container">
-					<div className="flex flex-wrap gap-10 md:gap-10px justify-between px-15px py-35px lg:px-30px lg:py-50px xl:px-50px xl:py-60px border-2 border-body-color dark:border-bg-color-2 rounded-15px bg-black text-white">
+					<div className="flex flex-wrap gap-10 md:gap-10px justify-between px-15px py-35px lg:px-30px lg:py-50px xl:px-50px xl:py-60px border-2 border-[#1f3a2c]/60 rounded-15px bg-black/60 backdrop-blur-sm text-white">
 						<div>
 							<h6 className="text-sm leading-1.2 uppercase text-white font-normal mb-25px md:mb-35px">
 								Sitemap
@@ -70,7 +71,7 @@ const Footer3 = () => {
 							<h6 className="text-sm leading-1.2 uppercase text-white font-normal mb-25px md:mb-35px">
 								Contact
 							</h6>
-							<ul className="nav flex flex-col  gap-3">
+							<ul className="nav flex flex-col gap-3">
 								<li className="nav_item group relative">
 									<Link
 										href="mailto:muhammad.huzaifa@amazonskipperteam.com"
@@ -79,7 +80,6 @@ const Footer3 = () => {
 										muhammad.huzaifa@amazonskipperteam.com
 									</Link>
 								</li>
-
 								<li className="nav_item group relative">
 									<Link
 										href="tel:+19342013452"
@@ -88,11 +88,24 @@ const Footer3 = () => {
 										+1 934 201 3452
 									</Link>
 								</li>
-
+								<li className="nav_item group relative">
+									<Link
+										href="tel:+923326322643"
+										className="text-size-15 font-normal text-white hover:text-primary-color dark:hover:text-primary-color capitalize"
+									>
+										+92 332 6322 643
+									</Link>
+								</li>
 								<li className="nav_item group relative">
 									<p className="text-size-15 font-normal text-white capitalize">
 										Office 13609, 182-184 High Street North,<br />
-										East Ham, London, United Kingdom, E6 2JA
+										East Ham, London, United Kingdom
+									</p>
+								</li>
+								<li className="nav_item group relative">
+									<p className="text-size-15 font-normal text-white capitalize">
+										Office #26, Kohinoor Plaza 1,<br />
+										Jaranwala Road, Faisalabad, Pakistan
 									</p>
 								</li>
 							</ul>
@@ -164,7 +177,7 @@ const Footer3 = () => {
 										>
 											<i className="fa-brands fa-x-twitter"></i>
 										</span>{" "}
-										Twitter
+										Twitter / X
 									</Link>
 								</li>
 							</ul>
@@ -174,37 +187,42 @@ const Footer3 = () => {
 							<div className="h-[75%]  w-0.5  bg-bg-color-2 "></div>
 						</div>
 
-						<div>
-							<h6 className="text-sm leading-1.2 uppercase text-white font-normal mb-25px md:mb-35px">
-								Legal Details
-							</h6>
-							<ul className="nav flex flex-col  gap-3">
-								<li className="nav_item group relative">
-									<Link
-										href="/privacy-policy"
-										className="text-size-15 font-normal text-white hover:text-primary-color dark:hover:text-primary-color capitalize"
-									>
-										Privacy Policy
-									</Link>
-								</li>
+						<div className="flex flex-col items-start gap-6">
+							<div>
+								<h6 className="text-sm leading-1.2 uppercase text-white font-normal mb-25px md:mb-35px">
+									Legal Details
+								</h6>
+								<ul className="nav flex flex-col  gap-3">
+									<li className="nav_item group relative">
+										<Link
+											href="/privacy-policy"
+											className="text-size-15 font-normal text-white hover:text-primary-color dark:hover:text-primary-color capitalize"
+										>
+											Privacy Policy
+										</Link>
+									</li>
 
-								<li className="nav_item group relative">
-									<Link
-										href="/refund-and-cancellation"
-										className="text-size-15 font-normal text-white hover:text-primary-color dark:hover:text-primary-color capitalize"
-									>
-										Refund & Cancellation
-									</Link>
-								</li>
-							</ul>
+									<li className="nav_item group relative">
+										<Link
+											href="/refund-and-cancellation"
+											className="text-size-15 font-normal text-white hover:text-primary-color dark:hover:text-primary-color capitalize"
+										>
+											Refund & Cancellation
+										</Link>
+									</li>
+								</ul>
+							</div>
+							<Link href="/" className="inline-flex items-center justify-center">
+								<Image src="/img/logo/black.png" alt="Amazon Skipper" width={420} height={420} className="w-40 h-auto" />
+							</Link>
 						</div>
 					</div>
 					<div className="flex flex-col items-center py-25px md:py-35px px-15px">
-						<div className="copyright text-gray-color dark:text-body-color whitespace-nowrap text-sm md:text-base">
+						<div className="copyright text-white/80 whitespace-nowrap text-sm md:text-base">
 							© 2025 All rights reserved by{" "}
 							<Link
 								href="/"
-								className="text-primary-color-light dark:text-white-color hover:text-primary-color  dark:hover:text-primary-color "
+								className="text-white hover:text-[#22C55E]"
 							>
 								AmazonSkipper
 							</Link>

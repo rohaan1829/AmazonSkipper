@@ -302,11 +302,11 @@ const About6 = () => {
 												<div className="absolute -top-20 left-1/3 h-40 w-40 rounded-full bg-[#22C55E] blur-[120px]" />
 												<div className="absolute bottom-[-25%] right-1/4 h-44 w-44 rounded-full bg-[#0EA5E9] blur-[140px]" />
 											</div>
-											<div className="relative z-10 space-y-4">
-												<p className="text-sm md:text-base text-white/80 leading-relaxed">
-													Every brand loses money somewhere — we’ll show you where, and how to fix it for good.
+											<div className="relative z-10 space-y-4 text-center">
+												<p className="text-sm md:text-base text-white/80 leading-relaxed text-center">
+													Every brand loses money somewhere - we’ll show you where, and how to fix it for good.
 												</p>
-												<ButtonPrimary type={2} isIcon={true} href="/#contact">
+												<ButtonPrimary type={2} isIcon={true} url="/contact">
 													Find My Profit Leaks
 												</ButtonPrimary>
 											</div>

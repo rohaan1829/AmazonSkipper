@@ -37,7 +37,7 @@ const Hero4 = () => {
 							</span>
 						</div>
 						<h1 className="tj-hero-4-title text-[36px] sm:text-[32px] md:text-[40px] lg:text-[52px] xl:text-[64px] 2xl:text-[56px] 3xl:text-[78px] 4xl:text-[82px] 5xl:text-[95px] text-[#121212] dark:text-white leading-0.84 font-semibold inline-block">
-							Your Amazon Ad Spend Could Be <span className="text-[#4CAF50]">X%</span> Lower in 47 Days Guaranteed!
+							Your Amazon Ad Spend Could Be <span className="text-[#4CAF50]">20%</span> Lower in 47 Days Guaranteed!
 						</h1>
 					</div>
 

@@ -120,11 +120,11 @@ const ServicesMain = () => {
   const successStories = [
     {
       id: 1,
-      clientName: "Sarah Martinez",
+      clientName: "Anne Martinez",
       company: "TechGear Solutions",
       achievement: "10x ROAS in 60 Days",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with actual video URL
-      thumbnail: "/img/portfolio/graph.png",
+      videoUrl: "https://www.youtube.com/embed/fgdcjsg0n6I",
+      thumbnail: "/img/testimonials/user/1.jpg",
       metric: "50% Cost Reduction",
       industry: "Electronics"
     },
@@ -133,8 +133,8 @@ const ServicesMain = () => {
       clientName: "David Chen",
       company: "Home Essentials Plus",
       achievement: "300% Revenue Growth",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with actual video URL
-      thumbnail: "/img/testimonials/user/2.jpg",
+      videoUrl: "",
+      thumbnail: "/img/testimonials/user/davidchen.jpg",
       metric: "45% ACoS Improvement",
       industry: "Home & Kitchen"
     },
@@ -143,8 +143,8 @@ const ServicesMain = () => {
       clientName: "Emily Rodriguez",
       company: "Fitness Pro Gear",
       achievement: "5x Ad Performance",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with actual video URL
-      thumbnail: "/img/testimonials/user/3.jpg",
+      videoUrl: "",
+      thumbnail: "/img/testimonials/user/emilyrodriguez.jpg",
       metric: "60% Lower CPC",
       industry: "Health & Fitness"
     },
@@ -153,8 +153,8 @@ const ServicesMain = () => {
       clientName: "Michael Thompson",
       company: "BeautyCare Co",
       achievement: "8x Return on Investment",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with actual video URL
-      thumbnail: "/img/testimonials/user/4.jpg",
+      videoUrl: "",
+      thumbnail: "/img/testimonials/user/MichaelThompson.jpg",
       metric: "35% Sales Increase",
       industry: "Beauty & Personal Care"
     }
@@ -168,7 +168,7 @@ const ServicesMain = () => {
         "Our monthly sales tripled after Skipper took over. Their brand management and creative strategy changed everything.",
       authorName: "Olivia Grant",
       authorTitle: "Founder, LumaNest Home",
-      image: "/img/testimonials/user/1.jpg",
+      image: "/img/testimonials/user/olivia.jpg",
       rating: 5,
     },
     {
@@ -178,7 +178,7 @@ const ServicesMain = () => {
         "We went from flat sales to six figures in under 4 months. Skipper’s ad control and visuals did the magic.",
       authorName: "Ryan Mitchell",
       authorTitle: "Co-Founder, PetVibe Co.",
-      image: "/img/testimonials/user/2.jpg",
+      image: "/img/testimonials/user/ryan.jpg",
       rating: 5,
     },
     {
@@ -186,9 +186,9 @@ const ServicesMain = () => {
       achievement: "6x Revenue Climb",
       quote:
         "From $20K to $120K in 6 months — and I barely touched Seller Central. Skipper handled it all.",
-      authorName: "Sarah Collins",
+      authorName: "Anne Martinez",
       authorTitle: "Owner, ZenCraft Studio",
-      image: "/img/testimonials/user/3.jpg",
+      image: "/img/testimonials/user/1.jpg",
       rating: 5,
     },
     {
@@ -198,7 +198,7 @@ const ServicesMain = () => {
         "Our listings now rank high and stay there. Revenue up 5x since partnering with Skipper — can’t ask for better.",
       authorName: "Ethan Cole",
       authorTitle: "Director, Orbit Office Supplies",
-      image: "/img/testimonials/user/4.jpg",
+      image: "/img/testimonials/user/uncle-g.jpg",
       rating: 5,
     },
     {
@@ -218,7 +218,7 @@ const ServicesMain = () => {
         "We used to struggle breaking $50K/month. Now it’s consistent six-figure revenue — thanks to their creative direction and strategy.",
       authorName: "Daniel Ruiz",
       authorTitle: "Founder, FetchMate Pets",
-      image: "/img/testimonials/user/h5-test-1.png",
+      image: "/img/testimonials/user/daniel.jpg",
       rating: 5,
     },
     {
@@ -228,7 +228,7 @@ const ServicesMain = () => {
         "After the rebranding, everything clicked — our visuals, ads, and growth. Sales jumped 4x in just one quarter.",
       authorName: "Emily James",
       authorTitle: "CEO, ModernBake Co.",
-      image: "/img/testimonials/user/h5-test-2.png",
+      image: "/img/testimonials/user/emily.jpg",
       rating: 5,
     },
     {
@@ -238,7 +238,7 @@ const ServicesMain = () => {
         "Our fitness line exploded after their A+ content revamp. Ads are leaner, profits are cleaner, sales are booming.",
       authorName: "Adam Lee",
       authorTitle: "Co-Founder, FitVerse Gear",
-      image: "/img/testimonials/user/h8-test-1.png",
+      image: "/img/testimonials/user/adamlee.jpg",
       rating: 5,
     },
     {
@@ -248,7 +248,7 @@ const ServicesMain = () => {
         "Skipper turned our slow-moving catalog into a bestseller lineup. We’ve hit record months back-to-back.",
       authorName: "Hannah Kim",
       authorTitle: "Creative Director, HomeFlow Decor",
-      image: "/img/testimonials/user/h8-test-2.png",
+      image: "/img/testimonials/user/hannah.jpg",
       rating: 5,
     },
     {
@@ -1000,7 +1000,7 @@ const ServicesMain = () => {
       )}
 
       {/* Stats/Results Section */}
-      <section id="results" className="py-100px bg-gradient-to-r from-[#4CAF50] to-[#2E7D32] scroll-mt-[130px]">
+      <section id="results" className="py-[50px] bg-gradient-to-r from-[#4CAF50] to-[#2E7D32] scroll-mt-[130px]">
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">

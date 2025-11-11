@@ -12,11 +12,9 @@ const Testimonials9 = ({ compact = false, idAttr = "testimonials", sectionClassN
 		<section id={idAttr} className={sectionClassName}>
 			<div className={`dark:bg-primary-color-light ${wrapperPadding} relative overflow-hidden`}>
 				<div className="container">
-					<div className="flex flex-col items-center gap-10">
+					<div className="flex flex-col items-center gap-10 pt-10 md:pt-14 lg:pt-16">
 						<div className="flex flex-col items-center text-center gap-4 max-w-3xl">
-							<span className="text-xs uppercase text-[#22C55E] font-semibold tracking-[0.25em] wow fadeInRight">
-								Clients Feedback
-							</span>
+							
 							<h2 className="text-3xl md:text-4xl lg:text-[46px] uppercase font-semibold leading-tight -tracking-0.02em text-white">
 								Let’s Hear From Dear Clients.
 							</h2>

@@ -110,12 +110,12 @@ const Navbar = ({ isActiveMobileMenu, setIsActiveMobileMenu, isSticky }) => {
 						{isResumeBtn ? (
 							<ButtonPrimary2 url={"#"}>Resume</ButtonPrimary2>
 						) : (
-							<ButtonPrimary
-								isIcon={headerType === 6 ? true : false}
-								url={isIndexPage ? "#contact" : "/#contact"}
-							>
-								{headerType === 6 ? "Lets Talk" : "Hire Me!"}
-							</ButtonPrimary>
+								<ButtonPrimary
+									isIcon={headerType === 6 ? true : false}
+									url={isIndexPage ? "#contact" : "/#contact"}
+								>
+									{headerType === 6 ? "Lets Make Money" : "Hire Me!"}
+								</ButtonPrimary>
 						)}
 					</li>
 				)}

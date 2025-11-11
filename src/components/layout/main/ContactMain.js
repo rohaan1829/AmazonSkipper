@@ -42,10 +42,10 @@ const ContactMain = () => {
                 Find My Profit Leaks
               </h2>
               <p className="mt-5 text-lg md:text-xl text-white/75 leading-relaxed max-w-3xl mx-auto">
-                Every brand loses money somewhere — we’ll show you where, and how to fix it for good.
+                Every brand loses money somewhere - we’ll show you where, and how to fix it for good.
               </p>
               <div className="mt-10 flex justify-center">
-                <ButtonPrimary type={2} isIcon={true} url="/#contact">
+              <ButtonPrimary type={2} isIcon={true} url="/contact">
                   Find My Profit Leaks
                 </ButtonPrimary>
               </div>

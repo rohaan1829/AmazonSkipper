@@ -85,7 +85,7 @@ const Header = ({ isSticky }) => {
 								}`}
 							>
 								<li>
-									<Logo isSticky={isSticky} />
+									<Logo isSticky={isSticky} sizeMultiplier={1.20} />
 								</li>
 								{headerType === 3 ||
 								headerType === 4 ||
@@ -141,8 +141,8 @@ const Header = ({ isSticky }) => {
 										{headerType === 10 ? "" : <Socials6 />}
 
 										<div className="hidden sm:block">
-											<ButtonPrimary type={2} isIcon={true} url={"/#contact"}>
-												Lets Talk
+											<ButtonPrimary type={2} isIcon={true} url={"/contact"}>
+												Lets Make Money
 											</ButtonPrimary>
 										</div>
 										<div className="menu-bar block lg:hidden ">
@@ -155,7 +155,7 @@ const Header = ({ isSticky }) => {
 								) : headerType === 6 ? (
 									<ButtonPrimary
 										isIcon={headerType === 6 ? true : false}
-										url={isIndexPage ? "#contact" : "/#contact"}
+										url={isIndexPage ? "#contact" : "/contact"}
 									>
 										{headerType === 6 ? "Lets Talk" : "Hire Me!"}
 									</ButtonPrimary>

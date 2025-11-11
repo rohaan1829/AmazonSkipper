@@ -155,16 +155,16 @@ const Index9Main = () => {
 								<div className="absolute -top-24 left-1/3 h-56 w-56 rounded-full bg-[#22C55E] blur-[130px]" />
 								<div className="absolute bottom-[-25%] right-1/4 h-64 w-64 rounded-full bg-[#0EA5E9] blur-[150px]" />
 							</div>
-							<div className="relative z-10 flex flex-col gap-6 text-center sm:text-left sm:flex-row sm:items-center sm:justify-between">
-								<div className="max-w-3xl space-y-3">
+							<div className="relative z-10 flex flex-col gap-6 text-center sm:flex-row sm:items-center sm:justify-center">
+								<div className="max-w-3xl space-y-3 text-center mx-auto">
 									<h3 className="text-2xl md:text-3xl font-semibold leading-tight text-white">
 										Build My Calm Growth Plan
 									</h3>
 									<p className="text-base md:text-lg text-white/80 leading-relaxed">
-										You don’t need louder ads — you need a predictable system. Let’s build your peace-of-mind plan today.
+										You don’t need louder ads - you need a predictable system. Let’s build your peace-of-mind plan today.
 									</p>
 								</div>
-								<ButtonPrimary type={2} isIcon={true} url="/#contact">
+								<ButtonPrimary type={2} isIcon={true} url="/contact">
 									Build My Calm Growth Plan
 								</ButtonPrimary>
 							</div>
@@ -197,7 +197,7 @@ const Index9Main = () => {
 									Ready to stop guessing and start scaling? Let's walk you through how we cut chaos and build stable growth.
 								</p>
 								<div className="flex flex-col sm:flex-row gap-4 justify-center wow fadeInUp" data-wow-delay=".58s">
-									<ButtonPrimary type={2} isIcon={true} url="/#contact">
+									<ButtonPrimary type={2} isIcon={true} url="/contact">
 										Book Your Free Strategy Call
 									</ButtonPrimary>
 								</div>

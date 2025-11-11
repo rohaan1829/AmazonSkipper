@@ -28,7 +28,7 @@ const Hero9 = () => {
 					<div className="mb-20px md:mb-14 lg:mb-12 xl:mb-14">
 						<h1 className="text-[36px] sm:text-[32px] md:text-[39px] lg:text-[50px] xl:text-[58px] 2x:text-[62px] 3xl:text-[72px] 4xl:text-[78px] 5xl:text-[88px] text-black dark:text-white leading-[1.08] lg:leading-[1.05] mb-4 -tracking-0.04em font-semibold text-center">
 						<div>Your Amazon AD Spend Could</div>
-						<div>be <span className="text-[#4CAF50] font-bold">X%</span> Lower in 47 days</div>
+						<div>be <span className="text-[#4CAF50] font-bold">20%</span> Lower in 47 days</div>
 						<div>Guaranteed!</div>
 					</h1>
 			</div>
@@ -101,7 +101,7 @@ const Hero9 = () => {
 							</div>
 							
 							{/* Clutch, AD & Trustpilot Logos */}
-							<div className="flex flex-nowrap items-center gap-3 overflow-x-auto md:overflow-visible">
+							<div className="flex flex-nowrap items-center gap-2 overflow-x-auto md:overflow-visible mt-4 lg:mt-0 lg:-translate-y-12 lg:-translate-x-[10px]">
 								<a
 									href="https://clutch.co/profile/amazon-skipper"
 									target="_blank"
@@ -111,7 +111,7 @@ const Hero9 = () => {
 									<img
 										src="/img/hero/clutch.png"
 										alt="Clutch"
-										className="h-[90px] w-auto object-contain drop-shadow-sm md:h-[100px] lg:h-[108px]"
+										className="h-[122px] md:h-[142px] lg:h-[158px] xl:h-[171px] w-auto max-w-none object-contain drop-shadow-sm"
 									/>
 								</a>
 								<a
@@ -123,7 +123,7 @@ const Hero9 = () => {
 									<img
 										src="/img/hero/ad.png"
 										alt="Amazon Verified"
-										className="h-[90px] w-auto object-contain drop-shadow-sm md:h-[100px] lg:h-[108px]"
+										className="h-[122px] md:h-[142px] lg:h-[158px] xl:h-[171px] w-auto max-w-none object-contain drop-shadow-sm"
 									/>
 								</a>
 								<a
@@ -135,7 +135,7 @@ const Hero9 = () => {
 									<img
 										src="/img/hero/trustpilot.png"
 										alt="Trustpilot"
-										className="h-[104px] w-auto object-contain drop-shadow-sm md:h-[116px] lg:h-[124px]"
+										className="h-[135px] md:h-[155px] lg:h-[174px] xl:h-[186px] w-auto max-w-none object-contain drop-shadow-sm"
 									/>
 								</a>
 							</div>
@@ -192,7 +192,7 @@ const Hero9 = () => {
 								</span>
 							</div>
 							<Link
-								href="#contact"
+								href="/contact"
 								className="md:text-[19px] leading-[1.52] font-medium text-white bg-[#4CAF50] hover:bg-[#2E7D32] dark:bg-[#4CAF50] dark:hover:bg-[#2E7D32] transition-all duration-300 cursor-pointer px-4 py-2 rounded-lg border border-[#4CAF50] hover:border-[#2E7D32] shadow-md hover:shadow-lg inline-flex items-center justify-center"
 							>
 								Get $500 Gift Card
@@ -213,7 +213,7 @@ const Hero9 = () => {
 
 						<Link
 							className="-ml-[95px] sm:-ml-[122px] mt-9 px-4 py-0.5 text-size-17 font-medium rounded-full bg-primary-color text-white-color hover:bg-[#2E7D32] transition-colors duration-300"
-							href="#"
+							href="/contact"
 						>
 							Watch the Video to Get Reward
 						</Link>

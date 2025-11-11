@@ -37,7 +37,7 @@ const ButtonRounded = () => {
 	}, [isClient]);
 	return (
 		<Link
-			href="#contact"
+			href="/contact"
 			className="tj-btn-rounded w-60px h-60px lg:w-20 lg:h-20 xl:w-100px xl:h-100px text-seondary-color dark:text-white-color hover:text-white-color dark:hover:text-white-color bg-transparent border border-body-color dark:border-border-color-5 hover:border-transparent rounded-100% leading-1 transition-all duration-300 inline-flex justify-center items-center relative z-0 overflow-hidden group"
 			ref={buttonRef}
 		>

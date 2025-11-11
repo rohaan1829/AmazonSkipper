@@ -8,11 +8,7 @@ const Footer = () => {
 	const { footerType } = useFooterContext();
 	return (
 		<footer>
-			<div
-				className={`footer-inner bg-seondary-color ${
-					footerType === 2 ? "dark:bg-seondary-color" : "dark:bg-dark-color"
-				}`}
-			>
+			<div className="footer-inner bg-gradient-to-br from-[#050505] via-[#0b1f14] to-[#22C55E]/75 dark:from-black dark:via-[#0d2d1b] dark:to-[#22C55E]/60">
 				<div className="container">
 					<div className="flex flex-col items-center pt-50px pb-5 md:pt-60px">
 						{/* <!-- socials --> */}
@@ -66,21 +62,11 @@ const Footer = () => {
 								</li>
 							</ul>
 						</div>
-						<div
-							className={`copyright ${
-								footerType === 2 || footerType === 3
-									? "text-primary-color"
-									: "text-gray-color"
-							} whitespace-nowrap text-sm md:text-base mt-5`}
-						>
+						<div className="copyright text-white/80 whitespace-nowrap text-sm md:text-base mt-5">
 							© 2024 All rights reserved by{" "}
 							<Link
 								href="/"
-								className={`${
-									footerType === 2 || footerType === 3
-										? "text-primary-color "
-										: "text-white-color"
-								} hover:text-primary-color`}
+								className="text-white hover:text-[#22C55E]"
 							>
 								ThemeJunction
 							</Link>

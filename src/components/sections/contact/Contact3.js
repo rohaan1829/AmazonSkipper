@@ -127,7 +127,7 @@ const Contact3 = () => {
 												href="mailto:roaan.dev@gmail.com"
 												className="text-primary-color-light dark:text-body-color-3 text-lg font-normal hover:text-[#16A34A] dark:hover:text-[#22C55E] break-all"
 											>
-												muhammad.huzaifa@amazonskipperteam.com 
+												theamazonskipper@gmail.com 
 											</Link>
 										</div>
 									</li>

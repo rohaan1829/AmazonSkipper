@@ -188,13 +188,13 @@ const Brands2 = ({ type }) => {
                 <div className="absolute -top-24 left-1/3 h-56 w-56 rounded-full bg-[#22C55E] blur-[130px]" />
                 <div className="absolute bottom-[-25%] right-1/4 h-64 w-64 rounded-full bg-[#0EA5E9] blur-[150px]" />
               </div>
-              <div className="relative z-10 flex flex-col gap-6 text-center sm:text-left sm:flex-row sm:items-center sm:justify-between">
-                <div className="max-w-3xl">
-                  <p className="text-white text-lg md:text-xl font-semibold leading-relaxed">
+              <div className="relative z-10 flex flex-col gap-6 text-center sm:flex-row sm:items-center sm:justify-center">
+                <div className="max-w-3xl mx-auto">
+                  <p className="text-white text-lg md:text-xl font-semibold leading-relaxed text-center">
                     Our process has helped dozens of sellers go from chaos to control - here’s how it actually works.
                   </p>
                 </div>
-                <Link href="/case-studies">
+                <Link href="/contact">
                   <button className="inline-flex items-center justify-center rounded-full bg-black px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white transition-all duration-300 hover:bg-[#22C55E] hover:text-black">
                     See the Skipper Framework
                   </button>
@@ -313,13 +313,13 @@ const Brands2 = ({ type }) => {
               <div className="absolute -top-24 left-1/2 h-56 w-56 -translate-x-1/2 bg-[#22C55E] blur-[140px]" />
               <div className="absolute bottom-[-30%] right-1/4 h-64 w-64 bg-[#0EA5E9] blur-[150px]" />
             </div>
-            <div className="relative z-10 flex flex-col gap-6 text-center sm:text-left sm:flex-row sm:items-center sm:justify-between">
-              <div className="max-w-3xl">
-                <p className="text-2xl md:text-3xl font-semibold leading-tight text-white">
-                  From ad chaos to clarity — see what happens when your strategy starts working for you, not against you.
+            <div className="relative z-10 flex flex-col gap-6 text-center sm:flex-row sm:items-center sm:justify-center">
+              <div className="max-w-3xl mx-auto">
+                <p className="text-2xl md:text-3xl font-semibold leading-tight text-white text-center">
+                  From ad chaos to clarity - see what happens when your strategy starts working for you, not against you.
                 </p>
               </div>
-              <Link href="/#contact">
+              <Link href="/contact">
                 <button className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-black transition-all duration-300 hover:bg-[#22C55E] hover:text-black shadow-lg">
                   Unlock Predictable Growth
                 </button>
