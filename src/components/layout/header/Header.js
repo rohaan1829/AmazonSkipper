@@ -65,18 +65,18 @@ const Header = ({ isSticky }) => {
 					}`}
 				>
 					<div
-						className={`flex flex-wrap justify-between ${
-							headerType === 10 ? "items-stretch" : "items-center"
+						className={`flex flex-nowrap justify-between items-center gap-2 lg:gap-4 ${
+							headerType === 10 ? "items-stretch" : ""
 						} `}
 					>
 						{/* <!-- logo and contact email --> */}
 						<div
 							className={
 								headerType === 10
-									? "max-w-140px sm:max-w-210px flex items-center h-75px sm:h-85px md:h-[103px]  border-r border-border-coloer dark:border-bg-color-2 w-full leading-1 pr-15px sm:pr-0"
+									? "max-w-140px sm:max-w-210px flex items-center h-75px sm:h-85px md:h-[103px]  border-r border-border-coloer dark:border-bg-color-2 w-full leading-1 pr-15px sm:pr-0 shrink-0"
 									: headerType === 4 || headerType === 6 || headerType === 9
-									? `max-w-205px lg:max-w-140px xl:max-w-180px 2xl:max-w-205px w-full -mt-2 sm:-mt-1 md:mt-0`
-									: ""
+									? `max-w-205px lg:max-w-120px xl:max-w-160px 2xl:max-w-205px w-full -mt-2 sm:-mt-1 md:mt-0 shrink-0`
+									: "shrink-0"
 							}
 						>
 							<ul
@@ -115,6 +115,7 @@ const Header = ({ isSticky }) => {
 							isActiveMobileMenu={isActiveMobileMenu}
 							setIsActiveMobileMenu={setIsActiveMobileMenu}
 							isSticky={isSticky}
+							className="flex-1 min-w-0"
 						/>
 						{/* <!-- social button --> */}
 						{headerType === 3 ||
@@ -128,7 +129,7 @@ const Header = ({ isSticky }) => {
 									headerType === 9 || headerType === 10 ? "flex" : "hidden"
 								} ${
 									headerType === 9 || headerType === 10 || headerType === 5
-										? "lg:flex items-center gap-4 xl:gap-25px"
+										? "lg:flex items-center gap-2 lg:gap-3 xl:gap-4 2xl:gap-25px shrink-0"
 										: "lg:block "
 								} ${
 									headerType === 10

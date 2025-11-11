@@ -2,10 +2,12 @@ import Link from "next/link";
 
 const Socials6 = () => {
 	return (
-		<ul className="hidden md:flex gap-x-8 lg:gap-x-10px">
+		<ul className="hidden md:flex gap-x-6 lg:gap-x-8 xl:gap-x-10px shrink-0">
 			<li>
 				<Link
-					href="https://www.facebook.com"
+					href="https://www.facebook.com/profile.php?id=61560301466107"
+					target="_blank"
+					rel="noopener noreferrer"
 					className="text-primary-color dark:text-white-color hover:text-body-color  text-size-13 border border-primary-color dark:border-border-color-3 dark:hover:border-primary-color w-30px h-30px rounded-full flex items-center justify-center overflow-hidden relative z-0 after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-full after:h-full after:scale-0 after:bg-primary-color hover:after:scale-105 after:transition-all after:duration-300 after:z-[-1] after:rounded-full"
 				>
 					<i className="fab fa-facebook-f"></i>
@@ -13,7 +15,19 @@ const Socials6 = () => {
 			</li>
 			<li>
 				<Link
-					href="https://www.linkedin.com"
+					href="https://www.instagram.com/amazonskiper"
+					target="_blank"
+					rel="noopener noreferrer"
+					className="text-primary-color dark:text-white-color hover:text-body-color  text-size-13 border border-primary-color dark:border-border-color-3 dark:hover:border-primary-color w-30px h-30px rounded-full flex items-center justify-center overflow-hidden relative z-0 after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-full after:h-full after:scale-0 after:bg-primary-color hover:after:scale-105 after:transition-all after:duration-300 after:z-[-1] after:rounded-full"
+				>
+					<i className="fa-brands fa-instagram"></i>
+				</Link>
+			</li>
+			<li>
+				<Link
+					href="https://www.linkedin.com/in/virtuallyhuzaifa/"
+					target="_blank"
+					rel="noopener noreferrer"
 					className="text-primary-color dark:text-white-color hover:text-body-color  text-size-13 border border-primary-color dark:border-border-color-3 dark:hover:border-primary-color w-30px h-30px rounded-full flex items-center justify-center overflow-hidden relative z-0 after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-full after:h-full after:scale-0 after:bg-primary-color hover:after:scale-105 after:transition-all after:duration-300 after:z-[-1] after:rounded-full"
 				>
 					<i className="fa-brands fa-linkedin-in"></i>
@@ -21,18 +35,12 @@ const Socials6 = () => {
 			</li>
 			<li>
 				<Link
-					href="https://www.github.com"
+					href="https://twitter.com/amazonskiper"
+					target="_blank"
+					rel="noopener noreferrer"
 					className="text-primary-color dark:text-white-color hover:text-body-color  text-size-13 border border-primary-color dark:border-border-color-3 dark:hover:border-primary-color w-30px h-30px rounded-full flex items-center justify-center overflow-hidden relative z-0 after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-full after:h-full after:scale-0 after:bg-primary-color hover:after:scale-105 after:transition-all after:duration-300 after:z-[-1] after:rounded-full"
 				>
-					<i className="fa-brands fa-github"></i>
-				</Link>
-			</li>
-			<li>
-				<Link
-					href="https://www.basketball.com"
-					className="text-primary-color dark:text-white-color hover:text-body-color  text-size-13 border border-primary-color dark:border-border-color-3 dark:hover:border-primary-color w-30px h-30px rounded-full flex items-center justify-center overflow-hidden relative z-0 after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-full after:h-full after:scale-0 after:bg-primary-color hover:after:scale-105 after:transition-all after:duration-300 after:z-[-1] after:rounded-full"
-				>
-					<i className="fa-light fa-basketball"></i>
+					<i className="fa-brands fa-x-twitter"></i>
 				</Link>
 			</li>
 		</ul>
