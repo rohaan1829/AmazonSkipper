@@ -12,7 +12,7 @@ const Hero9 = () => {
 	const closeModal = () => setIsModalOpen(false);
 
 	return (
-		<section className="hero-section relative min-h-[calc(100svh-40px)] pt-105px sm:pt-[118px] md:pt-[120px] lg:pt-[132px] xl:pt-[135px] 2xl:pt-[138px] pb-20px sm:pb-30px overflow-hidden bg-transparent dark:bg-black">
+		<section className="hero-section relative min-h-[calc(100svh-40px)] pt-[170px] sm:pt-[160px] md:pt-[130px] lg:pt-[132px] xl:pt-[135px] 2xl:pt-[138px] pb-20px sm:pb-30px overflow-hidden bg-transparent dark:bg-black">
 			{/* Black Gradient Background - Dark Mode */}
 			<div className="absolute inset-0 bg-gradient-to-br from-black via-[#1a1a1a] to-black opacity-100 dark:block hidden"></div>
 			<div className="absolute inset-0 bg-gradient-to-tr from-black via-transparent to-black opacity-95 dark:block hidden"></div>
@@ -34,74 +34,80 @@ const Hero9 = () => {
 			</div>
 			</div>
 			<div className="container">
-				<div className="relative pt-2 sm:pt-4 md:pt-4 lg:pt-3">
-				<div className="image mx-auto w-full max-w-[560px] sm:max-w-[340px] md:max-w-[480px] lg:max-w-[460px] xl:max-w-[520px] 2xl:max-w-[580px] relative z-0 after:absolute after:left-0 after:bottom-0 after:h-[250px] after:w-full after:bg-gradient-15-light dark:after:bg-gradient-15">
-				<img
-					src="/img/hero/Huzaifa's Portrait.png"
-					alt="Huzaifa"
-					className="w-full h-auto max-h-[520px] sm:max-h-[420px] md:max-h-[480px] lg:max-h-[500px] 2xl:max-h-[540px] object-contain object-top
-							[clip-path:path('M0_200A315_315_0_0_1_630_200L630_900L0_900Z')]"
-				/>
-				
-				{/* Play Button Overlay */}
-				<div className="absolute inset-0 flex items-center justify-center z-10">
-					<button
-						onClick={openModal}
-						className="group relative w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-26 xl:h-26 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 bg-transparent"
-						style={{
-							border: '3px solid #ffffff',
-							boxShadow: '0 4px 8px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.1)'
-						}}
-					>
-						{/* Play Triangle with Glossy Effect */}
-						<div className="relative ml-1">
-							{/* Main Triangle */}
-							<div 
-								className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9 relative"
-								style={{
-									background: 'linear-gradient(135deg, #4CAF50, #2E7D32)',
-									clipPath: 'polygon(0 0, 0 100%, 100% 50%)',
-									border: '1px solid #333'
-								}}
-							>
-								{/* Glossy Highlight */}
-								<div 
-									className="absolute inset-0"
+				<div className="relative flex flex-col items-center gap-12 lg:grid lg:grid-cols-12 lg:items-center lg:gap-10">
+					<div className="order-1 w-full lg:order-2 lg:col-span-4">
+						<div className="relative mx-auto w-full max-w-[420px] sm:max-w-[360px] md:max-w-[480px] lg:max-w-[420px] xl:max-w-[500px] 2xl:max-w-[560px] after:absolute after:left-0 after:bottom-0 after:h-[220px] after:w-full after:bg-gradient-15-light dark:after:bg-gradient-15">
+							<img
+								src="/img/hero/Huzaifa's Portrait.png"
+								alt="Huzaifa"
+								className="w-full h-auto max-h-[520px] sm:max-h-[420px] md:max-h-[480px] lg:max-h-[500px] 2xl:max-h-[540px] object-contain object-top [clip-path:path('M0_200A315_315_0_0_1_630_200L630_900L0_900Z')]"
+							/>
+
+							{/* Play Button Overlay */}
+							<div className="absolute inset-0 flex items-center justify-center z-10">
+								<button
+									onClick={openModal}
+									className="group relative w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-26 xl:h-26 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 bg-transparent"
 									style={{
-										background: 'linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.1) 100%)',
-										clipPath: 'polygon(0 0, 0 100%, 100% 50%)',
-										mixBlendMode: 'overlay'
+										border: "3px solid #ffffff",
+										boxShadow: "0 4px 8px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.1)",
 									}}
-								></div>
+								>
+									{/* Play Triangle with Glossy Effect */}
+									<div className="relative ml-1">
+										{/* Main Triangle */}
+										<div
+											className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9 relative"
+											style={{
+												background: "linear-gradient(135deg, #4CAF50, #2E7D32)",
+												clipPath: "polygon(0 0, 0 100%, 100% 50%)",
+												border: "1px solid #333",
+											}}
+										>
+											{/* Glossy Highlight */}
+											<div
+												className="absolute inset-0"
+												style={{
+													background:
+														"linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.1) 100%)",
+													clipPath: "polygon(0 0, 0 100%, 100% 50%)",
+													mixBlendMode: "overlay",
+												}}
+											></div>
+										</div>
+									</div>
+
+									{/* Hover Effect */}
+									<div className="absolute inset-0 rounded-full bg-white/10 scale-0 group-hover:scale-110 transition-transform duration-300"></div>
+								</button>
 							</div>
 						</div>
-						
-						{/* Hover Effect */}
-						<div className="absolute inset-0 rounded-full bg-white/10 scale-0 group-hover:scale-110 transition-transform duration-300"></div>
-					</button>
-				</div>
-				</div>
 
-					{/* Left Side Text */}
-					<div className="w-full max-w-300px relative md:absolute md:left-auto lg:left-0 xl:left-0 2xl:left-[1%] 3xl:-left-[9%] top-2 md:top-auto lg:top-[23%] xl:top-[22%] md:bottom-0 md:right-1/2 lg:right-auto md:translate-x-1/2 lg:translate-x-0 lg:-translate-y-1/2 mx-auto md:mx-0 z-1">
-						<div>
-							<div
-								className="text-seondary-color dark:text-white-color-4 leading-1.3 mb-26px text-lg md:text-xl lg:text-2xl font-medium"
+						<div className="mt-6 flex lg:hidden justify-center">
+							<Link
+								href="/contact"
+								className="inline-flex items-center justify-center px-5 py-2 text-base font-medium rounded-full bg-primary-color text-white-color hover:bg-[#2E7D32] transition-colors duration-300"
 							>
-								<div className="text-left">
-									<div className="mb-1.5">
-										<span className="text-[#4CAF50] font-semibold">Forget "Best Sellers."</span>
-									</div>
-									<div>
-										<span className="text-seondary-color dark:text-white-color">We Help YOU Become a </span>
-										<span className="bg-gradient-to-r from-[#4CAF50] to-[#2E7D32] bg-clip-text text-transparent font-bold">Profitable Seller</span>
-										<span className="text-seondary-color dark:text-white-color">.</span>
-									</div>
+								Watch the Video to Get Reward
+							</Link>
+						</div>
+					</div>
+
+					<div className="order-2 w-full max-w-xl lg:order-1 lg:col-span-4 lg:max-w-none">
+						<div className="flex flex-col items-center lg:items-start gap-6">
+							<div className="text-seondary-color dark:text-white-color-4 text-center lg:text-left leading-1.3 text-lg md:text-xl lg:text-2xl font-medium">
+								<div className="mb-1.5">
+									<span className="text-[#4CAF50] font-semibold">Forget "Best Sellers."</span>
+								</div>
+								<div>
+									<span className="text-seondary-color dark:text-white-color">We Help YOU Become a </span>
+									<span className="bg-gradient-to-r from-[#4CAF50] to-[#2E7D32] bg-clip-text text-transparent font-bold">Profitable Seller</span>
+									<span className="text-seondary-color dark:text-white-color">.</span>
 								</div>
 							</div>
-							
+
 							{/* Clutch, AD & Trustpilot Logos */}
-							<div className="flex flex-nowrap items-center gap-2 overflow-x-auto md:overflow-visible mt-4 lg:mt-0 lg:-translate-y-12 lg:-translate-x-[10px]">
+							<div className="flex w-full items-center justify-center lg:justify-start gap-4 sm:gap-6 overflow-x-auto md:overflow-visible">
 								<a
 									href="https://clutch.co/profile/amazon-skipper"
 									target="_blank"
@@ -111,7 +117,7 @@ const Hero9 = () => {
 									<img
 										src="/img/hero/clutch.png"
 										alt="Clutch"
-										className="h-[122px] md:h-[142px] lg:h-[158px] xl:h-[171px] w-auto max-w-none object-contain drop-shadow-sm"
+										className="h-20 sm:h-24 md:h-28 lg:h-[105px] w-auto object-contain drop-shadow-sm"
 									/>
 								</a>
 								<a
@@ -123,7 +129,7 @@ const Hero9 = () => {
 									<img
 										src="/img/hero/ad.png"
 										alt="Amazon Verified"
-										className="h-[122px] md:h-[142px] lg:h-[158px] xl:h-[171px] w-auto max-w-none object-contain drop-shadow-sm"
+										className="h-20 sm:h-24 md:h-28 lg:h-[105px] w-auto object-contain drop-shadow-sm"
 									/>
 								</a>
 								<a
@@ -135,15 +141,53 @@ const Hero9 = () => {
 									<img
 										src="/img/hero/trustpilot.png"
 										alt="Trustpilot"
-										className="h-[135px] md:h-[155px] lg:h-[174px] xl:h-[186px] w-auto max-w-none object-contain drop-shadow-sm"
+										className="h-16 sm:h-20 md:h-24 lg:h-[120px] w-auto object-contain drop-shadow-sm"
 									/>
 								</a>
+							</div>
+
+							<div className="hidden lg:flex relative">
+								<Link
+									href="/contact"
+									className="inline-flex items-center justify-center px-6 py-2 text-base font-medium rounded-full bg-primary-color text-white-color hover:bg-[#2E7D32] transition-colors duration-300"
+								>
+									Watch the Video to Get Reward
+								</Link>
+								<div className="absolute -left-12 -bottom-10">
+									<img src="/img/icons/hero-9-pointer.svg" className="w-10" alt="" />
+								</div>
+							</div>
+
+							<div className="w-full flex justify-center lg:justify-start">
+								<Link
+									href="/contact"
+									className="md:text-[19px] leading-[1.52] font-medium text-white bg-[#4CAF50] hover:bg-[#2E7D32] dark:bg-[#4CAF50] dark:hover:bg-[#2E7D32] transition-all duration-300 px-5 py-3 rounded-lg border border-[#4CAF50] hover:border-[#2E7D32] shadow-md hover:shadow-lg inline-flex items-center justify-center"
+								>
+									Get $500 Gift Card
+								</Link>
 							</div>
 						</div>
 					</div>
 
-					{/* <!-- transparent area --> */}
-					<div className=" absolute -top-3 sm:-top-0.5  lg:top-[26%] xl:top-[27%] 2xl:top-[28%] left-auto lg:left-[6%] xl:left-[10%] right-[30px] sm:right-0 md:right-[15%] lg:right-auto">
+					<div className="order-3 w-full max-w-xl lg:order-3 lg:col-span-4 lg:max-w-none">
+						<div className="flex flex-col items-center lg:items-start gap-6">
+							<div className="text-black lg:text-seondary-color dark:text-white-color-4 leading-1.3 text-center lg:text-left text-lg md:text-xl lg:text-2xl font-medium">
+								<div className="mb-2">
+									<span className="text-[#1a1a1a] lg:text-[#4CAF50] font-bold">No Empty Promise, Just Proven Results</span>
+								</div>
+								<div>
+									<span className="text-black lg:text-seondary-color dark:text-white-color"> - Or We'll Refund You </span>
+									<span className="bg-gradient-to-r from-[#FF6B6B] to-[#E53E3E] bg-clip-text text-transparent font-bold">100%</span>
+									<span className="text-black lg:text-seondary-color dark:text-white-color">.</span>
+								</div>
+							</div>
+							<FunFact9 />
+							<ButtonRounded />
+						</div>
+					</div>
+
+					{/* Floating CTA card - desktop only */}
+					<div className="hidden lg:block absolute top-10 right-[6%] xl:right-[10%]">
 						<div className="flex gap-1.5 px-15px lg:px-24px py-18px sm:py-24px lg:py-32px rounded-10px border border-dashed border-[#4CAF50]/90 dark:border-[#4CAF50]/30 bg-gradient-to-br from-white via-[#f8f9fa] to-[#4CAF50]/80 dark:from-[#121212] dark:via-[#1a1a1a] dark:to-[#4CAF50]/15 backdrop-blur-[45px] z-1 shadow-lg shadow-[#4CAF50]/60 dark:shadow-[#4CAF50]/10">
 							<div className="w-[26px] flex-shrink-0">
 								<span>
@@ -209,35 +253,6 @@ const Hero9 = () => {
 									alt=""
 								/>
 							</div>
-						</div>
-
-						<Link
-							className="-ml-[95px] sm:-ml-[122px] mt-9 px-4 py-0.5 text-size-17 font-medium rounded-full bg-primary-color text-white-color hover:bg-[#2E7D32] transition-colors duration-300"
-							href="/contact"
-						>
-							Watch the Video to Get Reward
-						</Link>
-					</div>
-					<div className="w-full max-w-300px relative md:absolute  md:right-auto lg:right-0 xl:right-0 2xl:right-[1%] 3xl:-right-[9%] top-2 md:top-auto lg:top-[23%] xl:top-[22%] md:bottom-0  md:left-1/2 lg:left-auto  md:-translate-x-1/2 lg:translate-x-0 lg:-translate-y-1/2  mx-auto md:mx-0 z-1 ">
-						<div>
-							<div
-								className="text-seondary-color dark:text-white-color-4 leading-1.3 mb-26px text-lg md:text-xl lg:text-2xl font-medium"
-							>
-								<div className="text-left">
-									<div className="mb-2">
-										<span className="text-[#4CAF50] font-bold">No Empty Promise, Just Proven Results</span>
-									</div>
-									<div>
-										<span className="text-seondary-color dark:text-white-color"> - Or We'll Refund You </span>
-										<span className="bg-gradient-to-r from-[#FF6B6B] to-[#E53E3E] bg-clip-text text-transparent font-bold">100%</span>
-										<span className="text-seondary-color dark:text-white-color">.</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<FunFact9 />
-						<div>
-							<ButtonRounded />
 						</div>
 					</div>
 				</div>
