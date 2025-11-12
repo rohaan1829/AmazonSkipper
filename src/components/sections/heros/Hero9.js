@@ -148,9 +148,9 @@ const Hero9 = () => {
 									className="inline-block hover:opacity-90 transition-opacity"
 								>
 									<img
-										src="/img/hero/trustpilot.png"
+										src="/img/hero/trustpilot.jpeg"
 										alt="Trustpilot"
-										className="h-[135px] md:h-[155px] lg:h-[125px] xl:h-[170px] w-auto max-w-none object-contain drop-shadow-sm"
+										className="h-[53px] md:h-[62px] lg:h-[49px] xl:h-[67px] w-auto max-w-none object-contain drop-shadow-sm"
 									/>
 								</a>
 							</div>

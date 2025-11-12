@@ -26,7 +26,11 @@ const Navbar = ({ isActiveMobileMenu, setIsActiveMobileMenu, isSticky }) => {
 	}, []);
 
 	return (
-		<nav className={`${headerType === 9 ? "w-full lg:flex-1" : ""}`}>
+		<nav
+			className={`${
+				headerType === 9 ? "flex-1 flex items-center justify-end lg:justify-center" : ""
+			}`}
+		>
 			<ul
 				className={`nav flex items-center  xl:gap-30px  ${
 					headerType === 5
