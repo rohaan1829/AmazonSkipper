@@ -67,7 +67,7 @@ const Header = ({ isSticky }) => {
 					<div
 						className={`flex flex-wrap justify-between ${
 							headerType === 10 ? "items-stretch" : "items-center"
-						} `}
+						} ${headerType === 9 ? "lg:flex-nowrap lg:gap-x-6" : ""}`}
 					>
 						{/* <!-- logo and contact email --> */}
 						<div
@@ -141,7 +141,7 @@ const Header = ({ isSticky }) => {
 										{headerType === 10 ? "" : <Socials6 />}
 
 										<div className="hidden sm:block">
-											<ButtonPrimary type={2} isIcon={true} url={"/contact"}>
+											<ButtonPrimary type={2} isIcon={true} url={"/contact"} className="whitespace-nowrap">
 												Lets Make Money
 											</ButtonPrimary>
 										</div>

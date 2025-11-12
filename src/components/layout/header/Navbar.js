@@ -26,13 +26,17 @@ const Navbar = ({ isActiveMobileMenu, setIsActiveMobileMenu, isSticky }) => {
 	}, []);
 
 	return (
-		<nav>
+		<nav className={`${headerType === 9 ? "w-full lg:flex-1" : ""}`}>
 			<ul
 				className={`nav flex items-center  xl:gap-30px  ${
 					headerType === 5
 						? "gap-x-25px lg:gap-x-10px xl:gap-x-15px 2xl:gap-x-25px"
 						: headerType === 4 || headerType === 6 || headerType === 9
-						? `gap-x-5  2xl:gap-x-35px lg:px-10 rounded-full ${
+						? `gap-x-5  2xl:gap-x-35px ${
+								headerType === 9
+									? "lg:px-4 xl:px-8 lg:flex-1 lg:justify-start lg:-ml-4 lg:gap-x-3 xl:gap-x-6"
+									: "lg:px-10"
+						  } rounded-full ${
 								headerType === 6 || headerType === 9
 									? "lg:bg-cream-light-color lg:dark:bg-black-color"
 									: "lg:border lg:border-primary-color "
@@ -61,7 +65,7 @@ const Navbar = ({ isActiveMobileMenu, setIsActiveMobileMenu, isSticky }) => {
 											? path
 											: path2
 									}
-							className={`text-size-15 font-medium  ${
+							className={`text-size-15 font-medium ${
 								isInnerPage && !isSticky
 									? "text-[#22C55E] dark:text-[#22C55E]"
 									: headerType === 5 ||
@@ -70,13 +74,15 @@ const Navbar = ({ isActiveMobileMenu, setIsActiveMobileMenu, isSticky }) => {
 											  headerType === 10
 											? ""
 											: "text-[#22C55E] dark:text-[#22C55E]"
-									} capitalize relative z-0  ${
-										headerType === 5 || headerType === 10 ? "" : "py-10px "
-									}  ${
+									} capitalize whitespace-nowrap relative z-0 ${
+										headerType === 5 || headerType === 10
+											? ""
+											: "py-10px"
+									} ${
 										headerType === 5 || headerType === 6 || headerType === 9
 											? ` text-[#22C55E] hover:text-[#15803D] dark:text-[#22C55E] dark:hover:text-[#16A34A] ${
 													headerType === 6 || headerType === 9
-														? "py-10px md:py-14px lg:py-14px 2xl:py-14px"
+														? "py-10px md:py-14px lg:py-12px xl:py-14px"
 														: "px-14px py-3px border border-transparent hover:border-primary-color rounded-full"
 											  }   `
 											: headerType === 4
@@ -86,7 +92,7 @@ const Navbar = ({ isActiveMobileMenu, setIsActiveMobileMenu, isSticky }) => {
 														? "text-[#22C55E] hover:text-[#15803D] dark:text-[#22C55E] dark:hover:text-[#16A34A]  py-10 after:w-0 after:h-0.5 after:bg-primary-color after:absolute after:right-0 hover:after:left-0 after:-bottom-0 after:transition-all after:duration-500 group-hover:after:w-full"
 														: "text-[#22C55E] hover:text-[#15803D] dark:text-[#22C55E] dark:hover:text-[#16A34A] md:py-15px lg:py-25px 2xl:py-30px  after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full"
 											  }`
-									} `}
+									} ${headerType === 9 ? "lg:text-[13px] xl:text-[15px] lg:pl-2 xl:pl-4" : ""}`}
 								>
 									{name}
 								</Link>

@@ -126,7 +126,7 @@ const Hero9 = () => {
 									<img
 										src="/img/hero/clutch.png"
 										alt="Clutch"
-										className="h-[122px] md:h-[142px] lg:h-[158px] xl:h-[171px] w-auto max-w-none object-contain drop-shadow-sm"
+										className="h-[122px] md:h-[142px] lg:h-[110px] xl:h-[150px] w-auto max-w-none object-contain drop-shadow-sm"
 									/>
 								</a>
 								<a
@@ -138,7 +138,7 @@ const Hero9 = () => {
 									<img
 										src="/img/hero/ad.png"
 										alt="Amazon Verified"
-										className="h-[122px] md:h-[142px] lg:h-[158px] xl:h-[171px] w-auto max-w-none object-contain drop-shadow-sm"
+										className="h-[122px] md:h-[142px] lg:h-[110px] xl:h-[150px] w-auto max-w-none object-contain drop-shadow-sm"
 									/>
 								</a>
 								<a
@@ -150,7 +150,7 @@ const Hero9 = () => {
 									<img
 										src="/img/hero/trustpilot.png"
 										alt="Trustpilot"
-										className="h-[135px] md:h-[155px] lg:h-[174px] xl:h-[186px] w-auto max-w-none object-contain drop-shadow-sm"
+										className="h-[135px] md:h-[155px] lg:h-[125px] xl:h-[170px] w-auto max-w-none object-contain drop-shadow-sm"
 									/>
 								</a>
 							</div>
@@ -227,7 +227,7 @@ const Hero9 = () => {
 						</div>
 
 						<Link
-							className="hidden sm:inline-flex sm:-ml-[122px] mt-9 px-4 py-0.5 text-size-17 font-medium rounded-full bg-primary-color text-white-color hover:bg-[#2E7D32] transition-colors duration-300"
+							className="hidden sm:inline-flex sm:-ml-[122px] mt-9 px-4 py-0.5 text-size-17 font-medium rounded-full bg-primary-color text-white-color hover:bg-[#2E7D32] transition-colors duration-300 lg:translate-x-[20px]"
 							href="/contact"
 						>
 							Watch the Video to Get Reward
