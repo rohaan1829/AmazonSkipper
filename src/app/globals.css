@@ -225,6 +225,11 @@ img {
 		top: -28px;
 	}
 }
+@media (min-width: 1280px) and (max-width: 1535px) {
+	.header-6.header-absolute {
+		top: 18px;
+	}
+}
 
 .header-area.header-2 {
 	width: 100%;
