@@ -3,10 +3,10 @@ import { useHeaderContext } from "@/context_api/HeaderContext";
 import Image from "next/image";
 import Link from "next/link";
 
-const Logo = ({ isSticky }) => {
+const Logo = ({ isSticky, sizeMultiplier = 1 }) => {
 	const { isInnerPage, headerType } = useHeaderContext();
 	return (
-		<Link href="/" className="logo">
+		<Link href="/" className="logo" style={{ transform: `scale(${sizeMultiplier})` }}>
 			<Image
 				className={`${
 					headerType === 4 || headerType === 9 || headerType === 10

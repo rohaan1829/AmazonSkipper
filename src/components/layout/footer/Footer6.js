@@ -75,7 +75,7 @@ const Footer3 = () => {
 								<li className="nav_item group relative">
 									<Link
 										href="mailto:muhammad.huzaifa@amazonskipperteam.com"
-										className="text-size-15 font-normal text-white hover:text-primary-color dark:hover:text-primary-color lowercase"
+										className="text-size-15 font-normal text-white hover:text-primary-color dark:hover:text-primary-color lowercase break-all sm:break-normal"
 									>
 										muhammad.huzaifa@amazonskipperteam.com
 									</Link>
