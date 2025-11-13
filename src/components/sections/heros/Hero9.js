@@ -98,7 +98,7 @@ const Hero9 = () => {
 				</div>
 
 					{/* Left Side Text */}
-					<div className="w-full max-w-300px relative md:absolute md:left-auto lg:left-0 xl:left-0 2xl:left-[1%] 3xl:-left-[9%] top-2 md:top-auto lg:top-[23%] xl:top-[22%] md:bottom-0 md:right-1/2 lg:right-auto md:translate-x-1/2 lg:translate-x-0 lg:-translate-y-1/2 mx-auto md:mx-0 z-1">
+					<div className="w-full max-w-full sm:max-w-300px relative md:absolute md:left-auto lg:left-0 xl:left-0 2xl:left-[1%] 3xl:-left-[9%] top-2 md:top-auto lg:top-[23%] xl:top-[22%] md:bottom-0 md:right-1/2 lg:right-auto md:translate-x-1/2 lg:translate-x-0 lg:-translate-y-1/2 mx-auto md:mx-0 z-1">
 						<div>
 							<div
 								className="text-seondary-color dark:text-white-color-4 leading-1.3 mb-26px text-lg md:text-xl lg:text-2xl font-medium"
@@ -116,7 +116,7 @@ const Hero9 = () => {
 							</div>
 							
 							{/* Clutch, AD & Trustpilot Logos */}
-							<div className="flex flex-nowrap items-center gap-2 overflow-x-auto md:overflow-visible mt-4 lg:mt-0 lg:-translate-y-12 lg:-translate-x-[10px]">
+							<div className="flex flex-nowrap items-center gap-2 md:gap-2 mt-4 lg:mt-0 lg:-translate-y-12 lg:-translate-x-[10px]">
 								<a
 									href="https://clutch.co/profile/amazon-skipper"
 									target="_blank"
@@ -126,7 +126,7 @@ const Hero9 = () => {
 									<img
 										src="/img/hero/clutch.png"
 										alt="Clutch"
-										className="h-[122px] md:h-[142px] lg:h-[110px] xl:h-[150px] w-auto max-w-none object-contain drop-shadow-sm"
+										className="h-[80px] sm:h-[90px] md:h-[142px] lg:h-[110px] xl:h-[150px] w-auto max-w-none object-contain drop-shadow-sm"
 									/>
 								</a>
 								<a
@@ -138,7 +138,7 @@ const Hero9 = () => {
 									<img
 										src="/img/hero/ad.png"
 										alt="Amazon Verified"
-										className="h-[122px] md:h-[142px] lg:h-[110px] xl:h-[150px] w-auto max-w-none object-contain drop-shadow-sm"
+										className="h-[80px] sm:h-[90px] md:h-[142px] lg:h-[110px] xl:h-[150px] w-auto max-w-none object-contain drop-shadow-sm"
 									/>
 								</a>
 								<a
@@ -148,9 +148,9 @@ const Hero9 = () => {
 									className="inline-block hover:opacity-90 transition-opacity"
 								>
 									<img
-										src="/img/hero/trustpilot.jpeg"
+										src="/img/hero/4.5trustpilot.png"
 										alt="Trustpilot"
-										className="h-[53px] md:h-[62px] lg:h-[49px] xl:h-[67px] w-auto max-w-none object-contain drop-shadow-sm"
+										className="h-[60px] sm:h-[70px] md:h-[62px] lg:h-[49px] xl:h-[67px] w-auto max-w-none object-contain drop-shadow-sm"
 									/>
 								</a>
 							</div>
