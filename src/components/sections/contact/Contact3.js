@@ -74,7 +74,7 @@ const Contact3 = () => {
 				<div className="container">
 					<div className="grid lg:grid-cols-12 gap-30px">
 						{/* <!-- experience single area --> */}
-						<div className="lg:col-start-1 lg:col-span-5 xl:col-span-4">
+						<div className="lg:col-start-1 lg:col-span-6 xl:col-span-5">
 							<div className="mb-10  ">
 								<div className="mb-25px  ">
 									<span
@@ -119,13 +119,13 @@ const Contact3 = () => {
 										<div className="flex-shrink-0 icon-box text-xl sm:text-size-22 w-50px h-50px sm:w-60px sm:h-60px text-white-color flex justify-center items-center flex-col bg-gradient-primary-2 rounded-full leading-1">
 											<i className="flaticon-mail-inbox-app leading-1 mt-1"></i>
 										</div>
-										<div className="text-box">
+										<div className="text-box flex-1 min-w-0">
 											<p className="text-lg mb-10px font-semibold text-primary-color-light dark:text-white-color ">
 												Email
 											</p>
 											<Link
-												href="mailto:roaan.dev@gmail.com"
-												className="text-primary-color-light dark:text-body-color-3 text-lg font-normal hover:text-[#16A34A] dark:hover:text-[#22C55E] break-all"
+												href="mailto:theamazonskipper@gmail.com"
+												className="text-primary-color-light dark:text-body-color-3 text-lg font-normal hover:text-[#16A34A] dark:hover:text-[#22C55E] whitespace-nowrap"
 											>
 												theamazonskipper@gmail.com 
 											</Link>
@@ -153,7 +153,7 @@ const Contact3 = () => {
 								</ul>
 							</div>
 						</div>
-						<div className=" lg:col-start-6  lg:col-span-7">
+						<div className="lg:col-start-7 lg:col-span-6">
 							<div className="wow fadeInRight" data-wow-delay=".3s">
 								<form
 									id="contact-form"
