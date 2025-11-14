@@ -15,7 +15,7 @@ const caseStudies = [
 const videoTestimonials = [
   { id: "testimonial-1", videoId: "5U66ATCyg4I", title: "Mark's Success Story", category: "Video" },
   { id: "testimonial-2", videoId: "fgdcjsg0n6I", title: "Annie's Success Story", category: "Video" },
-  { id: "testimonial-3", image: "/img/testimonials/user/daniel.jpg", title: "Daniel", category: "Video" },
+  { id: "testimonial-3", image: "/img/testimonials/user/daniel.jpg", title: "Daniel's Success Story", category: "Video" },
 ];
 
 // --- Helpers
