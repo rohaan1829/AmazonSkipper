@@ -328,9 +328,9 @@ const CaseStudyCard = ({ study, index }) => {
 			href={`/case-studies/${study.id}`}
       className={`group relative block h-full overflow-hidden rounded-3xl border ${styles.border} ${styles.bg} p-8 shadow-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_32px_80px_-60px_rgba(15,23,42,0.85)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white/60`}
     >
-      <div className={`grid h-full items-stretch gap-8 lg:grid-cols-2 ${isEven ? "" : "lg:grid-cols-[1.2fr_0.8fr]"}`}>
+      <div className="flex h-full flex-col justify-center">
         {/* Content Section */}
-        <div className={`flex h-full flex-col justify-center ${isEven ? "order-1" : "order-2"}`}>
+        <div className="flex h-full flex-col justify-center">
           <div className="flex items-center gap-2 mb-4">
             <span className="h-2 w-2 rounded-full bg-black dark:bg-white"></span>
             <span className="h-2 w-2 rounded-full bg-black dark:bg-white"></span>
@@ -356,21 +356,7 @@ const CaseStudyCard = ({ study, index }) => {
 
 					</div>
 
-        {/* Dashboard Mockup */}
-        <div className={`relative ${isEven ? "order-2" : "order-1"} flex h-full`}>
-          <div
-            className={`relative flex h-full w-full items-center justify-center overflow-hidden rounded-2xl border-2 ${styles.border} ${styles.graph} p-4 shadow-lg`}
-          >
-            <Image
-              src="/img/portfolio/graph.png"
-              alt="Performance dashboard preview"
-              width={900}
-              height={640}
-              className="w-full h-auto rounded-xl border border-white/40 shadow-[0_18px_45px_-30px_rgba(15,23,42,0.7)]"
-              priority={index < 2}
-            />
-					</div>
-				</div>
+        {/* Dashboard Mockup - Removed for now, will be replaced with real pictures later */}
 			</div>
 		</Link>
 	);

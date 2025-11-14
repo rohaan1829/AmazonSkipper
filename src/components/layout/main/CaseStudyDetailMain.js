@@ -418,54 +418,32 @@ const CaseStudyItem = ({ caseStudy, index }) => {
 						<div className="absolute bottom-0 left-0 w-[18rem] h-[18rem] rounded-full bg-[#4CAF50] blur-[120px]"></div>
 					</div>
 					<div className="relative z-10">
-						<div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10">
-							<div className="flex-1">
-								<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-[#4CAF50] text-sm font-semibold uppercase tracking-[0.3em] mb-6">
-									Creative Strategy
+						<div>
+							<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-[#4CAF50] text-sm font-semibold uppercase tracking-[0.3em] mb-6">
+								Creative Strategy
+							</div>
+							<h3 className="text-3xl md:text-4xl font-black mb-4">
+								Visual Storytelling That Converts
+							</h3>
+							<p className="text-lg text-white/80 leading-relaxed mb-6">
+								High-impact creative assets turned attention into action. Enhanced product visuals,
+								lifestyle imagery, and conversion-focused videos translated into measurable growth.
+							</p>
+							<div className="grid sm:grid-cols-3 gap-4">
+								<div className="bg-white/10 rounded-20px p-5 text-center">
+									<div className="text-2xl font-black text-[#7DFFAE] mb-2">+68%</div>
+									<div className="text-xs uppercase tracking-[0.2em] text-white/70">Listing Views</div>
 								</div>
-								<h3 className="text-3xl md:text-4xl font-black mb-4">
-									Visual Storytelling That Converts
-								</h3>
-								<p className="text-lg text-white/80 leading-relaxed mb-6">
-									High-impact creative assets turned attention into action. Enhanced product visuals,
-									lifestyle imagery, and conversion-focused videos translated into measurable growth.
-								</p>
-								<div className="grid sm:grid-cols-3 gap-4">
-									<div className="bg-white/10 rounded-20px p-5 text-center">
-										<div className="text-2xl font-black text-[#7DFFAE] mb-2">+68%</div>
-										<div className="text-xs uppercase tracking-[0.2em] text-white/70">Listing Views</div>
-									</div>
-									<div className="bg-white/10 rounded-20px p-5 text-center">
-										<div className="text-2xl font-black text-[#7DFFAE] mb-2">+42%</div>
-										<div className="text-xs uppercase tracking-[0.2em] text-white/70">Session to Order</div>
-									</div>
-									<div className="bg-white/10 rounded-20px p-5 text-center">
-										<div className="text-2xl font-black text-[#7DFFAE] mb-2">3.1x</div>
-										<div className="text-xs uppercase tracking-[0.2em] text-white/70">ROAS Lift</div>
-									</div>
+								<div className="bg-white/10 rounded-20px p-5 text-center">
+									<div className="text-2xl font-black text-[#7DFFAE] mb-2">+42%</div>
+									<div className="text-xs uppercase tracking-[0.2em] text-white/70">Session to Order</div>
+								</div>
+								<div className="bg-white/10 rounded-20px p-5 text-center">
+									<div className="text-2xl font-black text-[#7DFFAE] mb-2">3.1x</div>
+									<div className="text-xs uppercase tracking-[0.2em] text-white/70">ROAS Lift</div>
 								</div>
 							</div>
-							<div className="relative w-full max-w-[420px] mx-auto">
-								<div className="absolute -top-6 -right-6 w-24 h-24 bg-[#4CAF50]/20 rounded-full blur-2xl"></div>
-								<div className="absolute -bottom-6 -left-6 w-32 h-32 bg-white/20 rounded-full blur-2xl"></div>
-								<div className="relative bg-white/10 rounded-[32px] p-6 border border-white/10 backdrop-blur">
-									<div className="flex items-center justify-between mb-5">
-										<div>
-											<p className="text-xs uppercase tracking-[0.2em] text-white/60">Creative Rollout</p>
-											<div className="text-lg font-semibold">Launch Campaign</div>
-										</div>
-										<div className="text-xs text-white/60">Q2</div>
-									</div>
-									<Image
-										src="/img/portfolio/graph.png"
-										alt="Performance graph"
-										width={500}
-										height={320}
-										className="w-full rounded-2xl border border-white/10"
-										priority
-									/>
-								</div>
-							</div>
+							{/* Graph image removed - will be replaced with real pictures later */}
 						</div>
 					</div>
 				</div>
@@ -552,7 +530,7 @@ const CaseStudyDetailMain = ({ activeCaseStudyId }) => {
 					<div className="absolute bottom-10 right-16 w-52 h-52 rounded-full bg-[#4CAF50]/20 blur-[120px]"></div>
 				</div>
 				<div className="container relative">
-					<div className="grid gap-16 lg:grid-cols-[minmax(0,1.05fr)_1px_minmax(0,0.85fr)] items-center">
+					<div className="max-w-4xl">
 						<div className="text-left">
 							<span className="inline-flex items-center gap-2 rounded-full bg-[#4CAF50]/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#4CAF50] dark:text-[#7DFFAE]">
 								Case Studies
@@ -569,20 +547,7 @@ const CaseStudyDetailMain = ({ activeCaseStudyId }) => {
 								</ButtonPrimary>
 							</div>
 						</div>
-
-						<div className="hidden lg:block h-full w-px bg-gradient-to-b from-transparent via-white/30 to-transparent dark:via-[#4CAF50]/40"></div>
-
-						<div className="relative hidden lg:block h-full overflow-hidden rounded-[36px]">
-								<Image
-									src="/img/portfolio/graph.png"
-								alt="Case study performance"
-								fill
-								className="object-cover brightness-105 saturate-110"
-								sizes="(min-width: 1024px) 40vw, 100vw"
-									priority
-								/>
-							<div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/25 to-transparent"></div>
-						</div>
+						{/* Graph image removed - will be replaced with real pictures later */}
 					</div>
 				</div>
 			</section>

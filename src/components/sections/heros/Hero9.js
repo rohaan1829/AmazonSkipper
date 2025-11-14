@@ -3,13 +3,9 @@
 import ButtonRounded from "@/components/shared/buttons/ButtonRounded";
 import FunFact9 from "@/components/shared/fun-fact/FunFact9";
 import Link from "next/link";
-import { useState } from "react";
 
 const Hero9 = () => {
-	const [isModalOpen, setIsModalOpen] = useState(false);
-
-	const openModal = () => setIsModalOpen(true);
-	const closeModal = () => setIsModalOpen(false);
+	// Video modal removed - will be replaced with real video later
 
 	return (
 		<section className="hero-section relative min-h-[calc(100svh-40px)] pt-[150px] sm:pt-[118px] md:pt-[120px] lg:pt-[132px] xl:pt-[135px] 2xl:pt-[138px] pb-20px sm:pb-30px overflow-hidden bg-transparent dark:bg-black">
@@ -43,11 +39,10 @@ const Hero9 = () => {
 							[clip-path:path('M0_200A315_315_0_0_1_630_200L630_900L0_900Z')]"
 				/>
 				
-				{/* Play Button Overlay */}
+				{/* Play Button Overlay - Video functionality removed, will be replaced with real video later */}
 				<div className="absolute inset-0 flex items-center justify-center z-10">
-					<button
-						onClick={openModal}
-						className="group relative w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-26 xl:h-26 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 bg-transparent"
+					<div
+						className="group relative w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-26 xl:h-26 rounded-full flex items-center justify-center transition-all duration-300 transform bg-transparent"
 						style={{
 							border: '3px solid #ffffff',
 							boxShadow: '0 4px 8px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.1)'
@@ -78,7 +73,7 @@ const Hero9 = () => {
 						
 						{/* Hover Effect */}
 						<div className="absolute inset-0 rounded-full bg-white/10 scale-0 group-hover:scale-110 transition-transform duration-300"></div>
-					</button>
+					</div>
 				</div>
 				</div>
 
@@ -256,46 +251,7 @@ const Hero9 = () => {
 				</div>
 			</div>
 
-			{/* Video Modal */}
-			{isModalOpen && (
-				<div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-					<div className="relative w-full max-w-4xl bg-black rounded-lg overflow-hidden shadow-2xl">
-						{/* Close Button */}
-						<button
-							onClick={closeModal}
-							className="absolute top-4 right-4 z-10 w-10 h-10 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-colors duration-200"
-						>
-							<svg
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-								className="w-6 h-6"
-							>
-								<path
-									d="M18 6L6 18M6 6L18 18"
-									stroke="currentColor"
-									strokeWidth="2"
-									strokeLinecap="round"
-									strokeLinejoin="round"
-								/>
-							</svg>
-						</button>
-						
-						{/* YouTube Video Embed */}
-						<div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-							<iframe
-								src="https://www.youtube.com/embed/sf7DukfFK8E?si=XZKLLslAmqnhLQ7M&autoplay=1"
-								title="Amazon Skipper Video"
-								className="absolute top-0 left-0 w-full h-full"
-								frameBorder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowFullScreen
-							></iframe>
-						</div>
-					</div>
-				</div>
-			)}
+			{/* Video Modal removed - will be replaced with real video later */}
 		</section>
 	);
 };
