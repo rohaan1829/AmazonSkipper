@@ -202,15 +202,15 @@ const RefundCancellationMain = () => {
             {refundSections.map(section => (
               <article key={section.id} id={section.id} className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
                 <h3 className="text-2xl font-semibold text-white">{section.title}</h3>
-                <div className="mt-4 space-y-4 text-base leading-relaxed text-white/70">
+                <div className="mt-4 space-y-4 text-base leading-relaxed text-white/70 break-words">
                   {section.paragraphs?.map((paragraph, idx) => (
-                    <p key={idx}>{paragraph}</p>
+                    <p key={idx} className="break-words break-all">{paragraph}</p>
                   ))}
                   {section.subsections?.map(sub => (
                     <div key={sub.subtitle} className="space-y-3">
                       <h4 className="text-lg font-semibold text-white">{sub.subtitle}</h4>
                       {sub.paragraphs.map((paragraph, idx) => (
-                        <p key={idx}>{paragraph}</p>
+                        <p key={idx} className="break-words break-all">{paragraph}</p>
                       ))}
                     </div>
                   ))}
@@ -219,7 +219,7 @@ const RefundCancellationMain = () => {
                       {section.list.map(item => (
                         <li key={item} className="flex gap-3">
                           <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-[#22C55E]"></span>
-                          <span>{item}</span>
+                          <span className="break-words break-all">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -238,9 +238,9 @@ const RefundCancellationMain = () => {
             {cancellationSections.map(section => (
               <article key={section.id} id={section.id} className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
                 <h3 className="text-2xl font-semibold text-white">{section.title}</h3>
-                <div className="mt-4 space-y-4 text-base leading-relaxed text-white/70">
+                <div className="mt-4 space-y-4 text-base leading-relaxed text-white/70 break-words">
                   {section.paragraphs?.map((paragraph, idx) => (
-                    <p key={idx}>{paragraph}</p>
+                    <p key={idx} className="break-words break-all">{paragraph}</p>
                   ))}
                 </div>
               </article>
@@ -248,12 +248,12 @@ const RefundCancellationMain = () => {
 
             <article className="rounded-3xl border border-[#4CAF50]/30 bg-gradient-to-br from-black via-[#101828] to-[#0f2b1d] p-8">
               <h2 className="text-2xl font-bold text-white sm:text-3xl">Need help with next steps?</h2>
-              <p className="mt-4 text-base leading-relaxed text-white/70">
+                <p className="mt-4 text-base leading-relaxed text-white/70 break-words">
                 If you have any questions about our refund or cancellation policies, our team is ready to help you navigate the process.
                 Reach out at{" "}
                 <Link
                   href="mailto:muhammad.huzaifa@amazonskipperteam.com"
-                  className="font-semibold text-[#22C55E] transition hover:text-white"
+                  className="font-semibold text-[#22C55E] transition hover:text-white break-words break-all"
                 >
                   muhammad.huzaifa@amazonskipperteam.com
                 </Link>{" "}

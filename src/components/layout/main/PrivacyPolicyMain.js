@@ -166,16 +166,16 @@ const PrivacyPolicyMain = () => {
             {sections.map(section => (
               <article key={section.id} id={section.id} className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
                 <h2 className="text-2xl font-bold text-white sm:text-3xl">{section.title}</h2>
-                <div className="mt-5 space-y-4 text-base leading-relaxed text-white/70">
+                <div className="mt-5 space-y-4 text-base leading-relaxed text-white/70 break-words">
                   {section.paragraphs?.map((paragraph, idx) => (
-                    <p key={idx}>{paragraph}</p>
+                    <p key={idx} className="break-words break-all">{paragraph}</p>
                   ))}
 
                   {section.subsections?.map(sub => (
                     <div key={sub.subtitle} className="space-y-3">
                       <h3 className="text-lg font-semibold text-white">{sub.subtitle}</h3>
                       {sub.paragraphs.map((paragraph, idx) => (
-                        <p key={idx}>{paragraph}</p>
+                        <p key={idx} className="break-words break-all">{paragraph}</p>
                       ))}
                     </div>
                   ))}
@@ -185,7 +185,7 @@ const PrivacyPolicyMain = () => {
                       {section.list.map(item => (
                         <li key={item} className="flex gap-3">
                           <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-[#22C55E]"></span>
-                          <span>{item}</span>
+                          <span className="break-words break-all">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -210,7 +210,7 @@ const PrivacyPolicyMain = () => {
                         ))}
                       </div>
                     ) : href ? (
-                      <Link href={href} className="text-sm text-white transition hover:text-[#22C55E]">
+                      <Link href={href} className="text-sm text-white transition hover:text-[#22C55E] break-words break-all">
                         {value}
                       </Link>
                     ) : (
