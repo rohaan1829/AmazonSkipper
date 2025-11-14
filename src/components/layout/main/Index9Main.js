@@ -11,10 +11,15 @@ import Portfolio9 from "@/components/sections/portfolio/Portfolio9";
 //import Resume5 from "@/components/sections/resume/Resume5";
 //import Services6 from "@/components/sections/services/Services6";
 import Skills4 from "@/components/sections/skills/Skills4";
-import Testimonials9 from "@/components/sections/testimonials/Testimonials9";
 import FunfacTsection1 from "@/components/sections/funfact/FunfacTsection1";
 import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
 import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import Image from "next/image";
 
 const faqs = [
 	{
@@ -59,6 +64,109 @@ const faqs = [
 	},
 ];
 
+const testimonials = [
+	{
+		id: 1,
+		achievement: "Monthly Sales Tripled",
+		quote:
+			"Our monthly sales tripled after Skipper took over. Their brand management and creative strategy changed everything.",
+		authorName: "Olivia Grant",
+		authorTitle: "Founder, LumaNest Home",
+		image: "/img/testimonials/user/olivia.jpg",
+		rating: 5,
+	},
+	{
+		id: 2,
+		achievement: "Six-Figure Breakthrough",
+		quote:
+			"We went from flat sales to six figures in under 4 months. Skipper's ad control and visuals did the magic.",
+		authorName: "Ryan Mitchell",
+		authorTitle: "Co-Founder, PetVibe Co.",
+		image: "/img/testimonials/user/ryan.jpg",
+		rating: 5,
+	},
+	{
+		id: 3,
+		achievement: "6x Revenue Climb",
+		quote:
+			"From $20K to $120K in 6 months — and I barely touched Seller Central. Skipper handled it all.",
+		authorName: "Anne Martinez",
+		authorTitle: "Owner, ZenCraft Studio",
+		image: "/img/testimonials/user/1.jpg",
+		rating: 5,
+	},
+	{
+		id: 4,
+		achievement: "Rankings Locked In",
+		quote:
+			"Our listings now rank high and stay there. Revenue up 5x since partnering with Skipper — can't ask for better.",
+		authorName: "Ethan Cole",
+		authorTitle: "Director, Orbit Office Supplies",
+		image: "/img/testimonials/user/uncle-g.jpg",
+		rating: 5,
+	},
+	{
+		id: 5,
+		achievement: "ACoS Slashed, Sales Surged",
+		quote:
+			"They rebuilt our storefront and listings. Within weeks, our ACoS dropped and sales crossed $200K.",
+		authorName: "Laura Bennett",
+		authorTitle: "COO, EcoEase Living",
+		image: "/img/testimonials/user/testmonial-7-thumb.jpg",
+		rating: 5,
+	},
+	{
+		id: 6,
+		achievement: "Consistent Six Figures",
+		quote:
+			"We used to struggle breaking $50K/month. Now it's consistent six-figure revenue — thanks to their creative direction and strategy.",
+		authorName: "Daniel Ruiz",
+		authorTitle: "Founder, FetchMate Pets",
+		image: "/img/testimonials/user/daniel.jpg",
+		rating: 5,
+	},
+	{
+		id: 7,
+		achievement: "Brand Reborn",
+		quote:
+			"After the rebranding, everything clicked — our visuals, ads, and growth. Sales jumped 4x in just one quarter.",
+		authorName: "Emily James",
+		authorTitle: "CEO, ModernBake Co.",
+		image: "/img/testimonials/user/emily.jpg",
+		rating: 5,
+	},
+	{
+		id: 8,
+		achievement: "A+ Content Wins",
+		quote:
+			"Our fitness line exploded after their A+ content revamp. Ads are leaner, profits are cleaner, sales are booming.",
+		authorName: "Adam Lee",
+		authorTitle: "Co-Founder, FitVerse Gear",
+		image: "/img/testimonials/user/adamlee.jpg",
+		rating: 5,
+	},
+	{
+		id: 9,
+		achievement: "Catalog Turnaround",
+		quote:
+			"Skipper turned our slow-moving catalog into a bestseller lineup. We've hit record months back-to-back.",
+		authorName: "Hannah Kim",
+		authorTitle: "Creative Director, HomeFlow Decor",
+		image: "/img/testimonials/user/hannah.jpg",
+		rating: 5,
+	},
+	{
+		id: 10,
+		achievement: "Premium Brand Lift",
+		quote:
+			"We crossed $300K/month after their team overhauled our listings. Brand feels premium, and it finally pays off.",
+		authorName: "Jake Wilson",
+		authorTitle: "Owner, PawJoy Supplies",
+		image: "/img/testimonials/user/h10-test.png",
+		rating: 5,
+	},
+];
+
 const Index9Main = () => {
 	const [activeFaq, setActiveFaq] = useState(0);
 
@@ -88,9 +196,94 @@ const Index9Main = () => {
 			<div className="wow fadeInUp" data-wow-delay=".28s">
 				<About6 />
 			</div>
-			<div className="wow fadeInUp" data-wow-delay=".40s">
-				<Testimonials9 sectionClassName="py-80px md:py-100px bg-[#050505] dark:bg-[#0a0a0a]" />
-			</div>
+			{/* Testimonials Section */}
+			<section id="testimonials" className="wow fadeInUp py-80px md:py-100px bg-[#050505] dark:bg-[#0a0a0a] scroll-mt-[130px]" data-wow-delay=".40s">
+				<div className="container">
+					<div className="max-w-4xl mx-auto text-center mb-16">
+						<h2 className="text-4xl md:text-5xl font-bold text-white">
+							Testimonials
+						</h2>
+					</div>
+
+					<div className="relative max-w-4xl mx-auto px-16 md:px-0">
+						{/* Navigation Arrows */}
+						<button
+							className="testimonials-slider-prev absolute left-0 md:left-[-60px] top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg flex items-center justify-center text-[#121212] dark:text-white transition-all duration-300 hover:scale-110"
+							aria-label="Previous"
+						>
+							<i className="fa-regular fa-chevron-left"></i>
+						</button>
+						<button
+							className="testimonials-slider-next absolute right-0 md:right-[-60px] top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg flex items-center justify-center text-[#121212] dark:text-white transition-all duration-300 hover:scale-110"
+							aria-label="Next"
+						>
+							<i className="fa-regular fa-chevron-right"></i>
+						</button>
+
+						<Swiper
+							spaceBetween={30}
+							slidesPerView={1}
+							loop={true}
+							autoplay={{
+								delay: 5000,
+								disableOnInteraction: false,
+							}}
+							navigation={{
+								prevEl: ".testimonials-slider-prev",
+								nextEl: ".testimonials-slider-next",
+							}}
+							modules={[Navigation, Autoplay]}
+							className="testimonials-slider"
+						>
+							{testimonials.map((testimonial) => (
+								<SwiperSlide key={testimonial.id}>
+									<div className="flex flex-col items-center text-center px-4">
+										{/* Profile Image */}
+										<div className="mb-8">
+											<div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden shadow-lg">
+												<Image
+													src={testimonial.image}
+													alt={testimonial.authorName}
+													width={160}
+													height={160}
+													className="w-full h-full object-cover"
+												/>
+											</div>
+										</div>
+
+										{/* Achievement Sub-heading */}
+										<h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
+											{testimonial.achievement}
+										</h3>
+
+										{/* Quote */}
+										<blockquote className="text-lg md:text-xl text-gray-300 italic mb-8 max-w-3xl leading-relaxed">
+											{testimonial.quote}
+										</blockquote>
+
+										{/* Author Name */}
+										<p className="text-xl md:text-2xl font-bold text-white mb-3">
+											{testimonial.authorName}
+										</p>
+
+										{/* Stars Rating */}
+										<div className="flex gap-1 mb-3 justify-center">
+											{[...Array(testimonial.rating)].map((_, i) => (
+												<i key={i} className="fas fa-star text-white text-xl"></i>
+											))}
+										</div>
+
+										{/* Author Title */}
+										<p className="text-lg text-gray-400">
+											{testimonial.authorTitle}
+										</p>
+									</div>
+								</SwiperSlide>
+							))}
+						</Swiper>
+					</div>
+				</div>
+			</section>
 			{/* <Services6 type={2} /> */}
 			<div className="wow fadeInUp" data-wow-delay=".32s">
 				<Portfolio9 />
