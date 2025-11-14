@@ -24,7 +24,7 @@ const Contact3 = () => {
 			message: formData.get("conMessage")?.toString().trim() ?? "",
 		};
 
-		if (!payload.firstName || !payload.lastName || !payload.email || !payload.phone) {
+		if (!payload.firstName || !payload.lastName || !payload.email || !payload.phone || !payload.budget) {
 			setStatus({ type: "error", message: "Please fill in all required fields." });
 			return;
 		}
@@ -233,7 +233,7 @@ const Contact3 = () => {
 										{/* <!-- Budget --> */}
 										<div className="sm:col-start-1 sm:col-span-2 sm:mb-5">
 											<p className=" mb-15px font-semibold text-primary-color-light dark:text-white-color uppercase ">
-												What is your budget (per month) for this project?
+												What is your budget (per month) for this project?*
 											</p>
 											<div className="grid gap-3">
 												{[
@@ -242,7 +242,7 @@ const Contact3 = () => {
 													"$4000-$6000",
 													"$6000-$8000",
 													"Not sure",
-												].map((option) => (
+												].map((option, index) => (
 													<label
 														key={option}
 														className="flex items-center gap-3 rounded-lg border-2 border-body-color dark:border-bg-color-2 px-4 py-3 transition-all duration-300 hover:border-primary-color has-[input:checked]:border-[#22C55E] has-[input:checked]:bg-[#22C55E]/15"
@@ -251,6 +251,7 @@ const Contact3 = () => {
 															type="radio"
 															name="conBudget"
 															value={option}
+															required={index === 0}
 															className="peer h-4 w-4 accent-[#22C55E]"
 														/>
 														<span className="text-gray-color dark:text-white-color text-sm md:text-base transition-colors duration-300 peer-checked:text-[#22C55E]">
