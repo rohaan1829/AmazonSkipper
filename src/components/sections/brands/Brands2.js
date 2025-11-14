@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const caseStudies = [
   { title: "A Compelling Turnaround: From Stagnation to Momentum", img: "/img/portfolio/pppc.png" },
@@ -14,7 +15,7 @@ const caseStudies = [
 const videoTestimonials = [
   { id: "testimonial-1", videoId: "5U66ATCyg4I", title: "Mark's Success Story", category: "Video" },
   { id: "testimonial-2", videoId: "fgdcjsg0n6I", title: "Annie's Success Story", category: "Video" },
-  { id: "testimonial-3", videoId: "5U66ATCyg4I", title: "Mark's Success Story", category: "Video" },
+  { id: "testimonial-3", image: "/img/testimonials/user/daniel.jpg", title: "Daniel", category: "Video" },
 ];
 
 // --- Helpers
@@ -312,13 +313,14 @@ const Brands2 = ({ type }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 items-stretch px-2">
             {videoTestimonials?.length
               ? videoTestimonials.map((testimonial) => {
-                  const thumbnailUrl = `https://img.youtube.com/vi/${testimonial.videoId}/maxresdefault.jpg`;
+                  const isImageTestimonial = testimonial.image && !testimonial.videoId;
+                  const thumbnailUrl = testimonial.image || (testimonial.videoId ? `https://img.youtube.com/vi/${testimonial.videoId}/maxresdefault.jpg` : '');
                   const isPlaying = playingVideo === testimonial.id;
                   return (
                     <div key={testimonial.id} className="h-full">
                       <div className="h-full p-3 sm:p-[15px] bg-white dark:bg-black-color border border-white dark:border-border-color-2 backdrop-blur-[40px] rounded-[10px] relative overflow-hidden group">
                         <div className="relative rounded-[10px] overflow-hidden mb-3 sm:mb-4">
-                          {isPlaying ? (
+                          {!isImageTestimonial && isPlaying ? (
                             <iframe
                               width="100%"
                               height="100%"
@@ -331,23 +333,43 @@ const Brands2 = ({ type }) => {
                             />
                           ) : (
                             <>
-                              {/* eslint-disable-next-line @next/next/no-img-element */}
-                              <img
-                                src={thumbnailUrl}
-                                alt={testimonial.title}
-                                className="w-full aspect-video object-cover group-hover:scale-110 transition-all duration-500"
-                                loading="lazy"
-                              />
-                              <button
-                                type="button"
-                                className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-all duration-300 cursor-pointer"
-                                onClick={() => setPlayingVideo(testimonial.id)}
-                                aria-label={`Play ${testimonial.title}`}
-                              >
-                                <span className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/90 hover:bg-white transition-all duration-300 flex items-center justify-center shadow-lg hover:scale-110 group-hover:scale-110">
-                                  <i className="fa-solid fa-play text-[#4CAF50] text-base md:text-lg ml-1" />
-                                </span>
-                              </button>
+                              {isImageTestimonial ? (
+                                <>
+                                  <Image
+                                    src={testimonial.image}
+                                    alt={testimonial.title}
+                                    width={800}
+                                    height={450}
+                                    className="w-full aspect-video object-cover group-hover:scale-110 transition-all duration-500"
+                                    loading="lazy"
+                                  />
+                                  <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-all duration-300 pointer-events-none">
+                                    <span className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/90 transition-all duration-300 flex items-center justify-center shadow-lg group-hover:scale-110">
+                                      <i className="fa-solid fa-play text-[#4CAF50] text-base md:text-lg ml-1" />
+                                    </span>
+                                  </div>
+                                </>
+                              ) : (
+                                <>
+                                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                                  <img
+                                    src={thumbnailUrl}
+                                    alt={testimonial.title}
+                                    className="w-full aspect-video object-cover group-hover:scale-110 transition-all duration-500"
+                                    loading="lazy"
+                                  />
+                                  <button
+                                    type="button"
+                                    className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-all duration-300 cursor-pointer"
+                                    onClick={() => setPlayingVideo(testimonial.id)}
+                                    aria-label={`Play ${testimonial.title}`}
+                                  >
+                                    <span className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/90 hover:bg-white transition-all duration-300 flex items-center justify-center shadow-lg hover:scale-110 group-hover:scale-110">
+                                      <i className="fa-solid fa-play text-[#4CAF50] text-base md:text-lg ml-1" />
+                                    </span>
+                                  </button>
+                                </>
+                              )}
                             </>
                           )}
                           <Link
