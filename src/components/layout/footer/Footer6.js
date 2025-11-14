@@ -137,7 +137,7 @@ const Footer3 = () => {
 								</li>
 								<li className="nav_item group relative">
 									<Link
-										href="https://www.instagram.com/amazonskiper"
+										href="https://www.instagram.com/amazonskipper"
 										className="text-size-15 font-normal text-white hover:text-primary-color dark:hover:text-primary-color capitalize flex gap-2 items-center"
 										target="_blank"
 										rel="noopener noreferrer"
@@ -167,7 +167,7 @@ const Footer3 = () => {
 								</li>
 								<li className="nav_item group relative">
 									<Link
-										href="https://twitter.com/amazonskiper"
+										href="https://twitter.com/amazonskipper"
 										className="text-size-15 font-normal text-white hover:text-primary-color dark:hover:text-primary-color capitalize flex gap-2 items-center"
 										target="_blank"
 										rel="noopener noreferrer"
