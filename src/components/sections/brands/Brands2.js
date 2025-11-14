@@ -61,8 +61,8 @@ function calcCarouselLayout(vw) {
   }
 
   if (vw < 640) {
-    // Mobile (sm-)
-    const ACTIVE_W = Math.min(360, vw - 32);
+    // Mobile (sm-) - Reduced width to show arrows
+    const ACTIVE_W = Math.min(280, vw - 120); // Leave space for arrows (48px each + padding)
     const SIDE_W = Math.round(ACTIVE_W * 0.9);
     return {
       ACTIVE_W,
@@ -177,13 +177,13 @@ const Brands2 = ({ type }) => {
           </motion.div>
 
           {/* Slider */}
-          <div className="relative flex justify-center items-center overflow-visible px-2 sm:px-4">
+          <div className="relative flex justify-center items-center overflow-visible px-8 sm:px-4">
             <button
               onClick={prevSlide}
-              className="absolute left-2 sm:-left-4 md:-left-12 lg:-left-16 text-black dark:text-white text-3xl sm:text-4xl z-20 hover:text-[#4CAF50] transition rounded-full size-10 sm:size-12 inline-flex items-center justify-center bg-white/70 dark:bg-white/10 backdrop-blur border border-black/10 dark:border-white/10 shadow md:hover:scale-105"
+              className="absolute left-0 sm:-left-6 md:-left-14 lg:-left-18 top-1/2 -translate-y-1/2 text-[#4CAF50] text-xl sm:text-2xl md:text-3xl lg:text-4xl z-[50] hover:text-[#22C55E] transition-all duration-300 rounded-full w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 inline-flex items-center justify-center bg-transparent hover:bg-[#4CAF50]/10 backdrop-blur-sm shadow-2xl hover:scale-110 active:scale-95"
               aria-label="Previous"
             >
-              ‹
+              <i className="fa-regular fa-chevron-left"></i>
             </button>
 
             <div
@@ -258,10 +258,10 @@ const Brands2 = ({ type }) => {
 
             <button
               onClick={nextSlide}
-              className="absolute right-2 sm:-right-4 md:-right-12 lg:-right-16 text-black dark:text-white text-3xl sm:text-4xl z-20 hover:text-[#4CAF50] transition rounded-full size-10 sm:size-12 inline-flex items-center justify-center bg-white/70 dark:bg-white/10 backdrop-blur border border-black/10 dark:border-white/10 shadow md:hover:scale-105"
+              className="absolute right-0 sm:-right-6 md:-right-14 lg:-right-18 top-1/2 -translate-y-1/2 text-[#4CAF50] text-xl sm:text-2xl md:text-3xl lg:text-4xl z-[50] hover:text-[#22C55E] transition-all duration-300 rounded-full w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 inline-flex items-center justify-center bg-transparent hover:bg-[#4CAF50]/10 backdrop-blur-sm shadow-2xl hover:scale-110 active:scale-95"
               aria-label="Next"
             >
-              ›
+              <i className="fa-regular fa-chevron-right"></i>
             </button>
           </div>
 
