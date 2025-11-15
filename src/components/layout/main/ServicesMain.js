@@ -130,11 +130,11 @@ const ServicesMain = () => {
     },
     {
       id: 2,
-      clientName: "David Chen",
+      clientName: "Mark",
       company: "Home Essentials Plus",
       achievement: "300% Revenue Growth",
-      videoUrl: "",
-      thumbnail: "/img/testimonials/user/davidchen.jpg",
+      videoUrl: "https://www.youtube.com/embed/5U66ATCyg4I",
+      thumbnail: "/img/testimonials/user/mark.png",
       metric: "45% ACoS Improvement",
       industry: "Home & Kitchen"
     },
@@ -748,9 +748,9 @@ const ServicesMain = () => {
         </div>
 
         <div className="container relative z-10">
-          <div className="grid lg:grid-cols-12 gap-12 lg:items-center">
+          <div className="grid lg:grid-cols-12 gap-12 lg:items-start">
             <div className="lg:col-span-4 flex">
-              <div className="space-y-8 w-full lg:max-w-md lg:ml-auto">
+              <div className="space-y-8 w-full lg:max-w-md lg:ml-auto lg:sticky lg:top-24">
                 <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#4CAF50]/10 border border-[#4CAF50]/30 text-[#4CAF50] rounded-full text-xs font-semibold uppercase tracking-[0.35em]">
                   Our 5-Step System
                 </span>

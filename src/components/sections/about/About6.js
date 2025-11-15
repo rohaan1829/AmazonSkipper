@@ -3,6 +3,7 @@
 import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
 import FunFact10 from "@/components/shared/fun-fact/FunFact10";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 const About6 = () => {
 	const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -242,9 +243,12 @@ const About6 = () => {
 															</div>
 															
 															<div className="space-y-4">
-																<button className="w-full bg-white text-[#4CAF50] font-bold py-3 px-6 rounded-lg hover:bg-white/90 transition-all duration-200 transform hover:scale-105">
+																<Link 
+																	href="/contact"
+																	className="w-full bg-white text-[#4CAF50] font-bold py-3 px-6 rounded-lg hover:bg-white/90 transition-all duration-200 transform hover:scale-105 block text-center"
+																>
 																	{result.cta}
-																</button>
+																</Link>
 																<button 
 																	onClick={resetQuiz}
 																	className="w-full text-white/80 hover:text-white text-sm underline transition-colors"

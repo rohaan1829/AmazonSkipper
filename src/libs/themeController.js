@@ -1,28 +1,10 @@
 const themeController = () => {
+  // Always ensure dark mode is enabled
   const html = document.querySelector("html");
-  const isDark = html?.classList?.contains("dark");
-  if (isDark) {
+  if (html) {
     html.classList.add("dark");
-  } else {
-    html.classList.remove("dark");
+    localStorage.setItem("theme", "dark");
   }
-
-  const currentMode = localStorage.getItem("theme");
-  if (currentMode === "light") {
-    html.classList.remove("dark");
-  } else if (currentMode === "light") {
-    html.classList.add("dark");
-  }
-  const themeController = document.querySelector(".theme-controller");
-  themeController.addEventListener("click", function () {
-    html.classList.toggle("dark");
-    const currentMode = html.classList.contains("dark");
-    if (currentMode) {
-      localStorage.setItem("theme", "dark");
-    } else {
-      localStorage.setItem("theme", "light");
-    }
-  });
 };
 
 export default themeController;

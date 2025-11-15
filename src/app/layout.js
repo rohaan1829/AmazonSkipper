@@ -1,4 +1,3 @@
-import ThmeModeSwither from "@/components/shared/others/ThmeModeSwither";
 import { Suspense } from "react";
 
 import "swiper/css";
@@ -32,7 +31,6 @@ export default function RootLayout({ children }) {
 				className={`font-sora  dark:bg-dark-color overflow-x-hidden  relative`}
 			>
 				<Suspense fallback={<></>}>{children}</Suspense>
-				<ThmeModeSwither />
 			</body>
 		</html>
 	);
