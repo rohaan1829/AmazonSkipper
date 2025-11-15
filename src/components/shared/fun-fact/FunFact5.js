@@ -37,7 +37,7 @@ const FunFact5 = () => {
 					className="grid w-full max-w-6xl mx-auto grid-cols-1 gap-6 text-primary-color dark:text-body-color sm:grid-cols-2 xl:grid-cols-4"
 				>
 					<div className="funfact-item flex h-full min-h-[190px] w-full min-w-[260px] flex-col items-center justify-center rounded-2xl border border-body-color bg-cream-light-color px-12 py-10 text-center dark:border-bg-color-2 dark:bg-transparent">
-						<div className="number inline-flex items-center justify-center text-size-15 md:text-size-35 xl:text-size-30 font-black leading-[1.05]">
+						<div className="number inline-flex items-center justify-center text-size-40 md:text-size-35 xl:text-size-30 font-black leading-[1.05]">
 							<Odometer className="!font-sora tracking-[0.02em]" value={value} />
 							<span className="symbol whitespace-nowrap">&nbsp;MIL +</span>
 						</div>

@@ -94,106 +94,106 @@ const getCaseStudies = () => [
 ];
 
 const testimonials = [
-  {
-    id: 1,
-    achievement: "Monthly Sales Tripled",
-    quote:
-      "Our monthly sales tripled after Skipper took over. Their brand management and creative strategy changed everything.",
-    authorName: "Olivia Grant",
-    authorTitle: "Founder, LumaNest Home",
-    image: "/img/testimonials/user/1.jpg",
-    rating: 5,
-  },
-  {
-    id: 2,
-    achievement: "Six-Figure Breakthrough",
-    quote:
-      "We went from flat sales to six figures in under 4 months. Skipper’s ad control and visuals did the magic.",
-    authorName: "Ryan Mitchell",
-    authorTitle: "Co-Founder, PetVibe Co.",
-    image: "/img/testimonials/user/2.jpg",
-    rating: 5,
-  },
-  {
-    id: 3,
-    achievement: "6x Revenue Climb",
-    quote:
-      "From $20K to $120K in 6 months — and I barely touched Seller Central. Skipper handled it all.",
-    authorName: "Sarah Collins",
-    authorTitle: "Owner, ZenCraft Studio",
-    image: "/img/testimonials/user/3.jpg",
-    rating: 5,
-  },
-  {
-    id: 4,
-    achievement: "Rankings Locked In",
-    quote:
-      "Our listings now rank high and stay there. Revenue up 5x since partnering with Skipper — can’t ask for better.",
-    authorName: "Ethan Cole",
-    authorTitle: "Director, Orbit Office Supplies",
-    image: "/img/testimonials/user/4.jpg",
-    rating: 5,
-  },
-  {
-    id: 5,
-    achievement: "ACoS Slashed, Sales Surged",
-    quote:
-      "They rebuilt our storefront and listings. Within weeks, our ACoS dropped and sales crossed $200K.",
-    authorName: "Laura Bennett",
-    authorTitle: "COO, EcoEase Living",
-    image: "/img/testimonials/user/testmonial-7-thumb.jpg",
-    rating: 5,
-  },
-  {
-    id: 6,
-    achievement: "Consistent Six Figures",
-    quote:
-      "We used to struggle breaking $50K/month. Now it’s consistent six-figure revenue — thanks to their creative direction and strategy.",
-    authorName: "Daniel Ruiz",
-    authorTitle: "Founder, FetchMate Pets",
-    image: "/img/testimonials/user/h5-test-1.png",
-    rating: 5,
-  },
-  {
-    id: 7,
-    achievement: "Brand Reborn",
-    quote:
-      "After the rebranding, everything clicked — our visuals, ads, and growth. Sales jumped 4x in just one quarter.",
-    authorName: "Emily James",
-    authorTitle: "CEO, ModernBake Co.",
-    image: "/img/testimonials/user/h5-test-2.png",
-    rating: 5,
-  },
-  {
-    id: 8,
-    achievement: "A+ Content Wins",
-    quote:
-      "Our fitness line exploded after their A+ content revamp. Ads are leaner, profits are cleaner, sales are booming.",
-    authorName: "Adam Lee",
-    authorTitle: "Co-Founder, FitVerse Gear",
-    image: "/img/testimonials/user/h8-test-1.png",
-    rating: 5,
-  },
-  {
-    id: 9,
-    achievement: "Catalog Turnaround",
-    quote:
-      "Skipper turned our slow-moving catalog into a bestseller lineup. We’ve hit record months back-to-back.",
-    authorName: "Hannah Kim",
-    authorTitle: "Creative Director, HomeFlow Decor",
-    image: "/img/testimonials/user/h8-test-2.png",
-    rating: 5,
-  },
-  {
-    id: 10,
-    achievement: "Premium Brand Lift",
-    quote:
-      "We crossed $300K/month after their team overhauled our listings. Brand feels premium, and it finally pays off.",
-    authorName: "Jake Wilson",
-    authorTitle: "Owner, PawJoy Supplies",
-    image: "/img/testimonials/user/h10-test.png",
-    rating: 5,
-  },
+	{
+		id: 1,
+		achievement: "Monthly Sales Tripled",
+		quote:
+			"Our monthly sales tripled after Skipper took over. Their brand management and creative strategy changed everything.",
+		authorName: "Olivia Grant",
+		authorTitle: "Founder, LumaNest Home",
+		image: "/img/testimonials/user/olivia.jpg",
+		rating: 5,
+	},
+	{
+		id: 2,
+		achievement: "Six-Figure Breakthrough",
+		quote:
+			"We went from flat sales to six figures in under 4 months. Skipper's ad control and visuals did the magic.",
+		authorName: "Ryan Mitchell",
+		authorTitle: "Co-Founder, PetVibe Co.",
+		image: "/img/testimonials/user/ryan.jpg",
+		rating: 5,
+	},
+	{
+		id: 3,
+		achievement: "6x Revenue Climb",
+		quote:
+			"From $20K to $120K in 6 months — and I barely touched Seller Central. Skipper handled it all.",
+		authorName: "Anne Martinez",
+		authorTitle: "Owner, ZenCraft Studio",
+		image: "/img/testimonials/user/1.jpg",
+		rating: 5,
+	},
+	{
+		id: 4,
+		achievement: "Rankings Locked In",
+		quote:
+			"Our listings now rank high and stay there. Revenue up 5x since partnering with Skipper — can't ask for better.",
+		authorName: "Ethan Cole",
+		authorTitle: "Director, Orbit Office Supplies",
+		image: "/img/testimonials/user/uncle-g.jpg",
+		rating: 5,
+	},
+	{
+		id: 5,
+		achievement: "ACoS Slashed, Sales Surged",
+		quote:
+			"They rebuilt our storefront and listings. Within weeks, our ACoS dropped and sales crossed $200K.",
+		authorName: "Laura Bennett",
+		authorTitle: "COO, EcoEase Living",
+		image: "/img/testimonials/user/testmonial-7-thumb.jpg",
+		rating: 5,
+	},
+	{
+		id: 6,
+		achievement: "Consistent Six Figures",
+		quote:
+			"We used to struggle breaking $50K/month. Now it's consistent six-figure revenue — thanks to their creative direction and strategy.",
+		authorName: "Daniel Ruiz",
+		authorTitle: "Founder, FetchMate Pets",
+		image: "/img/testimonials/user/daniel.jpg",
+		rating: 5,
+	},
+	{
+		id: 7,
+		achievement: "Brand Reborn",
+		quote:
+			"After the rebranding, everything clicked — our visuals, ads, and growth. Sales jumped 4x in just one quarter.",
+		authorName: "Emily James",
+		authorTitle: "CEO, ModernBake Co.",
+		image: "/img/testimonials/user/emily.jpg",
+		rating: 5,
+	},
+	{
+		id: 8,
+		achievement: "A+ Content Wins",
+		quote:
+			"Our fitness line exploded after their A+ content revamp. Ads are leaner, profits are cleaner, sales are booming.",
+		authorName: "Adam Lee",
+		authorTitle: "Co-Founder, FitVerse Gear",
+		image: "/img/testimonials/user/adamlee.jpg",
+		rating: 5,
+	},
+	{
+		id: 9,
+		achievement: "Catalog Turnaround",
+		quote:
+			"Skipper turned our slow-moving catalog into a bestseller lineup. We've hit record months back-to-back.",
+		authorName: "Hannah Kim",
+		authorTitle: "Creative Director, HomeFlow Decor",
+		image: "/img/testimonials/user/hannah.jpg",
+		rating: 5,
+	},
+	{
+		id: 10,
+		achievement: "Premium Brand Lift",
+		quote:
+			"We crossed $300K/month after their team overhauled our listings. Brand feels premium, and it finally pays off.",
+		authorName: "Jake Wilson",
+		authorTitle: "Owner, PawJoy Supplies",
+		image: "/img/testimonials/user/h10-test.png",
+		rating: 5,
+	},
 ];
 
 const successStories = [
@@ -469,115 +469,93 @@ const CaseStudiesMain = () => {
 						</div>
 
           {/* Testimonials Section */}
-          <section id="case-studies-testimonials" className="relative py-24">
-            <div className="absolute inset-0 -z-10">
-              <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-[#0f172a]/20 to-transparent blur-3xl opacity-60"></div>
-            </div>
-            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="mb-16">
-                <div className="relative overflow-hidden rounded-[30px] border border-[#4CAF50]/30 bg-gradient-to-br from-black via-[#121212] to-[#4CAF50] px-8 py-12 sm:px-12 md:px-16 md:py-14 shadow-[0_40px_120px_-60px_rgba(34,197,94,0.55)]">
-                  <div className="absolute inset-0 opacity-10 pointer-events-none">
-                    <div className="absolute top-1/4 left-1/4 h-56 w-56 rounded-full bg-[#4CAF50] blur-3xl"></div>
-                    <div className="absolute bottom-1/4 right-1/4 h-56 w-56 rounded-full bg-[#0EA5E9] blur-3xl"></div>
-                  </div>
-                  <div className="relative z-10 flex flex-col items-center text-center gap-6">
-                    <h3 className="text-2xl md:text-3xl font-bold text-white">
-                      Curious what actually drives our 6-month turnarounds?
-                    </h3>
-                    <p className="text-base md:text-lg text-white/80 leading-relaxed max-w-3xl">
-                      Take a behind-the-scenes look at our approach and see how calm growth actually gets engineered.
-                    </p>
-                    <div className="flex justify-center">
-                      <ButtonPrimary type={2} isIcon={true} url="/#contact">
-                        Show Me How It Works
-                      </ButtonPrimary>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="text-center mb-16">
-                <span className="inline-flex items-center rounded-full border border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.4em] text-white/60">
-                  Voices From Clients
-                </span>
-                <h2 className="mt-6 text-4xl md:text-5xl font-black text-white leading-tight">
-                  Testimonials
-                </h2>
-                <p className="mt-4 text-lg text-white/70 max-w-3xl mx-auto">
-                  Real operators sharing the wins we engineered together — the calm after the chaos of runaway ad spend.
-                </p>
-              </div>
+			<section id="testimonials" className="wow fadeInUp py-80px md:py-100px bg-[#050505] dark:bg-[#0a0a0a] scroll-mt-[130px]" data-wow-delay=".40s">
+				<div className="container">
+					<div className="max-w-4xl mx-auto text-center mb-16">
+						<h2 className="text-4xl md:text-5xl font-bold text-white">
+							Testimonials
+						</h2>
+					</div>
 
-              <div className="relative px-8 sm:px-12 lg:px-0">
-                <button
-                  className="testimonials-slider-prev absolute left-0 lg:left-[-64px] top-1/2 -translate-y-1/2 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white/80 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/10"
-                  aria-label="Previous testimonial"
-                >
-                  <i className="fa-regular fa-chevron-left"></i>
-                </button>
-                <button
-                  className="testimonials-slider-next absolute right-0 lg:right-[-64px] top-1/2 -translate-y-1/2 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white/80 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/10"
-                  aria-label="Next testimonial"
-                >
-                  <i className="fa-regular fa-chevron-right"></i>
-                </button>
+					<div className="relative max-w-4xl mx-auto px-16 md:px-0">
+						{/* Navigation Arrows */}
+						<button
+							className="testimonials-slider-prev absolute left-0 md:left-[-60px] top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg flex items-center justify-center text-[#121212] dark:text-white transition-all duration-300 hover:scale-110"
+							aria-label="Previous"
+						>
+							<i className="fa-regular fa-chevron-left"></i>
+						</button>
+						<button
+							className="testimonials-slider-next absolute right-0 md:right-[-60px] top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg flex items-center justify-center text-[#121212] dark:text-white transition-all duration-300 hover:scale-110"
+							aria-label="Next"
+						>
+							<i className="fa-regular fa-chevron-right"></i>
+						</button>
 
-                <Swiper
-                  spaceBetween={30}
-                  slidesPerView={1}
-                  loop={true}
-                  autoplay={{
-                    delay: 5000,
-                    disableOnInteraction: false,
-                  }}
-                  navigation={{
-                    prevEl: ".testimonials-slider-prev",
-                    nextEl: ".testimonials-slider-next",
-                  }}
-                  modules={[Navigation, Autoplay]}
-                  className="testimonials-slider"
-                >
-                  {testimonials.map((testimonial) => (
-                    <SwiperSlide key={testimonial.id}>
-                      <div className="flex flex-col items-center text-center">
-                        <div className="mb-8">
-                          <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border border-white/10 shadow-[0_20px_45px_-30px_rgba(59,130,246,0.6)]">
-                            <Image
-                              src={testimonial.image}
-                              alt={testimonial.authorName}
-                              width={160}
-                              height={160}
-                              className="h-full w-full object-cover"
-                            />
-                          </div>
-                        </div>
+						<Swiper
+							spaceBetween={30}
+							slidesPerView={1}
+							loop={true}
+							autoplay={{
+								delay: 5000,
+								disableOnInteraction: false,
+							}}
+							navigation={{
+								prevEl: ".testimonials-slider-prev",
+								nextEl: ".testimonials-slider-next",
+							}}
+							modules={[Navigation, Autoplay]}
+							className="testimonials-slider"
+						>
+							{testimonials.map((testimonial) => (
+								<SwiperSlide key={testimonial.id}>
+									<div className="flex flex-col items-center text-center px-4">
+										{/* Profile Image */}
+										<div className="mb-8">
+											<div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden shadow-lg">
+												<Image
+													src={testimonial.image}
+													alt={testimonial.authorName}
+													width={160}
+													height={160}
+													className="w-full h-full object-cover"
+												/>
+											</div>
+										</div>
 
-                        <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6">
-                          {testimonial.achievement}
-                        </h3>
+										{/* Achievement Sub-heading */}
+										<h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
+											{testimonial.achievement}
+										</h3>
 
-                        <blockquote className="text-lg sm:text-xl text-white/70 italic mb-8 max-w-3xl leading-relaxed">
-                          “{testimonial.quote}”
-                        </blockquote>
+										{/* Quote */}
+										<blockquote className="text-lg md:text-xl text-gray-300 italic mb-8 max-w-3xl leading-relaxed">
+											{testimonial.quote}
+										</blockquote>
 
-                        <p className="text-xl sm:text-2xl font-black text-white mb-2">
-                          {testimonial.authorName}
-                        </p>
-                        <p className="text-base text-white/60 mb-4">
-                          {testimonial.authorTitle}
-                        </p>
+										{/* Author Name */}
+										<p className="text-xl md:text-2xl font-bold text-white mb-3">
+											{testimonial.authorName}
+										</p>
 
-                        <div className="flex gap-1 justify-center">
-                          {[...Array(testimonial.rating)].map((_, i) => (
-                            <i key={i} className="fas fa-star text-amber-400 text-lg"></i>
-                          ))}
-                        </div>
-                      </div>
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-              </div>
-            </div>
-          </section>
+										{/* Stars Rating */}
+										<div className="flex gap-1 mb-3 justify-center">
+											{[...Array(testimonial.rating)].map((_, i) => (
+												<i key={i} className="fas fa-star text-white text-xl"></i>
+											))}
+										</div>
+
+										{/* Author Title */}
+										<p className="text-lg text-gray-400">
+											{testimonial.authorTitle}
+										</p>
+									</div>
+								</SwiperSlide>
+							))}
+						</Swiper>
+					</div>
+				</div>
+			</section>
 
           {/* Video Testimonials Section */}
           <section id="case-studies-video-testimonials" className="relative py-28">

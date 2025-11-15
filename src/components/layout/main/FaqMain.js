@@ -80,7 +80,7 @@ const FaqMain = () => {
 								Every Amazon brand is on its own voyage. These answers show you exactly how we steady the waters, reclaim your margins, and systemize growth without adding chaos.
 							</p>
 							<div className="mt-35px flex flex-wrap gap-20px wow fadeInUp" data-wow-delay=".2s">
-								<ButtonPrimary href="/#contact" isIcon={true}>
+								<ButtonPrimary url="/contact" isIcon={true}>
 									Talk to a Growth Skipper
 								</ButtonPrimary>
 							</div>
@@ -101,10 +101,10 @@ const FaqMain = () => {
 								<div className="h-[1px] bg-gradient-to-r from-transparent via-primary-color-light/30 to-transparent"></div>
 								<ul className="grid grid-cols-2 gap-15px">
 									{[
-										{ value: "82M+", label: "Managed Ad Revenue" },
-										{ value: "47", label: "Days to measurable impact" },
-										{ value: "4.9/5", label: "Client confidence score" },
-										{ value: "Zero Guesswork", label: "Promise we make (and keep)" },
+										{ value: "100 MIL +", label: "Revenue This Year" },
+										{ value: "277% +", label: "Average Revenue Growth" },
+										{ value: "300 +", label: "Brands We Helped" },
+										{ value: "150 +", label: "Brands Currently Working With Us" },
 									].map((item, idx) => (
 										<li key={idx} className="rounded-20px bg-cream-light-color dark:bg-[#1A1A1A] px-4 py-6 text-center border border-transparent dark:border-white/10">
 											<p className="text-2xl font-semibold text-primary-color-light dark:text-white-color">
@@ -188,7 +188,7 @@ const FaqMain = () => {
 								Growth doesn’t need to be dramatic — just disciplined. We’ll help you reset, rebuild, and scale profitably.
 							</p>
 							<div className="flex flex-col sm:flex-row gap-4 justify-center">
-								<ButtonPrimary href="/#contact" isIcon={true}>
+								<ButtonPrimary url="/contact" isIcon={true}>
 									Start My Brand Turnaround
 								</ButtonPrimary>
 							</div>
