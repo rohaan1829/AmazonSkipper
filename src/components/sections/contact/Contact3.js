@@ -91,60 +91,60 @@ const Contact3 = () => {
 									Let’s Get In Touch
 								</h2>
 							</div>
-							<div className="contact-info-list px-15px py-30px lg:p-30px lg:pb-35px border-2 border-body-color dark:border-bg-color-2  transition-all duration-500 rounded-15px relative z-0 ">
+							<div className="contact-info-list px-15px py-20px sm:px-20px sm:py-25px lg:p-30px lg:pb-35px border-2 border-body-color dark:border-bg-color-2  transition-all duration-500 rounded-15px relative z-0 ">
 								<ul className="flex flex-col ">
 									<li
-										className="flex  items-center gap-15px pb-30px mb-17px border-b-2 border-body-color dark:border-bg-color-2 last:pb-0 last:mb-0 last:border-b-0 position-relative wow fadeInLeft"
+										className="flex items-start sm:items-center gap-25px sm:gap-30px md:gap-35px pt-15px sm:pt-20px pb-25px sm:pb-30px mb-15px sm:mb-17px border-b-2 border-body-color dark:border-bg-color-2 last:pb-0 last:mb-0 last:border-b-0 position-relative wow fadeInLeft"
 										data-wow-delay=".4s"
 									>
-										<div className="flex-shrink-0 icon-box text-xl sm:text-size-22 w-50px h-50px sm:w-60px sm:h-60px text-white-color flex justify-center items-center flex-col bg-gradient-primary-2 rounded-full leading-1">
-											<i className="flaticon-phone-call leading-1 mt-1"></i>
+										<div className="flex-shrink-0 icon-box w-50px h-50px sm:w-60px sm:h-60px text-white-color flex justify-center items-center bg-gradient-primary-2 rounded-full aspect-square relative">
+											<i className="flaticon-phone-call text-xl sm:text-size-22 absolute inset-0 flex items-center justify-center"></i>
 										</div>
-										<div className="text-box">
-											<p className="text-lg mb-10px font-semibold text-primary-color-light dark:text-white-color ">
+										<div className="text-box flex-1 min-w-0">
+											<p className="text-base sm:text-lg mb-8px sm:mb-10px font-semibold text-primary-color-light dark:text-white-color ">
 												Phone
 											</p>
 											<Link
 												href="tel:+19342013452"
-												className="text-primary-color-light dark:text-body-color-3 text-lg  font-normal hover:text-[#16A34A] dark:hover:text-[#22C55E]"
+												className="text-primary-color-light dark:text-body-color-3 text-sm sm:text-base md:text-lg font-normal hover:text-[#16A34A] dark:hover:text-[#22C55E] break-words"
 											>
 												+1 9342013452
 											</Link>
 										</div>
 									</li>
 									<li
-										className="flex  items-center gap-15px pb-30px mb-17px border-b-2 border-body-color dark:border-bg-color-2 last:pb-0 last:mb-0 last:border-b-0 position-relative wow fadeInLeft"
+										className="flex items-start sm:items-center gap-25px sm:gap-30px md:gap-35px pb-25px sm:pb-30px mb-15px sm:mb-17px border-b-2 border-body-color dark:border-bg-color-2 last:pb-0 last:mb-0 last:border-b-0 position-relative wow fadeInLeft"
 										data-wow-delay=".5s"
 									>
-										<div className="flex-shrink-0 icon-box text-xl sm:text-size-22 w-50px h-50px sm:w-60px sm:h-60px text-white-color flex justify-center items-center flex-col bg-gradient-primary-2 rounded-full leading-1">
-											<i className="flaticon-mail-inbox-app leading-1 mt-1"></i>
+										<div className="flex-shrink-0 icon-box w-50px h-50px sm:w-60px sm:h-60px text-white-color flex justify-center items-center bg-gradient-primary-2 rounded-full aspect-square relative">
+											<i className="flaticon-mail-inbox-app text-xl sm:text-size-22 absolute inset-0 flex items-center justify-center"></i>
 										</div>
 										<div className="text-box flex-1 min-w-0">
-											<p className="text-lg mb-10px font-semibold text-primary-color-light dark:text-white-color ">
+											<p className="text-base sm:text-lg mb-8px sm:mb-10px font-semibold text-primary-color-light dark:text-white-color ">
 												Email
 											</p>
 											<Link
 												href="mailto:theamazonskipper@gmail.com"
-												className="text-primary-color-light dark:text-body-color-3 text-lg font-normal hover:text-[#16A34A] dark:hover:text-[#22C55E] whitespace-nowrap"
+												className="text-primary-color-light dark:text-body-color-3 text-sm sm:text-base md:text-lg font-normal hover:text-[#16A34A] dark:hover:text-[#22C55E] break-all sm:break-words"
 											>
 												theamazonskipper@gmail.com 
 											</Link>
 										</div>
 									</li>
 									<li
-										className="flex  items-center gap-15px pb-30px mb-17px border-b-2 border-body-color dark:border-bg-color-2 last:pb-0 last:mb-0 last:border-b-0 position-relative wow fadeInLeft"
+										className="flex items-start sm:items-center gap-25px sm:gap-30px md:gap-35px pb-25px sm:pb-30px mb-15px sm:mb-17px border-b-2 border-body-color dark:border-bg-color-2 last:pb-0 last:mb-0 last:border-b-0 position-relative wow fadeInLeft"
 										data-wow-delay=".6s"
 									>
-										<div className="flex-shrink-0 icon-box text-xl sm:text-size-22 w-50px h-50px sm:w-60px sm:h-60px text-white-color flex justify-center items-center flex-col bg-gradient-primary-2 rounded-full leading-1">
-											<i className="flaticon-location leading-1 mt-1"></i>
+										<div className="flex-shrink-0 icon-box w-50px h-50px sm:w-60px sm:h-60px text-white-color flex justify-center items-center bg-gradient-primary-2 rounded-full aspect-square relative">
+											<i className="flaticon-location text-xl sm:text-size-22 absolute inset-0 flex items-center justify-center"></i>
 										</div>
-										<div className="text-box">
-											<p className="text-lg mb-10px font-semibold text-primary-color-light dark:text-white-color ">
+										<div className="text-box flex-1 min-w-0">
+											<p className="text-base sm:text-lg mb-8px sm:mb-10px font-semibold text-primary-color-light dark:text-white-color ">
 												Address
 											</p>
 											<Link
 												href="https://maps.google.com/?q=Office%2013609%20182-184%20High%20Street%20North,%20East%20Ham,%20London,%20United%20Kingdom,%20E6%202JA"
-												className="text-primary-color-light dark:text-body-color-3 text-lg  font-normal hover:text-[#16A34A] dark:hover:text-[#22C55E]"
+												className="text-primary-color-light dark:text-body-color-3 text-sm sm:text-base md:text-lg font-normal hover:text-[#16A34A] dark:hover:text-[#22C55E] break-words"
 											>
 												Office 13609 182-184 High Street North, East Ham, London, United Kingdom, E6 2JA
 											</Link>
