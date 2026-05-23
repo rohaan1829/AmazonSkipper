@@ -5,15 +5,10 @@ import FooterContextProvider from "@/context_api/FooterContext";
 import HeaderContextProvider from "@/context_api/HeaderContext";
 import PortfolioRenderContextProvider from "@/context_api/PortfolioRenderContext";
 import useSticky from "@/hooks/useSticky";
-import animateInvertText from "@/libs/animateInvertText";
-import animateSplitText from "@/libs/animateSplitText ";
-import controlVanillaTilt from "@/libs/controlVanillaTilt";
 import smoothScroll from "@/libs/smoothScroll";
-import tjTitleAnim from "@/libs/tjTitleAnim";
 import { useEffect } from "react";
 import BackToTop from "../others/BackToTop";
 import MagicCusror1 from "../others/MagicCusror1";
-import Preloader from "../others/Preloader";
 
 const PageWrapper = ({
 	children,
@@ -25,19 +20,15 @@ const PageWrapper = ({
 }) => {
 	useSticky();
 	useEffect(() => {
+		// WOW.js drives the `wow fadeInUp`-style scroll reveals used throughout
+		// the live components. Dynamic-imported so it doesn't block first paint.
 		import("wow.js").then(({ default: WOW }) => {
 			new WOW().init();
-			controlVanillaTilt();
 		});
 		smoothScroll();
-		animateSplitText();
-		animateInvertText();
-		tjTitleAnim();
 	}, []);
 	return (
 		<div>
-			<Preloader />
-
 			<BackToTop />
 			{headerType === 4 && <MagicCusror1 />}
 			<HeaderContextProvider
