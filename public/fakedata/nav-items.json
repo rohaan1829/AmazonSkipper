@@ -2,36 +2,46 @@
     {
       "name":"Home",
       "path":"/",
-      "path2":"/"  
+      "path2":"/"
     },
     {
       "name":"Services",
       "path":"#services",
-      "path2":"/services"  
+      "path2":"/services",
+      "dropdown": [
+        {
+          "name": "PPC Management",
+          "path": "/services"
+        },
+        {
+          "name": "Brand Management",
+          "path": "/brand-management"
+        }
+      ]
     },
     {
       "name":"Case Studies",
       "path":"#case-studies",
-      "path2":"/case-studies"  
+      "path2":"/case-studies"
     },
     {
       "name":"Testimonials",
       "path":"#testimonials",
-      "path2":"/testimonials"  
+      "path2":"/testimonials"
     },
     {
       "name":"About Us",
       "path":"/about",
-      "path2":"/about"  
+      "path2":"/about"
     },
     {
       "name":"FAQ's",
       "path":"/faq",
-      "path2":"/faq"  
+      "path2":"/faq"
     },
     {
       "name":"Contact",
       "path":"/contact",
-      "path2":"/contact"  
+      "path2":"/contact"
     }
 ]

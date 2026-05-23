@@ -201,59 +201,25 @@ img {
 		transform: translate3d(0, -3000px, 0);
 	}
 }
+/* Single always-pinned header. Frosted-glass treatment — translucent
+   background lets the hero's brand glows wash through, strong backdrop
+   blur keeps text crisp, hairline border defines the edge. */
 .header-area {
-	position: relative;
-	z-index: 9;
-	background-color: var(--off-white-color);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+	background-color: rgba(255, 255, 255, 0.72);
+	backdrop-filter: blur(20px) saturate(160%);
+	-webkit-backdrop-filter: blur(20px) saturate(160%);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 .dark .header-area {
-	background-color: var(--black-color);
-}
-.header-area.header-absolute {
-	position: absolute;
-	background-color: transparent;
-	left: 0;
-	top: 0;
-	width: 100%;
-	z-index: 99;
-}
-.header-6.header-absolute {
-	top: -22px;
-}
-@media (min-width: 768px) {
-	.header-6.header-absolute {
-		top: -28px;
-	}
-}
-@media (min-width: 1280px) and (max-width: 1535px) {
-	.header-6.header-absolute {
-		top: 18px;
-	}
-}
-
-.header-area.header-2 {
-	width: 100%;
-	position: fixed;
-	top: -90px;
-	left: 0;
-	z-index: 100;
-	opacity: 0;
-	transition: 0.3s;
-	box-shadow: 0 0 30px rgba(135, 80, 247, 0.2);
-}
-.header-area.header-2.sticky {
-	top: 0;
-	opacity: 1;
-	animation: bounceInDown 1s;
-	animation-duration: 1s;
-	animation-fill-mode: both;
-}
-.header-area.header-2.sticky-out {
-	top: 0;
-	opacity: 1;
-	animation: bounceInUp 1s;
-	animation-duration: 1s;
-	animation-fill-mode: forwards;
+	background-color: rgba(10, 10, 10, 0.62);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
 }
 .nav .nav_item .active:after {
 	width: 100%;
@@ -275,13 +241,15 @@ img {
 .dark .header-6 .nav .nav_item .active {
 	color: var(--white-color);
 }
-/* Compact sticky header for header-6/headerType 9 */
-.header-6.header-sticky.sticky {
-	background-color: var(--off-white-color);
-	backdrop-filter: blur(10px);
+/* Dropdown menu styles */
+.nav .nav_item {
+	position: relative;
 }
-.dark .header-6.header-sticky.sticky {
-	background-color: var(--black-color);
+.header-area,
+.header-area > div,
+.header-area .nav,
+.header-area .nav > ul {
+	overflow: visible !important;
 }
 
 .menu-bar button {

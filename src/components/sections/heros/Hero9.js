@@ -31,14 +31,64 @@ const Hero9 = () => {
 			</div>
 			<div className="container">
 				<div className="relative pt-2 sm:pt-4 md:pt-4 lg:pt-3">
-				<div className="image mx-auto w-full max-w-[560px] sm:max-w-[340px] md:max-w-[480px] lg:max-w-[460px] xl:max-w-[520px] 2xl:max-w-[580px] relative z-0 after:absolute after:left-0 after:bottom-0 after:h-[250px] after:w-full after:bg-gradient-15-light dark:after:bg-gradient-15">
+				<div className="image mx-auto w-full max-w-[560px] sm:max-w-[340px] md:max-w-[480px] lg:max-w-[460px] xl:max-w-[520px] 2xl:max-w-[580px] relative z-0">
+				{/* Stage-light: soft brand halo behind the figure, extends past the image edges */}
+				<div
+					aria-hidden
+					className="pointer-events-none absolute -inset-x-16 -top-10 -bottom-16 -z-10"
+					style={{
+						background:
+							"radial-gradient(ellipse 60% 65% at 50% 42%, rgba(76,175,80,0.32) 0%, rgba(76,175,80,0.12) 35%, rgba(76,175,80,0.04) 60%, transparent 80%)",
+						filter: "blur(36px)",
+					}}
+				/>
+				{/* Secondary warm accent — orange counterlight, smaller and offset */}
+				<div
+					aria-hidden
+					className="pointer-events-none absolute -inset-x-10 top-4 -bottom-8 -z-10"
+					style={{
+						background:
+							"radial-gradient(circle 35% at 75% 30%, rgba(255,107,53,0.16), transparent 70%)",
+						filter: "blur(30px)",
+					}}
+				/>
 				<img
 					src="/img/hero/Huzaifa's Portrait.png"
 					alt="Huzaifa"
-					className="w-full h-auto max-h-[520px] sm:max-h-[420px] md:max-h-[480px] lg:max-h-[500px] 2xl:max-h-[540px] object-contain object-top
-							[clip-path:path('M0_200A315_315_0_0_1_630_200L630_900L0_900Z')]"
+					className="w-full h-auto max-h-[520px] sm:max-h-[420px] md:max-h-[480px] lg:max-h-[500px] 2xl:max-h-[540px] object-contain object-top"
+					style={{
+						maskImage:
+							"radial-gradient(ellipse 72% 92% at 50% 48%, #000 42%, rgba(0,0,0,0.85) 60%, rgba(0,0,0,0.4) 80%, transparent 100%)",
+						WebkitMaskImage:
+							"radial-gradient(ellipse 72% 92% at 50% 48%, #000 42%, rgba(0,0,0,0.85) 60%, rgba(0,0,0,0.4) 80%, transparent 100%)",
+						filter:
+							"drop-shadow(0 25px 60px rgba(76,175,80,0.32)) drop-shadow(0 10px 24px rgba(0,0,0,0.4))",
+					}}
 				/>
 				
+				{/* Green bottom-blend — dissolves the image into the brand-green wave below.
+					Multi-stop gradient: strong green at the floor, dissipating upward through the
+					lower third so the figure stays readable. */}
+				<div
+					aria-hidden
+					className="pointer-events-none absolute inset-x-0 bottom-0 h-[280px] z-[1]"
+					style={{
+						background:
+							"linear-gradient(to top, rgba(34,197,94,0.78) 0%, rgba(76,175,80,0.52) 18%, rgba(76,175,80,0.22) 45%, rgba(76,175,80,0.06) 75%, transparent 100%)",
+					}}
+				/>
+				{/* Soft inner glow at the very bottom edge — catches a hint of light where the
+					image kisses the wave, makes the blend feel intentional rather than a fade-out. */}
+				<div
+					aria-hidden
+					className="pointer-events-none absolute inset-x-4 bottom-[-20px] h-[60px] z-[2]"
+					style={{
+						background:
+							"radial-gradient(ellipse 70% 100% at 50% 100%, rgba(255,255,255,0.18), transparent 70%)",
+						filter: "blur(8px)",
+					}}
+				/>
+
 				{/* Play Button Overlay - Video functionality removed, will be replaced with real video later */}
 				<div className="absolute inset-0 flex items-center justify-center z-10">
 					<div

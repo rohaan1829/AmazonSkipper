@@ -6,115 +6,40 @@ import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import getALlServices from "@/libs/getALlServices";
 import Image from "next/image";
 import BrandMarque from "@/components/sections/marquee/BrandMarque";
 
-const ServicesMain = () => {
-  const [services, setServices] = useState([]);
+const BrandManagementMain = () => {
   const [activeFaq, setActiveFaq] = useState(null);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [faqs, setFaqs] = useState([
     {
-      question: "How much can I expect to reduce my Amazon ad spend?",
-      answer: "Our clients typically see a 30-50% reduction in their Amazon ad spend within the first 47 days. We guarantee results or provide a full refund."
+      question: "What does full-service brand management include?",
+      answer: "Our brand management covers everything from Seller Central setup, listing optimization, A+ content creation, PPC advertising, inventory management, customer support, seasonal promotions, brand protection, and performance reporting. We handle the entire Amazon ecosystem so you can focus on your business."
     },
     {
-      question: "What services do you offer for Amazon sellers?",
-      answer: "We offer comprehensive Amazon business solutions including ad optimization, keyword research, listing optimization, PPC management, and strategic consulting to maximize your ROI."
+      question: "How do you improve my product rankings on Amazon?",
+      answer: "We use deep keyword research, competitor analysis, optimized listings with A+ content, and strategic storefront design to boost your organic rank. Combined with targeted advertising campaigns, we ensure your products get maximum visibility."
     },
     {
-      question: "How long does it take to see results?",
-      answer: "Most clients start seeing improvements within 2-3 weeks, with significant results visible by day 47. Our process is designed for rapid optimization and immediate impact."
+      question: "Can you help expand my brand to international Amazon marketplaces?",
+      answer: "Yes, our team guides you into new Amazon regions and international marketplaces. We localize listings, manage cross-border logistics, and tailor campaigns so your brand succeeds wherever customers shop."
     },
     {
-      question: "Do you work with all types of Amazon sellers?",
-      answer: "Yes, we work with sellers of all sizes - from new sellers just starting out to established brands looking to optimize their existing campaigns and scale their business."
+      question: "How do you protect my brand on Amazon?",
+      answer: "We monitor for unauthorized sellers and counterfeit goods, assist with intellectual property enforcement, and take proactive action to maintain buy box control and protect your brand reputation."
     },
     {
-      question: "What makes your approach different?",
-      answer: "Our data-driven approach combines advanced analytics, machine learning, and years of Amazon expertise. We focus on long-term sustainable growth rather than quick fixes."
+      question: "What kind of reporting do you provide?",
+      answer: "You receive regular insights on conversion rates, advertising cost of sale (ACoS), return rates, and other key metrics. Our reports come with actionable recommendations that evolve as the marketplace changes."
     }
   ]);
-  useEffect(() => {
-    const allServices = getALlServices();
-    setServices(allServices);
-  }, []);
 
   const stats = [
     { value: 47, label: "Days to Results" },
     { value: 45, label: "Average Spend Reduction %" },
     { value: 500, label: "Successful Campaigns" },
     { value: 98, label: "Client Satisfaction %" }
-  ];
-
-  const onboardingSteps = [
-    {
-      title: "Discover & Strategize",
-      description:
-        "We start by understanding your business, products, audience, and Amazon goals. Using data-driven insights, we create a tailored strategy that identifies key opportunities and sets a clear path for growth.",
-      icon: "fa-compass-drafting",
-    },
-    {
-      title: "Launch & Optimize",
-      description:
-        "We handle everything from building and launching your campaigns to optimizing bids, targeting, and creatives. You focus on your business while we fine-tune performance to maximize your ROI.",
-      icon: "fa-rocket-launch",
-    },
-    {
-      title: "Scale & Elevate",
-      description:
-        "With results rolling in, we help you scale profitably—expanding into new markets, refining strategies, and continuously improving to keep you ahead of the competition.",
-      icon: "fa-arrows-up-to-line",
-    },
-  ];
-
-  const clientOutcomes = [
-    {
-      id: 1,
-      metric: "200%",
-      description: "Growth in ad revenue for Real Mushrooms through DSP advertising.",
-      icon: "fa-rocket",
-      
-      color: "from-[#4CAF50] to-[#2E7D32]"
-    },
-    {
-      id: 2,
-      metric: "57%",
-      description: "Reduction in TACOS for Vitargo through tight keyword pruning processes.",
-      icon: "fa-shopping-cart",
-      
-      color: "from-[#FF6B35] to-[#E55A2B]"
-    },
-    {
-      id: 3,
-      metric: "40K",
-      description: "More traffic to FitTea Amazon page from organic ranking.",
-      icon: "fa-chart-line",
-      
-      color: "from-[#4CAF50] to-[#2E7D32]"
-    },
-    {
-      id: 4,
-      metric: "1.1M",
-      description: "New sessions for Labrada's new pro series from a well planned launch.",
-      icon: "fa-chart-line",
-      color: "from-[#4CAF50] to-[#2E7D32]"
-    },
-    {
-      id: 5,
-      metric: "-20%",
-      description: "Reduction in ACOS for HappyV with PPC analysis.",
-      icon: "fa-chart-line",
-      color: "from-[#FF6B35] to-[#E55A2B]"
-    },
-    {
-      id: 6,
-      metric: "75%",
-      description: "Increase in profits for MMA Nutrition by implementing premium A.",
-      icon: "fa-bullseye",
-      color: "from-[#4CAF50] to-[#2E7D32]"
-    }
   ];
 
   const successStories = [
@@ -175,7 +100,7 @@ const ServicesMain = () => {
       id: 2,
       achievement: "Six-Figure Breakthrough",
       quote:
-        "We went from flat sales to six figures in under 4 months. Skipper’s ad control and visuals did the magic.",
+        "We went from flat sales to six figures in under 4 months. Skipper's ad control and visuals did the magic.",
       authorName: "Ryan Mitchell",
       authorTitle: "Co-Founder, PetVibe Co.",
       image: "/img/testimonials/user/ryan.jpg",
@@ -195,7 +120,7 @@ const ServicesMain = () => {
       id: 4,
       achievement: "Rankings Locked In",
       quote:
-        "Our listings now rank high and stay there. Revenue up 5x since partnering with Skipper — can’t ask for better.",
+        "Our listings now rank high and stay there. Revenue up 5x since partnering with Skipper — can't ask for better.",
       authorName: "Ethan Cole",
       authorTitle: "Director, Orbit Office Supplies",
       image: "/img/testimonials/user/uncle-g.jpg",
@@ -215,7 +140,7 @@ const ServicesMain = () => {
       id: 6,
       achievement: "Consistent Six Figures",
       quote:
-        "We used to struggle breaking $50K/month. Now it’s consistent six-figure revenue — thanks to their creative direction and strategy.",
+        "We used to struggle breaking $50K/month. Now it's consistent six-figure revenue — thanks to their creative direction and strategy.",
       authorName: "Daniel Ruiz",
       authorTitle: "Founder, FetchMate Pets",
       image: "/img/testimonials/user/daniel.jpg",
@@ -245,7 +170,7 @@ const ServicesMain = () => {
       id: 9,
       achievement: "Catalog Turnaround",
       quote:
-        "Skipper turned our slow-moving catalog into a bestseller lineup. We’ve hit record months back-to-back.",
+        "Skipper turned our slow-moving catalog into a bestseller lineup. We've hit record months back-to-back.",
       authorName: "Hannah Kim",
       authorTitle: "Creative Director, HomeFlow Decor",
       image: "/img/testimonials/user/hannah.jpg",
@@ -266,148 +191,94 @@ const ServicesMain = () => {
   const featuredCaseStudy = successStories[0];
   const featuredTestimonial = {
     achievement: successStories[0].achievement,
-    quote: "Skipper delivered 10x ROAS in just 60 days. They’re the partner TechGear Solutions needed to scale with confidence.",
+    quote: "Skipper delivered 10x ROAS in just 60 days. They're the partner TechGear Solutions needed to scale with confidence.",
     authorName: successStories[0].clientName,
     authorTitle: successStories[0].company,
     image: "/img/testimonials/user/1.jpg",
   };
-  const performanceHighlights = [
+
+  const brandCapabilities = [
     {
       id: 1,
-      client: "TechGear Solutions",
-      ppcSpend: "$1.2M managed",
-      projectsCompleted: "18 projects wrapped",
-      result: "47% lower ACOS in 60 days",
-      summary:
-        "Managed by our senior PPC pod with dedicated creatives, analytics, and conversion teams aligned to daily growth rituals.",
+      title: "Account Setup & Compliance",
+      summary: "Launch right, stay protected.",
+      detail: "We handle Seller Central registration, category approvals and brand registry. Ongoing compliance checks and policy monitoring keep your account healthy.",
+      icon: "fa-shield-check",
+      color: "from-[#4CAF50] to-[#2E7D32]",
     },
     {
       id: 2,
-      client: "Home Essentials Plus",
-      ppcSpend: "$860K managed",
-      projectsCompleted: "14 launches executed",
-      result: "3x ROAS across core catalog",
-      summary:
-        "Launch, scale, and optimize cycles wired into actionable dashboards, auditable data, and SKU-level performance loops.",
+      title: "Listing Creation & Optimization",
+      summary: "Convert visitors into buyers.",
+      detail: "High impact titles, bullet points, images and videos convert visitors into buyers. Our team continuously runs split tests and applies enhancements.",
+      icon: "fa-pen-to-square",
+      color: "from-[#FF6B35] to-[#E55A2B]",
     },
     {
       id: 3,
-      client: "Fitness Pro Gear",
-      ppcSpend: "$540K managed",
-      projectsCompleted: "11 growth initiatives",
-      result: "62% spike in conversions",
-      summary:
-        "Aggressive keyword pruning paired with creative refreshes and on-page CRO frameworks to unlock rapid scaling.",
-    },
-    {
-      id: 4,
-      client: "BeautyCare Co",
-      ppcSpend: "$1.05M managed",
-      projectsCompleted: "16 performance sprints",
-      result: "35% increase in repeat orders",
-      summary:
-        "Lifecycle PPC strategy combining DSP, Sponsored Brands video, and post-purchase retargeting to raise LTV.",
-    },
-  ];
-  const ppcCapabilities = [
-    {
-      id: 1,
-      title: "Sponsored Products",
-      summary:
-        " Visibility that converts.",
-      detail:
-        "We fine-tune bids and placements to make your top listings dominate profitable search spots.",
+      title: "Advertising Management",
+      summary: "Spend with purpose.",
+      detail: "Multi-layer campaigns across Sponsored Products, Brands, Display and DSP are paired with bid strategies, budget planning and analytics for profitable growth.",
       icon: "fa-bullseye",
       color: "from-[#4CAF50] to-[#2E7D32]",
     },
     {
-      id: 2,
-      title: "Sponsored Brands & Video Ads",
-      summary:
-        "Show your story where it sells.",
-      detail:
-        "We design brand-driven ads that build trust and pull shoppers straight into your listings.",
-      icon: "fa-photo-film",
-      color: "from-[#FF6B35] to-[#E55A2B]",
-    },
-    {
-      id: 3,
-      title: "Display & Retargeting Ads",
-      summary:
-        "Never lose a visitor twice.",
-      detail:
-        "Our smart retargeting campaigns bring back browsers and turn missed clicks into recovered sales.",
-      icon: "fa-retweet",
-      color: "from-[#4CAF50] to-[#2E7D32]",
-    },
-    {
       id: 4,
-      title: "Campaign Creation & Structure",
-      summary:
-        " Clean campaigns. Clear data.",
-      detail:
-        "Built from scratch or restructured for precision, control, and scalability that lasts.",
-      icon: "fa-diagram-project",
-      color: "from-[#4CAF50] to-[#2E7D32]",
+      title: "Inventory & Logistics",
+      summary: "Never run out. Never overstock.",
+      detail: "Demand forecasting, FBA and FBM stock planning, shipping label creation and shipment reconciliation ensure product availability and smooth fulfillment.",
+      icon: "fa-boxes-stacked",
+      color: "from-[#FF6B35] to-[#E55A2B]",
     },
     {
       id: 5,
-      title: "Keyword & Audience Optimization",
-      summary:
-        "Every search matters..",
-      detail:
-        "We identify high-intent keywords and audiences that deliver consistent, sustainable conversions",
-      icon: "fa-magnifying-glass-chart",
-      color: "from-[#FF6B35] to-[#E55A2B]",
+      title: "Customer Experience & Support",
+      summary: "Protect your reputation.",
+      detail: "Round the clock response to messages and reviews, proactive feedback requests and resolution of claims or disputes protect your reputation.",
+      icon: "fa-headset",
+      color: "from-[#4CAF50] to-[#2E7D32]",
     },
     {
       id: 6,
-      title: "Budget & Bid Management",
-      summary:
-        "Spend with purpose.",
-      detail:
-        "Every dollar is tracked, tested, and allocated to maximize ROI without bloating ACOS.",
-      icon: "fa-gauge-high",
-      color: "from-[#4CAF50] to-[#2E7D32]",
+      title: "Seasonal & Promotional Planning",
+      summary: "Capture every opportunity.",
+      detail: "We analyze market trends to build launch calendars, lightning deals, coupons and event-based promotions that drive momentum throughout the year.",
+      icon: "fa-calendar-days",
+      color: "from-[#FF6B35] to-[#E55A2B]",
     },
     {
       id: 7,
-      title: "Continuous Testing & Refinement",
-      summary:
-        "Amazon changes fast - we stay faster",
-      detail:
-        "Daily monitoring and adjustments keep your campaigns sharp and performing at their best.",
-      icon: "fa-flask",
-      color: "from-[#FF6B35] to-[#E55A2B]",
-    },
-    {
-      id: 8,
-      title: "Weekly Reporting & Growth Insights",
-      summary:
-        "Know what’s working, what’s next",
-      detail:
-        "Transparent reports and growth reviews help you see progress and plan your next move with confidence.",
-      icon: "fa-chart-pie",
+      title: "Brand Protection",
+      summary: "Guard your buy box.",
+      detail: "Monitoring for unauthorized sellers and counterfeit goods, assistance with intellectual property enforcement and proactive action maintain buy box control.",
+      icon: "fa-lock",
       color: "from-[#4CAF50] to-[#2E7D32]",
     },
     {
-      id: 9,
-      title: "Executive Growth Alignment",
-      summary:
-        "",
-      detail:
-        "",
-      icon: "fa-handshake-simple",
+      id: 8,
+      title: "Performance Reporting",
+      summary: "Know what's working.",
+      detail: "Regular insights on conversion, advertising cost of sale, return rates and other key metrics come with recommendations that evolve as the marketplace changes.",
+      icon: "fa-chart-pie",
       color: "from-[#FF6B35] to-[#E55A2B]",
     },
+    {
+      id: 9,
+      title: "Marketplace Expansion & Global Growth",
+      summary: "Scale beyond borders.",
+      detail: "Our team guides you into new Amazon regions and international marketplaces. We localize listings, manage cross-border logistics and tailor campaigns so your brand succeeds wherever customers shop.",
+      icon: "fa-globe",
+      color: "from-[#4CAF50] to-[#2E7D32]",
+    },
   ];
-  const ppcSteps = [
+
+  const brandSteps = [
     {
       id: 1,
       title: "Audit & Discovery",
-      headline: "We find what’s fueling growth—and what’s leaking cash.",
+      headline: "We find what's fueling growth—and what's leaking cash.",
       description:
-        "We dig into your listings, ad structure, spend trends, keyword data, and competition. The result: a crystal-clear snapshot of what’s working and a hit list of silent budget drains.",
+        "We dig into your listings, ad structure, spend trends, keyword data, and competition. The result: a crystal-clear snapshot of what's working and a hit list of silent budget drains.",
       icon: "fa-magnifying-glass",
       gradient: "from-[#4CAF50] to-[#2E7D32]",
     },
@@ -416,7 +287,7 @@ const ServicesMain = () => {
       title: "Strategy & Setup",
       headline: "We rebuild campaigns engineered for profitable intent.",
       description:
-        "Goals, margins, positioning—everything informs a tailor-made PPC architecture. Campaigns are restructured, targeting is refined, and ads are aligned with product promise so every click has a job.",
+        "Goals, margins, positioning—everything informs a tailor-made architecture. Campaigns are restructured, targeting is refined, and ads are aligned with product promise so every click has a job.",
       icon: "fa-sitemap",
       gradient: "from-[#FF6B35] to-[#E55A2B]",
     },
@@ -432,7 +303,7 @@ const ServicesMain = () => {
     {
       id: 4,
       title: "Optimize & Adapt",
-      headline: "Amazon shifts daily—your campaigns should too.",
+      headline: "Amazon shifts daily—your brand should too.",
       description:
         "Bids are tuned, keywords expanded, losers trimmed, and creative refreshed in real time. We adapt to algorithm updates before they hit your metrics.",
       icon: "fa-sliders",
@@ -454,14 +325,14 @@ const ServicesMain = () => {
       {/* Hero Services Header - Eye-Opening Design */}
       <section
         id="hero"
-        className="relative flex items-center overflow-hidden bg-[#0a0a0a] pt-110px md:pt-130px lg:pt-140px pb-40px md:pb-60px"
+        className="relative flex items-center overflow-hidden bg-[#0a0a0a] pt-[100px] sm:pt-[110px] md:pt-[120px] lg:pt-[130px] pb-10 sm:pb-12 md:pb-16 lg:pb-20"
       >
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#4CAF50]/20 rounded-full blur-[120px] animate-pulse"></div>
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#FF6B35]/10 rounded-full blur-[120px] animate-pulse" style={{animationDelay: '1s'}}></div>
           <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-[#4CAF50]/5 rounded-full blur-[150px] transform -translate-x-1/2 -translate-y-1/2"></div>
-          
+
           {/* Grid Pattern Overlay */}
           <div className="absolute inset-0 opacity-[0.03]" style={{
             backgroundImage: 'linear-gradient(rgba(76, 175, 80, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(76, 175, 80, 0.1) 1px, transparent 1px)',
@@ -475,49 +346,45 @@ const ServicesMain = () => {
           <div className="absolute bottom-0 left-0 w-2/3 h-2/3 bg-gradient-to-tr from-[#FF6B35]/5 via-transparent to-transparent transform -rotate-12 origin-bottom-left"></div>
         </div>
 
-        <div className="container relative z-10 px-6 md:px-8">
+        <div className="container relative z-10 px-4 sm:px-6 md:px-8">
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-12 gap-8 items-center">
-              
+            <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+
               {/* Left Column - Main Content */}
-              <div className="lg:col-span-7 space-y-4">
+              <div className="lg:col-span-7 space-y-3 sm:space-y-4">
                 {/* Badge */}
-                <div className="inline-block mb-4">
-                  <span className="px-6 py-2 bg-[#4CAF50]/10 border border-[#4CAF50]/30 rounded-full text-[#4CAF50] text-sm font-semibold uppercase tracking-wider backdrop-blur-sm">
-                    Revolutionary Amazon Growth
+                <div className="inline-block mb-2 sm:mb-4">
+                  <span className="px-4 sm:px-6 py-1.5 sm:py-2 bg-[#4CAF50]/10 border border-[#4CAF50]/30 rounded-full text-[#4CAF50] text-xs sm:text-sm font-semibold uppercase tracking-wider backdrop-blur-sm">
+                    Full-Service Brand Management
                   </span>
                 </div>
 
                 {/* Main Headline - Creative Typography */}
-                <h1 className="flex flex-col gap-4 text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-black leading-[0.95] text-white mb-4">
+                <h1 className="flex flex-col gap-2 sm:gap-3 md:gap-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[1] sm:leading-[0.95] text-white mb-3 sm:mb-4">
                   <span className="transform hover:scale-105 transition-transform duration-500">
-                    Stop
+                    Own Your
                   </span>
                   <span
                     className="text-[#4CAF50] transform hover:scale-105 transition-transform duration-500"
                     style={{ textShadow: "0 0 40px rgba(76, 175, 80, 0.5)" }}
                   >
-                    Wasting Money
+                    Amazon Growth
                   </span>
-                  <span className="transform hover:scale-105 transition-transform duration-500">
-                    on Amazon Ads
-                  </span>
-                  <span className="text-[#FF6B35] text-4xl md:text-5xl lg:text-6xl font-bold">
+                  <span className="text-[#FF6B35] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
                     Start Winning.
                   </span>
                 </h1>
 
-                {/* Description Paragraph - 50-70 words */}
-                <p className="text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-2xl mb-6 font-light">
-                Every click should move you closer to profit, not burn your budget. Most sellers lose thousands because campaigns run on guesswork instead of data.
-                We rebuild your PPC engine from the ground up, optimizing every keyword, bid, and placement so your spend finally turns into predictable growth.
+                {/* Description Paragraph */}
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-2xl mb-4 sm:mb-6 font-light">
+                  Ready to turn your Amazon store into a growth machine? Our brand management team drives real revenue, stronger rankings and higher conversion. We handle everything from content to campaigns and operations, turning shoppers into loyal customers while you focus on what you do best.
                 </p>
-                <div className="flex items-center gap-10 mt-12 md:mt-16">
+                <div className="flex items-center gap-6 sm:gap-10 mt-6 sm:mt-8 md:mt-12 lg:mt-16">
                   <Link
                     href="/contact"
-                    className="group relative px-10 py-5 bg-gradient-to-r from-[#4CAF50] to-[#2E7D32] rounded-15px text-white font-bold text-lg md:text-xl transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_30px_rgba(76,175,80,0.6)] overflow-hidden"
+                    className="group relative px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 bg-gradient-to-r from-[#4CAF50] to-[#2E7D32] rounded-15px text-white font-bold text-base sm:text-lg md:text-xl transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_30px_rgba(76,175,80,0.6)] overflow-hidden"
                   >
-                    <span className="relative z-10 flex items-center gap-3">
+                    <span className="relative z-10 flex items-center gap-2 sm:gap-3">
                       Claim Your Free Audit
                       <i className="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
                     </span>
@@ -527,12 +394,12 @@ const ServicesMain = () => {
               </div>
 
               {/* Right Column - Visual Card Placeholder */}
-              <div className="lg:col-span-5">
-                <div className="relative rounded-30px p-1 bg-gradient-to-br from-[#4CAF50] via-[#2E7D32] to-[#FF6B35] shadow-[0_25px_70px_rgba(76,175,80,0.25)]">
-                  <div className="absolute inset-0 rounded-30px bg-[#4CAF50]/20 blur-3xl opacity-40 -z-10"></div>
+              <div className="lg:col-span-5 hidden lg:block">
+                <div className="relative rounded-2xl lg:rounded-30px p-1 bg-gradient-to-br from-[#4CAF50] via-[#2E7D32] to-[#FF6B35] shadow-[0_25px_70px_rgba(76,175,80,0.25)]">
+                  <div className="absolute inset-0 rounded-2xl lg:rounded-30px bg-[#4CAF50]/20 blur-3xl opacity-40 -z-10"></div>
                   <div className="relative rounded-25px bg-[#070707]/90 dark:bg-[#040404]/95 border border-white/10 min-h-[360px] flex flex-col">
                     <div className="px-8 pt-8 pb-6 flex flex-col gap-6">
-                      
+
                       <h3 className="text-2xl md:text-3xl font-black text-white leading-snug">
                         See How Top Sellers Scale With Us
                       </h3>
@@ -551,7 +418,7 @@ const ServicesMain = () => {
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                             <div className="absolute bottom-4 left-4 right-4">
                               <div className="flex flex-wrap items-center gap-3">
-                              
+
                               </div>
                               <div className="mt-4">
                                 <h4 className="text-white text-xl font-semibold">
@@ -562,7 +429,7 @@ const ServicesMain = () => {
                                 </p>
                       </div>
                     </div>
-                        </div>
+                          </div>
                         </div>
                       )}
 
@@ -588,7 +455,7 @@ const ServicesMain = () => {
                             </div>
                           </div>
                           <p className="text-sm md:text-base text-white/80 leading-relaxed italic">
-                            “{featuredTestimonial.quote}”
+                            &ldquo;{featuredTestimonial.quote}&rdquo;
                           </p>
                           <div className="flex items-center gap-2 text-[#4CAF50]">
                             <i className="fas fa-star"></i>
@@ -601,7 +468,7 @@ const ServicesMain = () => {
                     </div>
                     {featuredCaseStudy && (
                       <div className="px-8 py-6 border-t border-white/10 flex flex-wrap items-center justify-center gap-3 text-center">
-                        
+
                         <a
                           href="https://www.youtube.com/watch?v=fgdcjsg0n6I"
                           target="_blank"
@@ -621,8 +488,8 @@ const ServicesMain = () => {
         </div>
       </section>
 
-      {/* PPC Capabilities Section */}
-      <section id="ppc-suite" className="py-50px md:py-60px bg-gradient-to-br from-[#080808] via-[#0f0f0f] to-[#060606] scroll-mt-[130px] relative overflow-hidden">
+      {/* Brand Management Capabilities Section */}
+      <section id="brand-suite" className="py-50px md:py-60px bg-gradient-to-br from-[#080808] via-[#0f0f0f] to-[#060606] scroll-mt-[130px] relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-10 -left-10 w-72 h-72 rounded-full bg-[#4CAF50]/20 blur-3xl"></div>
           <div className="absolute top-1/2 right-[-8rem] w-[26rem] h-[26rem] rounded-full bg-[#FF6B35]/15 blur-[160px]"></div>
@@ -637,49 +504,37 @@ const ServicesMain = () => {
           {/* Section Header */}
           <div className="text-center flex flex-col items-center gap-3 px-4 mb-6">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#FF6B35]/15 border border-[#FF6B35]/30 text-[#FF6B35] rounded-full text-xs font-semibold uppercase tracking-[0.35em]">
-              Calm, Profitable PPC
+              Complete Brand Management
             </span>
             <h2 className="text-2xl md:text-3xl font-black text-white leading-tight max-w-xl">
-              Everything Your PPC Needs to Stay Profitable & Peaceful
+              Everything Your Brand Needs to Stay Profitable & Peaceful
             </h2>
             <p className="text-sm md:text-base text-gray-300 leading-relaxed max-w-xl">
-              Your Amazon PPC shouldn't feel like firefighting. We bring structure, clarity, and consistency to every campaign so spend stays smart and sales stay steady.
+              Your Amazon brand shouldn&apos;t feel like firefighting. We bring structure, clarity, and consistency to every aspect of your business so growth stays steady and stress stays low.
             </p>
             <div className="flex flex-wrap justify-center gap-2">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#4CAF50]/15 text-[#4CAF50] text-xs font-semibold uppercase tracking-[0.35em]">
                 <i className="fas fa-shield-check"></i>
-                Precision-Controlled Spend
+                End-to-End Management
               </div>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FF6B35]/15 text-[#FF6B35] text-xs font-semibold uppercase tracking-[0.35em]">
                 <i className="fas fa-wave-square"></i>
-                Agile Optimization
+                Data-Driven Growth
               </div>
             </div>
           </div>
 
           {/* Capabilities Grid */}
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-            {ppcCapabilities.map((capability, idx) => (
+            {brandCapabilities.map((capability, idx) => (
               <div
                 key={capability.id}
-                className={`group relative overflow-hidden rounded-20px px-6 py-6 min-h-[180px] transition-all duration-500 ${
-                  idx === ppcCapabilities.length - 1
-                    ? "bg-gradient-to-br from-[#10210f]/95 via-[#071407]/95 to-[#0f0905]/95 border border-[#4CAF50]/60 shadow-[0_38px_120px_rgba(76,175,80,0.38)] hover:border-[#FF6B35]/60 hover:shadow-[0_50px_150px_rgba(76,175,80,0.45)] hover:-translate-y-1.5"
-                    : "bg-[#0e0e0e]/95 border border-white/8 hover:-translate-y-1 hover:border-[#4CAF50]/35 hover:shadow-[0_30px_90px_rgba(76,175,80,0.20)]"
-                }`}
+                className="group relative overflow-hidden rounded-20px px-6 py-6 min-h-[180px] transition-all duration-500 bg-[#0e0e0e]/95 border border-white/8 hover:-translate-y-1 hover:border-[#4CAF50]/35 hover:shadow-[0_30px_90px_rgba(76,175,80,0.20)]"
               >
                 {/* Accent top bar */}
                 <div
-                  className={`absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r ${capability.color} ${
-                    idx === ppcCapabilities.length - 1 ? "opacity-0" : ""
-                  }`}
+                  className={`absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r ${capability.color}`}
                 ></div>
-                {idx === ppcCapabilities.length - 1 && (
-                  <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute inset-3 rounded-[22px] bg-gradient-to-br from-[#4CAF50]/18 via-[#2E7D32]/12 to-[#FF6B35]/16 opacity-90 animate-pulse"></div>
-                    <div className="absolute inset-0 rounded-[25px] border border-[#4CAF50]/25 opacity-70"></div>
-                  </div>
-                )}
                 {/* Subtle hover glow */}
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500"
@@ -689,19 +544,13 @@ const ServicesMain = () => {
                 <div className="relative z-10 flex flex-col gap-2.5">
                   <div className="flex items-center gap-3">
                     <div
-                      className={`w-11 h-11 rounded-xl bg-gradient-to-br ${capability.color} text-white flex items-center justify-center text-base shadow-[0_22px_60px_rgba(76,175,80,0.33)] ${
-                        idx === ppcCapabilities.length - 1 ? "shadow-[0_25px_75px_rgba(76,175,80,0.45)] scale-105" : ""
-                      }`}
+                      className={`w-11 h-11 rounded-xl bg-gradient-to-br ${capability.color} text-white flex items-center justify-center text-base shadow-[0_22px_60px_rgba(76,175,80,0.33)]`}
                     >
                       <i className={`fas ${capability.icon}`}></i>
                     </div>
                     <div>
-                      <h3
-                        className={`text-base md:text-lg font-semibold text-white mt-1 ${
-                          idx === ppcCapabilities.length - 1 ? "text-xl" : ""
-                        }`}
-                      >
-                        {idx === ppcCapabilities.length - 1 ? "Executive Growth Alignment" : capability.title}
+                      <h3 className="text-base md:text-lg font-semibold text-white mt-1">
+                        {capability.title}
                       </h3>
                     </div>
                   </div>
@@ -715,26 +564,50 @@ const ServicesMain = () => {
                       {capability.detail}
                     </p>
                   )}
-                  {idx === ppcCapabilities.length - 1 && (
-                    <div className="pt-3">
-                      <Link
-                        href="/contact"
-                        className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-18px bg-gradient-to-r from-[#4CAF50] to-[#2E7D32] text-white text-xs font-semibold uppercase tracking-[0.3em] transition-all duration-300 hover:shadow-[0_18px_55px_rgba(76,175,80,0.24)] hover:-translate-y-0.5"
-                      >
-                        <i className="fas fa-phone-volume text-sm"></i>
-                        Schedule Executive Review
-                      </Link>
-                    </div>
-                  )}
                 </div>
               </div>
             ))}
           </div>
+
+          {/* Dedicated Partnership CTA Banner */}
+          <div className="mt-10">
+            <div className="relative overflow-hidden rounded-[32px] border border-[#4CAF50]/25 bg-gradient-to-br from-black via-[#0b1f14] to-[#22C55E]/40 px-8 py-10 sm:px-10 md:px-14 md:py-12 shadow-[0_30px_90px_-45px_rgba(34,197,94,0.6)]">
+              <div className="absolute inset-0 pointer-events-none opacity-30">
+                <div className="absolute -top-24 left-1/3 h-56 w-56 rounded-full bg-[#22C55E] blur-[130px]" />
+                <div className="absolute bottom-[-25%] right-1/4 h-64 w-64 rounded-full bg-[#0EA5E9] blur-[150px]" />
+              </div>
+              <div className="relative z-10 flex flex-col items-center gap-6 text-center">
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#FF6B35] to-[#E55A2B] text-white flex items-center justify-center text-xl shadow-[0_22px_60px_rgba(255,107,53,0.4)]">
+                    <i className="fas fa-handshake-simple"></i>
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white">
+                    Dedicated Partnership
+                  </h3>
+                </div>
+                <div className="max-w-3xl">
+                  <p className="text-white/90 text-lg md:text-xl font-medium leading-relaxed mb-2">
+                    Want something exciting? Something exclusive your Brand deserves.
+                  </p>
+                  <p className="text-white/70 text-base leading-relaxed">
+                    A named strategist aligns with your long-term goals, provides strategic guidance and collaborates on expansion into new categories or regions.
+                  </p>
+                </div>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#4CAF50] to-[#2E7D32] px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white transition-all duration-300 hover:shadow-[0_18px_55px_rgba(76,175,80,0.4)] hover:-translate-y-0.5"
+                >
+                  <i className="fas fa-phone-volume"></i>
+                  Schedule Partnership Call
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* PPC Five-Step System */}
-      <section id="ppc-process" className="py-100px bg-gradient-to-br from-[#060606] via-[#090909] to-[#050505] relative overflow-hidden">
+      {/* Brand Management Five-Step System */}
+      <section id="brand-process" className="py-100px bg-gradient-to-br from-[#060606] via-[#090909] to-[#050505] relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-[-8rem] right-[-6rem] w-[28rem] h-[28rem] rounded-full bg-[#4CAF50]/15 blur-[160px]"></div>
           <div className="absolute bottom-[-10rem] left-[-6rem] w-[30rem] h-[30rem] rounded-full bg-[#FF6B35]/12 blur-[190px]"></div>
@@ -753,16 +626,16 @@ const ServicesMain = () => {
                 </span>
                 <div className="space-y-4">
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight">
-                    The Only 5 Steps You’ll Ever Need for Profitable PPC
+                    The Only 5 Steps You&apos;ll Ever Need for Brand Growth
                   </h2>
                   <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                    Every profitable campaign starts with structure and ends with consistency. We rebuild your Amazon ads step-by-step so results become predictable, not hopeful.
+                    Every profitable brand starts with structure and ends with consistency. We rebuild your Amazon presence step-by-step so results become predictable, not hopeful.
                   </p>
                 </div>
                 <div className="rounded-25px border border-white/10 bg-white/[0.05] px-6 py-5 space-y-3 backdrop-blur-md">
                   <p className="text-white font-semibold text-lg">The Goal</p>
                   <p className="text-sm md:text-base text-white/70 leading-relaxed">
-                    Less noise. More control. Steady sales growth without the guesswork. That’s how we make Amazon ads work for you, not against you.
+                    Less noise. More control. Steady sales growth without the guesswork. That&apos;s how we make Amazon work for you, not against you.
                   </p>
                   <div className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-[#FF6B35]/15 text-[#FF6B35] text-xs font-semibold uppercase tracking-[0.3em]">
                     <i className="fas fa-forward"></i>
@@ -785,7 +658,7 @@ const ServicesMain = () => {
               <div className="relative pl-10">
                 <div className="absolute top-3 bottom-3 left-3 w-[2px] bg-gradient-to-b from-[#4CAF50]/0 via-[#4CAF50]/60 to-[#FF6B35]/0"></div>
                 <div className="space-y-12">
-                  {ppcSteps.map((step, idx) => (
+                  {brandSteps.map((step, idx) => (
                     <div
                       key={step.id}
                       className="group relative pl-14"
@@ -814,7 +687,7 @@ const ServicesMain = () => {
                                 </h3>
                               </div>
                             </div>
-                           
+
                           </div>
 
                           <div className="space-y-3">
@@ -836,91 +709,6 @@ const ServicesMain = () => {
         </div>
       </section>
 
-      {/* Client Performance Highlights */}
-      {false && (
-      <section className="py-60px md:py-80px bg-gradient-to-br from-[#0b0b0b] via-[#111111] to-[#050505]">
-        <div className="container">
-          <div className="grid lg:grid-cols-[1.1fr_1.3fr] gap-12 items-start">
-            <div className="space-y-6">
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#4CAF50]/10 border border-[#4CAF50]/30 rounded-full text-[#4CAF50] text-xs font-semibold uppercase tracking-[0.35em]">
-                Proven PPC Ops
-              </span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight">
-                Budgets We Command. Results We Deliver.
-              </h2>
-              <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                Each engagement is anchored by a hybrid pod—media buying, analytics, and creative—built to extract profitable growth from sizeable ad spend.
-              </p>
-              <div className="grid gap-4">
-                <div className="flex items-center gap-3 text-white/80">
-                  <div className="w-11 h-11 rounded-full bg-[#4CAF50]/15 border border-[#4CAF50]/40 flex items-center justify-center text-[#4CAF50]">
-                    <i className="fas fa-chart-line"></i>
-                  </div>
-                  <div>
-                    <p className="text-base font-semibold text-white">7-figure Ad Portfolios</p>
-                    <p className="text-sm text-white/60">Managed with daily optimization cadences and weekly growth sprints.</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3 text-white/80">
-                  <div className="w-11 h-11 rounded-full bg-[#FF6B35]/15 border border-[#FF6B35]/40 flex items-center justify-center text-[#FF6B35]">
-                    <i className="fas fa-tachometer-alt"></i>
-                  </div>
-                  <div>
-                    <p className="text-base font-semibold text-white">Conversion Engineered</p>
-                    <p className="text-sm text-white/60">SKU-level targeting, audience layering, and funnel sequencing dial in profitable scale.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="grid gap-6 md:grid-cols-2">
-              {performanceHighlights.map((highlight) => (
-                <div
-                  key={highlight.id}
-                  className="group relative overflow-hidden rounded-25px border border-white/10 bg-white/5 backdrop-blur-md p-6 flex flex-col gap-5 hover:border-[#4CAF50]/40 transition-all duration-300 hover:shadow-[0_25px_70px_rgba(76,175,80,0.18)]"
-                >
-                  <div className="flex items-center justify-between gap-4">
-                    <div>
-                      <p className="text-sm uppercase tracking-[0.3em] text-[#4CAF50]/90 font-semibold">
-                        {highlight.client}
-                      </p>
-                      <p className="text-xs text-white/60 mt-1">
-                        {highlight.projectsCompleted}
-                      </p>
-                    </div>
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] text-white flex items-center justify-center shadow-lg">
-                      <i className="fas fa-rocket"></i>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <div className="flex flex-wrap items-center gap-2 text-sm font-semibold">
-                      <span className="px-3 py-1 rounded-full bg-[#4CAF50]/20 text-[#4CAF50]">
-                        {highlight.ppcSpend}
-                      </span>
-                      <span className="text-white/80">
-                        {highlight.result}
-                      </span>
-                    </div>
-                    <div className="h-[2px] bg-gradient-to-r from-[#4CAF50]/40 via-white/15 to-transparent rounded-full"></div>
-                  </div>
-
-                  <p className="text-sm text-white/75 leading-relaxed">
-                    {highlight.summary}
-                  </p>
-
-                  <div className="flex items-center gap-2 text-xs text-white/50 mt-auto">
-                    <i className="fas fa-user-gear text-[#FF6B35]"></i>
-                    Senior Growth Pod Assigned
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-      )}
-
       {/* Trusted Brands Marquee */}
       <section className="py-60px md:py-80px bg-[#f5f0e8] dark:bg-[#050505]">
         <div className="container text-center mb-30px">
@@ -935,66 +723,6 @@ const ServicesMain = () => {
           <BrandMarque type={2} />
         </div>
       </section>
-
-      {/* Onboarding Process Section */}
-      {false && (
-      <section className="py-100px bg-gradient-to-br from-[#0b0b0b] via-[#121212] to-[#050505] scroll-mt-[130px] relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-10 -left-10 w-72 h-72 rounded-full bg-[#4CAF50]/20 blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-[22rem] h-[22rem] rounded-full bg-[#FF6B35]/15 blur-[120px]"></div>
-        </div>
-        <div className="container relative z-10">
-          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-16 mb-16">
-            <div className="max-w-3xl">
-              <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[#4CAF50]/40 text-[#4CAF50] text-xs font-semibold uppercase tracking-[0.35em]">
-                How We Onboard
-              </span>
-              <h2 className="mt-6 text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight">
-                A Seamless Partnership Built To Win Amazon
-              </h2>
-              <p className="mt-6 text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl">
-                Every engagement begins with clarity, accelerates with precision execution, and never stops evolving. Here’s how we bring brands onboard and deliver momentum from day one.
-              </p>
-            </div>
-          </div>
-
-          <div className="relative">
-            <div className="absolute hidden lg:block left-1/2 top-12 bottom-12 w-px bg-gradient-to-b from-transparent via-[#4CAF50]/50 to-transparent translate-x-[-50%]"></div>
-            <div className="grid gap-14 lg:gap-20">
-              {onboardingSteps.map((step, index) => (
-                <div
-                  key={step.title}
-                  className="relative flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12 group"
-                >
-                  <div className="flex items-center gap-6 lg:w-[18rem]">
-                    <div className="relative">
-                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] shadow-[0_20px_45px_rgba(76,175,80,0.35)] flex items-center justify-center text-2xl font-black text-white">
-                        {index + 1}
-                      </div>
-                      <div className="absolute inset-0 rounded-2xl blur-2xl bg-[#4CAF50]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div className="hidden lg:block w-24 h-[1px] bg-gradient-to-r from-[#4CAF50]/40 to-transparent"></div>
-                  </div>
-                  <div className="flex-1">
-                    <div className="relative bg-white/5 border border-white/10 rounded-25px p-8 md:p-10 backdrop-blur-sm transition-transform duration-300 group-hover:-translate-y-1 group-hover:border-[#4CAF50]/40 group-hover:shadow-[0_25px_70px_rgba(76,175,80,0.25)]">
-                      <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-gradient-to-br from-[#4CAF50]/20 to-[#2E7D32]/20 flex items-center justify-center text-[#4CAF50]">
-                        <i className={`fas ${step.icon} text-lg`}></i>
-                      </div>
-                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                        {step.title}
-                      </h3>
-                      <p className="text-gray-300 leading-[1.8] text-base md:text-lg">
-                        {step.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-      )}
 
       {/* Stats/Results Section */}
       <section id="results" className="py-[50px] bg-gradient-to-r from-[#4CAF50] to-[#2E7D32] scroll-mt-[130px]">
@@ -1021,96 +749,13 @@ const ServicesMain = () => {
         </div>
       </section>
 
-      {/* Enhanced Service Cards (match Recent Work slider behavior) */}
-      {/* <section className="py-100px bg-white dark:bg-[#121212]">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#121212] dark:text-white mb-4">
-              Our Services
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Comprehensive Amazon business solutions designed to maximize your ROI and minimize your ad spend
-            </p>
-          </div>
-          
-          <div className="relative mx-25px">
-            <button
-              className="portfolio-slider-6-prev absolute left-[-12px] top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg flex items-center justify-center text-[#121212] dark:text-white"
-              aria-label="Previous"
-            >
-              <i className="fa-regular fa-chevron-left"></i>
-            </button>
-            <button
-              className="portfolio-slider-6-next absolute right-[-12px] top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg flex items-center justify-center text-[#121212] dark:text-white"
-              aria-label="Next"
-            >
-              <i className="fa-regular fa-chevron-right"></i>
-            </button>
-
-            <div className="wow fadeInUp" data-wow-delay=".3s">
-              <Swiper
-                spaceBetween={30}
-                slidesPerView={1}
-                loop={true}
-                freeMode={true}
-                centeredSlides={true}
-                speed={3000}
-                autoplay={{ delay: 2000 }}
-                pagination={{ clickable: true }}
-                navigation={{
-                  prevEl: ".portfolio-slider-6-prev",
-                  nextEl: ".portfolio-slider-6-next",
-                }}
-                breakpoints={{
-                  768: { slidesPerView: 1.5 },
-                  992: { slidesPerView: 2 },
-                  1200: { slidesPerView: 3 },
-                }}
-                modules={[Pagination, Autoplay, Navigation]}
-                className="services-slider"
-              >
-                {services?.map((service, idx) => (
-                  <SwiperSlide key={idx}>
-                    <div className="portfolio-item branding p-5 md:p-25px bg-cream-light-color dark:bg-black-color hover:bg-cream-light-color dark:hover:bg-seondary-color rounded-30px group relative">
-                      <div className="mb-25px rounded-15px overflow-hidden w-full">
-                        <div className="w-16 h-16 bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] rounded-15px flex items-center justify-center">
-                          <i className={`${service.iconName} text-2xl text-white`}></i>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-25px justify-between">
-                        <div>
-                          <h4 className="block text-xl text-seondary-color dark:text-white-color hover:text-primary-color dark:hover:text-primary-color font-bold mb-1.5">
-                            {service.title}
-                          </h4>
-                          <p className="block text-primary-color-light dark:text-body-color-3">
-                            {service.shortDesc}
-                          </p>
-                        </div>
-                        <button
-                          type="button"
-                          className="flex-shrink-0 text-size-25px w-60px h-60px text-primary-color-light dark:text-white-color group-hover:text-white-color bg-transparent group-hover:bg-gradient-primary-8 outline-1 outline outline-body-color dark:outline-bg-color-2 group-hover:border-transparent rounded-100% leading-1 transition-all duration-300 inline-flex justify-center items-center"
-                        >
-                          <span className="relative overflow-hidden -rotate-45">
-                            <i className="fa-regular fa-arrow-right text-lg group-hover:translate-x-150% transition-all duration-500 inline-block"></i>
-                          </span>
-                        </button>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
       {/* Success Stories Section */}
       <section id="success-stories" className="py-100px bg-gradient-to-br from-[#121212] via-[#1a1a1a] to-[#121212] dark:from-[#0a0a0a] dark:via-[#121212] dark:to-[#0a0a0a] relative overflow-hidden scroll-mt-[130px]">
         {/* Background Effects */}
         <div className="absolute inset-0 bg-gradient-to-tr from-[#4CAF50]/10 via-transparent to-[#4CAF50]/5"></div>
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#4CAF50]/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#FF6B35]/10 rounded-full blur-3xl"></div>
-        
+
         <div className="container relative z-10">
           {/* Section Header */}
           <div className="text-center mb-16">
@@ -1122,11 +767,9 @@ const ServicesMain = () => {
               <span className="text-[#4CAF50] block">Loyal Clients</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Real results from real clients. Watch how we've transformed their Amazon businesses.
+              Real results from real clients. Watch how we&apos;ve transformed their Amazon businesses.
             </p>
           </div>
-
-        
 
           {/* Featured Video (Large) */}
           {successStories[0] && (
@@ -1149,7 +792,7 @@ const ServicesMain = () => {
                         fill
                         className="object-cover opacity-70 group-hover:opacity-50 transition-opacity"
                       />
-                      <div 
+                      <div
                         onClick={() => setSelectedVideo(successStories[0].id)}
                         className="absolute inset-0 flex items-center justify-center cursor-pointer group-hover:scale-110 transition-transform"
                       >
@@ -1206,7 +849,7 @@ const ServicesMain = () => {
                         fill
                         className="object-cover opacity-70 group-hover:opacity-50 transition-opacity"
                       />
-                      <div 
+                      <div
                         onClick={() => setSelectedVideo(story.id)}
                         className="absolute inset-0 flex items-center justify-center cursor-pointer group-hover:scale-110 transition-transform"
                       >
@@ -1260,7 +903,7 @@ const ServicesMain = () => {
             </div>
           </div>
         </div>
-            
+
         <div className="max-w-5xl mx-auto mb-16 mt-10">
             <div className="relative overflow-hidden rounded-[32px] border border-[#4CAF50]/25 bg-gradient-to-br from-black via-[#0b1f14] to-[#22C55E]/40 px-8 py-10 sm:px-10 md:px-14 md:py-12 shadow-[0_30px_90px_-45px_rgba(34,197,94,0.6)]">
               <div className="absolute inset-0 pointer-events-none opacity-30">
@@ -1282,106 +925,6 @@ const ServicesMain = () => {
             </div>
           </div>
       </section>
-
-      {/* Client Outcomes Section */}
-      {false && (
-      <section id="outcomes" className="py-100px bg-gradient-to-br from-[#0a0a0a] via-[#121212] to-[#1a1a1a] dark:from-[#050505] dark:via-[#0a0a0a] dark:to-[#121212] relative overflow-hidden scroll-mt-[130px]">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#4CAF50]/5 rounded-full blur-[150px] animate-pulse"></div>
-          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[#FF6B35]/5 rounded-full blur-[150px] animate-pulse" style={{animationDelay: '1.5s'}}></div>
-          <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-[#4CAF50]/3 rounded-full blur-[200px] transform -translate-x-1/2 -translate-y-1/2"></div>
-        </div>
-
-        {/* Grid Pattern Overlay */}
-        <div className="absolute inset-0 opacity-[0.02]" style={{
-          backgroundImage: 'linear-gradient(rgba(76, 175, 80, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(76, 175, 80, 0.1) 1px, transparent 1px)',
-          backgroundSize: '60px 60px'
-        }}></div>
-
-        <div className="container relative z-10">
-          <div className="grid lg:grid-cols-12 gap-12 items-start">
-            {/* Left Column - Header */}
-            <div className="lg:col-span-4">
-              <div className="sticky top-[150px]">
-                <span className="inline-block px-4 py-2 bg-[#4CAF50]/10 border border-[#4CAF50]/30 text-[#4CAF50] rounded-full text-xs font-semibold mb-6 uppercase tracking-wider">
-                  WE LET OUR RESULTS DO THE TALKING
-                </span>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
-                  CLIENT OUTCOMES
-                  <span className="block text-[#4CAF50] mt-2">THAT SPEAK FOR</span>
-                  <span className="block text-[#FF6B35]">THEMSELVES</span>
-                </h2>
-                <p className="text-lg text-gray-400 leading-relaxed">
-                  Witness the tangible impact of our strategies, where every metric tells a story of exponential growth and optimized performance.
-                </p>
-              </div>
-            </div>
-
-            {/* Right Column - Outcome Cards */}
-            <div className="lg:col-span-8">
-              <div className="grid md:grid-cols-2 gap-6">
-                {clientOutcomes.map((outcome, idx) => (
-                  <div
-                    key={outcome.id}
-                    className="group relative bg-gradient-to-br from-[#1a1a1a]/90 to-[#0a0a0a]/90 backdrop-blur-sm border border-white/5 rounded-25px p-8 hover:border-[#4CAF50]/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_20px_60px_rgba(76,175,80,0.2)] overflow-hidden"
-                    style={{
-                      animationDelay: `${idx * 0.1}s`
-                    }}
-                  >
-                    {/* Gradient Border Effect on Hover */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${outcome.color} opacity-0 group-hover:opacity-10 rounded-25px transition-opacity duration-500`}></div>
-                    
-                    {/* Animated Background Wave */}
-                    <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#FF6B35]/5 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                    {/* Icon with Animation */}
-                    <div className="absolute top-6 right-6 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
-                      <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${outcome.color} flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500`}>
-                        <i className={`fas ${outcome.icon} text-white text-lg`}></i>
-                      </div>
-                    </div>
-
-                    {/* Trend Indicator */}
-                    {outcome.trend && (
-                      <div className="absolute top-6 right-6 opacity-30 group-hover:opacity-60 transition-opacity duration-500">
-                        {outcome.trend === "up" ? (
-                          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#4CAF50] to-[#2E7D32] flex items-center justify-center">
-                            <i className="fas fa-arrow-up text-white text-xs"></i>
-                          </div>
-                        ) : (
-                          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#FF6B35] to-[#E55A2B] flex items-center justify-center">
-                            <i className="fas fa-arrow-down text-white text-xs"></i>
-                          </div>
-                        )}
-                      </div>
-                    )}
-
-                    {/* Metric - Large and Prominent */}
-                    <div className="mb-4 relative z-10">
-                      <h3 className={`text-5xl md:text-6xl font-black bg-gradient-to-r ${outcome.color} bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-500`} style={{
-                        textShadow: '0 0 40px rgba(76, 175, 80, 0.3)',
-                        filter: 'drop-shadow(0 0 20px rgba(76, 175, 80, 0.2))'
-                      }}>
-                        {outcome.metric}
-                      </h3>
-                    </div>
-
-                    {/* Description */}
-                    <p className="text-gray-300 text-base leading-relaxed relative z-10 group-hover:text-gray-200 transition-colors duration-300">
-                      {outcome.description}
-                    </p>
-
-                    {/* Glow Effect on Hover */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${outcome.color} opacity-0 group-hover:opacity-5 rounded-25px blur-xl transition-opacity duration-500`}></div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      )}
 
       {/* Testimonials Section */}
       <section id="testimonials" className="py-100px bg-white dark:bg-[#121212] scroll-mt-[130px]">
@@ -1480,7 +1023,7 @@ const ServicesMain = () => {
               <div className="relative z-10 flex flex-col items-center gap-6 text-center">
                 <div className="max-w-3xl">
                   <p className="text-white text-lg md:text-xl font-semibold leading-relaxed">
-                    Ready for a tailored roadmap? We’ll audit your ad spend, listings, and growth levers to map the fastest path to calmer, more profitable scaling.
+                    Ready for a tailored roadmap? We&apos;ll audit your brand, listings, and growth levers to map the fastest path to calmer, more profitable scaling.
                   </p>
                 </div>
                 <Link href="/contact">
@@ -1492,11 +1035,8 @@ const ServicesMain = () => {
             </div>
           </div>
         </div>
-    
-      </section>
 
-      {/* CTA - Book Strategy Call */}
-    
+      </section>
 
       {/* FAQ Accordion Section */}
       <section id="faq" className="py-100px bg-white dark:bg-[#1a1a1a] scroll-mt-[130px]">
@@ -1507,7 +1047,7 @@ const ServicesMain = () => {
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
               <div key={idx} className="border border-gray-200 dark:border-gray-700 rounded-15px overflow-hidden hover:border-[#4CAF50] transition-colors">
-                <button 
+                <button
                   onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
                   className="w-full p-6 text-left bg-white dark:bg-[#1a1a1a] hover:bg-[#4CAF50]/5 transition-colors"
                 >
@@ -1533,11 +1073,11 @@ const ServicesMain = () => {
         <div className="container relative z-10">
           <div className="text-center text-white">
             <h2 className="text-5xl font-bold mb-6">
-              Ready to Transform Your Amazon Business?
+              Ready to Transform Your Amazon Brand?
             </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Join hundreds of successful Amazon sellers who've reduced their ad spend by 30-50% 
-              and increased their profits significantly.
+              Join hundreds of successful Amazon sellers who&apos;ve scaled their brands
+              with our full-service management and increased their profits significantly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -1560,4 +1100,4 @@ const ServicesMain = () => {
   );
 };
 
-export default ServicesMain;
+export default BrandManagementMain;

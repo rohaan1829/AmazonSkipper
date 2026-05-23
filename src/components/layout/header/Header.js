@@ -5,118 +5,65 @@ import Socials4 from "@/components/shared/socials/Socials4";
 import Socials5 from "@/components/shared/socials/Socials5";
 import Socials6 from "@/components/shared/socials/Socials6";
 import { useHeaderContext } from "@/context_api/HeaderContext";
-import stickyHeader from "@/libs/stickyHeader";
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Logo from "./Logo";
 import MobileMenu from "./MobileMenu";
 import MobileMenuController from "./MobileMenuController";
 import Navbar from "./Navbar";
 
-const Header = ({ isSticky }) => {
-    const [isActiveMobileMenu, setIsActiveMobileMenu] = useState(false);
-    const [mounted, setMounted] = useState(false);
-	const { isInnerPage, headerType, isIndexPage } = useHeaderContext();
-    useEffect(() => {
-		stickyHeader();
-        setMounted(true);
-    }, []);
-
-    if (!mounted) return null;
+// Single, always-pinned header. Fixed to the top of the viewport from page
+// load and stays visible while scrolling — no scroll listener, no transparent
+// variant, no slide-in animation.
+const Header = () => {
+	const [isActiveMobileMenu, setIsActiveMobileMenu] = useState(false);
+	const { headerType } = useHeaderContext();
 
 	return (
-        <header
-            suppressHydrationWarning
-            className={`header-area ${
+		<header
+			className={`header-area header-fixed ${
 				headerType === 6 || headerType === 9 || headerType === 10
 					? "header-6"
 					: headerType === 5
-					? "header-5  "
+					? "header-5"
 					: ""
-			} ${isSticky ? "header-2 header-sticky" : "header-absolute"} `}
+			}`}
 		>
 			<div
 				className={`${
 					headerType === 10
 						? "border-b border-border-coloer dark:border-bg-color-2 "
-						: isSticky
-						? headerType === 9
-							? "py-3"
-							: headerType === 8 ||
-							  headerType === 7 ||
-							  headerType === 6 ||
-							  headerType === 5 ||
-							  headerType === 4
-							? "pt-5 pb-5  "
-							: "py-10px"
 						: headerType === 9
-						? "pt-0 pb-0 md:pt-1 md:pb-8px"
-						: "pt-15px xl:pt-5 pb-5 md:pb-30px xl:pb-5"
+						? "py-1"
+						: "pt-5 pb-5"
 				} relative`}
 			>
 				<div
-					className={`${
+					className={
 						headerType === 5 ||
 						headerType === 6 ||
 						headerType === 9 ||
 						headerType === 10
-							? "px-15px  2xl:px-65px"
+							? "px-15px 2xl:px-65px"
 							: "container"
-					}`}
+					}
 				>
 					<div
 						className={`flex flex-wrap justify-between ${
 							headerType === 10 ? "items-stretch" : "items-center"
-						} ${headerType === 9 ? "lg:flex-nowrap lg:gap-x-6" : ""}`}
+						} ${headerType === 9 ? "lg:flex-nowrap lg:gap-x-3 xl:gap-x-4" : ""}`}
 					>
-						{/* <!-- logo and contact email --> */}
-						<div
-							className={
-								headerType === 10
-									? "max-w-140px sm:max-w-210px flex items-center h-75px sm:h-85px md:h-[103px]  border-r border-border-coloer dark:border-bg-color-2 w-full leading-1 pr-15px sm:pr-0"
-									: headerType === 4 || headerType === 6 || headerType === 9
-									? `max-w-205px lg:max-w-130px xl:max-w-205px ${headerType === 9 ? "w-auto flex-shrink-0" : "w-full"} -mt-2 sm:-mt-1 md:mt-0`
-									: ""
-							}
-						>
-							<ul
-								className={`flex items-center ${
-									headerType === 5 ? "gap-x-25px" : "gap-x-15px xl:gap-x-35px"
-								}`}
-							>
-								<li>
-									<Logo isSticky={isSticky} sizeMultiplier={1.20} />
-								</li>
-								{headerType === 3 ||
-								headerType === 4 ||
-								headerType === 5 ||
-								headerType === 6 ||
-								headerType === 9 ||
-								headerType === 10 ? (
-									""
-								) : (
-									<li className="hidden md:block">
-										<Link
-											href="mailto:mail@gerolddesign.com"
-											className={`text-size-15 font-medium ${
-												isInnerPage && !isSticky
-													? "text-white-color"
-													: "text-seondary-color dark:text-white-color"
-											} `}
-										>
-											mail@gerolddesign.com
-										</Link>
-									</li>
-								)}
-							</ul>
+						{/* logo */}
+						<div className="flex items-center flex-shrink-0">
+							<Logo />
 						</div>
-						{/* <!-- main menu --> */}
+
+						{/* main menu */}
 						<Navbar
 							isActiveMobileMenu={isActiveMobileMenu}
 							setIsActiveMobileMenu={setIsActiveMobileMenu}
-							isSticky={isSticky}
 						/>
-						{/* <!-- social button --> */}
+
+						{/* right-side actions */}
 						{headerType === 3 ||
 						headerType === 4 ||
 						headerType === 5 ||
@@ -128,8 +75,10 @@ const Header = ({ isSticky }) => {
 									headerType === 9 || headerType === 10 ? "flex" : "hidden"
 								} ${
 									headerType === 9 || headerType === 10 || headerType === 5
-										? "lg:flex items-center gap-25px"
-										: "lg:block "
+										? `lg:flex items-center ${
+												headerType === 9 ? "gap-15px xl:gap-20px" : "gap-25px"
+										  }`
+										: "lg:block"
 								} ${
 									headerType === 10
 										? "lg:pl-30px lg:border-l border-border-coloer dark:border-bg-color-2"
@@ -138,14 +87,23 @@ const Header = ({ isSticky }) => {
 							>
 								{headerType === 9 || headerType === 10 ? (
 									<>
-										{headerType === 10 ? "" : <Socials6 />}
+										{headerType === 10 ? "" : <Socials6 compact={headerType === 9} />}
 
 										<div className="hidden sm:block">
-											<ButtonPrimary type={2} isIcon={true} url={"/contact"} className="whitespace-nowrap">
+											<ButtonPrimary
+												type={2}
+												isIcon={true}
+												url={"/contact"}
+												className={`whitespace-nowrap ${
+													headerType === 9
+														? "!py-12px !px-25px text-[13px] xl:text-[14px]"
+														: ""
+												}`}
+											>
 												Lets Make Money
 											</ButtonPrimary>
 										</div>
-										<div className="menu-bar block lg:hidden ">
+										<div className="menu-bar block lg:hidden">
 											<MobileMenuController
 												setIsActiveMobileMenu={setIsActiveMobileMenu}
 												isActiveMobileMenu={isActiveMobileMenu}
@@ -153,11 +111,8 @@ const Header = ({ isSticky }) => {
 										</div>
 									</>
 								) : headerType === 6 ? (
-									<ButtonPrimary
-										isIcon={headerType === 6 ? true : false}
-										url={isIndexPage ? "#contact" : "/contact"}
-									>
-										{headerType === 6 ? "Lets Talk" : "Hire Me!"}
+									<ButtonPrimary isIcon={true} url={"/contact"}>
+										Lets Talk
 									</ButtonPrimary>
 								) : headerType === 5 ? (
 									<>
@@ -173,7 +128,7 @@ const Header = ({ isSticky }) => {
 						)}
 					</div>
 				</div>
-				{/* <!-- mobile menu --> */}
+				{/* mobile menu */}
 				<MobileMenu isActiveMobileMenu={isActiveMobileMenu} />
 			</div>
 		</header>
