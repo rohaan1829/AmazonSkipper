@@ -2,6 +2,7 @@
 
 import ButtonRounded from "@/components/shared/buttons/ButtonRounded";
 import FunFact9 from "@/components/shared/fun-fact/FunFact9";
+import Image from "next/image";
 import Link from "next/link";
 
 const Hero9 = () => {
@@ -13,11 +14,18 @@ const Hero9 = () => {
 			<div className="absolute inset-0 bg-gradient-to-br from-black via-[#1a1a1a] to-black opacity-100 dark:block hidden"></div>
 			<div className="absolute inset-0 bg-gradient-to-tr from-black via-transparent to-black opacity-95 dark:block hidden"></div>
 			
-			{/* Dark mode background image */}
-			<div
-				className="absolute inset-0 hidden dark:block bg-no-repeat bg-center bg-cover z-0"
-				style={{ backgroundImage: "url('/img/hero/darkgreen.png')" }}
-			/>
+			{/* Dark mode background image — Next.js Image for AVIF/WebP optimization + preload */}
+			<div className="absolute inset-0 hidden dark:block z-0">
+				<Image
+					src="/img/hero/darkgreen.png"
+					alt=""
+					fill
+					priority
+					sizes="100vw"
+					className="object-cover object-center"
+					quality={75}
+				/>
+			</div>
 			{/* <!-- bg --> */}
 
 			<div className="px-15px relative z-10">
@@ -52,9 +60,14 @@ const Hero9 = () => {
 						filter: "blur(30px)",
 					}}
 				/>
-				<img
+				<Image
 					src="/img/hero/Huzaifa's Portrait.png"
 					alt="Huzaifa"
+					width={2581}
+					height={3873}
+					priority
+					sizes="(max-width: 640px) 340px, (max-width: 1024px) 480px, (max-width: 1280px) 460px, 580px"
+					quality={85}
 					className="w-full h-auto max-h-[520px] sm:max-h-[420px] md:max-h-[480px] lg:max-h-[500px] 2xl:max-h-[540px] object-contain object-top"
 					style={{
 						maskImage:
@@ -168,9 +181,13 @@ const Hero9 = () => {
 									rel="noopener noreferrer"
 									className="inline-block hover:opacity-90 transition-opacity"
 								>
-									<img
+									<Image
 										src="/img/hero/clutch.png"
 										alt="Clutch"
+										width={1536}
+										height={1024}
+										priority
+										sizes="(max-width: 768px) 120px, (max-width: 1024px) 215px, (max-width: 1280px) 165px, 225px"
 										className="h-[80px] sm:h-[90px] md:h-[142px] lg:h-[110px] xl:h-[150px] w-auto max-w-none object-contain drop-shadow-sm"
 									/>
 								</a>
@@ -180,9 +197,13 @@ const Hero9 = () => {
 									rel="noopener noreferrer"
 									className="inline-block hover:opacity-90 transition-opacity"
 								>
-									<img
+									<Image
 										src="/img/hero/ad.png"
 										alt="Amazon Verified"
+										width={1024}
+										height={1024}
+										priority
+										sizes="(max-width: 768px) 80px, (max-width: 1024px) 142px, (max-width: 1280px) 110px, 150px"
 										className="h-[80px] sm:h-[90px] md:h-[142px] lg:h-[110px] xl:h-[150px] w-auto max-w-none object-contain drop-shadow-sm"
 									/>
 								</a>
@@ -192,9 +213,13 @@ const Hero9 = () => {
 									rel="noopener noreferrer"
 									className="inline-block hover:opacity-90 transition-opacity"
 								>
-									<img
+									<Image
 										src="/img/hero/4.5trustpilot.png"
 										alt="Trustpilot"
+										width={969}
+										height={466}
+										priority
+										sizes="(max-width: 768px) 125px, (max-width: 1024px) 129px, (max-width: 1280px) 102px, 139px"
 										className="h-[60px] sm:h-[70px] md:h-[62px] lg:h-[49px] xl:h-[67px] w-auto max-w-none object-contain drop-shadow-sm"
 									/>
 								</a>
